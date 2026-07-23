@@ -1,0 +1,249 @@
+{
+  "schema": "open-design.design-manifest.v1",
+  "title": "66bb21e0-dae4-4736-99e8-56fae2738028",
+  "entryFile": "index.html",
+  "sourceFiles": {
+    "all": [
+      "__screenshot-expertises-header.png",
+      "__screenshot-footer.png",
+      "__screenshot-header.png",
+      "brand-spec.md",
+      "contact.html",
+      "expertises.html",
+      "img/contact-site.svg",
+      "img/hero-bg.svg",
+      "img/icon-carwash.svg",
+      "img/icon-cleaning.svg",
+      "img/icon-ev.svg",
+      "img/icon-infra.svg",
+      "img/icon-tankstation.svg",
+      "img/icon-water.svg",
+      "img/service-24-7.svg",
+      "img/service-cleaning.svg",
+      "img/service-onderhoud.svg",
+      "img/service-preventief.svg",
+      "img/team-workshop.svg",
+      "index.html",
+      "jobs.html",
+      "logo-white.svg",
+      "logo.svg",
+      "over-vandotec.html",
+      "service-onderhoud.html",
+      "style.css",
+      "vandotec-live.png",
+      "vandotec-website.zip"
+    ],
+    "html": [
+      "contact.html",
+      "expertises.html",
+      "index.html",
+      "jobs.html",
+      "over-vandotec.html",
+      "service-onderhoud.html"
+    ],
+    "css": [
+      "style.css"
+    ],
+    "scriptsAndComponents": [],
+    "assets": [
+      "__screenshot-expertises-header.png",
+      "__screenshot-footer.png",
+      "__screenshot-header.png",
+      "brand-spec.md",
+      "img/contact-site.svg",
+      "img/hero-bg.svg",
+      "img/icon-carwash.svg",
+      "img/icon-cleaning.svg",
+      "img/icon-ev.svg",
+      "img/icon-infra.svg",
+      "img/icon-tankstation.svg",
+      "img/icon-water.svg",
+      "img/service-24-7.svg",
+      "img/service-cleaning.svg",
+      "img/service-onderhoud.svg",
+      "img/service-preventief.svg",
+      "img/team-workshop.svg",
+      "logo-white.svg",
+      "logo.svg",
+      "vandotec-live.png",
+      "vandotec-website.zip"
+    ]
+  },
+  "screens": [
+    {
+      "file": "contact.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "expertises.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "index.html",
+      "role": "launcher-overview",
+      "implementationNote": "Use this as the navigation/overview entry only; implement each linked screen file as its own route/surface."
+    },
+    {
+      "file": "jobs.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "over-vandotec.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "service-onderhoud.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    }
+  ],
+  "screenFilePolicy": {
+    "mode": "screen-file-first",
+    "entryFileRole": "launcher-overview",
+    "rules": [
+      "Each distinct user-facing screen or surface must be delivered and implemented as its own file/route.",
+      "If a landing page is present or requested, keep it in landing.html and do not merge it into the product app screen.",
+      "When multiple HTML screens exist, index.html is a launcher/overview only; it must not be treated as the combined final UI.",
+      "Keep product app screens, landing pages, platform screens, and OS widget surfaces separate in production code."
+    ]
+  },
+  "appModules": [
+    "Identify domain-specific in-app modules from the exported UI; do not reduce them to generic cards.",
+    "For each major module, implement purpose, default/loading/empty/error/success states, and responsive behavior.",
+    "Keep app modules separate from OS home-screen widgets in the production component model."
+  ],
+  "osWidgets": [
+    "If the export includes home-screen, lock-screen, Live Activity, tablet glance, or Android widget surfaces, implement them as platform quick-access surfaces outside the app UI.",
+    "If none are present, do not invent OS widgets unless the product requirements request them."
+  ],
+  "landingPage": {
+    "detection": "Inspect files and screen names for a marketing/landing page surface. If present, keep it separate from product app screens.",
+    "requiredSections": [
+      "hero",
+      "value props",
+      "product proof/screenshots",
+      "feature proof",
+      "CTA"
+    ]
+  },
+  "tokens": {
+    "source": [
+      "style.css"
+    ],
+    "required": [
+      "background",
+      "surface",
+      "foreground",
+      "muted text",
+      "border",
+      "accent",
+      "radius",
+      "shadow",
+      "spacing",
+      "type scale",
+      "motion"
+    ],
+    "note": "Extract/freeze tokens before framework implementation so coding tools do not substitute default theme colors or typography."
+  },
+  "interactions": {
+    "source": [
+      "index.html"
+    ],
+    "requiredStates": [
+      "default",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "loading",
+      "empty",
+      "error",
+      "success"
+    ],
+    "requiredBehaviors": [
+      "forms/validation where present",
+      "tabs/filters where present",
+      "dialogs/sheets/drawers where present",
+      "copy/generate/share actions where present",
+      "player or quick controls where present"
+    ],
+    "note": "If the prototype is static, derive missing behavior from visible controls and document it before coding."
+  },
+  "responsiveViewports": [
+    {
+      "name": "mobile-compact",
+      "width": 360,
+      "height": 800,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-standard",
+      "width": 390,
+      "height": 844,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-large",
+      "width": 430,
+      "height": 932,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "foldable-small-tablet",
+      "width": 600,
+      "height": 960,
+      "category": "foldable-tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 820,
+      "height": 1180,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "laptop",
+      "width": 1366,
+      "height": 768,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "wide",
+      "width": 1920,
+      "height": 1080,
+      "category": "wide",
+      "mustAvoidHorizontalScroll": true
+    }
+  ],
+  "implementationChecklist": [
+    "Open entryFile first and map screens, modules, tokens, and interactions.",
+    "Extract tokens before writing framework components.",
+    "Implement app-specific modules with real states instead of generic card grids.",
+    "Preserve or rebuild JS interactions for meaningful UX actions.",
+    "Validate screenshots at desktop/tablet/mobile viewports with no horizontal overflow.",
+    "Keep landing pages, in-app modules, and OS widgets as separate implementation surfaces."
+  ]
+}

@@ -1,0 +1,143 @@
+---
+export const siteName = 'Vandotec';
+---
+
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#091950" />
+		<meta name="msapplication-TileColor" content="#091950" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="/style.css" />
+		<slot name="head" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="header-inner">
+					<a href="/" class="header-logo" aria-label={siteName}>
+						<img src="/logo.svg" alt={siteName} class="header-logo-img" />
+					</a>
+					<div class="header-right">
+						<nav class="header-nav" aria-label="Hoofdnavigatie">
+							<a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Home</a>
+							<a href="/expertises" class={Astro.url.pathname === '/expertises' ? 'active' : ''}>Expertises</a>
+							<a href="/service-onderhoud" class={Astro.url.pathname === '/service-onderhoud' ? 'active' : ''}>Service & onderhoud</a>
+							<a href="/over-vandotec" class={Astro.url.pathname === '/over-vandotec' ? 'active' : ''}>Over Vandotec</a>
+							<a href="/jobs" class={Astro.url.pathname === '/jobs' ? 'active' : ''}>Jobs</a>
+							<a href="/contact" class={Astro.url.pathname === '/contact' ? 'active' : ''}>Contact</a>
+						</nav>
+						<div class="header-lang">
+							<a href="#" class="active">NL</a>
+							<span style="color:var(--border)">|</span>
+							<a href="#">FR</a>
+						</div>
+						<div class="header-cta">
+							<a href="/contact" class="btn btn-red">Offerte aanvragen</a>
+						</div>
+						<button class="header-mobile-toggle" id="mobileToggle" aria-label="Menu openen">
+							<span></span><span></span><span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="mobile-nav" id="mobileNav">
+			<a href="/">Home</a>
+			<a href="/expertises">Expertises</a>
+			<a href="/service-onderhoud">Service & onderhoud</a>
+			<a href="/over-vandotec">Over Vandotec</a>
+			<a href="/jobs">Jobs</a>
+			<a href="/contact">Contact</a>
+			<a href="/contact" class="btn btn-red" style="margin-top:1rem;text-align:center">Offerte aanvragen</a>
+			<div class="mobile-lang">
+				<a href="#" class="active">NL</a>
+				<a href="#">FR</a>
+			</div>
+		</div>
+
+		<slot />
+
+		<footer class="footer">
+			<div class="footer-main">
+				<div class="container">
+					<div class="footer-grid">
+						<div class="footer-brand">
+							<img src="/logo.svg" alt={siteName} class="footer-logo-img" />
+							<p>{siteName} installeert en onderhoudt tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten.</p>
+							<p class="btw">BE 0417 923 411</p>
+						</div>
+						<div class="footer-col">
+							<h4>Expertises</h4>
+							<ul>
+								<li><a href="/expertises#tankstations">Tankstations</a></li>
+								<li><a href="/expertises#ev-laadinstallaties">EV laadinstallaties</a></li>
+								<li><a href="/expertises#carwashes">Carwashes</a></li>
+								<li><a href="/expertises#reinigingssystemen">Reinigingssystemen</a></li>
+								<li><a href="/expertises#infrastructuurwerken">Infrastructuurwerken</a></li>
+								<li><a href="/expertises#waterprojecten">Waterprojecten</a></li>
+							</ul>
+						</div>
+						<div class="footer-col">
+							<h4>Services</h4>
+							<ul>
+								<li><a href="/service-onderhoud#interventie">24/7 interventiedienst</a></li>
+								<li><a href="/service-onderhoud#onderhoud">Onderhoud &amp; herstellingen</a></li>
+								<li><a href="/service-onderhoud#preventief">Preventief onderhoud</a></li>
+								<li><a href="/service-onderhoud#tank-cleaning">Tank cleaning</a></li>
+								<li><a href="/expertises">Totaalprojecten</a></li>
+							</ul>
+						</div>
+						<div class="footer-col">
+							<h4>Contact</h4>
+							<div class="footer-contact">
+								<p><strong>{siteName}</strong><br>Nijverheidsstraat 49<br>8970 Poperinge<br>Belgi&euml;</p>
+								<p style="margin-top:.75rem"><a href="tel:+3257335251">+32 57 33 52 51</a></p>
+								<p><a href="mailto:info@vandotec.be">info@vandotec.be</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="footer-bottom-inner">
+						<span class="copy">&copy; 2026 {siteName}</span>
+						<nav class="nav">
+							<a href="#">Disclaimer</a>
+							<a href="#">Privacy policy</a>
+							<a href="#">Cookie policy</a>
+							<a href="#">Algemene voorwaarden</a>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			(function(){
+				var toggle = document.getElementById('mobileToggle');
+				var nav = document.getElementById('mobileNav');
+				if(toggle && nav){
+					toggle.addEventListener('click', function(){
+						nav.classList.toggle('open');
+					});
+					nav.querySelectorAll('a').forEach(function(link){
+						link.addEventListener('click', function(){
+							nav.classList.remove('open');
+						});
+					});
+					document.addEventListener('click', function(e){
+						if(nav.classList.contains('open') && !nav.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)){
+							nav.classList.remove('open');
+						}
+					});
+				}
+			})();
+		</script>
+	</body>
+</html>

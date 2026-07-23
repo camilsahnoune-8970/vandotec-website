@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <rect x="25" y="8" width="6" height="30" rx="2" stroke="#091950" stroke-width="1.5"/>
+  <rect x="49" y="8" width="6" height="30" rx="2" stroke="#091950" stroke-width="1.5"/>
+  <rect x="22" y="34" width="36" height="40" rx="4" stroke="#091950" stroke-width="1.8"/>
+  <rect x="28" y="42" width="24" height="8" rx="1.5" stroke="#c2000b" stroke-width="1.5"/>
+  <line x1="40" y1="34" x2="40" y2="42" stroke="#091950" stroke-width="1.2"/>
+  <line x1="36" y1="34" x2="44" y2="34" stroke="#091950" stroke-width="1.2"/>
+  <circle cx="36" cy="60" r="5" stroke="#091950" stroke-width="1.5"/>
+  <circle cx="44" cy="60" r="5" stroke="#091950" stroke-width="1.5"/>
+  <line x1="36" y1="55" x2="36" y2="50" stroke="#c2000b" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="44" y1="55" x2="44" y2="50" stroke="#c2000b" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M63 20 L68 25 L63 30" stroke="#2e58a6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M17 20 L12 25 L17 30" stroke="#2e58a6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M58 18 C58 15 62 15 62 18" stroke="#091950" stroke-width="1" fill="none"/>
+  <path d="M22 18 C22 15 18 15 18 18" stroke="#091950" stroke-width="1" fill="none"/>
+</svg>
