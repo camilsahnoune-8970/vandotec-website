@@ -1,11 +1,9 @@
 {
   "outputDirectory": "dist",
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/admin",
-      "destination": "/admin/index.html",
-      "permanent": false
+  "functions": {
+    "api/callback.js": {
+      "runtime": "nodejs20.x"
     }
-  ]
+  }
 }
