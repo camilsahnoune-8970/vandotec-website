@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "functions": {
     "api/callback.js": {
-      "runtime": "nodejs20.x"
+      "runtime": "nodejs20.0.0"
     }
   }
 }
