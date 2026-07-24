@@ -1,0 +1,50 @@
+backend:
+  name: github
+  repo: Camil96/vandotec-website
+  branch: main
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: "pages"
+    label: "Pagina's"
+    files:
+      - name: "home"
+        label: "Homepage"
+        file: "src/data/home.json"
+        fields:
+          - { label: "Paginatitel", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "string" }
+          - { label: "Hero titel", name: "hero_title", widget: "string" }
+          - { label: "Hero subtitel", name: "hero_subtitle", widget: "string" }
+      - name: "contact"
+        label: "Contact"
+        file: "src/data/contact.json"
+        fields:
+          - { label: "Paginatitel", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "string" }
+      - name: "expertises"
+        label: "Expertises"
+        file: "src/data/expertises.json"
+        fields:
+          - { label: "Paginatitel", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "string" }
+      - name: "jobs"
+        label: "Jobs"
+        file: "src/data/jobs.json"
+        fields:
+          - { label: "Paginatitel", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "string" }
+      - name: "over-vandotec"
+        label: "Over Vandotec"
+        file: "src/data/over-vandotec.json"
+        fields:
+          - { label: "Paginatitel", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "string" }
+      - name: "service-onderhoud"
+        label: "Service & Onderhoud"
+        file: "src/data/service-onderhoud.json"
+        fields:
+          - { label: "Paginatitel", name: "title", widget: "string" }
+          - { label: "Meta description", name: "description", widget: "string" }
