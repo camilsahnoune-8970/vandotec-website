@@ -1,12 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const pageTitle = 'Over Vandotec | Vandotec';
-const description = 'Vandotec is een Belgisch familiebedrijf met meer dan 40 jaar ervaring in tankstation installaties, EV laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten.';
+import overJson from '../data/over-vandotec.json';
+import { loadPageData } from '../lib/loadPageData';
+
+const over = loadPageData(overJson, {
+  title: 'Over Vandotec | Vandotec',
+  description: ''
+});
 ---
 
 <Layout>
-	<title>{pageTitle}</title>
-	<meta name="description" content={description} />
+	<title>{over.title}</title>
+	<meta name="description" content={over.description} />
 
 	<section class="page-hero">
 		<div class="container">

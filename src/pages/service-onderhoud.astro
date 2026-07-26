@@ -1,12 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const pageTitle = 'Service & onderhoud | Vandotec';
-const description = '24/7 interventiedienst, onderhoud en herstellingen van tankstation installaties, laadpalen, carwashes en industriële reiniging door Vandotec.';
+import serviceJson from '../data/service-onderhoud.json';
+import { loadPageData } from '../lib/loadPageData';
+
+const service = loadPageData(serviceJson, {
+  title: 'Service & onderhoud | Vandotec',
+  description: ''
+});
 ---
 
 <Layout>
-	<title>{pageTitle}</title>
-	<meta name="description" content={description} />
+	<title>{service.title}</title>
+	<meta name="description" content={service.description} />
 
 	<section class="page-hero">
 		<div class="container">

@@ -1,12 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const pageTitle = 'Jobs | Vandotec';
-const description = 'Vacatures bij Vandotec. Kom werken bij een Belgisch familiebedrijf met 40+ jaar ervaring in tankstations, EV laadinfra, carwashes en industriële projecten.';
+import jobsJson from '../data/jobs.json';
+import { loadPageData } from '../lib/loadPageData';
+
+const jobs = loadPageData(jobsJson, {
+  title: 'Jobs | Vandotec',
+  description: ''
+});
 ---
 
 <Layout>
-	<title>{pageTitle}</title>
-	<meta name="description" content={description} />
+	<title>{jobs.title}</title>
+	<meta name="description" content={jobs.description} />
 
 	<section class="page-hero">
 		<div class="container">

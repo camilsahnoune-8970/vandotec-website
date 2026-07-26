@@ -1,12 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import homeJson from '../data/home.json';
+import { loadPageData } from '../lib/loadPageData';
 
-const heroTitle = 'Vandotec | tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten';
-const heroIntro = 'Vandotec installeert en onderhoudt in zes domeinen: tankstations, EV-laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten. Van ontwerp tot oplevering, met 24/7 interventiedienst achteraf. Eigen vaste ploegen, geen onderaannemers.';
+const home = loadPageData(homeJson, {
+  title: 'Vandotec',
+  description: '',
+  hero_title: '',
+  hero_subtitle: ''
+});
+
+const heroTitle = home.hero_title || 'Vandotec | tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten';
+const heroIntro = home.hero_subtitle || 'Vandotec installeert en onderhoudt in zes domeinen: tankstations, EV-laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten. Van ontwerp tot oplevering, met 24/7 interventiedienst achteraf. Eigen vaste ploegen, geen onderaannemers.';
 ---
 
 <Layout>
-	<meta name="description" content="Vandotec is een installatiebedrijf actief in tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten. Sleutel-op-de-deur oplossingen in België." />
+	<title>{home.title}</title>
+	<meta name="description" content={home.description} />
 	<slot name="head" slot="head" />
 
 	<section class="hero">
