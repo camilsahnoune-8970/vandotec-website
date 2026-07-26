@@ -7,10 +7,6 @@ local_backend: true
 media_folder: public/img
 public_folder: /img
 
-default_preview_settings:
-  preview: true
-  placeholder: "placeholder.png"
-
 collections:
   - name: "pages"
     label: "Pagina's"
@@ -18,10 +14,6 @@ collections:
       - name: "home"
         label: "Homepage"
         file: "src/data/home.json"
-        slug: "{{slug}}"
-        preview:
-          - label: "Voorbeeldweergave"
-            url: "https://vandotec.netlify.app"
         fields:
           - { label: "Paginatitel", name: "title", widget: "string" }
           - { label: "Meta description", name: "description", widget: "string" }
@@ -30,50 +22,30 @@ collections:
       - name: "contact"
         label: "Contact"
         file: "src/data/contact.json"
-        slug: "{{slug}}"
-        preview:
-          - label: "Voorbeeldweergave"
-            url: "https://vandotec.netlify.app/contact"
         fields:
           - { label: "Paginatitel", name: "title", widget: "string" }
           - { label: "Meta description", name: "description", widget: "string" }
       - name: "expertises"
         label: "Expertises"
         file: "src/data/expertises.json"
-        slug: "{{slug}}"
-        preview:
-          - label: "Voorbeeldweergave"
-            url: "https://vandotec.netlify.app/expertises"
         fields:
           - { label: "Paginatitel", name: "title", widget: "string" }
           - { label: "Meta description", name: "description", widget: "string" }
       - name: "jobs"
         label: "Jobs"
         file: "src/data/jobs.json"
-        slug: "{{slug}}"
-        preview:
-          - label: "Voorbeeldweergave"
-            url: "https://vandotec.netlify.app/jobs"
         fields:
           - { label: "Paginatitel", name: "title", widget: "string" }
           - { label: "Meta description", name: "description", widget: "string" }
       - name: "over-vandotec"
         label: "Over Vandotec"
         file: "src/data/over-vandotec.json"
-        slug: "{{slug}}"
-        preview:
-          - label: "Voorbeeldweergave"
-            url: "https://vandotec.netlify.app/over-vandotec"
         fields:
           - { label: "Paginatitel", name: "title", widget: "string" }
           - { label: "Meta description", name: "description", widget: "string" }
       - name: "service-onderhoud"
         label: "Service & Onderhoud"
         file: "src/data/service-onderhoud.json"
-        slug: "{{slug}}"
-        preview:
-          - label: "Voorbeeldweergave"
-            url: "https://vandotec.netlify.app/service-onderhoud"
         fields:
           - { label: "Paginatitel", name: "title", widget: "string" }
           - { label: "Meta description", name: "description", widget: "string" }
