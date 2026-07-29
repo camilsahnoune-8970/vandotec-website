@@ -1,0 +1,79 @@
+---
+import AdminLayout from '../../../components/admin/AdminLayout.astro';
+import { isAuthenticated } from '../../../lib/admin-auth';
+import { readPageFile } from '../../../lib/admin-pages';
+import type { APIContext } from 'astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { slug: 'home' } },
+    { params: { slug: 'contact' } },
+    { params: { slug: 'expertises' } },
+    { params: { slug: 'jobs' } },
+    { params: { slug: 'over-vandotec' } },
+    { params: { slug: 'service-onderhoud' } }
+  ];
+}
+
+export async function GET({ params, cookies, redirect }: APIContext) {
+  if (!isAuthenticated(cookies)) {
+    return redirect('/admin/login');
+  }
+  return new Response(null, { status: 204 });
+}
+
+const { slug } = Astro.params;
+const raw = readPageFile(slug || 'home');
+const data = JSON.parse(raw);
+---
+
+<AdminLayout title={`${data.title ?? slug} bewerken`} active={slug}>
+  <div class="admin-header">
+    <div>
+      <div class="admin-title">{data.title ?? slug}</div>
+      <div class="admin-subtitle">Bewerk content en zie direct de preview.</div>
+    </div>
+    <div class="admin-header-actions">
+      <a href={`/${slug === 'home' ? '' : slug}`} target="_blank" rel="noreferrer" class="admin-btn secondary">Bekijk site</a>
+      <button id="saveBtn" class="admin-btn">Opslaan</button>
+    </div>
+  </div>
+
+  <form id="editorForm" method="POST" action="/api/save-page">
+    <input type="hidden" name="slug" value="{slug}" />
+    <div class="admin-grid">
+      <div class="admin-card">
+        <div class="admin-section-title">Content</div>
+        <textarea id="jsonEditor" name="content" class="admin-textarea" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; min-height: 70vh;">{raw}</textarea>
+      </div>
+      <div class="admin-card">
+        <div class="admin-section-title">Preview</div>
+        <div class="admin-preview-frame">
+          <iframe src="/{slug === 'home' ? '' : slug}" title="preview" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe>
+        </div>
+      </div>
+    </div>
+  </form>
+</AdminLayout>
+
+<script>
+  const form = document.getElementById('editorForm');
+  const saveBtn = document.getElementById('saveBtn');
+  if (form && saveBtn) {
+    saveBtn.addEventListener('click', async () => {
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Opslaan...';
+      const formData = new FormData(form);
+      const res = await fetch('/api/save-page', { method: 'POST', body: formData });
+      const json = await res.json();
+      if (json.ok) {
+        saveBtn.textContent = 'Opgeslagen';
+        setTimeout(() => { saveBtn.textContent = 'Opslaan'; saveBtn.disabled = false; }, 2000);
+      } else {
+        saveBtn.textContent = 'Fout bij opslaan';
+        saveBtn.disabled = false;
+        console.error(json.error);
+      }
+    });
+  }
+</script>
