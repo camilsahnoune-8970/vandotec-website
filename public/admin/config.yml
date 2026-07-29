@@ -34,6 +34,7 @@ collections:
           - { label: "Proces titel", name: "process_title", widget: "string" }
           - { label: "Proces subtitel", name: "process_subtitle", widget: "text" }
           - { label: "Processtappen", name: "process_items", widget: "list", field: { label: "Stap", name: "step", widget: "object", fields: [{ label: "Titel", name: "title", widget: "string" }, { label: "Tekst", name: "text", widget: "text" }] } }
+          - { label: "Proces stapnummers", name: "process_step_numbers", widget: "list", field: { label: "Nummer", name: "number", widget: "string" } }
           - { label: "Stats", name: "stats", widget: "list", field: { label: "Stat", name: "stat", widget: "object", fields: [{ label: "Getal", name: "number", widget: "string" }, { label: "Label", name: "label", widget: "string" }] } }
           - { label: "Call-to-actions", name: "ctas", widget: "list", field: { label: "CTA", name: "cta", widget: "object", fields: [{ label: "Label", name: "label", widget: "string" }, { label: "Link", name: "url", widget: "string" }, { label: "Thema", name: "theme", widget: "string" }, { label: "Tekst", name: "text", widget: "string" }, { label: "Beschrijving", name: "description", widget: "text" }] } }
 
@@ -47,6 +48,7 @@ collections:
           - { label: "Hero subtitel", name: "hero_subtitle", widget: "text" }
           - { label: "Bedrijfsnaam", name: "company", widget: "string" }
           - { label: "Adresregels", name: "address_lines", widget: "list", field: { label: "Adres", name: "line", widget: "string" } }
+          - { label: "Land", name: "country", widget: "string" }
           - { label: "BTW-nummer", name: "vat", widget: "string" }
           - { label: "Telefoonnummer", name: "phone", widget: "string" }
           - { label: "Telefoon weergave", name: "phone_display", widget: "string" }
@@ -55,6 +57,17 @@ collections:
           - { label: "Interventietekst", name: "intervention_text", widget: "text" }
           - { label: "Formuliertitel", name: "form_title", widget: "string" }
           - { label: "Formulieropmerking", name: "form_note", widget: "text" }
+          - { label: "Formulier naamlabel", name: "form_name_label", widget: "string" }
+          - { label: "Naam verplicht", name: "form_name_required", widget: "boolean" }
+          - { label: "Formulier e-maillabel", name: "form_email_label", widget: "string" }
+          - { label: "E-mail verplicht", name: "form_email_required", widget: "boolean" }
+          - { label: "Formulier telefoonlabel", name: "form_phone_label", widget: "string" }
+          - { label: "Telefoon verplicht", name: "form_phone_required", widget: "boolean" }
+          - { label: "Formulier onderwerplabel", name: "form_subject_label", widget: "string" }
+          - { label: "Onderwerpopties", name: "form_subjects", widget: "list", field: { label: "Optie", name: "option", widget: "object", fields: [{ label: "Waarde", name: "value", widget: "string" }, { label: "Label", name: "label", widget: "string" }] } }
+          - { label: "Formulier berichtlabel", name: "form_message_label", widget: "string" }
+          - { label: "Bericht verplicht", name: "form_message_required", widget: "boolean" }
+          - { label: "Formulier verzendlabel", name: "form_submit_label", widget: "string" }
           - { label: "Stats", name: "stats", widget: "list", field: { label: "Stat", name: "stat", widget: "object", fields: [{ label: "Getal", name: "number", widget: "string" }, { label: "Label", name: "label", widget: "string" }] } }
           - { label: "Call-to-actions", name: "ctas", widget: "list", field: { label: "CTA", name: "cta", widget: "object", fields: [{ label: "Label", name: "label", widget: "string" }, { label: "Link", name: "url", widget: "string" }, { label: "Thema", name: "theme", widget: "string" }, { label: "Tekst", name: "text", widget: "string" }, { label: "Beschrijving", name: "description", widget: "text" }] } }
 
@@ -84,6 +97,7 @@ collections:
           - { label: "Voordelen", name: "benefits", widget: "list", field: { label: "Voordeel", name: "item", widget: "string" } }
           - { label: "Vacaturekop", name: "open_roles_title", widget: "string" }
           - { label: "Vacaturetekst", name: "open_roles_text", widget: "text" }
+          - { label: "Vacature knoplabel", name: "open_roles_cta_label", widget: "string" }
           - { label: "Call-to-actions", name: "ctas", widget: "list", field: { label: "CTA", name: "cta", widget: "object", fields: [{ label: "Label", name: "label", widget: "string" }, { label: "Link", name: "url", widget: "string" }, { label: "Thema", name: "theme", widget: "string" }, { label: "Tekst", name: "text", widget: "string" }, { label: "Beschrijving", name: "description", widget: "text" }] } }
 
       - name: "over-vandotec"
@@ -103,6 +117,7 @@ collections:
           - { label: "Proces titel", name: "process_title", widget: "string" }
           - { label: "Proces intro", name: "process_intro", widget: "text" }
           - { label: "Processtappen", name: "process_items", widget: "list", field: { label: "Stap", name: "step", widget: "object", fields: [{ label: "Titel", name: "title", widget: "string" }, { label: "Tekst", name: "text", widget: "text" }] } }
+          - { label: "Proces stapnummers", name: "process_step_numbers", widget: "list", field: { label: "Nummer", name: "number", widget: "string" } }
           - { label: "Call-to-actions", name: "ctas", widget: "list", field: { label: "CTA", name: "cta", widget: "object", fields: [{ label: "Label", name: "label", widget: "string" }, { label: "Link", name: "url", widget: "string" }, { label: "Thema", name: "theme", widget: "string" }, { label: "Tekst", name: "text", widget: "string" }, { label: "Beschrijving", name: "description", widget: "text" }] } }
 
       - name: "service-onderhoud"

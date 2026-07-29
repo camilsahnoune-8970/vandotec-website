@@ -1,1 +1,88 @@
-{ "title": "Over Vandotec | Vandotec", "description": "" }
+{
+  "title": "Over Vandotec | Vandotec",
+  "description": "Meer dan 40 jaar ervaring in tankstation installaties, EV laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten.",
+  "hero_title": "Over Vandotec",
+  "hero_subtitle": "Meer dan 40 jaar ervaring in tankstation installaties, EV laadinfrastructuur, carwashes, reinigingsystemen, infrastructuurwerken en waterprojecten.",
+  "intro_title": "Familiebedrijf met vakkennis",
+  "intro_paragraphs": [
+    "Vandotec is een Belgisch familiebedrijf uit Poperinge, opgericht in 1984. Wat begon met tankstation installaties groeide uit tot een gespecialiseerd installatiebedrijf in zes domeinen: tankstations, EV-laadinfrastructuur, carwashes, industri&euml;le reiniging, infrastructuurwerken en waterprojecten.",
+    "Wij werken uitsluitend met eigen vaste ploegen en eigen materieel. Geen onderaannemers. Dat betekent korte lijnen, vaste contactpersonen en een constante kwaliteit van ontwerp tot oplevering.",
+    "Onze klanten zijn tankstationuitbaters, transportbedrijven, industri&euml;le ondernemingen, landbouwbedrijven en overheden in Vlaanderen en aangrenzend Frankrijk."
+  ],
+  "stats_title": "Kerncijfers",
+  "stats": [
+    {
+      "number": "40+",
+      "label": "Jaar ervaring"
+    },
+    {
+      "number": "100+",
+      "label": "Projecten per jaar"
+    },
+    {
+      "number": "24/7",
+      "label": "Interventiedienst"
+    },
+    {
+      "number": "10+",
+      "label": "Vaste medewerkers"
+    }
+  ],
+  "values_title": "Onze waarden",
+  "values": [
+    {
+      "title": "Vakmanschap",
+      "text": "Wij voeren elk project uit met eigen vaste ploegen en eigen materieel. Onze technici kennen de installaties door en door, van ontwerp tot oplevering."
+    },
+    {
+      "title": "Service",
+      "text": "24/7 interventiedienst, eigen stock onderdelen en een vaste contactpersoon per project. Bij een defect staan wij paraat."
+    },
+    {
+      "title": "Breed inzetbaar",
+      "text": "Zes domeinen onder &eacute;&eacute;n dak: van tankstation tot waterproject. Kleine herstellingen en totaalprojecten, wij voeren uit."
+    }
+  ],
+  "process_title": "Projectaanpak",
+  "process_intro": "Elk project doorloopt bij Vandotec vijf vaste stappen. Van uw eerste vraag tot oplevering en nazorg: u weet waar u aan toe bent, wij weten wat wij doen.",
+  "process_steps_intro": "Van uw eerste vraag tot oplevering en nazorg: u weet waar u aan toe bent, wij weten wat wij doen.",
+  "process_items": [
+    {
+      "title": "Analyse & advies",
+      "text": "We brengen uw situatie, locatie en technische vereisten in kaart en adviseren over de beste oplossing."
+    },
+    {
+      "title": "Ontwerp & offerte",
+      "text": "Onze technische dienst werkt een uitvoeringsplan uit en u ontvangt een duidelijke offerte."
+    },
+    {
+      "title": "Realisatie",
+      "text": "Eigen ploegen voeren het project uit, met oog voor veiligheid en minimale hinder."
+    },
+    {
+      "title": "Oplevering",
+      "text": "Na testen en documentatie leveren we het project op en lichten we de installatie samen met de gebruiker door."
+    },
+    {
+      "title": "Nazorg",
+      "text": "Optioneel onderhoudscontract met jaarlijkse controle, meetrapport en prioritair interventie bij defecten."
+    }
+  ],
+  "process_step_numbers": [1, 2, 3, 4, 5],
+  "ctas": [
+    {
+      "label": "Offerte aanvragen",
+      "url": "/contact",
+      "theme": "red",
+      "text": "Een project?",
+      "description": "Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject."
+    },
+    {
+      "label": "Bel nu",
+      "url": "tel:+325****5251",
+      "theme": "outline",
+      "text": "24/7 interventie nodig?",
+      "description": "Bel ons op +32 57 33 52 51."
+    }
+  ]
+}

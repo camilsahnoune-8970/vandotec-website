@@ -16,8 +16,8 @@ const jobs = loadPageData(jobsJson, {
 	<section class="page-hero">
 		<div class="container">
 			<div class="hero-inner">
-				<h1>Jobs</h1>
-				<p>Versterk ons team. Vandotec is een groeiend familiebedrijf met vaste medewerkers, afwisselende projecten en korte lijnen.</p>
+				<h1 set:html={jobs.hero_title || 'Jobs'} />
+				<p set:html={jobs.hero_subtitle || ''} />
 			</div>
 		</div>
 	</section>
@@ -26,21 +26,20 @@ const jobs = loadPageData(jobsJson, {
 		<div class="container">
 			<div class="content-grid">
 				<div>
-					<h2 class="section-title">Waarom bij Vandotec werken?</h2>
+					<h2 class="section-title">{jobs.why_title || 'Waarom bij Vandotec werken?'}</h2>
 					<div class="content-block">
-						<p>Bij Vandotec werk je in een familiebedrijf met korte lijnen, eigen ploegen en gevarieerde projecten. De ene dag werk je aan een nieuw tankstation, de volgende aan een laadinfraproject of een industri&euml;le reiniging. Geen dag is hetzelfde.</p>
-						<p>Wij hechten belang aan vakmanschap, veiligheid en teamwerk. Je krijgt verantwoordelijkheid en werkt met eigen materieel in een moderne omgeving.</p>
+						{(jobs.why_paragraphs || []).map((paragraph) => (
+							<p set:html={paragraph} />
+						))}
 					</div>
 				</div>
 				<div>
 					<div class="content-block card-outline">
-						<h3>Wat wij bieden</h3>
+						<h3>{jobs.benefits_title || 'Wat wij bieden'}</h3>
 						<ul class="list-check">
-							<li>Vast contract</li>
-							<li>Marktconform loon met extralegale voordelen</li>
-							<li>Modern en veilig materieel</li>
-							<li>Opleiding en doorgroeimogelijkheden</li>
-							<li>Korte lijnen, familiaal klimaat</li>
+							{(jobs.benefits || []).map((item) => (
+								<li set:html={item} />
+							))}
 						</ul>
 					</div>
 				</div>
@@ -50,22 +49,28 @@ const jobs = loadPageData(jobsJson, {
 
 	<section class="section section-gray">
 		<div class="container">
-			<h2 class="section-title">Openstaande vacatures</h2>
-			<p style="margin-bottom:2rem;max-width:600px">Op dit moment zijn er geen openstaande vacatures. Stuur ons een open sollicitatie als u denkt dat u een meerwaarde bent voor ons team.</p>
-			<a href="/contact" class="btn btn-red">Open sollicitatie</a>
+			<h2 class="section-title">{jobs.open_roles_title || 'Openstaande vacatures'}</h2>
+			<p style="margin-bottom:2rem;max-width:600px" set:html={jobs.open_roles_text || ''} />
+			{(jobs.ctas || []).map((cta) => (
+				<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
+			))}
+			{jobs.open_roles_cta_label && (
+				<p style="margin-top:1rem">
+					<a href="/contact" class="btn btn-red">{jobs.open_roles_cta_label}</a>
+				</p>
+			)}
 		</div>
 	</section>
 
-	<section class="connect-grid">
-		<div class="connect-item navy">
-			<h2>Een project?</h2>
-			<p>Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject.</p>
-			<a href="/contact" class="btn btn-red">Offerte aanvragen</a>
-		</div>
-		<div class="connect-item dark">
-			<h2>24/7 interventie nodig?</h2>
-			<p>Bel ons op <strong style="color:var(--white)">+32 57 33 52 51</strong>.</p>
-			<a href="tel:+3257335251" class="btn btn-outline">Bel nu</a>
-		</div>
-	</section>
+	{(jobs.ctas || []).length > 0 && (
+		<section class="connect-grid">
+			{jobs.ctas.map((cta) => (
+				<div class={`connect-item ${cta.theme || 'navy'}`}>
+					<h2 set:html={cta.text} />
+					<p set:html={cta.description} />
+					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
+				</div>
+			))}
+		</section>
+	)}
 </Layout>

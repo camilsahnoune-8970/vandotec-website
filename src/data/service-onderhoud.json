@@ -1,1 +1,81 @@
-{ "title": "Service & Onderhoud | Vandotec", "description": "" }
+{
+  "title": "Service & Onderhoud | Vandotec",
+  "description": "24/7 interventiedienst, herstellingen en preventief onderhoud voor tankstations, laadinfra, carwashes en industri&euml;le installaties.",
+  "hero_title": "Service & onderhoud",
+  "hero_subtitle": "24/7 interventiedienst, herstellingen en preventief onderhoud voor tankstations, laadinfra, carwashes en industri&euml;le installaties. E&eacute;n aanspreekpunt, eigen technici.",
+  "sections": [
+    {
+      "slug": "interventie",
+      "image": "/img/service-24-7.svg",
+      "title": "24/7 interventiedienst",
+      "intro": "Bij een defect belt u ons. 24 uur per dag, 7 dagen per week. Onze technici rijden uit, lossen het probleem ter plaatse en zorgen dat uw installatie terug operationeel is.",
+      "details": "Defecte pomp, lekkende leiding, wasstraat die stilvalt of laadpaal die niet werkt: Vandotec is bereikbaar op +32 57 33 52 51. Elke interventie wordt uitgevoerd door een eigen technicus, met uitgebreide stock veelgebruikte onderdelen aan boord.",
+      "highlights_title": "Bij interventie",
+      "highlights": [
+        "Eigen technici, geen onderaannemers",
+        "Uitgebreide stock veelgebruikte onderdelen",
+        "Oplossing ter plaatse bij eerste interventie",
+        "Duidelijke rapportering en opvolging"
+      ]
+    },
+    {
+      "slug": "onderhoud",
+      "image": "/img/service-onderhoud.svg",
+      "title": "Onderhoud & herstellingen",
+      "intro": "Vandotec voert structurele herstellingen en onderhoud uit aan alle types installaties die wij plaatsen: tankstations, laadpalen, wasstraten en industri&euml;le systemen. Met eigen technici en een uitgebreide stock onderdelen.",
+      "details": "Met een onderhoudscontract verzekert u zich van een jaarlijkse controle, tijdige vervanging van slijtageonderdelen en prioritair interventie bij defecten.",
+      "highlights_title": "Ons aanbod",
+      "highlights": [
+        "Herstellingen aan tankstation installaties",
+        "Onderhoud van laadpalen en EV-infrastructuur",
+        "Carwash herstellingen en optimalisatie",
+        "Vervanging van slijtageonderdelen"
+      ]
+    },
+    {
+      "slug": "preventief",
+      "image": "/img/service-preventief.svg",
+      "title": "Preventief onderhoud",
+      "intro": "Voorkomen is beter dan herstellen. Vandotec biedt preventieve onderhoudscontracten aan voor al uw installaties. Een jaarlijkse controle verlengt de levensduur en vermindert het risico op onverwachte stilstand.",
+      "details": "Na elk preventief bezoek ontvangt u een rapport met meetresultaten, de staat van uw installatie en eventuele aanbevelingen voor vervanging of herstel.",
+      "highlights_title": "Inbegrepen",
+      "highlights": [
+        "Jaarlijkse controle van de volledige installatie",
+        "Detectie van slijtage en risico's",
+        "Rapport met meetresultaten",
+        "Prioritaire interventie bij defecten",
+        "Vaste contactpersoon"
+      ]
+    },
+    {
+      "slug": "tank-cleaning",
+      "image": "/img/service-cleaning.svg",
+      "title": "Tank cleaning",
+      "intro": "Vandotec beschikt over eigen gespecialiseerd materieel en gecertificeerde ploegen voor het reinigen van ondergrondse brandstoftanks, bovengrondse opslagtanks, industri&euml;le reactoren en leidingnetten.",
+      "details": "Tank cleaning wordt uitgevoerd volgens de geldende veiligheidsprocedures. Na de reiniging volgt een visuele inspectie en wordt de tank klaargemaakt voor heringebruikname of buitengebruikstelling.",
+      "highlights_title": "Toepassingen",
+      "highlights": [
+        "Ondergrondse brandstoftanks",
+        "Bovengrondse opslagtanks",
+        "Industri&euml;le tanks en reactoren",
+        "Leidingnetten en afsluiters"
+      ]
+    }
+  ],
+  "ctas": [
+    {
+      "label": "Offerte aanvragen",
+      "url": "/contact",
+      "theme": "red",
+      "text": "Onderhoudscontract?",
+      "description": "Vraag een offerte aan voor een preventief onderhoudscontract of herstelling."
+    },
+    {
+      "label": "Bel nu",
+      "url": "tel:+325****5251",
+      "theme": "outline",
+      "text": "24/7 interventie nodig?",
+      "description": "Bel ons direct op +32 57 33 52 51."
+    }
+  ]
+}

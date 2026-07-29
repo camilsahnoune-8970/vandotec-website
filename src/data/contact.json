@@ -1,1 +1,80 @@
-{ "title": "Contact | Vandotec", "description": "" }
+{
+  "title": "Contact | Vandotec",
+  "description": "Vraag een offerte aan, meld een interventie of stel uw vraag. Vandotec reageert binnen &eacute;&eacute;n werkdag.",
+  "hero_title": "Contact",
+  "hero_subtitle": "Vraag een offerte aan, meld een interventie of stel uw vraag. Wij reageren binnen &eacute;&eacute;n werkdag.",
+  "company": "Vandotec",
+  "address_lines": [
+    "Nijverheidsstraat 49",
+    "8970 Poperinge",
+    "Belgi&euml;"
+  ],
+  "country": "België",
+  "vat": "BE 0417 923 411",
+  "phone": "+32 57 33 52 51",
+  "phone_display": "+32 57 33 52 51",
+  "email": "info@vandotec.be",
+  "intervention_title": "24/7 interventie",
+  "intervention_text": "Bij defecten en storingen bereikt u ons 24 uur per dag op +32 57 33 52 51. Een eigen technicus rijdt uit en lost het probleem ter plaatse op.",
+  "form_title": "Stuur een bericht",
+  "form_note": "Vul het formulier in en wij nemen zo snel mogelijk contact met u op.",
+  "form_name_label": "Naam",
+  "form_name_required": true,
+  "form_email_label": "E-mail",
+  "form_email_required": true,
+  "form_phone_label": "Telefoon",
+  "form_phone_required": false,
+  "form_subject_label": "Onderwerp",
+  "form_subject_options": [
+    "Kies een onderwerp",
+    "Offerte aanvragen",
+    "Interventie / storing",
+    "Onderhoudscontract",
+    "Open sollicitatie",
+    "Algemene vraag"
+  ],
+  "form_message_label": "Bericht",
+  "form_message_required": true,
+  "form_submit_label": "Verzenden",
+  "form_subjects": [
+    { "value": "offerte", "label": "Offerte aanvragen" },
+    { "value": "interventie", "label": "Interventie / storing" },
+    { "value": "onderhoud", "label": "Onderhoudscontract" },
+    { "value": "sollicitatie", "label": "Open sollicitatie" },
+    { "value": "vraag", "label": "Algemene vraag" }
+  ],
+  "stats": [
+    {
+      "number": "40+",
+      "label": "Jaar ervaring"
+    },
+    {
+      "number": "100+",
+      "label": "Projecten per jaar"
+    },
+    {
+      "number": "24/7",
+      "label": "Interventiedienst"
+    },
+    {
+      "number": "10+",
+      "label": "Vaste medewerkers"
+    }
+  ],
+  "ctas": [
+    {
+      "label": "Bel nu",
+      "url": "tel:+325****5251",
+      "theme": "outline",
+      "text": "Interventie nodig?",
+      "description": "Bel ons direct op +32 57 33 52 51."
+    },
+    {
+      "label": "Vacatures",
+      "url": "/jobs",
+      "theme": "outline",
+      "text": "Kom werken bij Vandotec",
+      "description": "Bekijk onze openstaande vacatures of stuur een open sollicitatie."
+    }
+  ]
+}

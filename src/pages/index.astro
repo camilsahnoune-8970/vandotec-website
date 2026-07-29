@@ -5,13 +5,11 @@ import { loadPageData } from '../lib/loadPageData';
 
 const home = loadPageData(homeJson, {
   title: 'Vandotec',
-  description: '',
-  hero_title: '',
-  hero_subtitle: ''
+  description: ''
 });
 
-const heroTitle = home.hero_title || 'Vandotec | tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten';
-const heroIntro = home.hero_subtitle || 'Vandotec installeert en onderhoudt in zes domeinen: tankstations, EV-laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten. Van ontwerp tot oplevering, met 24/7 interventiedienst achteraf. Eigen vaste ploegen, geen onderaannemers.';
+const heroTitle = home.hero_title || 'Vandotec';
+const heroIntro = home.hero_subtitle || '';
 ---
 
 <Layout>
@@ -27,165 +25,121 @@ const heroIntro = home.hero_subtitle || 'Vandotec installeert en onderhoudt in z
 			<div class="hero-inner">
 				<h1>{heroTitle}</h1>
 				<p>{heroIntro}</p>
-				<a href="/contact" class="btn btn-red">Offerte aanvragen</a>
+				{(home.ctas || []).map((cta) => (
+					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
+				))}
 			</div>
 		</div>
 	</section>
 
-	<section class="section" id="about">
-		<div class="container">
-			<div style="max-width:900px">
-				<h2 class="section-title">Over Vandotec</h2>
-				<p class="about-text"><strong>Vandotec</strong> is een installatiebedrijf gespecialiseerd in <strong>tankstation installaties</strong>, <strong>EV laadinstallaties</strong>, <strong>carwashes</strong>, <strong>reinigingsystemen</strong>, <strong>infrastructuurwerken</strong> en <strong>waterprojecten</strong>. Wij ontwerpen, bouwen en onderhouden installaties voor ondergrondse en bovengrondse toepassingen.</p>
-				<p class="about-text">Service is een kernactiviteit: bij defecten aan tankstations, laadpalen, wasstraten of industri&euml;le installaties plannen wij meteen een interventie via onze <strong>24/7 interventiedienst</strong>. Daarnaast voeren wij preventief onderhoud en tank cleaning uit, ook in het kader van onderhoudscontracten.</p>
-				<p class="about-text">Meer dan 40 jaar ervaring in de sector. Projecten worden uitgevoerd door eigen vaste ploegen, niet door onderaannemers.</p>
-				<a href="/over-vandotec" class="about-link">Meer over ons &rarr;</a>
+	{home.about_title && (
+		<section class="section" id="about">
+			<div class="container">
+				<div style="max-width:900px">
+					<h2 class="section-title">{home.about_title}</h2>
+					{(home.about_paragraphs || []).map((paragraph) => (
+						<p class="about-text" set:html={paragraph} />
+					))}
+					<a href="/over-vandotec" class="about-link">{home.about_link_label || 'Meer over ons'} &rarr;</a>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	)}
 
-	<section class="section section-gray">
-		<div class="container">
-			<div class="section-header text-center">
-				<h2 class="section-title centered">Onze expertises</h2>
-				<p class="section-sub" style="margin:0 auto">Wij ontwerpen, bouwen en onderhouden installaties in zes domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.</p>
+	{home.expertises_title && (home.expertises_sections || []).length > 0 && (
+		<section class="section section-gray">
+			<div class="container">
+				<div class="section-header text-center">
+					<h2 class="section-title centered">{home.expertises_title}</h2>
+					{home.expertises_subtitle && (
+						<p class="section-sub" style="margin:0 auto" set:html={home.expertises_subtitle} />
+					)}
+				</div>
+				<div class="expertise-grid">
+					{home.expertises_sections.map((section, idx) => (
+						<a href={`/expertises#${section.slug}`} class="expertise-card">
+							<img src={section.icon} alt="" class="card-icon" aria-hidden="true" />
+							<h3>{section.title}</h3>
+							<p set:html={section.summary} />
+						</a>
+					))}
+				</div>
+				{home.expertises_cta_label && (
+					<p style="text-align:center;margin-top:2rem">
+						<a href="/expertises" class="btn btn-navy">{home.expertises_cta_label} &rarr;</a>
+					</p>
+				)}
 			</div>
-			<div class="expertise-grid">
-				<a href="/expertises#tankstations" class="expertise-card">
-					<img src="/img/icon-tankstation.svg" alt="" class="card-icon" aria-hidden="true" />
-					<h3>Tankstations</h3>
-					<p>Engineering, bouw en onderhoud van onder- en bovengrondse tankstation installaties: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie.</p>
-				</a>
-				<a href="/expertises#ev-laadinstallaties" class="expertise-card">
-					<img src="/img/icon-ev.svg" alt="" class="card-icon" aria-hidden="true" />
-					<h3>EV laadinstallaties</h3>
-					<p>Plaatsing en onderhoud van AC-en DC-laadpalen met bijhorende bekabeling, verdeelkasten en laadbeheersystemen voor bedrijven en openbare instanties.</p>
-				</a>
-				<a href="/expertises#carwashes" class="expertise-card">
-					<img src="/img/icon-carwash.svg" alt="" class="card-icon" aria-hidden="true" />
-					<h3>Carwashes</h3>
-					<p>Installatie en onderhoud van roll-over wasstraten, hogedrukreinigingsinstallaties en self-wash systemen, met inbedrijfstelling en technische opvolging.</p>
-				</a>
-				<a href="/expertises#reinigingssystemen" class="expertise-card">
-					<img src="/img/icon-cleaning.svg" alt="" class="card-icon" aria-hidden="true" />
-					<h3>Reinigingssystemen</h3>
-					<p>Tank cleaning, reactor cleaning, drain cleaning en hogedrukreiniging van industri&euml;le installaties. Uitgevoerd met eigen gespecialiseerd materieel.</p>
-				</a>
-				<a href="/expertises#infrastructuurwerken" class="expertise-card">
-					<img src="/img/icon-infra.svg" alt="" class="card-icon" aria-hidden="true" />
-					<h3>Infrastructuurwerken</h3>
-					<p>Grondverzet, riolering, wegenis, betonwerken en hoog- en middenspanningsinstallaties (tot en met 36 kV) voor industri&euml;le projecten.</p>
-				</a>
-				<a href="/expertises#waterprojecten" class="expertise-card">
-					<img src="/img/icon-water.svg" alt="" class="card-icon" aria-hidden="true" />
-					<h3>Waterprojecten</h3>
-					<p>Installatie van waterzuivering, drukverhogingsstations, hemelwaterrecuperatie en pompinstallaties voor bedrijven en overheden.</p>
-				</a>
-			</div>
-			<p style="text-align:center;margin-top:2rem"><a href="/expertises" class="btn btn-navy">Bekijk alle expertises &rarr;</a></p>
-		</div>
-	</section>
+		</section>
+	)}
 
-	<section class="section section-dark">
-		<div class="container">
-			<div class="section-header text-center">
-				<h2 class="section-title centered light">Service & interventie</h2>
-				<p class="section-sub light" style="margin:0 auto">Onze interventiedienst staat 24/7 paraat voor storings- en defectmeldingen. Daarnaast voeren we preventief onderhoud en herstellingen uit, ook in het kader van onderhoudscontracten.</p>
-			</div>
-			<div class="service-grid">
-				<div class="service-item">
-					<img src="/img/service-24-7.svg" alt="" class="service-icon" aria-hidden="true" />
-					<h3>24/7 interventiedienst</h3>
-					<p>Bij een defect plannen wij meteen een interventie in en sturen een eigen technicus ter plaatse. Uw installatie is zo snel mogelijk terug operationeel.</p>
+	{home.services_title && (home.services || []).length > 0 && (
+		<section class="section section-dark">
+			<div class="container">
+				<div class="section-header text-center">
+					<h2 class="section-title centered light">{home.services_title}</h2>
+					{home.services_subtitle && (
+						<p class="section-sub light" style="margin:0 auto" set:html={home.services_subtitle} />
+					)}
 				</div>
-				<div class="service-item">
-					<img src="/img/service-onderhoud.svg" alt="" class="service-icon" aria-hidden="true" />
-					<h3>Onderhoud &amp; herstellingen</h3>
-					<p>Herstellingen aan tankstations, laadpalen, carwashes en industri&euml;le installaties, met eigen technici en uitgebreide stock onderdelen.</p>
-				</div>
-				<div class="service-item">
-					<img src="/img/service-preventief.svg" alt="" class="service-icon" aria-hidden="true" />
-					<h3>Preventief onderhoud</h3>
-					<p>Jaarlijkse controle van uw installatie met meetrapport, detectie van slijtage en risico&rsquo;s, en prioritair interventie bij defecten.</p>
-				</div>
-				<div class="service-item">
-					<img src="/img/service-cleaning.svg" alt="" class="service-icon" aria-hidden="true" />
-					<h3>Tank cleaning</h3>
-					<p>Gespecialiseerde reiniging van tanks, leidingen en aanverwante infrastructuur.</p>
+				<div class="service-grid">
+					{home.services.map((item) => (
+						<div class="service-item">
+							<h3>{item.title}</h3>
+							<p set:html={item.text} />
+						</div>
+					))}
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	)}
 
-	<section class="section">
-		<div class="container">
-			<div class="section-header text-center">
-				<h2 class="section-title centered">Project aanpak</h2>
-				<p class="section-sub" style="margin:0 auto">Elk project doorloopt vijf vaste fasen, van uw eerste vraag tot oplevering en nazorg.</p>
-			</div>
-			<div class="steps-grid">
-				<div class="step-card">
-					<div class="number">1</div>
-					<h3>Analyse &amp; advies</h3>
-					<p>We brengen uw situatie, locatie en technische vereisten in kaart. U ontvangt een helder advies over de beste oplossing.</p>
+	{home.process_title && (home.process_items || []).length > 0 && (
+		<section class="section">
+			<div class="container">
+				<div class="section-header text-center">
+					<h2 class="section-title centered">{home.process_title}</h2>
+					{home.process_subtitle && (
+						<p class="section-sub" style="margin:0 auto" set:html={home.process_subtitle} />
+					)}
 				</div>
-				<div class="step-card">
-					<div class="number">2</div>
-					<h3>Ontwerp &amp; offerte</h3>
-					<p>Onze technische dienst werkt een uitvoeringsplan uit dat voldoet aan alle regelgeving. U ontvangt een duidelijke offerte.</p>
-				</div>
-				<div class="step-card">
-					<div class="number">3</div>
-					<h3>Realisatie</h3>
-					<p>Onze vaste ploegen voeren de installatie uit. Wij werken met eigen mensen en materieel, geen onderaannemers.</p>
-				</div>
-				<div class="step-card">
-					<div class="number">4</div>
-					<h3>Oplevering</h3>
-					<p>Na testen en documentatie leveren we het project op. We doorlopen de installatie samen met de gebruiker.</p>
-				</div>
-				<div class="step-card">
-					<div class="number">5</div>
-					<h3>Onderhoud &amp; nazorg</h3>
-					<p>Na oplevering blijven wij beschikbaar voor onderhoud, herstellingen en 24/7 interventie. Optioneel onderhoudscontract.</p>
+				<div class="steps-grid">
+					{home.process_items.map((item, idx) => (
+						<div class="step-card">
+							<div class="number">{home.process_step_numbers?.[idx] ?? ''}</div>
+							<h3 set:html={item.title} />
+							<p set:html={item.text} />
+						</div>
+					))}
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	)}
 
-	<div class="stats-bar">
-		<div class="container">
-			<div class="stats-grid">
-				<div>
-					<div class="stat-number">40+</div>
-					<div class="stat-label">Jaar ervaring</div>
-				</div>
-				<div>
-					<div class="stat-number">100+</div>
-					<div class="stat-label">Projecten per jaar</div>
-				</div>
-				<div>
-					<div class="stat-number">24/7</div>
-					<div class="stat-label">Interventiedienst</div>
-				</div>
-				<div>
-					<div class="stat-number">10+</div>
-					<div class="stat-label">Vaste medewerkers</div>
+	{(home.stats || []).length > 0 && (
+		<div class="stats-bar">
+			<div class="container">
+				<div class="stats-grid">
+					{home.stats.map((stat) => (
+						<div>
+							<div class="stat-number" set:html={stat.number} />
+							<div class="stat-label" set:html={stat.label} />
+						</div>
+					))}
 				</div>
 			</div>
 		</div>
-	</div>
+	)}
 
-	<section class="connect-grid">
-		<div class="connect-item navy">
-			<h2>Een project?</h2>
-			<p>Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject.</p>
-			<a href="/contact" class="btn btn-red">Offerte aanvragen</a>
-		</div>
-		<div class="connect-item dark">
-			<h2>Werken bij Vandotec</h2>
-			<p>Bekijk onze openstaande vacatures en solliciteer direct.</p>
-			<a href="/jobs" class="btn btn-outline">Solliciteren</a>
-		</div>
-	</section>
+	{(home.ctas || []).length > 0 && (
+		<section class="connect-grid">
+			{home.ctas.map((cta) => (
+				<div class={`connect-item ${cta.theme || 'navy'}`}>
+					<h2 set:html={cta.text} />
+					<p set:html={cta.description} />
+					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
+				</div>
+			))}
+		</section>
+	)}
 </Layout>

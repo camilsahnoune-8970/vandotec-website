@@ -1,1 +1,38 @@
-{ "title": "Jobs | Vandotec", "description": "" }
+{
+  "title": "Jobs | Vandotec",
+  "description": "Vacatures bij Vandotec: installatie- en onderhoudsrollen in tankstation, EV-laadinfra, carwash, reiniging, infra en waterprojecten.",
+  "hero_title": "Jobs",
+  "hero_subtitle": "Versterk ons team. Vandotec is een groeiend familiebedrijf met vaste medewerkers, afwisselende projecten en korte lijnen.",
+  "why_title": "Waarom bij Vandotec werken?",
+  "why_paragraphs": [
+    "Bij Vandotec werk je in een familiebedrijf met korte lijnen, eigen ploegen en gevarieerde projecten. De ene dag werk je aan een nieuw tankstation, de volgende aan een laadinfraproject of een industri&euml;le reiniging. Geen dag is hetzelfde.",
+    "Wij hechten belang aan vakmanschap, veiligheid en teamwerk. Je krijgt verantwoordelijkheid en werkt met eigen materieel in een moderne omgeving."
+  ],
+  "benefits_title": "Wat wij bieden",
+  "benefits": [
+    "Vast contract",
+    "Marktconform loon met extralegale voordelen",
+    "Modern en veilig materieel",
+    "Opleiding en doorgroeimogelijkheden",
+    "Korte lijnen, familiaal klimaat"
+  ],
+  "open_roles_title": "Openstaande vacatures",
+  "open_roles_text": "Op dit moment zijn er geen openstaande vacatures. Stuur ons een open sollicitatie als u denkt dat u een meerwaarde bent voor ons team.",
+  "open_roles_cta_label": "Open sollicitatie",
+  "ctas": [
+    {
+      "label": "Open sollicitatie",
+      "url": "/contact",
+      "theme": "red",
+      "text": "Een project?",
+      "description": "Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject."
+    },
+    {
+      "label": "Bel nu",
+      "url": "tel:+325****5251",
+      "theme": "outline",
+      "text": "24/7 interventie nodig?",
+      "description": "Bel ons op +32 57 33 52 51."
+    }
+  ]
+}

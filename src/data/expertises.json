@@ -1,1 +1,127 @@
-{ "title": "Expertises | Vandotec", "description": "" }
+{
+  "title": "Expertises | Vandotec",
+  "description": "Vandotec ontwerpt, bouwt en onderhoudt installaties in zes domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
+  "hero_title": "Onze expertises",
+  "hero_subtitle": "Vandotec ontwerpt, bouwt en onderhoudt installaties in zes domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen, van ontwerp tot oplevering. Geen onderaannemers.",
+  "sections": [
+    {
+      "slug": "tankstations",
+      "icon": "/img/icon-tankstation.svg",
+      "title": "Tankstations",
+      "summary": "Engineering, bouw en onderhoud van onder- en bovengrondse tankstation installaties: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie.",
+      "body": [
+        "Wij ontwerpen, bouwen en onderhouden volledige tankstation installaties, onder- en bovengronds: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie. Van engineering tot oplevering.",
+        "Elk project start met een analyse van de locatie en technische vereisten. Onze technische dienst werkt een uitvoeringsplan uit dat voldoet aan alle vigerende regelgeving. Na oplevering blijft Vandotec beschikbaar voor onderhoud, herstellingen en 24/7 interventie."
+      ],
+      "approach_title": "Onze aanpak",
+      "approach": [
+        "Wij werken samen met de brandstoftoeleverancier voor een correcte plaatsing en afregeling. Na oplevering ontvangt u een volledige documentatie van de installatie. Ook voor bodemsanering en buitengebruikstelling van tanks kunt u bij ons terecht."
+      ]
+    },
+    {
+      "slug": "ev-laadinstallaties",
+      "icon": "/img/icon-ev.svg",
+      "title": "EV laadinstallaties",
+      "summary": "Plaatsing en onderhoud van AC-en DC-laadpalen met bekabeling, verdeelkasten en laadbeheersystemen voor bedrijven en openbare instanties.",
+      "body": [
+        "Wij plaatsen en onderhouden laadpalen en bijbehorende elektrische infrastructuur voor bedrijven en openbare instanties. Onze projecten omvatten AC en DC-laadinfrastructuur, met bekabeling, verdeelkasten en laadbeheersystemen.",
+        "Van ontwerp tot oplevering: we beginnen met een inventarisatie van de gewenste capaciteit en toekomstige behoeften, dienen de nodige aanvragen in bij de netbeheerder en voeren de plaatsing uit. Na oplevering blijft ons beschikbaar voor ondersteuning en uitbreidingen."
+      ],
+      "approach_title": "Onze aanpak",
+      "approach": [
+        "We beginnen met een inventarisatie van de gewenste laadcapaciteit en toekomstige behoeften. Vervolgens ontwerpen we de installatie, dienen we de nodige aanvragen in bij de netbeheerder en voeren we de plaatsing uit.",
+        "Na oplevering blijven we beschikbaar voor technische ondersteuning, uitbreidingen en onderhoud."
+      ]
+    },
+    {
+      "slug": "carwashes",
+      "icon": "/img/icon-carwash.svg",
+      "title": "Carwashes",
+      "summary": "Installatie en onderhoud van roll-over wasstraten, hogedrukreinigingsinstallaties en self-wash systemen, met inbedrijfstelling en technische opvolging.",
+      "body": [
+        "Wij installeren en onderhouden roll-over wasstraten, hogedrukreinigingsinstallaties en self-wash systemen. Van eenvoudige wasplaatsen tot volwaardige wasstraten met meerdere programma's.",
+        "Onze diensten omvatten plaatsing, aansluiting, inbedrijfstelling en preventief onderhoud. Wij adviseren over het type wasstraat dat past bij uw locatie en verwacht volume. Ook voor herstellingen en interventies staat Vandotec paraat."
+      ],
+      "approach_title": "Onze aanpak",
+      "approach": [
+        "We adviseren over het type wasstraat dat past bij uw locatie en verwacht volume. Na ontwerp en plaatsing wordt de installatie afgesteld en getest. Ook voor herstellingen en interventies staat Vandotec paraat."
+      ]
+    },
+    {
+      "slug": "reinigingssystemen",
+      "icon": "/img/icon-cleaning.svg",
+      "title": "Reinigingssystemen",
+      "summary": "Tank cleaning, reactor cleaning, drain cleaning en hogedrukreiniging van industri&euml;le installaties met eigen gespecialiseerd materieel.",
+      "body": [
+        "Wij voeren tank cleaning, reactor cleaning, drain cleaning en hogedrukreiniging van industri&euml;le installaties uit met eigen gespecialiseerd materieel en gecertificeerde ploegen.",
+        "Elke reinigingsopdracht start met een veiligheidsanalyse en een werkplan. Na de reiniging volgt een visuele inspectie en wordt de tank klaargemaakt voor heringebruikname of buitengebruikstelling."
+      ],
+      "approach_title": "Onze aanpak",
+      "approach": [
+        "Elke reinigingsopdracht start met een veiligheidsanalyse en een werkplan. De uitvoering gebeurt volgens de geldende procedures, met aandacht voor milieu en veiligheid."
+      ]
+    },
+    {
+      "slug": "infrastructuurwerken",
+      "icon": "/img/icon-infra.svg",
+      "title": "Infrastructuurwerken",
+      "summary": "Grondverzet, riolering, wegenis, betonwerken en hoog- en middenspanningsinstallaties tot en met 36 kV voor industri&euml;le projecten.",
+      "body": [
+        "Wij voeren grondverzet, riolering, wegenis en betonwerken uit voor industri&euml;le projecten, zowel in functie van onze kerndomeinen als zelfstandig.",
+        "Wij zijn gespecialiseerd in hoog- en middenspanningsinstallaties tot en met 36 kV. Dit omvat de plaatsing van transformatoren, schakelinstallaties en bekabeling, met naleving van alle veiligheidsvoorschriften en netbeheerder-eisen."
+      ],
+      "approach_title": "HS- en MS-installaties",
+      "approach": [
+        "Deze uitvoering gebeurt in nauw overleg met de opdrachtgever en netbeheerder. Na oplevering volgt een duidelijk nazorg- en onderhoudspad."
+      ]
+    },
+    {
+      "slug": "waterprojecten",
+      "icon": "/img/icon-water.svg",
+      "title": "Waterprojecten",
+      "summary": "Installatie van waterzuivering, drukverhogingsstations, hemelwaterrecuperatie en pompinstallaties voor bedrijven en overheden.",
+      "body": [
+        "Wij installeren waterbehandelingssystemen, pompinstallaties, drukverhogingsstations en hemelwaterrecuperatiesystemen voor bedrijven en overheden.",
+        "We beginnen met een analyse van de waterbehoefte of zuiveringsvraag, ontwerpen de installatie en stemmen af met de betrokken instanties. Na plaatsing en oplevering volgt eventueel een onderhoudscontract."
+      ],
+      "approach_title": "Onze aanpak",
+      "approach": [
+        "We beginnen met een analyse van de waterbehoefte of zuiveringsvraag. Vervolgens ontwerpen we de installatie en stemmen we af met de betrokken overheidsinstanties. Na plaatsing en oplevering volgt eventueel een onderhoudscontract."
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "number": "40+",
+      "label": "Jaar ervaring"
+    },
+    {
+      "number": "100+",
+      "label": "Projecten per jaar"
+    },
+    {
+      "number": "24/7",
+      "label": "Interventiedienst"
+    },
+    {
+      "number": "10+",
+      "label": "Vaste medewerkers"
+    }
+  ],
+  "ctas": [
+    {
+      "label": "Offerte aanvragen",
+      "url": "/contact",
+      "theme": "red",
+      "text": "Een project?",
+      "description": "Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject."
+    },
+    {
+      "label": "Bel nu",
+      "url": "tel:+325****5251",
+      "theme": "outline",
+      "text": "24/7 interventie nodig?",
+      "description": "Bij defecten plannen wij direct een interventie. Bel ons op +32 57 33 52 51."
+    }
+  ]
+}

@@ -1,6 +1,95 @@
 {
   "title": "Vandotec",
-  "description": "",
-  "hero_title": "",
-  "hero_subtitle": ""
+  "description": "Installatiebedrijf voor tankstations, EV-laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten.",
+  "hero_title": "Vandotec | tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten",
+  "hero_subtitle": "Vandotec installeert en onderhoudt in zes domeinen: tankstations, EV-laadinfrastructuur, carwashes, reinigingsystemen, infrastructuurwerken en waterprojecten. Van ontwerp tot oplevering, met 24/7 interventiedienst achteraf. Eigen vaste ploegen, geen onderaannemers.",
+  "about_title": "Over Vandotec",
+  "about_paragraphs": [
+    "<strong>Vandotec</strong> is een installatiebedrijf gespecialiseerd in <strong>tankstation installaties</strong>, <strong>EV laadinstallaties</strong>, <strong>carwashes</strong>, <strong>reinigingsystemen</strong>, <strong>infrastructuurwerken</strong> en <strong>waterprojecten</strong>. Wij ontwerpen, bouwen en onderhouden installaties voor ondergrondse en bovengrondse toepassingen.",
+    "Service is een kernactiviteit: bij defecten aan tankstations, laadpalen, wasstraten of industri&euml;le installaties plannen wij meteen een interventie via onze <strong>24/7 interventiedienst</strong>. Daarnaast voeren wij preventief onderhoud en tank cleaning uit, ook in het kader van onderhoudscontracten.",
+    "Meer dan 40 jaar ervaring in de sector. Projecten worden uitgevoerd door eigen vaste ploegen, niet door onderaannemers."
+  ],
+  "about_link_label": "Meer over ons",
+  "expertises_title": "Onze expertises",
+  "expertises_subtitle": "Wij ontwerpen, bouwen en onderhouden installaties in zes domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
+  "expertises_cta_label": "Bekijk alle expertises",
+  "services_title": "Service & interventie",
+  "services_subtitle": "Onze interventiedienst staat 24/7 paraat voor storings- en defectmeldingen. Daarnaast voeren we preventief onderhoud en herstellingen uit, ook in het kader van onderhoudscontracten.",
+  "services": [
+    {
+      "title": "24/7 interventiedienst",
+      "text": "Bij een defect plannen wij meteen een interventie in en sturen een eigen technicus ter plaatse. Uw installatie is zo snel mogelijk terug operationeel."
+    },
+    {
+      "title": "Onderhoud & herstellingen",
+      "text": "Herstellingen aan tankstations, laadpalen, carwashes en industri&euml;le installaties, met eigen technici en uitgebreide stock onderdelen."
+    },
+    {
+      "title": "Preventief onderhoud",
+      "text": "Jaarlijkse controle van uw installatie met meetrapport, detectie van slijtage en risico&rsquo;s, en prioritair interventie bij defecten."
+    },
+    {
+      "title": "Tank cleaning",
+      "text": "Gespecialiseerde reiniging van tanks, leidingen en aanverwante infrastructuur."
+    }
+  ],
+  "process_title": "Project aanpak",
+  "process_subtitle": "Elk project doorloopt vijf vaste fasen, van uw eerste vraag tot oplevering en nazorg.",
+  "process_items": [
+    {
+      "title": "Analyse & advies",
+      "text": "We brengen uw situatie, locatie en technische vereisten in kaart. U ontvangt een helder advies over de beste oplossing."
+    },
+    {
+      "title": "Ontwerp & offerte",
+      "text": "Onze technische dienst werkt een uitvoeringsplan uit dat voldoet aan alle regelgeving. U ontvangt een duidelijke offerte."
+    },
+    {
+      "title": "Realisatie",
+      "text": "Onze vaste ploegen voeren de installatie uit. Wij werken met eigen mensen en materieel, geen onderaannemers."
+    },
+    {
+      "title": "Oplevering",
+      "text": "Na testen en documentatie leveren we het project op. We doorlopen de installatie samen met de gebruiker."
+    },
+    {
+      "title": "Onderhoud & nazorg",
+      "text": "Na oplevering blijven wij beschikbaar voor onderhoud, herstellingen en 24/7 interventie. Optioneel onderhoudscontract."
+    }
+  ],
+  "stats": [
+    {
+      "number": "40+",
+      "label": "Jaar ervaring"
+    },
+    {
+      "number": "100+",
+      "label": "Projecten per jaar"
+    },
+    {
+      "number": "24/7",
+      "label": "Interventiedienst"
+    },
+    {
+      "number": "10+",
+      "label": "Vaste medewerkers"
+    }
+  ],
+  "ctas": [
+    {
+      "label": "Offerte aanvragen",
+      "url": "/contact",
+      "theme": "red",
+      "text": "Een project?",
+      "description": "Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject."
+    },
+    {
+      "label": "Solliciteren",
+      "url": "/jobs",
+      "theme": "outline",
+      "text": "Werken bij Vandotec",
+      "description": "Bekijk onze openstaande vacatures en solliciteer direct."
+    }
+  ],
+  "process_step_numbers": [1, 2, 3, 4, 5]
 }
