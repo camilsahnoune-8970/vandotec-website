@@ -1,101 +1,54 @@
 ---
 import AdminLayout from '../../components/admin/AdminLayout.astro';
-import { getPageFiles } from '../../lib/admin-pages';
-import { isAuthenticated, setSessionCookie, clearSessionCookie } from '../../lib/admin-auth';
 
-export async function GET({ cookies, redirect }) {
-  if (!isAuthenticated(cookies)) {
-    return redirect('/beheer/login');
-  }
-  return new Response(null, { status: 204 });
-}
+const pages = [
+  { slug: 'home', title: 'Homepage', updated: '2026-07-30 16:00' },
+  { slug: 'contact', title: 'Contact', updated: '2026-07-30 15:40' },
+  { slug: 'expertises', title: 'Expertises', updated: '2026-07-30 15:20' },
+  { slug: 'jobs', title: 'Jobs', updated: '2026-07-29 18:05' },
+  { slug: 'over-vandotec', title: 'Over Vandotec', updated: '2026-07-29 09:10' },
+  { slug: 'service-onderhoud', title: 'Service & Onderhoud', updated: '2026-07-28 21:35' }
+];
 
-export async function POST({ request, cookies, redirect }) {
-  const form = await request.formData();
-  const intent = String(form.get('intent') || '');
-
-  if (intent === 'logout') {
-    clearSessionCookie(cookies);
-    return redirect('/beheer/login');
-  }
-
-  if (isAuthenticated(cookies)) {
-    return redirect('/beheer');
-  }
-
-  const password = form.get('password');
-  if (intent === 'login' && password === 'vandotec2026') {
-    setSessionCookie(cookies);
-    return redirect('/beheer');
-  }
-
-  return redirect('/beheer/login');
-}
-
-export async function DELETE({ cookies, redirect }) {
-  clearSessionCookie(cookies);
-  return redirect('/beheer/login');
-}
-
-const pages = getPageFiles();
+const renderTableRows = pages.map((page) => `
+  <tr>
+    <td>
+      <a href="/beheer/bewerk/${page.slug}" class="admin-table-title">${page.title}</a>
+      <div class="admin-table-meta">${page.slug}</div>
+    </td>
+    <td>${page.updated}</td>
+    <td>
+      <a href="/beheer/bewerk/${page.slug}" class="admin-btn small">Bewerk</a>
+    </td>
+  </tr>
+`).join('');
 ---
 
-<script is:inline>
-  (function () {
-    const key = 'admin_session';
-    const loginUrl = '/beheer/login';
-    function hasSession() {
-      try {
-        return document.cookie.split('; ').some((row) => row.startsWith(key + '='));
-      } catch {
-        return false;
-      }
-    }
-    if (!hasSession()) {
-      window.location.replace(loginUrl);
-    }
-  })();
-</script>
+<AdminLayout title="Dashboard">
+	<div class="admin-header">
+		<div>
+			<div class="admin-title">Dashboard</div>
+			<div class="admin-subtitle">Pagina's en laatste bewerkingen.</div>
+		</div>
+		<div class="admin-header-actions">
+			<a href="/" class="admin-btn secondary">Site openen</a>
+		</div>
+	</div>
 
-<AdminLayout title="Dashboard" active="dashboard">
-  <div class="admin-header">
-    <div>
-      <div class="admin-title">Pagina's</div>
-      <div class="admin-subtitle">Beheer je vandotec-content in één hoofdscherm.</div>
-    </div>
-    <a href="https://github.com/Camil96/vandotec-website" target="_blank" rel="noreferrer" class="admin-btn secondary">Open repo</a>
-  </div>
-
-  <div class="admin-card">
-    <div class="admin-table-wrap">
-      <table class="admin-table">
-        <thead>
-          <tr>
-            <th>Pagina</th>
-            <th>Bestand</th>
-            <th>Laatste aanpassing</th>
-            <th class="admin-table-actions">Acties</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pages.map((page) => (
-            <tr>
-              <td>
-                <div style="font-weight:600;">{page.label}</div>
-                <div style="font-size:0.85rem;color:var(--admin-muted);">{page.slug}</div>
-              </td>
-              <td>{page.file}</td>
-              <td>{page.lastModified ?? '—'}</td>
-              <td class="admin-table-actions">
-                <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
-                  <a href={`/${page.slug === 'home' ? '' : page.slug}`} target="_blank" rel="noreferrer" class="admin-btn secondary">Bekijk site</a>
-                  <a href={`/beheer/bewerk/${page.slug}`} class="admin-btn">Bewerk</a>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </div>
+	<div class="admin-card">
+		<div class="admin-table-wrap">
+			<table class="admin-table">
+				<thead>
+					<tr>
+						<th>Pagina</th>
+						<th>Laatst aangepast</th>
+						<th>Actie</th>
+					</tr>
+				</thead>
+				<tbody>
+					${renderTableRows}
+				</tbody>
+			</table>
+		</div>
+	</div>
 </AdminLayout>
