@@ -18,12 +18,7 @@ export function getPageFiles(): PageFile[] {
     { slug: 'jobs', label: 'Jobs', file: 'src/data/jobs.json' },
     { slug: 'over-vandotec', label: 'Over Vandotec', file: 'src/data/over-vandotec.json' },
     { slug: 'service-onderhoud', label: 'Service & Onderhoud', file: 'src/data/service-onderhoud.json' }
-  ].map((page) => {
-    const stats = readFileSync(join(root, page.file), 'utf-8');
-    const m = stats.match(/"lastModified"\s*:\s*"([^"]+)"/);
-    const lastModified = m?.[1];
-    return { ...page, lastModified };
-  });
+  ];
 }
 
 export function readPageFile(slug: string): string {

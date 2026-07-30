@@ -44,7 +44,7 @@ const data = JSON.parse(raw);
     <div class="admin-grid">
       <div class="admin-card">
         <div class="admin-section-title">Content</div>
-        <textarea id="jsonEditor" name="content" class="admin-textarea" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; min-height: 70vh;">{raw}</textarea>
+        <textarea id="jsonEditor" name="content" class="admin-textarea" style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; min-height: 70vh;">{raw.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
       </div>
       <div class="admin-card">
         <div class="admin-section-title">Preview</div>

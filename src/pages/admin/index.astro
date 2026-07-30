@@ -29,8 +29,48 @@ export async function DELETE({ cookies, redirect }) {
   clearSessionCookie(cookies);
   return redirect('/admin/login');
 }
+
+const pages = getPageFiles();
 ---
 
-<AdminLayout title="Beheer" active="dashboard">
-  <slot />
+<AdminLayout title="Dashboard" active="dashboard">
+  <div class="admin-header">
+    <div>
+      <div class="admin-title">Pagina's</div>
+      <div class="admin-subtitle">Beheer je vandotec-content in één hoofdscherm.</div>
+    </div>
+    <a href="https://github.com/Camil96/vandotec-website" target="_blank" rel="noreferrer" class="admin-btn secondary">
+      Open repo
+    </a>
+  </div>
+
+  <div class="admin-card" style="margin-bottom: 1.25rem;">
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Pagina</th>
+            <th>Bestand</th>
+            <th>Laatste aanpassing</th>
+            <th class="admin-table-actions">Acties</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pages.map((page) => (
+            <tr>
+              <td>
+                <div style="font-weight:600;">{page.label}</div>
+                <div style="font-size:0.85rem;color:var(--admin-muted);">{page.slug}</div>
+              </td>
+              <td>{page.file}</td>
+              <td>{page.lastModified ?? '—'}</td>
+              <td class="admin-table-actions">
+                <a href={`/admin/edit/${page.slug}`} class="admin-btn">Bewerk</a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </AdminLayout>

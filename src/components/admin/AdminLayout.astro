@@ -1,17 +1,18 @@
 ---
 interface Props {
-	title: string;
+	title?: string;
 	active?: string;
 }
 
-const { title, active = '' } = Astro.props;
+const { title = 'Vandotec Admin', active = '' } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="nl">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title} — Vandotec Admin</title>
+		<title>{title}</title>
 		<link rel="stylesheet" href="/style.css" />
 		<link rel="stylesheet" href="/admin.css" />
 		<slot name="head" />
