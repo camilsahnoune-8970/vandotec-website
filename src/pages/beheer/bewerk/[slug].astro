@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 
 export async function GET({ params, cookies, redirect }: APIContext) {
   if (!isAuthenticated(cookies)) {
-    return redirect('/admin/login');
+    return redirect('/beheer/login');
   }
   return new Response(null, { status: 204 });
 }
@@ -73,6 +73,7 @@ const data = JSON.parse(raw);
         saveBtn.textContent = 'Fout bij opslaan';
         saveBtn.disabled = false;
         console.error(json.error);
+        alert(json.error || 'Opslaan mislukt');
       }
     });
   }

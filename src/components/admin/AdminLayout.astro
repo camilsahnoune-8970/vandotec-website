@@ -21,15 +21,15 @@ const { title = 'Vandotec Admin', active = '' } = Astro.props;
 		<div class="admin-layout">
 			<aside class="admin-sidebar">
 				<div class="admin-brand">Vandotec Admin</div>
-				<a href="/admin" class="admin-nav-item {active === 'dashboard' ? 'active' : ''}">Dashboard</a>
-				<a href="/admin/edit/home" class="admin-nav-item {active === 'home' ? 'active' : ''}">Homepage</a>
-				<a href="/admin/edit/contact" class="admin-nav-item {active === 'contact' ? 'active' : ''}">Contact</a>
-				<a href="/admin/edit/expertises" class="admin-nav-item {active === 'expertises' ? 'active' : ''}">Expertises</a>
-				<a href="/admin/edit/jobs" class="admin-nav-item {active === 'jobs' ? 'active' : ''}">Jobs</a>
-				<a href="/admin/edit/over-vandotec" class="admin-nav-item {active === 'over-vandotec' ? 'active' : ''}">Over Vandotec</a>
-				<a href="/admin/edit/service-onderhoud" class="admin-nav-item {active === 'service-onderhoud' ? 'active' : ''}">Service & Onderhoud</a>
+				<a href="/beheer" class="admin-nav-item {active === 'dashboard' ? 'active' : ''}">Dashboard</a>
+				<a href="/beheer/bewerk/home" class="admin-nav-item {active === 'home' ? 'active' : ''}">Homepage</a>
+				<a href="/beheer/bewerk/contact" class="admin-nav-item {active === 'contact' ? 'active' : ''}">Contact</a>
+				<a href="/beheer/bewerk/expertises" class="admin-nav-item {active === 'expertises' ? 'active' : ''}">Expertises</a>
+				<a href="/beheer/bewerk/jobs" class="admin-nav-item {active === 'jobs' ? 'active' : ''}">Jobs</a>
+				<a href="/beheer/bewerk/over-vandotec" class="admin-nav-item {active === 'over-vandotec' ? 'active' : ''}">Over Vandotec</a>
+				<a href="/beheer/bewerk/service-onderhoud" class="admin-nav-item {active === 'service-onderhoud' ? 'active' : ''}">Service & Onderhoud</a>
 				<div style="margin-top:auto; padding-top:1rem; border-top:1px solid var(--admin-border);">
-					<form method="POST" action="/admin">
+					<form method="POST" action="/beheer">
 						<button class="admin-btn secondary" style="width:100%;" type="submit">Uitloggen</button>
 					</form>
 					<a href="/" class="admin-btn secondary" style="width:100%; margin-top:0.5rem; display:inline-flex;">Naar site</a>

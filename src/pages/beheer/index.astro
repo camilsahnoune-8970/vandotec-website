@@ -1,33 +1,15 @@
 ---
 import AdminLayout from '../../components/admin/AdminLayout.astro';
 import { getPageFiles } from '../../lib/admin-pages';
-import { isAuthenticated, setSessionCookie, clearSessionCookie } from '../../lib/admin-auth';
+import { isAuthenticated } from '../../lib/admin-auth';
+import { readPageFile } from '../../lib/admin-pages';
+import type { APIRoute } from 'astro';
 
-export const partial = true;
-
-export async function GET({ request, cookies, redirect }) {
+export async function GET({ cookies, redirect }) {
   if (!isAuthenticated(cookies)) {
-    return redirect('/admin/login');
+    return redirect('/beheer/login');
   }
   return new Response(null, { status: 204 });
-}
-
-export async function POST({ request, cookies, redirect }) {
-  const form = await request.formData();
-  const intent = form.get('intent');
-  const password = form.get('password');
-
-  if (intent === 'login' && password === 'vandotec2026') {
-    setSessionCookie(cookies);
-    return redirect('/admin');
-  }
-
-  return redirect('/admin/login');
-}
-
-export async function DELETE({ cookies, redirect }) {
-  clearSessionCookie(cookies);
-  return redirect('/admin/login');
 }
 
 const pages = getPageFiles();
@@ -65,7 +47,7 @@ const pages = getPageFiles();
               <td>{page.file}</td>
               <td>{page.lastModified ?? '—'}</td>
               <td class="admin-table-actions">
-                <a href={`/admin/edit/${page.slug}`} class="admin-btn">Bewerk</a>
+                <a href={`/beheer/bewerk/${page.slug}`} class="admin-btn">Bewerk</a>
               </td>
             </tr>
           ))}
