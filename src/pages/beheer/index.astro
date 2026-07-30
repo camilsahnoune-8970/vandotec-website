@@ -1,13 +1,36 @@
 ---
 import AdminLayout from '../../components/admin/AdminLayout.astro';
 import { getPageFiles } from '../../lib/admin-pages';
-import { isAuthenticated } from '../../lib/admin-auth';
+import { isAuthenticated, setSessionCookie, clearSessionCookie } from '../../lib/admin-auth';
 
 export async function GET({ cookies, redirect }) {
   if (!isAuthenticated(cookies)) {
     return redirect('/beheer/login');
   }
   return new Response(null, { status: 204 });
+}
+
+export async function POST({ request, cookies, redirect }) {
+  if (isAuthenticated(cookies)) {
+    clearSessionCookie(cookies);
+    return redirect('/beheer/login');
+  }
+
+  const form = await request.formData();
+  const intent = form.get('intent');
+  const password = form.get('password');
+
+  if (intent === 'login' && password === 'vandotec2026') {
+    setSessionCookie(cookies);
+    return redirect('/beheer');
+  }
+
+  return redirect('/beheer/login');
+}
+
+export async function DELETE({ cookies, redirect }) {
+  clearSessionCookie(cookies);
+  return redirect('/beheer/login');
 }
 
 const pages = getPageFiles();
