@@ -11,7 +11,7 @@ export interface PageFile {
 const root = process.cwd();
 
 export function getPageFiles(): PageFile[] {
-  const pages = [
+  return [
     { slug: 'home', label: 'Homepage', file: 'src/data/home.json' },
     { slug: 'contact', label: 'Contact', file: 'src/data/contact.json' },
     { slug: 'expertises', label: 'Expertises', file: 'src/data/expertises.json' },
@@ -19,20 +19,6 @@ export function getPageFiles(): PageFile[] {
     { slug: 'over-vandotec', label: 'Over Vandotec', file: 'src/data/over-vandotec.json' },
     { slug: 'service-onderhoud', label: 'Service & Onderhoud', file: 'src/data/service-onderhoud.json' }
   ];
-
-  return pages.map((page) => {
-    try {
-      const stats = statSync(join(root, page.file));
-      const date = new Date(stats.mtimeMs);
-      const formatted = new Intl.DateTimeFormat('nl-BE', {
-        dateStyle: 'medium',
-        timeStyle: 'short'
-      }).format(date);
-      return { ...page, lastModified: formatted };
-    } catch {
-      return page;
-    }
-  });
 }
 
 export function readPageFile(slug: string): string {
