@@ -39,6 +39,9 @@ const data = JSON.parse(raw);
     </div>
   </div>
 
+  <div id="saveStatus" class="admin-save-status" role="status" aria-live="polite" hidden>Opgeslagen</div>
+  <div id="saveError" class="admin-save-status admin-save-status--error" role="alert" aria-live="assertive" hidden></div>
+
   <form id="editorForm" method="POST" action="/api/save-page">
     <input type="hidden" name="slug" value="{slug}" />
     <div class="admin-grid">
@@ -59,22 +62,70 @@ const data = JSON.parse(raw);
 <script>
   const form = document.getElementById('editorForm');
   const saveBtn = document.getElementById('saveBtn');
+  const saveStatus = document.getElementById('saveStatus');
+  const saveError = document.getElementById('saveError');
+  const editor = document.getElementById('jsonEditor');
+
+  function showStatus(message, isError = false) {
+    if (!saveStatus || !saveError) return;
+    saveStatus.hidden = true;
+    saveError.hidden = true;
+    saveStatus.textContent = '';
+    saveError.textContent = '';
+
+    if (!message) return;
+
+    if (isError) {
+      saveError.textContent = message;
+      saveError.hidden = false;
+    } else {
+      saveStatus.textContent = message;
+      saveStatus.hidden = false;
+    }
+  }
+
+  function validateJson(text) {
+    try {
+      JSON.parse(text);
+      return null;
+    } catch (error) {
+      return `JSON is ongeldig: ${error.message}`;
+    }
+  }
+
+  if (editor) {
+    editor.addEventListener('input', () => {
+      const message = validateJson(editor.value);
+      if (message) {
+        showStatus(message, true);
+        saveBtn.disabled = true;
+      } else {
+        showStatus('');
+        saveBtn.disabled = false;
+      }
+    });
+  }
+
   if (form && saveBtn) {
     saveBtn.addEventListener('click', async () => {
+      const validationMessage = validateJson(editor?.value ?? '');
+      if (validationMessage) {
+        showStatus(validationMessage, true);
+        return;
+      }
+
       saveBtn.disabled = true;
-      saveBtn.textContent = 'Opslaan...';
+      showStatus('Opslaan...');
       const formData = new FormData(form);
       const res = await fetch('/api/save-page', { method: 'POST', body: formData });
-      const json = await res.json();
+      const json = await res.json().catch(() => ({ ok: false, error: 'Onbekende fout bij opslaan.' }));
       if (json.ok) {
-        saveBtn.textContent = 'Opgeslagen';
-        setTimeout(() => { saveBtn.textContent = 'Opslaan'; saveBtn.disabled = false; }, 2000);
+        showStatus('Opgeslagen');
+        setTimeout(() => showStatus(''), 3000);
       } else {
-        saveBtn.textContent = 'Fout bij opslaan';
-        saveBtn.disabled = false;
-        console.error(json.error);
-        alert(json.error || 'Opslaan mislukt');
+        showStatus(json.error || 'Opslaan mislukt', true);
       }
+      saveBtn.disabled = false;
     });
   }
 </script>
