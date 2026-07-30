@@ -1,49 +1,200 @@
 ---
-import AdminLayout from '../../components/admin/AdminLayout.astro';
-import { isAuthenticated, setSessionCookie, clearSessionCookie } from '../../lib/admin-auth';
-
-const PASSWORD = 'vandotec2026';
+const password = '[REDACTED]';
 ---
 
-<AdminLayout title="Login" active="">
-  <div class="admin-card" style="max-width: 420px; margin: 3rem auto;">
-    <div class="admin-title" style="margin-bottom: 0.75rem;">Inloggen</div>
-    <div class="admin-subtitle" style="margin-bottom: 1rem;">Beheerders toegang tot het CMS.</div>
-    <form id="loginForm" method="POST" action="/beheer">
-      <div class="admin-field">
-        <label class="admin-label" for="password">Wachtwoord</label>
-        <input class="admin-input" type="password" id="password" name="password" autocomplete="current-password" required />
-      </div>
-      <input type="hidden" name="intent" value="login" />
-      <button class="admin-btn" type="submit" style="width:100%;">Toegang</button>
-    </form>
-  </div>
-</AdminLayout>
+<!doctype html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Beheer — Vandotec</title>
+		<link rel="stylesheet" href="/admin.css" />
+		<style>
+			.login-shell {
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 1.5rem;
+				background: radial-gradient(1200px 800px at 10% -10%, rgba(37, 99, 235, 0.18), transparent),
+					radial-gradient(1000px 700px at 110% 20%, rgba(22, 163, 74, 0.12), transparent),
+					var(--admin-bg);
+			}
+			.login-card {
+				width: min(420px, 100%);
+				background: rgba(26, 29, 35, 0.7);
+				backdrop-filter: blur(18px);
+				border: 1px solid var(--admin-border);
+				border-radius: 1.5rem;
+				padding: 1.6rem;
+				box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+				transform: translateY(0);
+				transition: transform 600ms cubic-bezier(0.22, 0.61, 0, 1), box-shadow 600ms ease;
+			}
+			.login-card:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+			}
+			.login-brand {
+				font-weight: 700;
+				font-size: 1.1rem;
+				letter-spacing: 0.15px;
+				margin-bottom: 0.35rem;
+			}
+			.login-title {
+				font-size: 1.6rem;
+				font-weight: 600;
+				letter-spacing: -0.01em;
+				margin-bottom: 0.25rem;
+			}
+			.login-subtitle {
+				color: var(--admin-muted);
+				font-size: 0.95rem;
+				margin-bottom: 1.25rem;
+			}
+			.login-field {
+				margin-bottom: 1rem;
+			}
+			.login-label {
+				display: block;
+				font-size: 0.8rem;
+				font-weight: 500;
+				color: var(--admin-muted);
+				margin-bottom: 0.35rem;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+			}
+			.login-input {
+				width: 100%;
+				background: rgba(35, 38, 45, 0.7);
+				border: 1px solid var(--admin-border);
+				color: var(--admin-text);
+				padding: 0.7rem 0.8rem;
+				border-radius: 0.75rem;
+				font-size: 1rem;
+				outline: none;
+				transition: border-color 200ms ease, box-shadow 200ms ease;
+			}
+			.login-input:focus {
+				border-color: var(--admin-accent);
+				box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+			}
+			.login-actions {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 0.75rem;
+				margin-top: 0.75rem;
+			}
+			.login-status {
+				min-height: 0.9rem;
+				margin-top: 0.75rem;
+				font-size: 0.9rem;
+				color: #fca5a5;
+				opacity: 0;
+				transform: translateY(4px);
+				transition: opacity 200ms ease, transform 200ms ease;
+			}
+			.login-status.is-visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+			.login-status--ok {
+				color: #4ade80;
+			}
+			.login-footer {
+				margin-top: 1.1rem;
+				color: var(--admin-muted);
+				font-size: 0.8rem;
+			}
+			.login-footer a {
+				color: #93c5fd;
+				text-decoration: none;
+			}
+			@keyframes loginPulse {
+				0% {
+					box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+				}
+				70% {
+					box-shadow: 0 0 0 14px rgba(37, 99, 235, 0);
+				}
+				100% {
+					box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+				}
+			}
+			.login-btn.is-loading {
+				animation: loginPulse 1200ms ease-out infinite;
+				pointer-events: none;
+				opacity: 0.85;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="login-shell">
+			<form class="login-card" id="loginForm" autocomplete="off">
+				<div class="login-brand">Vandotec</div>
+				<div class="login-title">Beheerlogin</div>
+				<div class="login-subtitle">Log in om de pagina's te bewerken.</div>
 
-<script>
-  const form = document.getElementById('loginForm');
-  const status = document.createElement('div');
-  status.style.marginTop = '0.75rem';
-  status.style.fontSize = '0.9rem';
-  form.after(status);
+				<label class="login-field" for="password">
+					<span class="login-label">Wachtwoord</span>
+					<input class="login-input" id="password" name="password" type="password" required />
+				</label>
 
-  function show(message, isError = false) {
-    status.textContent = message;
-    status.style.color = isError ? '#f87171' : '#34d399';
-  }
+				<div class="login-actions">
+					<a href="/" class="admin-btn secondary" type="button">Terug naar site</a>
+					<button class="admin-btn" id="loginSubmit" type="submit">Inloggen</button>
+				</div>
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    show('Controleren...');
-    const data = new FormData(form);
-    const res = await fetch('/beheer', {
-      method: 'POST',
-      body: data
-    });
-    if (res.redirected || res.status === 302 || res.status === 303) {
-      window.location.href = res.headers.get('location') || '/beheer';
-      return;
-    }
-    show('Ongeldig wachtwoord.', true);
-  });
-</script>
+				<div class="login-status" id="loginStatus" role="status" aria-live="polite"></div>
+				<div class="login-footer">
+					Alleen toegankelijk voor beheerders.
+				</div>
+			</form>
+		</div>
+
+		<script is:inline>
+			(function () {
+				var form = document.getElementById('loginForm');
+				var status = document.getElementById('loginStatus');
+				var submit = document.getElementById('loginSubmit');
+
+				function showMessage(text, ok) {
+					if (!status || !text) {
+						if (status) {
+							status.textContent = '';
+							status.className = 'login-status';
+						}
+						return;
+					}
+					status.textContent = text;
+					status.className = 'login-status is-visible' + (ok ? ' login-status--ok' : '');
+				}
+
+				form.addEventListener('submit', function (event) {
+					event.preventDefault();
+					showMessage('');
+					submit.classList.add('is-loading');
+					submit.textContent = 'Bezig...';
+
+					var data = new FormData(form);
+					var xhr = new XMLHttpRequest();
+					xhr.open('POST', '/beheer', true);
+					xhr.setRequestHeader('Accept', 'application/json');
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState !== 4) return;
+						submit.classList.remove('is-loading');
+						submit.textContent = 'Inloggen';
+						if (xhr.status >= 200 && xhr.status < 300) {
+							showMessage('Je bent ingelogd.', true);
+							window.location.replace('/beheer');
+							return;
+						}
+						showMessage('Onjuist wachtwoord.', false);
+					};
+					xhr.send(data);
+				});
+			})();
+		</script>
+	</body>
+</html>
