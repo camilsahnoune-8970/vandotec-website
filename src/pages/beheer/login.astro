@@ -1,6 +1,6 @@
 ---
 import AdminLayout from '../../components/admin/AdminLayout.astro';
-import { isAuthenticated, setSessionCookie } from '../../lib/admin-auth';
+import { isAuthenticated, setSessionCookie, clearSessionCookie } from '../../lib/admin-auth';
 
 const PASSWORD = 'vandotec2026';
 ---
@@ -9,7 +9,7 @@ const PASSWORD = 'vandotec2026';
   <div class="admin-card" style="max-width: 420px; margin: 3rem auto;">
     <div class="admin-title" style="margin-bottom: 0.75rem;">Inloggen</div>
     <div class="admin-subtitle" style="margin-bottom: 1rem;">Beheerders toegang tot het CMS.</div>
-    <form method="POST" action="/beheer">
+    <form id="loginForm" method="POST" action="/beheer">
       <div class="admin-field">
         <label class="admin-label" for="password">Wachtwoord</label>
         <input class="admin-input" type="password" id="password" name="password" autocomplete="current-password" required />
@@ -19,3 +19,31 @@ const PASSWORD = 'vandotec2026';
     </form>
   </div>
 </AdminLayout>
+
+<script>
+  const form = document.getElementById('loginForm');
+  const status = document.createElement('div');
+  status.style.marginTop = '0.75rem';
+  status.style.fontSize = '0.9rem';
+  form.after(status);
+
+  function show(message, isError = false) {
+    status.textContent = message;
+    status.style.color = isError ? '#f87171' : '#34d399';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    show('Controleren...');
+    const data = new FormData(form);
+    const res = await fetch('/beheer', {
+      method: 'POST',
+      body: data
+    });
+    if (res.redirected || res.status === 302 || res.status === 303) {
+      window.location.href = res.headers.get('location') || '/beheer';
+      return;
+    }
+    show('Ongeldig wachtwoord.', true);
+  });
+</script>

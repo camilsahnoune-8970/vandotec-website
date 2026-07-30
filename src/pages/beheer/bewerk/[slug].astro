@@ -27,6 +27,23 @@ const raw = readPageFile(slug || 'home');
 const data = JSON.parse(raw);
 ---
 
+<script is:inline>
+  (function () {
+    const key = 'admin_session';
+    const loginUrl = '/beheer/login';
+    function hasSession() {
+      try {
+        return document.cookie.split('; ').some((row) => row.startsWith(key + '='));
+      } catch {
+        return false;
+      }
+    }
+    if (!hasSession()) {
+      window.location.replace(loginUrl);
+    }
+  })();
+</script>
+
 <AdminLayout title={`${data.title ?? slug} bewerken`} active={slug}>
   <div class="admin-header">
     <div>

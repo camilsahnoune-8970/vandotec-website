@@ -16,3 +16,7 @@ export function setSessionCookie(cookies: Astro.Cookies) {
 export function clearSessionCookie(cookies: Astro.Cookies) {
   cookies.delete('admin_session', { path: '/' });
 }
+
+export function hasAdminSession(cookies: Astro.Cookies): boolean {
+  return cookies.has('admin_session');
+}

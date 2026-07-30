@@ -116,6 +116,33 @@ Verification:
 
 ---
 
+## Task 4.5: Client-side admin-gate voor `/beheer`
+
+**Decision:** Optie 3 — blijf binnen duurzaamheid, geen nieuwe auth-providers of hostingstack.
+Deze keuze voorkomt een productie-auth mismatch in Astro static export en houdt het project onderhoudsvriendelijk.
+
+**Objective:** Voorkom dat `/beheer`, `/beheer/bewerk/*` en `/api/save-page` zonder login bereikbaar zijn in productie, zonder nieuwe dependencies.
+
+**Files:**
+- Modify: `src/pages/beheer/index.astro`
+- Modify: `src/pages/beheer/login.astro`
+- Modify: `src/pages/beheer/bewerk/[slug].astro`
+- Modify: `src/pages/api/save-page.ts`
+- Modify: `src/lib/admin-auth.ts`
+
+**Step 1:** Verwijder statische暗中 guards die alleen in dev werken en vervang ze door een consistente client-side/admin-gate op basis van een admin-cookie/token, zonder externe auth-provider.
+**Step 2:** Hou de login bij `/beheer/login` als startpagina; alle adminpagina's checken eerst de gate en sturen door naar login indien nodig.
+**Step 3:** `/api/save-page` accepteert alleen requests met geldige admin-sessie; zonder sessie wordt een 401 geretourneerd.
+**Step 4:** Build, push en verifieer op `/beheer` dat niet-geauthenticeerde toegang niet meer mogelijk is.
+
+Verification:
+- Bezoek `/beheer` zonder cookie → redirect naar `/beheer/login`
+- Login met het ingestelde wachtwoord → toegang tot dashboard en editor
+- Opslaan zonder sessie → API geeft fout
+- Opslaan met sessie → API slaat en pushed naar `origin/main`
+
+---
+
 ## Task 5: Algemene verfijningsronde
 
 ### Task 5.1: Admin-stijlen opqmaken

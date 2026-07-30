@@ -36,6 +36,23 @@ export async function DELETE({ cookies, redirect }) {
 const pages = getPageFiles();
 ---
 
+<script is:inline>
+  (function () {
+    const key = 'admin_session';
+    const loginUrl = '/beheer/login';
+    function hasSession() {
+      try {
+        return document.cookie.split('; ').some((row) => row.startsWith(key + '='));
+      } catch {
+        return false;
+      }
+    }
+    if (!hasSession()) {
+      window.location.replace(loginUrl);
+    }
+  })();
+</script>
+
 <AdminLayout title="Dashboard" active="dashboard">
   <div class="admin-header">
     <div>

@@ -3,6 +3,10 @@ import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { simpleGit } from 'simple-git';
 
+function hasAdminSession(cookies: Astro.Cookies): boolean {
+  return cookies.has('admin_session');
+}
+
 export const GET: APIRoute = async () => {
   return new Response(
     JSON.stringify({ ok: true, method: 'POST', message: 'Gebruik POST om een pagina op te slaan.' }),
@@ -10,8 +14,12 @@ export const GET: APIRoute = async () => {
   );
 };
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, cookies }) => {
   try {
+    if (!hasAdminSession(cookies)) {
+      return new Response(JSON.stringify({ ok: false, error: 'Niet geautoriseerd.' }), { status: 401, headers: { 'content-type': 'application/json' } });
+    }
+
     const form = await request.formData();
     const slug = String(form.get('slug') || '').trim();
     const content = String(form.get('content') || '');
