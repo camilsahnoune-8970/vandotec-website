@@ -22,13 +22,13 @@ const { title = 'Vandotec Admin', active = '' } = Astro.props;
 			<aside class="admin-sidebar">
 				<div class="admin-brand">Vandotec</div>
 				<nav class="admin-nav">
-					<a href="/beheer" class="admin-nav-item {active === 'dashboard' ? 'active' : ''}">Dashboard</a>
-					<a href="/beheer/bewerk/home" class="admin-nav-item {active === 'home' ? 'active' : ''}">Homepage</a>
-					<a href="/beheer/bewerk/contact" class="admin-nav-item {active === 'contact' ? 'active' : ''}">Contact</a>
-					<a href="/beheer/bewerk/expertises" class="admin-nav-item {active === 'expertises' ? 'active' : ''}">Expertises</a>
-					<a href="/beheer/bewerk/jobs" class="admin-nav-item {active === 'jobs' ? 'active' : ''}">Jobs</a>
-					<a href="/beheer/bewerk/over-vandotec" class="admin-nav-item {active === 'over-vandotec' ? 'active' : ''}">Over Vandotec</a>
-					<a href="/beheer/bewerk/service-onderhoud" class="admin-nav-item {active === 'service-onderhoud' ? 'active' : ''}">Service & Onderhoud</a>
+					<a href="/beheer" data-nav-path="/beheer" class="admin-nav-item">Dashboard</a>
+					<a href="/beheer/bewerk/home" data-nav-path="/beheer/bewerk/home" class="admin-nav-item">Homepage</a>
+					<a href="/beheer/bewerk/contact" data-nav-path="/beheer/bewerk/contact" class="admin-nav-item">Contact</a>
+					<a href="/beheer/bewerk/expertises" data-nav-path="/beheer/bewerk/expertises" class="admin-nav-item">Expertises</a>
+					<a href="/beheer/bewerk/jobs" data-nav-path="/beheer/bewerk/jobs" class="admin-nav-item">Jobs</a>
+					<a href="/beheer/bewerk/over-vandotec" data-nav-path="/beheer/bewerk/over-vandotec" class="admin-nav-item">Over Vandotec</a>
+					<a href="/beheer/bewerk/service-onderhoud" data-nav-path="/beheer/bewerk/service-onderhoud" class="admin-nav-item">Service & Onderhoud</a>
 				</nav>
 				<div class="admin-sidebar-footer">
 					<form method="POST" action="/beheer" class="admin-logout-form">
@@ -50,5 +50,14 @@ const { title = 'Vandotec Admin', active = '' } = Astro.props;
 				<slot />
 			</main>
 		</div>
+		<script is:inline>
+		  (function () {
+		    var current = window.location.pathname || '';
+		    var items = document.querySelectorAll('.admin-nav-item[data-nav-path]');
+		    for (var i = 0; i < items.length; i++) {
+		      items[i].classList.toggle('active', items[i].getAttribute('data-nav-path') === current);
+		    }
+		  })();
+		</script>
 	</body>
 </html>
