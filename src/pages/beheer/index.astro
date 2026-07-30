@@ -11,15 +11,19 @@ export async function GET({ cookies, redirect }) {
 }
 
 export async function POST({ request, cookies, redirect }) {
-  if (isAuthenticated(cookies)) {
+  const form = await request.formData();
+  const intent = String(form.get('intent') || '');
+
+  if (intent === 'logout') {
     clearSessionCookie(cookies);
     return redirect('/beheer/login');
   }
 
-  const form = await request.formData();
-  const intent = form.get('intent');
-  const password = form.get('password');
+  if (isAuthenticated(cookies)) {
+    return redirect('/beheer');
+  }
 
+  const password = form.get('password');
   if (intent === 'login' && password === 'vandotec2026') {
     setSessionCookie(cookies);
     return redirect('/beheer');
