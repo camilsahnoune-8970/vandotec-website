@@ -270,6 +270,30 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.admin-editor-help {
+  font-size: 0.85rem;
+  color: var(--admin-muted);
+  margin-top: 0.6rem;
+}
+
+.admin-preview-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-preview-hint {
+  font-size: 0.8rem;
+  color: var(--admin-muted);
+}
+
+.admin-subtitle {
+  font-size: 0.95rem;
+  color: var(--admin-muted);
+  margin-top: 0.25rem;
+}
+
 .admin-preview-frame {
   position: relative;
   width: 100%;
