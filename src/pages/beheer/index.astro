@@ -1,35 +1,57 @@
 ---
 import AdminLayout from '../../components/admin/AdminLayout.astro';
-import { isAuthenticated, setSessionCookie, clearSessionCookie } from '../../lib/admin-auth';
+import { getPageFiles } from '../../lib/admin-pages';
+import { isAuthenticated } from '../../lib/admin-auth';
 
-export const partial = true;
-
-export async function GET({ request, cookies, redirect }) {
+export async function GET({ cookies, redirect }) {
   if (!isAuthenticated(cookies)) {
     return redirect('/beheer/login');
   }
   return new Response(null, { status: 204 });
 }
 
-export async function POST({ request, cookies, redirect }) {
-  const form = await request.formData();
-  const intent = form.get('intent');
-  const password = form.get('password');
-
-  if (intent === 'login' && password === 'vandotec2026') {
-    setSessionCookie(cookies);
-    return redirect('/beheer');
-  }
-
-  return redirect('/beheer/login');
-}
-
-export async function DELETE({ cookies, redirect }) {
-  clearSessionCookie(cookies);
-  return redirect('/beheer/login');
-}
+const pages = getPageFiles();
 ---
 
-<AdminLayout title="Beheer" active="dashboard">
-  <slot />
+<AdminLayout title="Dashboard" active="dashboard">
+  <div class="admin-header">
+    <div>
+      <div class="admin-title">Pagina's</div>
+      <div class="admin-subtitle">Beheer je vandotec-content in één hoofdscherm.</div>
+    </div>
+    <a href="https://github.com/Camil96/vandotec-website" target="_blank" rel="noreferrer" class="admin-btn secondary">Open repo</a>
+  </div>
+
+  <div class="admin-card">
+    <div class="admin-table-wrap">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Pagina</th>
+            <th>Bestand</th>
+            <th>Laatste aanpassing</th>
+            <th class="admin-table-actions">Acties</th>
+          </tr>
+        </thead>
+        <tbody>
+          {pages.map((page) => (
+            <tr>
+              <td>
+                <div style="font-weight:600;">{page.label}</div>
+                <div style="font-size:0.85rem;color:var(--admin-muted);">{page.slug}</div>
+              </td>
+              <td>{page.file}</td>
+              <td>{page.lastModified ?? '—'}</td>
+              <td class="admin-table-actions">
+                <div style="display:flex; gap:0.5rem; justify-content:flex-end;">
+                  <a href={`/${page.slug === 'home' ? '' : page.slug}`} target="_blank" rel="noreferrer" class="admin-btn secondary">Bekijk site</a>
+                  <a href={`/beheer/bewerk/${page.slug}`} class="admin-btn">Bewerk</a>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </AdminLayout>
