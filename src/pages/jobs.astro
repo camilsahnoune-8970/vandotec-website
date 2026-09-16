@@ -10,8 +10,8 @@ const jobs = loadPageData(jobsJson, {
 ---
 
 <Layout>
-	<title>{jobs.title}</title>
-	<meta name="description" content={jobs.description} />
+	<title slot="head">{jobs.title}</title>
+	<meta slot="head" name="description" content={jobs.description} />
 
 	<section class="page-hero">
 		<div class="container">
@@ -65,7 +65,7 @@ const jobs = loadPageData(jobsJson, {
 	{(jobs.ctas || []).length > 0 && (
 		<section class="connect-grid">
 			{jobs.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme || 'navy'}`}>
+				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
 					<h2 set:html={cta.text} />
 					<p set:html={cta.description} />
 					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>

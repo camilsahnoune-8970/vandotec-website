@@ -23,12 +23,12 @@ export const siteName = 'Vandotec';
 					</a>
 					<div class="header-right">
 						<nav class="header-nav" aria-label="Hoofdnavigatie">
-							<a href="/" class={Astro.url.pathname === '/' ? 'active' : ''}>Home</a>
-							<a href="/expertises" class={Astro.url.pathname === '/expertises' ? 'active' : ''}>Expertises</a>
-							<a href="/service-onderhoud" class={Astro.url.pathname === '/service-onderhoud' ? 'active' : ''}>Service & onderhoud</a>
-							<a href="/over-vandotec" class={Astro.url.pathname === '/over-vandotec' ? 'active' : ''}>Over Vandotec</a>
-							<a href="/jobs" class={Astro.url.pathname === '/jobs' ? 'active' : ''}>Jobs</a>
-							<a href="/contact" class={Astro.url.pathname === '/contact' ? 'active' : ''}>Contact</a>
+							<a href="/" class:list={[{ active: Astro.url.pathname === '/' }]}>Home</a>
+							<a href="/expertises" class:list={[{ active: Astro.url.pathname === '/expertises' }]}>Expertises</a>
+							<a href="/service-onderhoud" class:list={[{ active: Astro.url.pathname === '/service-onderhoud' }]}>Service & onderhoud</a>
+							<a href="/over-vandotec" class:list={[{ active: Astro.url.pathname === '/over-vandotec' }]}>Over Vandotec</a>
+							<a href="/jobs" class:list={[{ active: Astro.url.pathname === '/jobs' }]}>Jobs</a>
+							<a href="/contact" class:list={[{ active: Astro.url.pathname === '/contact' }]}>Contact</a>
 						</nav>
 						<div class="header-lang">
 							<a href="#" class="active">NL</a>
@@ -108,15 +108,22 @@ export const siteName = 'Vandotec';
 					<div class="footer-bottom-inner">
 						<span class="copy">&copy; 2026 {siteName}</span>
 						<nav class="nav">
-							<a href="#">Disclaimer</a>
-							<a href="#">Privacy policy</a>
-							<a href="#">Cookie policy</a>
-							<a href="#">Algemene voorwaarden</a>
-						</nav>
+												<a href="/disclaimer">Disclaimer</a>
+												<a href="/privacy">Privacyverklaring</a>
+												<a href="/cookies">Cookieverklaring</a>
+												<a href="/algemenevoorwaarden">Algemene voorwaarden</a>
+											</nav>
 					</div>
 				</div>
 			</div>
 		</footer>
+	<div class="cookie-bar" id="cookieBar" aria-live="polite">
+		<div class="container">
+			<p>Deze website gebruikt functionele cookies. Geen tracking, geen targeting. <a href="/cookies">Lees meer</a></p>
+			<button id="acceptCookies" class="btn btn-red" type="button">Accepteren</button>
+		</div>
+	</div>
+
 
 		<script>
 			(function(){
@@ -138,6 +145,19 @@ export const siteName = 'Vandotec';
 					});
 				}
 			})();
-		</script>
+	
+		// cookie consent
+		(function(){
+			var bar = document.getElementById('cookieBar');
+			if(!bar) return;
+			if(localStorage.getItem('vdtc-cookies') === 'accepted') return;
+			bar.classList.add('show');
+			var btn = document.getElementById('acceptCookies');
+			if(btn) btn.addEventListener('click', function(){
+				localStorage.setItem('vdtc-cookies', 'accepted');
+				bar.classList.remove('show');
+			});
+		})();
+	</script>
 	</body>
 </html>

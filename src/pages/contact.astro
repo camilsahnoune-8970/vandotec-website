@@ -10,8 +10,8 @@ const contact = loadPageData(contactJson, {
 ---
 
 <Layout>
-	<title>{contact.title}</title>
-	<meta name="description" content={contact.description} />
+	<title slot="head">{contact.title}</title>
+	<meta slot="head" name="description" content={contact.description} />
 
 	<section class="page-hero">
 		<div class="container">
@@ -59,7 +59,7 @@ const contact = loadPageData(contactJson, {
 					<div class="content-block">
 						{contact.form_note && <p set:html={contact.form_note} />}
 					</div>
-					<form class="contact-form" action="#" method="post">
+					<form class="contact-form" action="/contact.php" method="post">
 						<div class="form-group">
 							<label for="name">{contact.form_name_label || 'Naam'}{(contact.form_name_required ? ' *' : '')}</label>
 							<input type="text" id="name" name="name" required={contact.form_name_required ? true : false} />
@@ -83,6 +83,10 @@ const contact = loadPageData(contactJson, {
 						<div class="form-group">
 							<label for="message">{contact.form_message_label || 'Bericht'}{(contact.form_message_required ? ' *' : '')}</label>
 							<textarea id="message" name="message" rows="5" required={contact.form_message_required ? true : false}></textarea>
+						<div style="display:none">
+							<label for="website">Laat dit veld leeg</label>
+							<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+						</div>
 						</div>
 						<button type="submit" class="btn btn-red">{contact.form_submit_label || 'Verzenden'}</button>
 					</form>
@@ -109,7 +113,7 @@ const contact = loadPageData(contactJson, {
 	{(contact.ctas || []).length > 0 && (
 		<section class="connect-grid">
 			{contact.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme || 'navy'}`}>
+				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
 					<h2 set:html={cta.text} />
 					<p set:html={cta.description} />
 					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>

@@ -13,8 +13,8 @@ const heroIntro = home.hero_subtitle || '';
 ---
 
 <Layout>
-	<title>{home.title}</title>
-	<meta name="description" content={home.description} />
+	<title slot="head">{home.title}</title>
+	<meta slot="head" name="description" content={home.description} />
 	<slot name="head" slot="head" />
 
 	<section class="hero">
@@ -134,7 +134,7 @@ const heroIntro = home.hero_subtitle || '';
 	{(home.ctas || []).length > 0 && (
 		<section class="connect-grid">
 			{home.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme || 'navy'}`}>
+				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
 					<h2 set:html={cta.text} />
 					<p set:html={cta.description} />
 					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>

@@ -10,8 +10,8 @@ const over = loadPageData(overJson, {
 ---
 
 <Layout>
-	<title>{over.title}</title>
-	<meta name="description" content={over.description} />
+	<title slot="head">{over.title}</title>
+	<meta slot="head" name="description" content={over.description} />
 
 	<section class="page-hero">
 		<div class="container">
@@ -117,7 +117,7 @@ const over = loadPageData(overJson, {
 	{(over.ctas || []).length > 0 && (
 		<section class="connect-grid">
 			{over.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme || 'navy'}`}>
+				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
 					<h2 set:html={cta.text} />
 					<p set:html={cta.description} />
 					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>

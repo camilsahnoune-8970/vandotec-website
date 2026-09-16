@@ -1,9 +1,9 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
+// Static sitemap.xml lives in public/ — no plugin dependency needed.
 export default defineConfig({
   output: 'static',
   outDir: 'dist',
-  trailingSlash: 'never'
+  trailingSlash: 'never',
+  site: 'https://www.vandotec.be',
 });
