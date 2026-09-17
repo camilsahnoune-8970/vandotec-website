@@ -1,5 +1,6 @@
 ---
 export const siteName = 'Vandotec';
+export const siteDescription = 'Vandotec installeert en onderhoudt tankstationinstallaties, EV-laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten. Meer dan 40 jaar ervaring in installatie en 24/7 onderhoud.';
 ---
 
 <html lang="nl">
@@ -12,6 +13,12 @@ export const siteName = 'Vandotec';
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="/style.css" />
+		<meta property="og:image" content="https://www.vandotec.be/logo-white.svg" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.vandotec.be" />
+		<meta property="og:title" content={siteName} />
+		<meta property="og:description" content={siteDescription} />
+		<meta name="twitter:card" content="summary_large_image" />
 		<slot name="head" />
 	</head>
 	<body>
