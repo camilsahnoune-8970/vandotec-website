@@ -1,46 +1,105 @@
 {
   "title": "Over Vandotec | Vandotec",
-  "description": "Meer dan 40 jaar ervaring in tankstation installaties, EV laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten.",
-  "hero_title": "Over Vandotec",
-  "hero_subtitle": "Meer dan 40 jaar ervaring in tankstation installaties, EV laadinfrastructuur, carwashes, reinigingsystemen, infrastructuurwerken en waterprojecten.",
-  "intro_title": "Familiebedrijf met vakkennis",
+  "description": "Meer dan 45 jaar ervaring in tankstationinstallaties, EV-laadinfrastructuur en infrastructuurwerken.",
+  "hero_title": "Over <em>Vandotec</em>",
+  "hero_subtitle": "Meer dan 45 jaar ervaring in tankstationinstallaties, EV-laadinfrastructuur en infrastructuurwerken.",
+  "intro_title": "Totaalpartner sinds 1978",
   "intro_paragraphs": [
-    "Vandotec is een Belgisch familiebedrijf uit Poperinge, opgericht in 1984. Wat begon met tankstation installaties groeide uit tot een gespecialiseerd installatiebedrijf in zes domeinen: tankstations, EV-laadinfrastructuur, carwashes, industri&euml;le reiniging, infrastructuurwerken en waterprojecten.",
+    "Vandotec is sinds 1978 de referentie als totaalpartner en contractor voor tankstations, brandstofinstallaties, infrastructuurwerken en civiele werken. Van concept en engineering tot installatie, oplevering en structureel onderhoud — altijd met eigen mensen, altijd sleutel-op-de-deur.",
     "Wij werken uitsluitend met eigen vaste ploegen en eigen materieel. Geen onderaannemers. Dat betekent korte lijnen, vaste contactpersonen en een constante kwaliteit van ontwerp tot oplevering.",
-    "Onze klanten zijn tankstationuitbaters, transportbedrijven, industri&euml;le ondernemingen, landbouwbedrijven en overheden in Vlaanderen en aangrenzend Frankrijk."
+    "Onze klanten zijn brandstofbedrijven en tankstationuitbaters, industriële bedrijven, netbeheerders en energiebedrijven, aannemers en projectontwikkelaars, overheden en gemeenten — in België en buurlanden."
+  ],
+  "history_title": "Van fossiele brandstof naar groene energie",
+  "history_intro": "Het verhaal van een gevestigd infrastructuurbedrijf dat bewust transformeerde.",
+  "history": [
+    {
+      "year": "1978",
+      "text": "Oprichting Vandotec. Specialist in fossiele energie-infrastructuur: tankstations en industriële brandstofopstellingen."
+    },
+    {
+      "year": "2009",
+      "text": "Overname door Benoit Goesaert. Uitbreiding met CNG/LNG."
+    },
+    {
+      "year": "2011",
+      "text": "Kevin Bervoet treedt toe als mede-eigenaar. Service en onderhoud worden belangrijke pijlers."
+    },
+    {
+      "year": "2020",
+      "text": "Opstart Powerland als divisie voor laadinfrastructuur, batterijopslag en slimme energieprojecten."
+    },
+    {
+      "year": "2023",
+      "text": "Powerland wordt totaalprovider en contractor. Vandotec groeit in hoog- en middenspanningscabines."
+    },
+    {
+      "year": "2026",
+      "text": "Oplevering Powerhub — nieuw bedrijfsgebouw in Poperinge, met interne projectleiding."
+    }
+  ],
+  "powerhub_title": "Powerhub: thuisbasis in Poperinge",
+  "powerhub_text": "Het nieuwe bedrijfsgebouw van de groep in Poperinge, opgeleverd in mei 2026. Wat wij dagelijks voor klanten doen — projectmanagement van complexe infrastructuur — pasten wij toe op ons eigen gebouw: de volledige projectleiding lag intern, bij COO Marijn Louwagie.",
+  "team_title": "Managementteam",
+  "team": [
+    {
+      "name": "Benoit Goesaert",
+      "role": "CEO en eigenaar Group Vandotec",
+      "focus": "Strategie, visie, groei",
+      "photo": "/img/team-benoit.jpg"
+    },
+    {
+      "name": "Kevin Bervoet",
+      "role": "CEO divisie Vandotec, mede-eigenaar",
+      "focus": "Infrastructuur, contractor-projecten",
+      "photo": "/img/team-kevin.jpg"
+    },
+    {
+      "name": "Marijn Louwagie",
+      "role": "COO",
+      "focus": "Operaties, projecten, techniek",
+      "photo": "/img/team-marijn.jpg"
+    }
   ],
   "stats_title": "Kerncijfers",
   "stats": [
     {
-      "number": "40+",
+      "number": "45+",
       "label": "Jaar ervaring"
     },
     {
-      "number": "100+",
-      "label": "Projecten per jaar"
+      "number": "6.000+",
+      "label": "Projecten"
     },
     {
-      "number": "24/7",
-      "label": "Interventiedienst"
+      "number": "3.500+",
+      "label": "IJkingen per jaar"
     },
     {
-      "number": "10+",
-      "label": "Vaste medewerkers"
+      "number": "5",
+      "label": "Landen actief"
     }
   ],
-  "values_title": "Onze waarden",
+  "values_title": "Onze waarden: de High Five",
   "values": [
     {
-      "title": "Vakmanschap",
-      "text": "Wij voeren elk project uit met eigen vaste ploegen en eigen materieel. Onze technici kennen de installaties door en door, van ontwerp tot oplevering."
+      "title": "Oplossingsgericht",
+      "text": "Mogelijkheden zoeken, snel en precies schakelen. Oplossingen die vandaag werken en voorbereid zijn op morgen."
     },
     {
-      "title": "Service",
-      "text": "24/7 interventiedienst, eigen stock onderdelen en een vaste contactpersoon per project. Bij een defect staan wij paraat."
+      "title": "Betrokken",
+      "text": "Aanspreekbaar, beschikbaar, verantwoordelijk. Niet alleen voor het project, ook voor de werking nadien."
     },
     {
-      "title": "Breed inzetbaar",
-      "text": "Zes domeinen onder &eacute;&eacute;n dak: van tankstation tot waterproject. Kleine herstellingen en totaalprojecten, wij voeren uit."
+      "title": "Voorbereid",
+      "text": "Overleg, planning, realisme. Vlotte doorloop zonder verrassingen."
+    },
+    {
+      "title": "Realistisch",
+      "text": "Geen luchtkastelen. Wat we beloven, maken we waar. Voetjes op de grond."
+    },
+    {
+      "title": "Positief",
+      "text": "Energie en plezier in elk project. Met de glimlach, ook op de werf."
     }
   ],
   "process_title": "Projectaanpak",
@@ -68,14 +127,20 @@
       "text": "Optioneel onderhoudscontract met jaarlijkse controle, meetrapport en prioritair interventie bij defecten."
     }
   ],
-  "process_step_numbers": [1, 2, 3, 4, 5],
+  "process_step_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
   "ctas": [
     {
       "label": "Offerte aanvragen",
       "url": "/contact",
       "theme": "red",
       "text": "Een project?",
-      "description": "Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject."
+      "description": "Vraag een offerte aan voor uw tankstation, laadinfra- of infraproject."
     },
     {
       "label": "Bel nu",

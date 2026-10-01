@@ -1,12 +1,12 @@
 {
   "title": "Jobs | Vandotec",
-  "description": "Vacatures bij Vandotec: installatie- en onderhoudsrollen in tankstation, EV-laadinfra, carwash, reiniging, infra en waterprojecten.",
-  "hero_title": "Jobs",
+  "description": "Vacatures bij Vandotec: installatie- en onderhoudsrollen in tankstations, EV-laadinfrastructuur en infrastructuurwerken.",
+  "hero_title": "Jobs bij <em>Vandotec</em>",
   "hero_subtitle": "Versterk ons team. Vandotec is een groeiend familiebedrijf met vaste medewerkers, afwisselende projecten en korte lijnen.",
   "why_title": "Waarom bij Vandotec werken?",
   "why_paragraphs": [
-    "Bij Vandotec werk je in een familiebedrijf met korte lijnen, eigen ploegen en gevarieerde projecten. De ene dag werk je aan een nieuw tankstation, de volgende aan een laadinfraproject of een industri&euml;le reiniging. Geen dag is hetzelfde.",
-    "Wij hechten belang aan vakmanschap, veiligheid en teamwerk. Je krijgt verantwoordelijkheid en werkt met eigen materieel in een moderne omgeving."
+    "Bij Vandotec werkt u in een familiebedrijf met korte lijnen, eigen ploegen en gevarieerde projecten. De ene dag werkt u aan een nieuw tankstation, de volgende aan een laadinfraproject of een industrieel project. Geen dag is hetzelfde.",
+    "Wij hechten belang aan vakmanschap, veiligheid en teamwerk. U krijgt verantwoordelijkheid en werkt met eigen materieel in een moderne omgeving."
   ],
   "benefits_title": "Wat wij bieden",
   "benefits": [
@@ -24,14 +24,14 @@
       "label": "Open sollicitatie",
       "url": "/contact",
       "theme": "red",
-      "text": "Een project?",
-      "description": "Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject."
+      "text": "Iets voor u?",
+      "description": "Stuur een open sollicitatie via ons contactformulier."
     },
     {
       "label": "Bel nu",
       "url": "tel:+3257335251",
       "theme": "outline",
-      "text": "24/7 interventie nodig?",
+      "text": "Vragen over werken bij Vandotec?",
       "description": "Bel ons op +32 57 33 52 51."
     }
   ]

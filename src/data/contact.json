@@ -1,8 +1,8 @@
 {
   "title": "Contact | Vandotec",
-  "description": "Vraag een offerte aan, meld een interventie of stel uw vraag. Vandotec reageert binnen &eacute;&eacute;n werkdag.",
+  "description": "Vraag een offerte aan, meld een interventie of stel uw vraag. Vandotec reageert zo snel mogelijk.",
   "hero_title": "Contact",
-  "hero_subtitle": "Vraag een offerte aan, meld een interventie of stel uw vraag. Wij reageren binnen &eacute;&eacute;n werkdag.",
+  "hero_subtitle": "Vraag een offerte aan, meld een interventie of stel uw vraag. Wij reageren zo snel mogelijk.",
   "company": "Vandotec",
   "address_lines": [
     "Nijverheidsstraat 49",
@@ -37,28 +37,25 @@
   "form_message_required": true,
   "form_submit_label": "Verzenden",
   "form_subjects": [
-    { "value": "offerte", "label": "Offerte aanvragen" },
-    { "value": "interventie", "label": "Interventie / storing" },
-    { "value": "onderhoud", "label": "Onderhoudscontract" },
-    { "value": "sollicitatie", "label": "Open sollicitatie" },
-    { "value": "vraag", "label": "Algemene vraag" }
-  ],
-  "stats": [
     {
-      "number": "40+",
-      "label": "Jaar ervaring"
+      "value": "offerte",
+      "label": "Offerte aanvragen"
     },
     {
-      "number": "100+",
-      "label": "Projecten per jaar"
+      "value": "interventie",
+      "label": "Interventie / storing"
     },
     {
-      "number": "24/7",
-      "label": "Interventiedienst"
+      "value": "onderhoud",
+      "label": "Onderhoudscontract"
     },
     {
-      "number": "10+",
-      "label": "Vaste medewerkers"
+      "value": "sollicitatie",
+      "label": "Open sollicitatie"
+    },
+    {
+      "value": "vraag",
+      "label": "Algemene vraag"
     }
   ],
   "ctas": [

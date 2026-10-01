@@ -1,4 +1,6 @@
+# Let op: dit bestand werkt alleen op Netlify/Vercel-achtige hosts.
+# Op PHP-hosting (keuze A, bv. Combell) wordt het genegeerd — headers daar via host-config.
 /*
-  X-Frame-Options: ALLOWALL
-  Content-Security-Policy: frame-ancestors 'self' https://vandotec.netlify.app https://*.netlify.app;
+  X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff

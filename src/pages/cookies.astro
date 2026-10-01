@@ -2,10 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { siteName } from '../layouts/Layout.astro';
 ---
-<Layout>
-	<title slot="head">Cookieverklaring | {siteName}</title>
-	<meta slot="head" name="description" content="Cookieverklaring Vandotec. Deze website maakt gebruik van functionele cookies voor de website-werking. Geen tracking-cookies." />
-	<section class="page-hero">
+<Layout title={`Cookieverklaring | ${siteName}`} description="Cookieverklaring Vandotec. Deze website gebruikt uitsluitend functionele cookies. Geen tracking-cookies." path="/cookies">
+	<section class="page-hero page-hero-slim">
+		<div class="hero-mark" aria-hidden="true">COOKIES</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1>Cookieverklaring</h1>
@@ -16,16 +15,16 @@ import { siteName } from '../layouts/Layout.astro';
 	<section class="section">
 		<div class="container">
 			<div class="content-block">
-				<h3>Welke cookies?</h3>
-				<p>Vandotec gebruikt uitsluitend functionele cookies die noodzakelijk zijn voor de werking van de website. Den Bint verkeerde functies ontbroken: het openen van de mobiele navigatie en het onthoudnen van uw cookievoorkeuren.</p>
+				<h2>Welke cookies?</h2>
+				<p>Vandotec gebruikt uitsluitend functionele cookies die noodzakelijk zijn voor de werking van de website, zoals het openen van de mobiele navigatie en het onthouden van uw cookievoorkeur.</p>
 			</div>
 			<div class="content-block">
-				<h3>Geen tracking</h3>
-				<p>Deze website plaatst geen tracking-, marketing- of retargeting-cookies. Er wordt geen analytics-script geladen (zoals Google Analytics of Facebook Pixel). Bezoekcijfers worden eventueel via de host (Combell) anonim gemonitord.</p>
+				<h2>Geen tracking</h2>
+				<p>Deze website plaatst geen tracking-, marketing- of retargetingcookies. Er wordt geen analytics-script geladen (zoals Google Analytics of Facebook Pixel). Bezoekcijfers worden eventueel door de hostingprovider geanonimiseerd bijgehouden.</p>
 			</div>
-		 <div class="content-block">
-				<h3>Je keuze</h3>
-				<p>Door de website te blijven gebruiken ga je akkoord met de functionele cookies. Wil je cookies uitschakelen? De mobiele menu en bepaalde interacties werken dan mogelijk niet meer naadloos.</p>
+			<div class="content-block">
+				<h2>Uw keuze</h2>
+				<p>Door de website te gebruiken gaat u akkoord met de functionele cookies. Schakelt u cookies uit, dan werken het mobiele menu en bepaalde interacties mogelijk niet meer naar behoren.</p>
 			</div>
 		</div>
 	</section>

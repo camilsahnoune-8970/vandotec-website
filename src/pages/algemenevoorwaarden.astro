@@ -2,10 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { siteName } from '../layouts/Layout.astro';
 ---
-<Layout>
-	<title slot="head">Algemene voorwaarden | {siteName}</title>
-	<meta slot="head" name="description" content="Algemene voorwaarden Vandotec. Alle werkzaamheden vindt plaats volgens de gestelde offerte en de van toepassing zijnde normen." />
-	<section class="page-hero">
+<Layout title={`Algemene voorwaarden | ${siteName}`} description="Algemene voorwaarden Vandotec. Alle werkzaamheden vinden plaats volgens de gestelde offerte en de van toepassing zijnde normen." path="/algemenevoorwaarden">
+	<section class="page-hero page-hero-slim">
+		<div class="hero-mark" aria-hidden="true">VOORWAARDEN</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1>Algemene voorwaarden</h1>
@@ -16,16 +15,16 @@ import { siteName } from '../layouts/Layout.astro';
 	<section class="section">
 		<div class="container">
 			<div class="content-block">
-				<h3>Offerte & contract</h3>
-				<p>Alle offertes van Vandotec zijn vrijblijvend en geldig 30 dagen, tenzij anders vermeld. Een aanvatting vindt plaats na schriftelijke bevestiging door de opdrachtgever.</p>
+				<h2>Offerte &amp; contract</h2>
+				<p>Alle offertes van Vandotec zijn vrijblijvend en geldig 30 dagen, tenzij anders vermeld. Een opdracht komt tot stand na schriftelijke bevestiging door de opdrachtgever.</p>
 			</div>
 			<div class="content-block">
-				<h3>Levering & betaling</h3>
-		<p>De levering en de betalingscondities zijn het onderwerp van het projectspecifieke contract. Standaard geldt: betaling binnen 30 dagen na factuur, zonder aftrek.</p>
+				<h2>Levering &amp; betaling</h2>
+				<p>De levering en de betalingscondities zijn het onderwerp van het projectspecifieke contract. Standaard geldt: betaling binnen 30 dagen na factuur, zonder aftrek.</p>
 			</div>
 			<div class="content-block">
-				<h3>Geschillen</h3>
-				<p>Op deze algemene voorwaarden is Belgis recht van toepassing. Voor alle geschillen wordt uitsluitend de bevoege rechter in West-Vlaanderen geselecteerd.</p>
+				<h2>Geschillen</h2>
+				<p>Op deze algemene voorwaarden is het Belgische recht van toepassing. Voor alle geschillen is uitsluitend de bevoegde rechter in West-Vlaanderen aangewezen.</p>
 			</div>
 		</div>
 	</section>

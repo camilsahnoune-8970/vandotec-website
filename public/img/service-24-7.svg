@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none">
-  <circle cx="80" cy="55" r="45" stroke="#091950" stroke-width="1.5"/>
-  <circle cx="80" cy="55" r="35" stroke="#091950" stroke-width="1" stroke-dasharray="4 3"/>
-  <text x="80" y="52" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="28" font-weight="700" fill="#c2000b">24/7</text>
-  <text x="80" y="70" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="9" fill="#091950">INTERVENTIE</text>
-  <path d="M80 10 L80 4" stroke="#091950" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M80 106 L80 112" stroke="#091950" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M35 55 L28 55" stroke="#091950" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M125 55 L132 55" stroke="#091950" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M48 28 L42 22" stroke="#091950" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M112 28 L118 22" stroke="#091950" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M48 82 L42 88" stroke="#091950" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M112 82 L118 88" stroke="#091950" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="70" y1="55" x2="80" y2="55" stroke="#c2000b" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="80" y1="55" x2="85" y2="45" stroke="#c2000b" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="80" cy="55" r="45" stroke="#00298f" stroke-width="1.5"/>
+  <circle cx="80" cy="55" r="35" stroke="#00298f" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="80" y="52" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="28" font-weight="700" fill="#c30017">24/7</text>
+  <text x="80" y="70" text-anchor="middle" font-family="Open Sans,sans-serif" font-size="9" fill="#00298f">INTERVENTIE</text>
+  <path d="M80 10 L80 4" stroke="#00298f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M80 106 L80 112" stroke="#00298f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M35 55 L28 55" stroke="#00298f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M125 55 L132 55" stroke="#00298f" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M48 28 L42 22" stroke="#00298f" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M112 28 L118 22" stroke="#00298f" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M48 82 L42 88" stroke="#00298f" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M112 82 L118 88" stroke="#00298f" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="70" y1="55" x2="80" y2="55" stroke="#c30017" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="80" y1="55" x2="85" y2="45" stroke="#c30017" stroke-width="1.8" stroke-linecap="round"/>
 </svg>

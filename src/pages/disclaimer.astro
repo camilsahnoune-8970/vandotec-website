@@ -2,34 +2,33 @@
 import Layout from '../layouts/Layout.astro';
 import { siteName } from '../layouts/Layout.astro';
 ---
-<Layout>
-	<title slot="head">Disclaimer | {siteName}</title>
-	<meta slot="head" name="description" content="Disclaimer Vandotec. Alle informatie op deze website is op onze zorgvuldigste basis gegeven. Voor vragen: info@vandotec.be." />
-	<section class="page-hero">
+<Layout title={`Disclaimer | ${siteName}`} description="Disclaimer Vandotec. De informatie op deze website is met zorg samengesteld. Voor vragen: info@vandotec.be." path="/disclaimer">
+	<section class="page-hero page-hero-slim">
+		<div class="hero-mark" aria-hidden="true">DISCLAIMER</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1>Disclaimer</h1>
-				<p>Informatie op deze website is, zover als wettelijk toegestaan, op onze zorgvuldigste basis gegeven.</p>
+				<p>De informatie op deze website is met zorg samengesteld.</p>
 			</div>
 		</div>
 	</section>
 	<section class="section">
 		<div class="container">
 			<div class="content-block">
-				<h3>Inhoud</h3>
-				<p>De inhoud van deze website is opgesteld op basis van actuele inzichten en verantwoord kennis. Hoewel Vandotec zorgvuldigheidsvol de informatie verzamelt, kunt u van de inhoud geen uiteindelijke conclusies trekken zonder de beoordeling van een gekwalificeerde adviseur.</p>
+				<h2>Inhoud</h2>
+				<p>De inhoud van deze website is opgesteld op basis van actuele inzichten en vakkennis. Hoewel Vandotec de informatie zorgvuldig verzamelt, kunt u er geen rechten aan ontlenen zonder advies van een gekwalificeerd adviseur.</p>
 			</div>
 			<div class="content-block">
-				<h3>Technische specificaties</h3>
-				<p>Alle modellen, specificaties, afmetingen en capaciteiten zijn indicatief en kunnen zonder voorafgaande mededeling wijzigen. Een offerte is altijd vooraf schriftelijk en zonder verplichting.</p>
+				<h2>Technische specificaties</h2>
+				<p>Alle modellen, specificaties, afmetingen en capaciteiten zijn indicatief en kunnen zonder voorafgaande mededeling wijzigen. Een offerte is altijd schriftelijk, vooraf en vrijblijvend.</p>
 			</div>
 			<div class="content-block">
-				<h3>Aansprakelijkheid</h3>
-				<p>Vandotec is niet aansprakelijk voor indirecte schadoweringen, gevolgschade of gevolgen die voortvloeien uit het gebruik van deze website.</p>
+				<h2>Aansprakelijkheid</h2>
+				<p>Vandotec is niet aansprakelijk voor indirecte schade of gevolgschade die voortvloeit uit het gebruik van deze website.</p>
 			</div>
 			<div class="content-block">
-				<h3>Linken</h3>
-				<p>Deze website kan links naar externe websites bevatten. Vandotec heeft geen controle over de inhoud van deze externe links en aanvaardt geen verantwoordelijkheid voor de inhoud daarvan.</p>
+				<h2>Linken</h2>
+				<p>Deze website kan links naar externe websites bevatten. Vandotec heeft geen controle over de inhoud van deze externe websites en aanvaardt geen verantwoordelijkheid voor de inhoud daarvan.</p>
 			</div>
 		</div>
 	</section>

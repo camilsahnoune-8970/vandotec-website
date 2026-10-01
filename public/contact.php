@@ -1,8 +1,7 @@
-<script setup>
-// Minimal, validated contact-form handler — works on Combell (statische site + PHP)
-// No external dependencies, no DB. Uses PHP mail().
-</script>
 <?php
+// Minimal, validated contact-form handler — werkt alleen op PHP-hosting (bv. Combell).
+// Op puur statische hosting (GitHub Pages e.d.) draait PHP niet — zie tasks/hosting-keuze.md.
+// No external dependencies, no DB. Uses PHP mail().
 header('Content-Type: text/html; charset=utf-8');
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);

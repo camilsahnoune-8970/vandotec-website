@@ -1,39 +1,55 @@
 {
-  "title": "Vandotec",
-  "description": "Installatiebedrijf voor tankstations, EV-laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten.",
-  "hero_title": "Vandotec | tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten",
-  "hero_subtitle": "Vandotec installeert en onderhoudt in zes domeinen: tankstations, EV-laadinfrastructuur, carwashes, reinigingsystemen, infrastructuurwerken en waterprojecten. Van ontwerp tot oplevering, met 24/7 interventiedienst achteraf. Eigen vaste ploegen, geen onderaannemers.",
+  "title": "Vandotec | Tankstations, EV-laadinfrastructuur & infra",
+  "description": "Installatiebedrijf voor tankstations, EV-laadinfrastructuur en infrastructuurwerken.",
+  "hero_title": "Installaties die <em>blijven</em> draaien.",
+  "hero_subtitle": "Tankstations, EV-laadinfrastructuur en infrastructuurwerken — van ontwerp tot oplevering, met 24/7 interventie achteraf.",
   "about_title": "Over Vandotec",
   "about_paragraphs": [
-    "<strong>Vandotec</strong> is een installatiebedrijf gespecialiseerd in <strong>tankstation installaties</strong>, <strong>EV laadinstallaties</strong>, <strong>carwashes</strong>, <strong>reinigingsystemen</strong>, <strong>infrastructuurwerken</strong> en <strong>waterprojecten</strong>. Wij ontwerpen, bouwen en onderhouden installaties voor ondergrondse en bovengrondse toepassingen.",
-    "Service is een kernactiviteit: bij defecten aan tankstations, laadpalen, wasstraten of industri&euml;le installaties plannen wij meteen een interventie via onze <strong>24/7 interventiedienst</strong>. Daarnaast voeren wij preventief onderhoud en tank cleaning uit, ook in het kader van onderhoudscontracten.",
-    "Meer dan 40 jaar ervaring in de sector. Projecten worden uitgevoerd door eigen vaste ploegen, niet door onderaannemers."
+    "<strong>Vandotec</strong> is een installatiebedrijf gespecialiseerd in <strong>tankstation installaties</strong>, <strong>EV laadinstallaties</strong> en <strong>infrastructuurwerken</strong>. Wij ontwerpen, bouwen en onderhouden installaties voor ondergrondse en bovengrondse toepassingen.",
+    "Service is een kernactiviteit: bij defecten aan tankstations, laadpalen of industri&euml;le installaties plannen wij meteen een interventie via onze <strong>24/7 interventiedienst</strong>. Daarnaast voeren wij preventief onderhoud uit, ook in het kader van onderhoudscontracten.",
+    "Meer dan 45 jaar ervaring in de sector. Projecten worden uitgevoerd door eigen vaste ploegen, niet door onderaannemers."
   ],
   "about_link_label": "Meer over ons",
   "expertises_title": "Onze expertises",
-  "expertises_subtitle": "Wij ontwerpen, bouwen en onderhouden installaties in zes domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
+  "expertises_subtitle": "Wij ontwerpen, bouwen en onderhouden installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
   "expertises_cta_label": "Bekijk alle expertises",
   "services_title": "Service & interventie",
   "services_subtitle": "Onze interventiedienst staat 24/7 paraat voor storings- en defectmeldingen. Daarnaast voeren we preventief onderhoud en herstellingen uit, ook in het kader van onderhoudscontracten.",
   "services": [
     {
       "title": "24/7 interventiedienst",
-      "text": "Bij een defect plannen wij meteen een interventie in en sturen een eigen technicus ter plaatse. Uw installatie is zo snel mogelijk terug operationeel."
+      "text": "Bij een defect plannen wij meteen een interventie in en sturen een eigen technicus ter plaatse. Uw installatie is zo snel mogelijk terug operationeel.",
+      "img": "/img/srv-interventie.jpg",
+      "slug": "interventie",
+      "cta_label": "Bel bij defect",
+      "cta_url": "tel:+3257335251"
     },
     {
       "title": "Onderhoud & herstellingen",
-      "text": "Herstellingen aan tankstations, laadpalen, carwashes en industri&euml;le installaties, met eigen technici en uitgebreide stock onderdelen."
+      "text": "Herstellingen aan tankstations, laadpalen en industriële installaties, met eigen technici en uitgebreide stock onderdelen.",
+      "img": "/img/srv-onderhoud.jpg",
+      "slug": "onderhoud",
+      "cta_label": "Bekijk onderhoud",
+      "cta_url": "/service-onderhoud#onderhoud"
     },
     {
       "title": "Preventief onderhoud",
-      "text": "Jaarlijkse controle van uw installatie met meetrapport, detectie van slijtage en risico&rsquo;s, en prioritair interventie bij defecten."
+      "text": "Jaarlijkse controle van uw installatie met meetrapport, detectie van slijtage en risico&rsquo;s, en prioritaire interventie bij defecten.",
+      "img": "/img/srv-preventief.jpg",
+      "slug": "preventief",
+      "cta_label": "Bekijk preventief",
+      "cta_url": "/service-onderhoud#preventief"
     },
     {
-      "title": "Tank cleaning",
-      "text": "Gespecialiseerde reiniging van tanks, leidingen en aanverwante infrastructuur."
+      "title": "IJkingen",
+      "text": "Jaarlijkse ijking van meer dan 3.500 vulpistolen, met volledige dossieropvolging. ISO 17020-geaccrediteerd.",
+      "img": "/img/wrk-pompen.jpg",
+      "slug": "ijkingen",
+      "cta_label": "Bekijk ijkingen",
+      "cta_url": "/service-onderhoud#ijkingen"
     }
   ],
-  "process_title": "Project aanpak",
+  "process_title": "Aanpak",
   "process_subtitle": "Elk project doorloopt vijf vaste fasen, van uw eerste vraag tot oplevering en nazorg.",
   "process_items": [
     {
@@ -59,20 +75,20 @@
   ],
   "stats": [
     {
-      "number": "40+",
+      "number": "45+",
       "label": "Jaar ervaring"
     },
     {
-      "number": "100+",
-      "label": "Projecten per jaar"
+      "number": "6.000+",
+      "label": "Projecten"
     },
     {
-      "number": "24/7",
-      "label": "Interventiedienst"
+      "number": "3.500+",
+      "label": "IJkingen per jaar"
     },
     {
-      "number": "10+",
-      "label": "Vaste medewerkers"
+      "number": "5",
+      "label": "Landen actief"
     }
   ],
   "ctas": [
@@ -81,7 +97,7 @@
       "url": "/contact",
       "theme": "red",
       "text": "Een project?",
-      "description": "Vraag een offerte aan voor uw tankstation, laadinfra, carwash, reiniging, infra- of waterproject."
+      "description": "Vraag een offerte aan voor uw tankstation, laadinfra- of infraproject."
     },
     {
       "label": "Solliciteren",
@@ -91,5 +107,11 @@
       "description": "Bekijk onze openstaande vacatures en solliciteer direct."
     }
   ],
-  "process_step_numbers": [1, 2, 3, 4, 5]
+  "process_step_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
 }

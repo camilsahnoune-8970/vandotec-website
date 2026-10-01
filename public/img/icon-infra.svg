@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
-  <rect x="5" y="30" width="70" height="10" rx="2" stroke="#091950" stroke-width="1.5"/>
-  <line x1="40" y1="40" x2="40" y2="70" stroke="#091950" stroke-width="1.8"/>
-  <rect x="30" y="60" width="20" height="10" rx="1.5" stroke="#091950" stroke-width="1.5"/>
-  <line x1="10" y1="30" x2="10" y2="20" stroke="#091950" stroke-width="1.5"/>
-  <line x1="70" y1="30" x2="70" y2="20" stroke="#091950" stroke-width="1.5"/>
-  <line x1="10" y1="20" x2="70" y2="20" stroke="#091950" stroke-width="1.5"/>
-  <rect x="30" y="10" width="20" height="10" rx="2" stroke="#c2000b" stroke-width="1.5"/>
-  <line x1="36" y1="15" x2="44" y2="15" stroke="#c2000b" stroke-width="1.2"/>
-  <line x1="25" y1="40" x2="25" y2="55" stroke="#091950" stroke-width="1.2"/>
-  <line x1="55" y1="40" x2="55" y2="55" stroke="#091950" stroke-width="1.2"/>
-  <line x1="25" y1="55" x2="55" y2="55" stroke="#091950" stroke-width="1.2"/>
-  <line x1="25" y1="48" x2="55" y2="48" stroke="#091950" stroke-width="1"/>
-  <path d="M15 40 L20 45 L15 50" stroke="#2e58a6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  <path d="M65 40 L60 45 L65 50" stroke="#2e58a6" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-  <line x1="40" y1="10" x2="40" y2="4" stroke="#c2000b" stroke-width="1.5"/>
-  <path d="M36 6 L40 2 L44 6" stroke="#c2000b" stroke-width="1.2" fill="none"/>
+  <rect x="5" y="30" width="70" height="10" rx="2" stroke="#00298f" stroke-width="1.5"/>
+  <line x1="40" y1="40" x2="40" y2="70" stroke="#00298f" stroke-width="1.8"/>
+  <rect x="30" y="60" width="20" height="10" rx="1.5" stroke="#00298f" stroke-width="1.5"/>
+  <line x1="10" y1="30" x2="10" y2="20" stroke="#00298f" stroke-width="1.5"/>
+  <line x1="70" y1="30" x2="70" y2="20" stroke="#00298f" stroke-width="1.5"/>
+  <line x1="10" y1="20" x2="70" y2="20" stroke="#00298f" stroke-width="1.5"/>
+  <rect x="30" y="10" width="20" height="10" rx="2" stroke="#c30017" stroke-width="1.5"/>
+  <line x1="36" y1="15" x2="44" y2="15" stroke="#c30017" stroke-width="1.2"/>
+  <line x1="25" y1="40" x2="25" y2="55" stroke="#00298f" stroke-width="1.2"/>
+  <line x1="55" y1="40" x2="55" y2="55" stroke="#00298f" stroke-width="1.2"/>
+  <line x1="25" y1="55" x2="55" y2="55" stroke="#00298f" stroke-width="1.2"/>
+  <line x1="25" y1="48" x2="55" y2="48" stroke="#00298f" stroke-width="1"/>
+  <path d="M15 40 L20 45 L15 50" stroke="#2680ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M65 40 L60 45 L65 50" stroke="#2680ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <line x1="40" y1="10" x2="40" y2="4" stroke="#c30017" stroke-width="1.5"/>
+  <path d="M36 6 L40 2 L44 6" stroke="#c30017" stroke-width="1.2" fill="none"/>
 </svg>

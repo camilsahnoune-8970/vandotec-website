@@ -2,10 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { siteName } from '../layouts/Layout.astro';
 ---
-<Layout>
-	<title slot="head">Privacyverklaring | {siteName}</title>
-	<meta slot="head" name="description" content="Privacyverklaring Vandotec. Wij verwerken uw gegevens conform de AVG. Meer lezen over cookies en uw rechten." />
-	<section class="page-hero">
+<Layout title={`Privacyverklaring | ${siteName}`} description="Privacyverklaring Vandotec. Wij verwerken uw gegevens conform de AVG. Meer lezen over cookies en uw rechten." path="/privacy">
+	<section class="page-hero page-hero-slim">
+		<div class="hero-mark" aria-hidden="true">PRIVACY</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1>Privacyverklaring</h1>
@@ -16,24 +15,28 @@ import { siteName } from '../layouts/Layout.astro';
 	<section class="section">
 		<div class="container">
 			<div class="content-block">
-				<h3>Wat wij verzamelen</h3>
-				<p>Via ons contactformulier ontvangen wij uw naam, bedrijfsnaam, e-mailadres, telefoonnummer en uw vraag. Deze gegevens worden uitsluitend gebruikt om uw verzoek te behandelen en u zo spoedig mogelijk te benaderen.</p>
+				<h2>Wat wij verzamelen</h2>
+				<p>Via ons contactformulier ontvangen wij uw naam, e-mailadres, telefoonnummer en uw vraag. Deze gegevens worden uitsluitend gebruikt om uw verzoek te behandelen en u zo spoedig mogelijk te benaderen.</p>
 			</div>
 			<div class="content-block">
-				<h3>Hoe wij de gegevens gebruiken</h3>
-				<p>Uw gegevens worden niet verkocht, niet aan derden verstrekt voor marketingdoeleinden, en enkel bewaard zolang nodig om uw vraag te beantwoorden. Analytische cookies op deze website zijn anoniem en kunnen niet op individuen worden teruggespannen.</p>
+				<h2>Hoe wij de gegevens gebruiken</h2>
+				<p>Uw gegevens worden niet verkocht, niet aan derden verstrekt voor marketingdoeleinden, en enkel bewaard zolang nodig om uw vraag te beantwoorden. Analytische cookies op deze website zijn anoniem en kunnen niet tot individuen worden herleid.</p>
 			</div>
 			<div class="content-block">
-				<h3>Uw rechten</h3>
+				<h2>Uw rechten</h2>
 				<p>U heeft het recht om inzage te krijgen in uw gegevens, deze te laten corrigeren of verwijderen, en bezwaar te maken tegen de verwerking. Stuur een bericht naar <a href="mailto:info@vandotec.be">info@vandotec.be</a>.</p>
 			</div>
 			<div class="content-block">
-				<h3>Bezoekersstatistieken</h3>
+				<h2>Bezoekersstatistieken</h2>
 				<p>Deze website maakt geen gebruik van tracking-scripts van derden. Eventuele bezoekcijfers worden alleen intern en anoniem gemonitord om de site te verbeteren.</p>
 			</div>
 			<div class="content-block">
-				<h3>Contact</h3>
+				<h2>Contact</h2>
 				<p>Voor vragen over deze privacyverklaring neemt u contact op: <a href="mailto:info@vandotec.be">info@vandotec.be</a> of +32 57 33 52 51.</p>
+			</div>
+			<div class="content-block">
+				<h2>Beeldmateriaal</h2>
+				<p>Foto&rsquo;s: eigen archief van Vandotec. E&eacute;n beeld (EV-laadpalen) via Flickr onder CC BY-licentie: Grand Canyon NPS. Dit beeld wordt vervangen door een eigen foto zodra beschikbaar.</p>
 			</div>
 		</div>
 	</section>
