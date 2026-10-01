@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "skills": {
+    "brandkit": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/brandkit/SKILL.md",
+      "computedHash": "735007879f5110aeae1e981a53fe74a12afde70347f9773dacd50e4697a091bf"
+    },
+    "design-taste-frontend": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "899b84384f74f540ea5284d9b2e9234e050998b42eacc805410b518d4226c0b3"
+    },
+    "high-end-visual-design": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/soft-skill/SKILL.md",
+      "computedHash": "f730e4132775f13eea19e3dc39afc6bb453cfc0498872b127ad8f0d47cfd802d"
+    },
+    "image-to-code": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/image-to-code-skill/SKILL.md",
+      "computedHash": "3d2ac14d956fdafc5500d2108b90895e134d847f9f199e7f1d18bf1f814cf7c8"
+    },
+    "industrial-brutalist-ui": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/brutalist-skill/SKILL.md",
+      "computedHash": "e66e5a2a8b73cef79ab6546459c665e8b983645689c5f3772f7eed8b9f1e8e0e"
+    },
+    "landing-page-conversion-audit": {
+      "source": "autonnel/autonnel-skills",
+      "sourceType": "github",
+      "skillPath": "landing-page-conversion-audit/SKILL.md",
+      "computedHash": "2ad7ffa8e37354acab4d2d9c5f27a327ef6d24787392589f4969edf1162d6ea5"
+    },
+    "redesign-existing-projects": {
+      "source": "leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/redesign-skill/SKILL.md",
+      "computedHash": "47eced3e960a2c961d3cbee11fa1216264f589344b586a5cbd03967cd6b9c54b"
+    },
+    "ui-taste": {
+      "source": "uizze.sh",
+      "sourceUrl": "https://uizze.sh",
+      "sourceType": "well-known",
+      "computedHash": "9b73951ae54b7d1eb81e69bb2f47d1622b3813bbefbd6c0aaa36dfcf938f1f27",
+      "wellKnownDigest": "sha256:3b88468608bc7ceec66b8333fab1729590e7af62487fcdbdf79ef60ff626def7"
+    }
+  }
+}

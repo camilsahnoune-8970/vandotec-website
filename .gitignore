@@ -1,5 +1,7 @@
 # build output
 dist/
+# bronbeelden (originelen lokaal bij maker; alleen public/img/ wordt gecommit)
+Beelden/
 # generated types
 .astro/
 
