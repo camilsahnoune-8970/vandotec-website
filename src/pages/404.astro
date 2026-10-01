@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pagina niet gevonden | Vandotec" description="Deze pagina bestaat niet (meer). Ga terug naar de homepage of neem contact op." path="/404">
+	<section class="page-hero">
+		<div class="page-hero-photo" aria-hidden="true">
+			<img src="/img/hero-pmo.jpg" alt="" fetchpriority="high" />
+		</div>
+		<div class="hero-mark" aria-hidden="true">404</div>
+		<div class="container">
+			<div class="hero-inner">
+				<span class="eyebrow">404</span>
+				<h1>Pagina niet gevonden</h1>
+				<p>Deze pagina bestaat niet of is verplaatst. Ga terug naar de homepage of neem contact met ons op.</p>
+				<div class="hero-cta">
+					<a href="/" class="btn btn-red on-dark">Naar homepage</a>
+					<a href="/contact" class="btn btn-outline">Contact</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

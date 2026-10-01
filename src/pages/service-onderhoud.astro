@@ -7,13 +7,22 @@ const service = loadPageData(serviceJson, {
   title: 'Service & onderhoud | Vandotec',
   description: ''
 });
+
+// Foto's: eigen beelden (maker-map Beelden/, zie tasks/beelden.md).
+const serviceImages: Record<string, { src: string; alt: string }> = {
+  'interventie': { src: '/img/srv-interventie.jpg', alt: 'Vandotec-servicebus aan de pomp' },
+  'onderhoud': { src: '/img/srv-onderhoud.jpg', alt: 'Werf met leidingwerk en keerkamers' },
+  'preventief': { src: '/img/srv-preventief.jpg', alt: 'Leidingwerk in fundering op een werf' },
+};
 ---
 
-<Layout>
-	<title slot="head">{service.title}</title>
-	<meta slot="head" name="description" content={service.description} />
+<Layout title={service.title} description={service.description} path="/service-onderhoud">
 
 	<section class="page-hero">
+		<div class="page-hero-photo" aria-hidden="true">
+			<img src="/img/hero-service.jpg" alt="" />
+		</div>
+		<div class="hero-mark" aria-hidden="true">24/7</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1 set:html={service.hero_title || 'Service & onderhoud'} />
@@ -22,32 +31,150 @@ const service = loadPageData(serviceJson, {
 		</div>
 	</section>
 
-	{(service.sections || []).map((section, idx) => (
-		<section class={`section ${idx % 2 === 1 ? 'section-gray' : ''}`} id={section.slug}>
-			<div class="container">
-				<div class="content-grid">
-					<div>
-						<img src={section.image} alt="" class="section-header-img" aria-hidden="true" />
-						<h2 class="section-title">{section.title}</h2>
+	{(service.sections || []).length > 0 && (
+		<div class="container">
+			<nav class="hero-tabs" aria-label="Ga direct naar">
+				{(service.sections || []).map((section) => (
+					<a class="chip" href={`#${section.slug}`}>{section.title}</a>
+				))}
+			</nav>
+		</div>
+	)}
+
+	{(service.sections || []).map((section, idx) => {
+		const img = serviceImages[section.slug];
+		const num = String(idx + 1).padStart(2, '0');
+		return (
+		<>
+		{section.slug === 'ijkingen' && (
+			<section class="section" id={section.slug}>
+				<div class="container">
+					<div class="sec-num" aria-hidden="true">{num}</div>
+					<span class="eyebrow" style="color:var(--red)">Geaccrediteerd inspectieorganisme</span>
+					<h2 class="section-title" style="margin-top:1rem">{section.title}</h2>
+					{section.best_for && <p class="best-for" set:html={section.best_for} />}
+					<div class="content-grid" style="margin-top:1.5rem">
 						<div class="content-block">
 							<p set:html={section.intro} />
 							<p set:html={section.details} />
 						</div>
-					</div>
-					<div>
-						<div class="content-block card-outline">
-							<h3>{section.highlights_title}</h3>
-							<ul class="list-check">
+						<div>
+							<div class="stat-chips on-light" aria-label={section.highlights_title}>
+								<span class="chips-label">{section.highlights_title}:</span>
 								{(section.highlights || []).map((item) => (
-									<li set:html={item} />
+									<span class="stat-chip" set:html={item} />
 								))}
-							</ul>
+							</div>
 						</div>
 					</div>
 				</div>
+			</section>
+		)}
+		{section.slug === 'interventie' && (
+			<section class="urgency-band light" id={section.slug}>
+				<div class="container">
+					<div>
+						<div class="sec-num" aria-hidden="true">{num}</div>
+						<span class="eyebrow">Defect? Bel direct</span>
+						<h2 class="urgency-title"><a class="urgency-tel" href="tel:+3257335251">+32 57 33 52 51</a></h2>
+						{section.best_for && <p class="best-for" set:html={section.best_for} />}
+						<p set:html={section.intro} />
+						<p set:html={section.details} />
+						<ul class="urgency-list">
+							{(section.highlights || []).map((item) => (
+								<li set:html={item} />
+							))}
+						</ul>
+						<p style="margin-top:1.5rem"><a class="promise-link" href="/contact#contactform">Liever schrijven? Stuur een bericht &rarr;</a></p>
+					</div>
+					<div>
+						{img && (
+							<div class="media-slot ratio-4x3">
+								<img src={img.src} alt={img.alt} loading="lazy" />
+							</div>
+						)}
+					</div>
+				</div>
+			</section>
+		)}
+		{section.slug === 'onderhoud' && (
+			<section class="section" id={section.slug}>
+				<div class="container">
+					<div class="content-grid" style="align-items:center">
+						<div>
+							{img && (
+								<div class="media-slot ratio-4x3">
+									<img src={img.src} alt={img.alt} loading="lazy" />
+								</div>
+							)}
+						</div>
+						<div>
+							<div class="sec-num" aria-hidden="true">{num}</div>
+							<h2 class="section-title">{section.title}</h2>
+							{section.best_for && <p class="best-for" set:html={section.best_for} />}
+							<div class="content-block">
+								<p set:html={section.intro} />
+								<p set:html={section.details} />
+								<ul class="list-check" style="margin-top:1rem">
+									{(section.highlights || []).map((item) => (
+										<li set:html={item} />
+									))}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		)}
+		{section.slug === 'preventief' && (
+			<section class="section section-gray" id={section.slug}>
+				<div class="container">
+					<div class="content-grid" style="align-items:center">
+						<div>
+							<div class="sec-num" aria-hidden="true">{num}</div>
+							<h2 class="section-title">{section.title}</h2>
+							{section.best_for && <p class="best-for" set:html={section.best_for} />}
+							<div class="content-block">
+								<p set:html={section.intro} />
+								<p set:html={section.details} />
+							</div>
+						</div>
+						<div>
+							{img && (
+								<div class="media-slot ratio-4x3" style="margin-bottom:1.5rem">
+									<img src={img.src} alt={img.alt} loading="lazy" />
+								</div>
+							)}
+							<div class="content-block card-outline">
+								<h3>{section.highlights_title}</h3>
+								<ul class="list-check">
+									{(section.highlights || []).map((item) => (
+										<li set:html={item} />
+									))}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		)}
+		</>
+		);
+	})}
+
+	<section class="section" aria-label="Uitvoering in beeld">
+		<div class="container">
+			<div class="section-header" style="max-width:820px">
+				<h2 class="section-title">Uitvoering in beeld</h2>
 			</div>
-		</section>
-	))}
+			<div class="gal-rail" tabindex="0" role="region" aria-label="Uitvoering in beeld">
+				<button class="gal-zoom" type="button" data-full="/img/wrk-tankput.jpg" data-caption="Brandstoftank in een tankput"><img src="/img/wrk-tankput.jpg" alt="Brandstoftank in een tankput" loading="lazy" /><figcaption>Tankput</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/wrk-kamers.jpg" data-caption="Blauwe keerkamers met leidingwerk"><img src="/img/wrk-kamers.jpg" alt="Blauwe keerkamers met leidingwerk op een werf" loading="lazy" /><figcaption>Keerkamers</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/wrk-service.jpg" data-caption="Technieker aan Texaco-brandstofpompen"><img src="/img/wrk-service.jpg" alt="Technieker aan Texaco-brandstofpompen met Vandotec-busje" loading="lazy" /><figcaption>Service ter plaatse</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/wrk-pompen.jpg" data-caption="Technieker aan brandstofpompen"><img src="/img/wrk-pompen.jpg" alt="Technieker aan brandstofpompen met Vandotec-busje" loading="lazy" /><figcaption>Aan de pomp</figcaption></button>
+			</div>
+		</div>
+	</section>
 
 	{(service.ctas || []).length > 0 && (
 		<section class="connect-grid">

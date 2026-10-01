@@ -1,0 +1,18 @@
+# Let op: ALLEEN voor staging (preview.vandotec.be). NOOIT mee deployen naar www.
+
+# 1. Zoekmachines buiten houden (laag 1)
+Header always set X-Robots-Tag "noindex, nofollow"
+
+# 2. Basis-authenticatie (laag 3) — gebruikersnaam/wachtwoord voor bezoekers
+#    Wachtwoord-hash genereren (lokaal, nooit delen in chat):
+#      openssl passwd -apr1 'JOUW-WACHTWOORD-HIER'
+#    Plak het resultaat in .htpasswd als:  vandotecpreview:HASH-HIER
+AuthType Basic
+AuthName "Preview Vandotec (besloten)"
+AuthUserFile /pad/naar/preview.vandotec.be/.htpasswd
+Require valid-user
+
+# 3. PHP gewoon laten werken (contact.php + ?sent=1-redirect)
+<Files "contact.php">
+  Require valid-user
+</Files>

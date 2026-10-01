@@ -7,13 +7,29 @@ const expertises = loadPageData(expertisesJson, {
   title: 'Expertises | Vandotec',
   description: ''
 });
+
+/* Chips gedestilleerd uit bestaande body-teksten. */
+const sectionChips: Record<string, string[]> = {
+  'tankstations': ['Brandstoftanks', 'Pompeilanden', 'Leidingwerk', 'Bebakening', 'Lekdetectie', 'Bodemsanering'],
+  'ev-laadinstallaties': ['AC- en DC-laadpalen', 'Bekabeling', 'Verdeelkasten', 'Laadbeheersystemen', 'Netbeheerder-aanvragen'],
+  'infrastructuurwerken': ['Grondverzet', 'Riolering', 'Wegenis', 'Betonwerken', 'HS/MS tot 36 kV'],
+};
+
+// Eigen beelden (maker-map Beelden/, zie tasks/beelden.md); alleen EV is nog stock tot de Powerland-laderfoto er is.
+const sectionImages: Record<string, { src: string; alt: string }> = {
+  'tankstations': { src: '/img/exp-tankstations.jpg', alt: 'Tankstation met groene luifel en Vandotec-servicebus' },
+  'ev-laadinstallaties': { src: '/img/exp-ev.jpg', alt: 'Elektrische auto aan een snellader' },
+  'infrastructuurwerken': { src: '/img/exp-infrastructuur.jpg', alt: 'Grondwerk met leidingen en kabels op een werf' },
+};
 ---
 
-<Layout>
-	<title slot="head">{expertises.title}</title>
-	<meta slot="head" name="description" content={expertises.description} />
+<Layout title={expertises.title} description={expertises.description} path="/expertises">
 
 	<section class="page-hero">
+		<div class="page-hero-photo" aria-hidden="true">
+			<img src="/img/hero-expertises.jpg" alt="" />
+		</div>
+		<div class="hero-mark" aria-hidden="true">DOMEINEN</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1 set:html={expertises.hero_title || 'Onze expertises'} />
@@ -22,20 +38,56 @@ const expertises = loadPageData(expertisesJson, {
 		</div>
 	</section>
 
-	{(expertises.sections || []).map((section) => (
-		<section class={`section ${section.idx % 2 === 1 ? 'section-gray' : ''}`} id={section.slug}>
-			<div class="container">
-				<div class="content-grid">
-					<div class="expertise-section-left">
-						<img src={section.icon} alt="" class="expertise-header-icon" aria-hidden="true" />
+	<section class="section" style="padding-bottom:0">
+		<div class="container">
+			<div class="teaser-grid">
+				{(expertises.sections || []).map((section) => (
+					<article class="teaser-card">
+						{sectionImages[section.slug] && (
+							<img src={sectionImages[section.slug].src} alt={sectionImages[section.slug].alt} loading="lazy" />
+						)}
+						<div class="teaser-body">
+							<h3><a href={`#${section.slug}`}>{section.title}</a></h3>
+							<details>
+								<summary>In het kort</summary>
+								<p class="teaser-text" set:html={section.summary} />
+								<a class="teaser-link" href={`#${section.slug}`}>Lees meer &rarr;</a>
+							</details>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	{(expertises.sections || []).map((section, idx) => {
+		const img = sectionImages[section.slug];
+		const chips = sectionChips[section.slug] || [];
+		const num = String(idx + 1).padStart(2, '0');
+		const pattern = idx % 3;
+		return (
+		<>
+		{pattern === 0 && (
+			<section class="section" id={section.slug}>
+				<div class="container">
+					{img && (
+						<div class="media-slot ratio-16x9" style="margin-bottom:2.5rem">
+							<img src={img.src} alt={img.alt} loading="lazy" />
+						</div>
+					)}
+					<div class="section-header" style="max-width:820px">
+						<span class="eyebrow" style="color:var(--red)">Expertise {num}</span>
 						<h2 class="section-title">{section.title}</h2>
+					</div>
+					{chips.length > 0 && (
+						<div class="chips" aria-label="Omvat"><span class="chips-label">Omvat:</span>{chips.map((chip) => (<span class="chip">{chip}</span>))}</div>
+					)}
+					<div class="content-grid">
 						<div class="content-block">
 							{(section.body || []).map((paragraph) => (
 								<p set:html={paragraph} />
 							))}
 						</div>
-					</div>
-					<div>
 						<div class="content-block">
 							{section.approach_title && <h3>{section.approach_title}</h3>}
 							{(section.approach || []).map((paragraph) => (
@@ -43,10 +95,162 @@ const expertises = loadPageData(expertisesJson, {
 							))}
 						</div>
 					</div>
+					{(section.gallery || []).length > 0 && (
+						<div class="gal-rail" tabindex="0" style="margin-top:2.5rem" role="region" aria-label={`Galerij ${section.title}`}>
+							{section.gallery.map((photo) => (
+								<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt} aria-label={`Vergroot foto: ${photo.alt}`}>
+									<img src={photo.src} alt={photo.alt} loading="lazy" />
+									<figcaption>{photo.alt}</figcaption>
+								</button>
+							))}
+						</div>
+					)}
+				</div>
+			</section>
+		)}
+		{section.slug === 'tankstations' && (
+		<figure class="moment-band" aria-label="Technieker aan het werk aan brandstofpompen">
+			<img src="/img/wrk-pompen.jpg" alt="Technieker aan brandstofpompen met Vandotec-busje" loading="lazy" />
+			<figcaption class="moment-caption"><div class="container"><strong>Eigen techniekers, eigen materieel</strong><span>Tankstations — uitvoering</span></div></figcaption>
+		</figure>
+		)}
+		{pattern === 1 && (
+			<section class="section section-dark" id={section.slug}>
+				<div class="container">
+					<div class="content-grid">
+						<div>
+							{img && (
+								<div class="media-slot ratio-16x9">
+									<img src={img.src} alt={img.alt} loading="lazy" />
+								</div>
+							)}
+						</div>
+						<div>
+							<span class="eyebrow">Expertise {num}</span>
+							<h2 class="section-title light">{section.title}</h2>
+							{chips.length > 0 && (
+								<div class="chips" aria-label="Omvat"><span class="chips-label">Omvat:</span>{chips.map((chip) => (<span class="chip">{chip}</span>))}</div>
+							)}
+							<div class="content-block">
+								{(section.body || []).map((paragraph) => (
+									<p set:html={paragraph} />
+								))}
+								{section.approach_title && <h3 style="margin-top:1.5rem">{section.approach_title}</h3>}
+								{(section.approach || []).map((paragraph) => (
+									<p set:html={paragraph} />
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		)}
+		{pattern === 2 && (
+			<section class="section section-gray" id={section.slug}>
+				<div class="container">
+					<div class="content-grid">
+						<div>
+							<div class="exp-num" aria-hidden="true">{num}</div>
+							<h2 class="section-title">{section.title}</h2>
+							{chips.length > 0 && (
+								<div class="chips" aria-label="Omvat"><span class="chips-label">Omvat:</span>{chips.map((chip) => (<span class="chip">{chip}</span>))}</div>
+							)}
+							<div class="content-block">
+								{(section.body || []).map((paragraph) => (
+									<p set:html={paragraph} />
+								))}
+								{section.approach_title && <h3 style="margin-top:1.5rem">{section.approach_title}</h3>}
+								{(section.approach || []).map((paragraph) => (
+									<p set:html={paragraph} />
+								))}
+							</div>
+						</div>
+						<div>
+							{img && (
+								<div class="media-slot ratio-4x3">
+									<img src={img.src} alt={img.alt} loading="lazy" />
+								</div>
+							)}
+						</div>
+					</div>
+				</div>
+			</section>
+		)}
+		{section.slug === 'infrastructuurwerken' && (
+		<figure class="moment-band" aria-label="Grondwerk met keerkamers en leidingen">
+			<img src="/img/wrk-kamers.jpg" alt="Blauwe keerkamers met leidingwerk op een werf" loading="lazy" />
+			<figcaption class="moment-caption"><div class="container"><strong>Van grondwerk tot leidingwerk</strong><span>Infrastructuurwerken — uitvoering</span></div></figcaption>
+		</figure>
+		)}
+		</>
+		);
+	})}
+
+	{expertises.references_title && (expertises.references || []).length > 0 && (
+	<section class="section" id="referenties">
+		<div class="container">
+			<div class="section-header" style="max-width:820px">
+				<span class="eyebrow" style="color:var(--red)">Realisaties</span>
+				<h2 class="section-title">{expertises.references_title}</h2>
+				{expertises.references_intro && <p class="section-sub" set:html={expertises.references_intro} />}
+			</div>
+			<div class="ref-filter" role="group" aria-label="Filter referenties op domein">
+				<button class="ref-pill is-active" type="button" data-filter="all" aria-pressed="true">Alle</button>
+				<button class="ref-pill" type="button" data-filter="tankstations" aria-pressed="false">Tankstations</button>
+				<button class="ref-pill" type="button" data-filter="ev-laadinstallaties" aria-pressed="false">EV-laadinfrastructuur</button>
+				<button class="ref-pill" type="button" data-filter="infrastructuurwerken" aria-pressed="false">Infrastructuurwerken</button>
+			</div>
+			<div class="ref-grid">
+				{(expertises.references || []).map((ref, idx) => {
+					const parts = String(ref.name || '').split(',');
+					const loc = parts.length > 1 ? parts.slice(1).join(',').trim() : '';
+					const client = parts.length > 1 ? parts[0].trim() : String(ref.name || '');
+					const catLabel = ref.cat === 'ev-laadinstallaties' ? 'EV-laadinfrastructuur' : ref.cat === 'infrastructuurwerken' ? 'Infrastructuurwerken' : 'Tankstations';
+					return (
+				<article class="ref-card" data-cat={ref.cat || 'tankstations'}>
+					{ref.img && <img src={ref.img} alt={ref.alt || ref.name} loading="lazy" />}
+					<div class="ref-meta"><span class="ref-chip">{catLabel}</span>{loc && <span class="ref-loc">{loc}</span>}</div>
+					<h3>{client}</h3>
+					<p set:html={ref.text} />
+					<button class="ref-more" type="button" data-idx={idx} data-client={client} data-loc={loc} data-cat={catLabel} data-text={ref.text} data-img={ref.img || ''} data-alt={ref.alt || ref.name}>Lees meer &rarr;</button>
+				</article>
+					);
+				})}
+			</div>
+			<p class="ref-empty" hidden>Geen referenties in dit domein.</p>
+		</div>
+		<dialog class="ref-modal" id="refModal" aria-labelledby="refModalTitle">
+			<div class="ref-modal-card">
+				<img id="refModalImg" src="" alt="" />
+				<div class="ref-modal-body">
+					<div class="ref-meta"><span class="ref-chip" id="refModalCat"></span><span class="ref-loc" id="refModalLoc"></span></div>
+					<h3 id="refModalTitle"></h3>
+					<p id="refModalText"></p>
+					<div class="ref-modal-gal" id="refModalGal"></div>
+					<div class="ref-modal-cta">
+						<a href="/contact" class="btn btn-red">Dit project bespreken</a>
+						<button class="btn btn-navy" id="refModalClose" type="button">Sluiten</button>
+					</div>
 				</div>
 			</div>
+		</dialog>
+		<script type="application/json" id="refGalleries">{JSON.stringify(Object.fromEntries((expertises.references || []).map((r, i) => [i, r.gallery || []])))}</script>
+	</section>
+	)}
+
+	{expertises.audiences && (
+		<section class="cross-band" aria-label={expertises.audiences_title || 'Doelgroepen'}>
+			<div class="container">
+				<div>
+					<h2>{expertises.audiences_title || 'Voor wie wij werken'}</h2>
+					<p set:html={expertises.audiences} />
+				</div>
+					<div class="cross-band-cta">
+						<a href="/contact" class="btn btn-red">Neem contact op</a>
+					</div>
+			</div>
 		</section>
-	))}
+	)}
 
 	{(expertises.stats || []).length > 0 && (
 		<div class="stats-bar">
@@ -74,4 +278,66 @@ const expertises = loadPageData(expertisesJson, {
 			))}
 		</section>
 	)}
+	<script>
+		(function(){
+			document.body.classList.add('js');
+			// Filter pills
+			var pills = Array.prototype.slice.call(document.querySelectorAll('.ref-pill'));
+			var cards = Array.prototype.slice.call(document.querySelectorAll('.ref-grid .ref-card'));
+			var empty = document.querySelector('.ref-empty');
+			pills.forEach(function(pill){
+				pill.addEventListener('click', function(){
+					pills.forEach(function(p){ p.classList.remove('is-active'); p.setAttribute('aria-pressed', 'false'); });
+					pill.classList.add('is-active');
+					pill.setAttribute('aria-pressed', 'true');
+					var f = pill.getAttribute('data-filter');
+					var shown = 0;
+					cards.forEach(function(card){
+						var show = f === 'all' || card.getAttribute('data-cat') === f;
+						card.hidden = !show;
+						if(show) shown++;
+					});
+					if(empty) empty.hidden = shown > 0;
+				});
+			});
+			// Detail modal (native dialog)
+			var dialog = document.getElementById('refModal');
+			var galData = {};
+			try { galData = JSON.parse(document.getElementById('refGalleries').textContent || '{}'); } catch(e) {}
+			var lastFocus = null;
+			function openModal(btn){
+				if(!dialog || typeof dialog.showModal !== 'function') return;
+				document.getElementById('refModalCat').textContent = btn.getAttribute('data-cat') || '';
+				document.getElementById('refModalLoc').textContent = btn.getAttribute('data-loc') || '';
+				document.getElementById('refModalTitle').textContent = btn.getAttribute('data-client') || '';
+				document.getElementById('refModalText').textContent = btn.getAttribute('data-text') || '';
+				var img = document.getElementById('refModalImg');
+				img.src = btn.getAttribute('data-img') || '';
+				img.alt = btn.getAttribute('data-alt') || '';
+				var gal = document.getElementById('refModalGal');
+				gal.innerHTML = '';
+				var photos = galData[btn.getAttribute('data-idx')] || [];
+				photos.forEach(function(ph){
+					var im = document.createElement('img');
+					im.src = ph.src; im.alt = ph.alt || ''; im.loading = 'lazy';
+					gal.appendChild(im);
+				});
+				gal.hidden = photos.length === 0;
+				lastFocus = document.activeElement;
+				dialog.showModal();
+				document.getElementById('refModalClose').focus();
+			}
+			function closeModal(){
+				if(!dialog) return;
+				dialog.close();
+				if(lastFocus && lastFocus.focus) lastFocus.focus();
+			}
+			document.querySelectorAll('.ref-more').forEach(function(btn){
+				btn.addEventListener('click', function(){ openModal(btn); });
+			});
+			var closeBtn = document.getElementById('refModalClose');
+			if(closeBtn) closeBtn.addEventListener('click', closeModal);
+			if(dialog){ dialog.addEventListener('click', function(e){ if(e.target === dialog) closeModal(); }); dialog.addEventListener('cancel', function(e){ e.preventDefault(); closeModal(); }); }
+		})();
+	</script>
 </Layout>

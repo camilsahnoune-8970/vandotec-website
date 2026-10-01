@@ -9,11 +9,13 @@ const jobs = loadPageData(jobsJson, {
 });
 ---
 
-<Layout>
-	<title slot="head">{jobs.title}</title>
-	<meta slot="head" name="description" content={jobs.description} />
+<Layout title={jobs.title} description={jobs.description} path="/jobs">
 
 	<section class="page-hero">
+		<div class="page-hero-photo" aria-hidden="true">
+			<img src="/img/jobs-team.jpg" alt="" />
+		</div>
+		<div class="hero-mark" aria-hidden="true">TEAM</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1 set:html={jobs.hero_title || 'Jobs'} />
@@ -21,6 +23,11 @@ const jobs = loadPageData(jobsJson, {
 			</div>
 		</div>
 	</section>
+
+	<figure class="moment-band" aria-label="Vandotec-servicebus aan de pomp">
+		<img src="/img/srv-interventie.jpg" alt="Vandotec-servicebus aan de pomp" loading="lazy" />
+		<figcaption class="moment-caption"><div class="container"><strong>Eigen ploegen op elke werf</strong><span>Werken bij Vandotec</span></div></figcaption>
+	</figure>
 
 	<section class="section">
 		<div class="container">
@@ -51,9 +58,6 @@ const jobs = loadPageData(jobsJson, {
 		<div class="container">
 			<h2 class="section-title">{jobs.open_roles_title || 'Openstaande vacatures'}</h2>
 			<p style="margin-bottom:2rem;max-width:600px" set:html={jobs.open_roles_text || ''} />
-			{(jobs.ctas || []).map((cta) => (
-				<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
-			))}
 			{jobs.open_roles_cta_label && (
 				<p style="margin-top:1rem">
 					<a href="/contact" class="btn btn-red">{jobs.open_roles_cta_label}</a>

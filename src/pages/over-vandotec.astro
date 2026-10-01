@@ -9,11 +9,13 @@ const over = loadPageData(overJson, {
 });
 ---
 
-<Layout>
-	<title slot="head">{over.title}</title>
-	<meta slot="head" name="description" content={over.description} />
+<Layout title={over.title} description={over.description} path="/over-vandotec">
 
 	<section class="page-hero">
+		<div class="page-hero-photo" aria-hidden="true">
+			<img src="/img/hero-over.jpg" alt="" />
+		</div>
+		<div class="hero-mark" aria-hidden="true">1978</div>
 		<div class="container">
 			<div class="hero-inner">
 				<h1 set:html={over.hero_title || 'Over Vandotec'} />
@@ -34,7 +36,9 @@ const over = loadPageData(overJson, {
 					</div>
 				</div>
 				<div>
-					<img src="/img/team-workshop.svg" alt="" class="about-illustration" aria-hidden="true" />
+					<div class="media-slot ratio-4x3" style="margin-bottom:1.5rem">
+						<img src="/img/over-ons.jpg" alt="Servicewagens van Group Vandotec" loading="lazy" />
+					</div>
 					{over.stats_title && (over.stats || []).length > 0 && (
 						<div class="content-block card-outline" style="margin-top:1.5rem">
 							<h3>{over.stats_title}</h3>
@@ -45,6 +49,92 @@ const over = loadPageData(overJson, {
 							</ul>
 						</div>
 					)}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-label="Bedrijf in beeld" style="padding-top:0">
+		<div class="container">
+			<div class="gal-rail" tabindex="0" role="region" aria-label="Bedrijf in beeld">
+				<button class="gal-zoom" type="button" data-full="/img/bedrijf-1.jpg" data-caption="Esso-tankstation met Vandotec-busje"><img src="/img/bedrijf-1.jpg" alt="Esso-tankstation met Vandotec-busje" loading="lazy" /><figcaption>Esso met busje</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/bedrijf-2.jpg" data-caption="Ondergrondse tankput met blauwe tanks"><img src="/img/bedrijf-2.jpg" alt="Ondergrondse tankput met blauwe tanks" loading="lazy" /><figcaption>Tankput</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/bedrijf-3.jpg" data-caption="Tanktransport met kraan"><img src="/img/bedrijf-3.jpg" alt="Tanktransport met kraan" loading="lazy" /><figcaption>Kraantransport</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/bedrijf-4.jpg" data-caption="Vandotec-busje bij laadpaal"><img src="/img/bedrijf-4.jpg" alt="Vandotec-busje bij laadpaal en Porsche" loading="lazy" /><figcaption>Busje bij laadpaal</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/wrk-tankput.jpg" data-caption="Brandstoftank in een tankput"><img src="/img/wrk-tankput.jpg" alt="Brandstoftank in een tankput" loading="lazy" /><figcaption>Tankplaatsing</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/wrk-sleuf.jpg" data-caption="Tank in een sleuf met leidingwerk"><img src="/img/wrk-sleuf.jpg" alt="Tank in een sleuf met leidingwerk" loading="lazy" /><figcaption>Sleufwerk</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/wrk-werf.jpg" data-caption="Leidingwerk op een werf in opbouw"><img src="/img/wrk-werf.jpg" alt="Leidingwerk op een werf in opbouw" loading="lazy" /><figcaption>Leidingwerk</figcaption></button>
+				<button class="gal-zoom" type="button" data-full="/img/wrk-kamers.jpg" data-caption="Blauwe keerkamers met leidingwerk"><img src="/img/wrk-kamers.jpg" alt="Blauwe keerkamers met leidingwerk op een werf" loading="lazy" /><figcaption>Keerkamers</figcaption></button>
+			</div>
+		</div>
+	</section>
+
+	<section class="building-full" aria-label="Nieuwbouw Group Vandotec en Powerland in Poperinge">
+		<img src="/img/gebouw-poperinge.jpg" alt="Nieuwbouw Group Vandotec en Powerland in Poperinge" loading="lazy" />
+	</section>
+
+	{over.powerhub_title && (
+		<section class="section" style="padding-top:3rem;padding-bottom:0">
+			<div class="container" style="max-width:820px">
+				<span class="eyebrow" style="color:var(--red)">Powerhub</span>
+				<h2 class="section-title">{over.powerhub_title}</h2>
+				<div class="content-block">
+					<p set:html={over.powerhub_text} />
+				</div>
+			</div>
+		</section>
+	)}
+
+	{over.history_title && (over.history || []).length > 0 && (
+		<section class="section">
+			<div class="container" style="max-width:820px">
+				<span class="eyebrow" style="color:var(--red)">Geschiedenis</span>
+				<h2 class="section-title">{over.history_title}</h2>
+				{over.history_intro && <p class="section-sub" style="margin-bottom:2rem" set:html={over.history_intro} />}
+			</div>
+			<div class="container container-wide">
+				<div class="tl-rail" role="region" aria-label={over.history_title}>
+					{over.history.map((item) => (
+						<div class="tl-station">
+							<div class="tl-year" aria-hidden="true">{item.year}</div>
+							<p set:html={item.text} />
+						</div>
+					))}
+				</div>
+				<div class="container" style="max-width:820px">
+					<div class="rail-nav rail-nav-light">
+						<button class="tl-prev" type="button" aria-label="Eerdere jaren">&#8592;</button>
+						<button class="tl-next" type="button" aria-label="Latere jaren">&#8594;</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	)}
+
+	<section class="facts-band" aria-label="Kernfeiten Vandotec">
+		<div class="container">
+			<ul>
+				<li><div><strong>Sinds 1978</strong><span>Actief in Poperinge</span></div></li>
+				<li><div><strong>Eigen ploegen</strong><span>Geen onderaannemers</span></div></li>
+				<li><div><strong>24/7</strong><span>Interventiedienst</span></div></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="section" aria-label="VCA-certificering">
+		<div class="container">
+			<div class="content-grid" style="align-items:center">
+				<div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap">
+					<img src="/img/vca-officieel.png" alt="Officieel VCA-logo" class="vca-logo-lg" loading="lazy" />
+					<img src="/img/belac-logo.jpg" alt="BELAC-accreditatie" class="vca-logo-lg" loading="lazy" />
+				</div>
+				<div>
+					<span class="eyebrow" style="color:var(--red)">Certificering</span>
+					<h2 class="section-title">VCA gecertificeerd</h2>
+					<div class="content-block">
+						<p>VCA staat voor Veiligheid, Gezondheid en Milieu Checklist Aannemers. Het certificaat bewijst dat onze ploegen veilig en gezond werken — op elke werf, bij elke opdrachtgever.</p>
+						<p>Geldig voor onze tankstation- en laadinfrastructuurprojecten — werkzaamheden waar veel opdrachtgevers certificatie verplicht stellen. Vandotec is bovendien ISO 17020-geaccrediteerd als inspectieorganisme en erkend in klasse 6/P2.</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -65,6 +155,22 @@ const over = loadPageData(overJson, {
 			</div>
 		</section>
 	)}
+
+	{/* Quote uit publiek Voka-interview (Ondernemers, januari 2026). */}
+	<section class="quote-break">
+		<div class="container">
+			<div class="quote-block">
+				<blockquote>&ldquo;We voeren elk project volledig in eigen beheer uit met een eigen installatieteam en een serviceteam dat ook voor de nazorg instaat.&rdquo;</blockquote>
+				<p class="quote-source">Benoit Goesaert, zaakvoerder &mdash; Voka Ondernemers, januari 2026</p>
+				<div class="quote-article">
+					<span class="eyebrow">In de pers</span>
+					<strong>Vandotec installeert duurzame laadoplossingen</strong>
+					<p>&ldquo;Deze markt is continu in evolutie&rdquo; — coververhaal met Benoit Goesaert over laadpalen, batterijsystemen en slimme sturingen.</p>
+					<a class="btn btn-red" href="https://www.voka.be/west-vlaanderen/nieuws/ondernemers-2026-1/vandotec-installeert-duurzame-laadoplossingen-deze-markt-continu-evolutie" target="_blank" rel="noopener">Lees het interview</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	{over.process_title && (
 		<section class="section">
@@ -88,7 +194,7 @@ const over = loadPageData(overJson, {
 						</div>
 					</div>
 					<div>
-						{(over.ctas || []).map((cta) => (
+						{(over.ctas || []).slice(0, 1).map((cta) => (
 							<div class="content-block card-outline">
 								<h3 set:html={cta.text} />
 								<p set:html={cta.description} />
@@ -114,6 +220,25 @@ const over = loadPageData(overJson, {
 		</div>
 	</div>
 
+	{over.team_title && (over.team || []).length > 0 && (
+		<section class="section section-gray">
+			<div class="container">
+				<div class="section-header text-center" style="margin-left:auto;margin-right:auto">
+					<h2 class="section-title centered">{over.team_title}</h2>
+				</div>
+				<div class="team-grid">
+					{over.team.map((member) => (
+						<div class="team-card">
+							{member.photo && <img src={member.photo} alt={`Portret van ${member.name}`} loading="lazy" />}
+							<h3>{member.name}</h3>
+							<p><strong>{member.role}</strong><br />{member.focus}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	)}
+
 	{(over.ctas || []).length > 0 && (
 		<section class="connect-grid">
 			{over.ctas.map((cta) => (
@@ -125,4 +250,17 @@ const over = loadPageData(overJson, {
 			))}
 		</section>
 	)}
+	<script>
+		(function(){
+			var rail = document.querySelector('.tl-rail');
+			if(!rail) return;
+			var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			var behavior = reduce ? 'auto' : 'smooth';
+			function step(){ var s = rail.querySelector('.tl-station'); return s ? s.offsetWidth + 28 : 320; }
+			var prev = document.querySelector('.tl-prev');
+			var next = document.querySelector('.tl-next');
+			if(prev) prev.addEventListener('click', function(){ rail.scrollBy({ left: -step(), behavior: behavior }); });
+			if(next) next.addEventListener('click', function(){ rail.scrollBy({ left: step(), behavior: behavior }); });
+		})();
+	</script>
 </Layout>

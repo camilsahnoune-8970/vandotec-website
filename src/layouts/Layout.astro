@@ -1,32 +1,46 @@
 ---
 export const siteName = 'Vandotec';
-export const siteDescription = 'Vandotec installeert en onderhoudt tankstationinstallaties, EV-laadinfrastructuur, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten. Meer dan 40 jaar ervaring in installatie en 24/7 onderhoud.';
+export const siteDescription = 'Vandotec installeert en onderhoudt tankstationinstallaties, EV-laadinfrastructuur en infrastructuurwerken. Meer dan 45 jaar ervaring en een 24/7 interventiedienst.';
+export interface Props { title?: string; description?: string; path?: string; }
+const { title, description, path } = Astro.props as Props;
+const resolvedTitle = title ?? siteName;
+const resolvedDescription = description ?? siteDescription;
+const siteUrl = 'https://www.vandotec.be';
+const canonicalUrl = `${siteUrl}${path ?? Astro.url.pathname}`;
 ---
 
 <html lang="nl">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#091950" />
-		<meta name="msapplication-TileColor" content="#091950" />
+		<meta name="theme-color" content="#00298f" />
+		<meta name="msapplication-TileColor" content="#00298f" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+		<link rel="icon" type="image/png" href="/favicon-v.png" />
+		<link rel="apple-touch-icon" href="/favicon-v.png" />
 		<link rel="stylesheet" href="/style.css" />
+		<title>{resolvedTitle}</title>
+		<meta name="description" content={resolvedDescription} />
+		<link rel="canonical" href={canonicalUrl} />
 		<meta property="og:image" content="https://www.vandotec.be/og-image.png" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://www.vandotec.be" />
-		<meta property="og:title" content={siteName} />
-		<meta property="og:description" content={siteDescription} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={resolvedTitle} />
+		<meta property="og:description" content={resolvedDescription} />
 		<meta name="twitter:card" content="summary_large_image" />
+		<noscript><style>.hero-photo img,.page-hero-photo img{opacity:.4 !important}</style></noscript>
 		<slot name="head" />
 	</head>
 	<body>
+		<a class="skip-link" href="#main">Ga naar inhoud</a>
 		<header class="header">
 			<div class="container">
 				<div class="header-inner">
 					<a href="/" class="header-logo" aria-label={siteName}>
-						<img src="/logo.svg" alt={siteName} class="header-logo-img" />
+						<img src="/logo.png" alt={siteName} class="header-logo-img logo-color" width="807" height="240" />
+						<img src="/logo-white.svg" alt="" aria-hidden="true" class="header-logo-img logo-white" width="277" height="82" />
 					</a>
 					<div class="header-right">
 						<nav class="header-nav" aria-label="Hoofdnavigatie">
@@ -37,15 +51,10 @@ export const siteDescription = 'Vandotec installeert en onderhoudt tankstationin
 							<a href="/jobs" class:list={[{ active: Astro.url.pathname === '/jobs' }]}>Jobs</a>
 							<a href="/contact" class:list={[{ active: Astro.url.pathname === '/contact' }]}>Contact</a>
 						</nav>
-						<div class="header-lang">
-							<a href="#" class="active">NL</a>
-							<span style="color:var(--border)">|</span>
-							<a href="#">FR</a>
-						</div>
 						<div class="header-cta">
 							<a href="/contact" class="btn btn-red">Offerte aanvragen</a>
 						</div>
-						<button class="header-mobile-toggle" id="mobileToggle" aria-label="Menu openen">
+						<button class="header-mobile-toggle" id="mobileToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileNav">
 							<span></span><span></span><span></span>
 						</button>
 					</div>
@@ -61,46 +70,46 @@ export const siteDescription = 'Vandotec installeert en onderhoudt tankstationin
 			<a href="/jobs">Jobs</a>
 			<a href="/contact">Contact</a>
 			<a href="/contact" class="btn btn-red" style="margin-top:1rem;text-align:center">Offerte aanvragen</a>
-			<div class="mobile-lang">
-				<a href="#" class="active">NL</a>
-				<a href="#">FR</a>
-			</div>
 		</div>
 
-		<slot />
+		<main id="main">
+			<slot />
+		</main>
 
 		<footer class="footer">
 			<div class="footer-main">
 				<div class="container">
 					<div class="footer-grid">
 						<div class="footer-brand">
-							<img src="/logo.svg" alt={siteName} class="footer-logo-img" />
-							<p>{siteName} installeert en onderhoudt tankstation installaties, EV laadinstallaties, carwashes, reinigingssystemen, infrastructuurwerken en waterprojecten.</p>
+							<img src="/logo.png" alt={siteName} class="footer-logo-img" width="807" height="240" />
+							<p>{siteName} installeert en onderhoudt tankstationinstallaties, EV-laadinstallaties en infrastructuurwerken.</p>
 							<p class="btw">BE 0417 923 411</p>
+							<div class="footer-social" aria-label="Volg Vandotec">
+								<a href="https://www.facebook.com/vandotecnv/" rel="noopener" target="_blank">Facebook</a>
+								<a href="https://www.instagram.com/vandotec_nv/" rel="noopener" target="_blank">Instagram</a>
+								<a href="https://www.linkedin.com/company/vandotec-nv/" rel="noopener" target="_blank">LinkedIn</a>
+							</div>
 						</div>
 						<div class="footer-col">
-							<h4>Expertises</h4>
+							<h2>Expertises</h2>
 							<ul>
 								<li><a href="/expertises#tankstations">Tankstations</a></li>
 								<li><a href="/expertises#ev-laadinstallaties">EV laadinstallaties</a></li>
-								<li><a href="/expertises#carwashes">Carwashes</a></li>
-								<li><a href="/expertises#reinigingssystemen">Reinigingssystemen</a></li>
 								<li><a href="/expertises#infrastructuurwerken">Infrastructuurwerken</a></li>
-								<li><a href="/expertises#waterprojecten">Waterprojecten</a></li>
 							</ul>
 						</div>
 						<div class="footer-col">
-							<h4>Services</h4>
+							<h2>Services</h2>
 							<ul>
 								<li><a href="/service-onderhoud#interventie">24/7 interventiedienst</a></li>
 								<li><a href="/service-onderhoud#onderhoud">Onderhoud &amp; herstellingen</a></li>
 								<li><a href="/service-onderhoud#preventief">Preventief onderhoud</a></li>
-								<li><a href="/service-onderhoud#tank-cleaning">Tank cleaning</a></li>
+								<li><a href="/service-onderhoud#ijkingen">IJkingen</a></li>
 								<li><a href="/expertises">Totaalprojecten</a></li>
 							</ul>
 						</div>
 						<div class="footer-col">
-							<h4>Contact</h4>
+							<h2>Contact</h2>
 							<div class="footer-contact">
 								<p><strong>{siteName}</strong><br>Nijverheidsstraat 49<br>8970 Poperinge<br>Belgi&euml;</p>
 								<p style="margin-top:.75rem"><a href="tel:+3257335251">+32 57 33 52 51</a></p>
@@ -108,6 +117,14 @@ export const siteDescription = 'Vandotec installeert en onderhoudt tankstationin
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="footer-quote">
+				<div class="footer-photo" aria-hidden="true">
+					<img src="/img/mom-werf.jpg" alt="" loading="lazy" />
+				</div>
+				<div class="container">
+					<p>&ldquo;We voeren elk project volledig in eigen beheer uit.&rdquo; <span>Benoit Goesaert</span></p>
 				</div>
 			</div>
 			<div class="footer-bottom">
@@ -124,6 +141,12 @@ export const siteDescription = 'Vandotec installeert en onderhoudt tankstationin
 				</div>
 			</div>
 		</footer>
+	<dialog class="gal-light" id="galLight" aria-label="Vergrote foto">
+		<img id="galLightImg" src="" alt="" />
+		<p id="galLightCaption"></p>
+		<button class="gal-light-close" id="galLightClose" type="button" aria-label="Sluiten">&times;</button>
+	</dialog>
+	<button id="toTop" class="to-top" type="button" aria-label="Terug naar boven">&uarr;</button>
 	<div class="cookie-bar" id="cookieBar" aria-live="polite">
 		<div class="container">
 			<p>Deze website gebruikt functionele cookies. Geen tracking, geen targeting. <a href="/cookies">Lees meer</a></p>
@@ -133,36 +156,200 @@ export const siteDescription = 'Vandotec installeert en onderhoudt tankstationin
 
 
 		<script>
-			(function(){
-				var toggle = document.getElementById('mobileToggle');
-				var nav = document.getElementById('mobileNav');
-				if(toggle && nav){
-					toggle.addEventListener('click', function(){
-						nav.classList.toggle('open');
-					});
-					nav.querySelectorAll('a').forEach(function(link){
-						link.addEventListener('click', function(){
-							nav.classList.remove('open');
-						});
-					});
-					document.addEventListener('click', function(e){
-						if(nav.classList.contains('open') && !nav.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)){
-							nav.classList.remove('open');
-						}
+		(function(){
+			var toggle = document.getElementById('mobileToggle');
+			var nav = document.getElementById('mobileNav');
+			if(toggle && nav){
+				var lastFocus = null;
+				function closeNav(){
+					nav.classList.remove('open');
+					toggle.setAttribute('aria-expanded', 'false');
+					toggle.setAttribute('aria-label', 'Menu openen');
+					if(lastFocus && lastFocus.focus) lastFocus.focus();
+					lastFocus = null;
+				}
+				toggle.addEventListener('click', function(){
+					var open = nav.classList.toggle('open');
+					toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+					toggle.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+					if(open){
+						lastFocus = document.activeElement;
+						var first = nav.querySelector('a');
+						if(first) first.focus();
+					} else if(lastFocus && lastFocus.focus){
+						lastFocus.focus();
+						lastFocus = null;
+					}
+				});
+				nav.querySelectorAll('a').forEach(function(link){
+					link.addEventListener('click', function(){ closeNav(); });
+				});
+				document.addEventListener('click', function(e){
+					if(nav.classList.contains('open') && !nav.contains(e.target) && e.target !== toggle && !toggle.contains(e.target)){
+						closeNav();
+					}
+				});
+				document.addEventListener('keydown', function(e){
+					if(e.key === 'Escape' && nav.classList.contains('open')) closeNav();
+				});
+			}
+		})();
+		// hero-foto's tonen na laden (alle pagina's; voorkomt helder-donker-klap)
+		(function(){
+			var imgs = Array.prototype.slice.call(document.querySelectorAll('.hero-photo img, .page-hero-photo img'));
+			imgs.forEach(function(img){
+				function done(){ img.classList.add('loaded'); }
+				if(img.complete && img.naturalWidth) done();
+				else { img.addEventListener('load', done); img.addEventListener('error', done); }
+			});
+		})();
+	
+		// galerij-lightbox (native dialog; zonder JS blijven foto's zichtbaar)
+		(function(){
+			var dialog = document.getElementById('galLight');
+			if(!dialog || typeof dialog.showModal !== 'function') return;
+			var img = document.getElementById('galLightImg');
+			var cap = document.getElementById('galLightCaption');
+			var closeBtn = document.getElementById('galLightClose');
+			var lastFocus = null;
+			function open(btn){
+				img.src = btn.getAttribute('data-full') || '';
+				img.alt = btn.getAttribute('data-caption') || '';
+				if(cap) cap.textContent = btn.getAttribute('data-caption') || '';
+				lastFocus = document.activeElement;
+				dialog.showModal();
+				if(closeBtn) closeBtn.focus();
+			}
+			function close(){
+				dialog.close();
+				if(lastFocus && lastFocus.focus) lastFocus.focus();
+			}
+			document.querySelectorAll('.gal-zoom').forEach(function(btn){
+				btn.addEventListener('click', function(){ open(btn); });
+			});
+			if(closeBtn) closeBtn.addEventListener('click', close);
+			dialog.addEventListener('click', function(e){ if(e.target === dialog) close(); });
+			dialog.addEventListener('cancel', function(e){ e.preventDefault(); close(); });
+		})();
+		// galerij-rails: dot-navigatie per rail (Como-ritme)
+		(function(){
+			var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			document.querySelectorAll('.gal-rail').forEach(function(rail, ri){
+				var nav = document.createElement('div');
+				nav.className = 'gal-dots';
+				nav.setAttribute('role', 'tablist');
+				nav.setAttribute('aria-label', 'Galerijpagina’s');
+				var dots = [];
+				function pages(){
+					var n = Math.max(1, Math.round(rail.scrollWidth / rail.clientWidth));
+					while(dots.length < n){
+						(function(i){
+							var d = document.createElement('button');
+							d.type = 'button';
+							d.className = 'gal-dot';
+							d.setAttribute('role', 'tab');
+							d.setAttribute('aria-label', 'Galerijpagina ' + (i + 1));
+							d.addEventListener('click', function(){
+								rail.scrollTo({ left: i * rail.clientWidth, behavior: reduce ? 'auto' : 'smooth' });
+							});
+							nav.appendChild(d);
+							dots.push(d);
+						})(dots.length);
+					}
+					while(dots.length > n){ nav.removeChild(dots.pop()); }
+					update();
+				}
+				function update(){
+					var cur = Math.min(dots.length - 1, Math.round(rail.scrollLeft / rail.clientWidth));
+					dots.forEach(function(d, i){
+						var on = i === cur;
+						d.classList.toggle('is-active', on);
+						d.setAttribute('aria-selected', on ? 'true' : 'false');
 					});
 				}
-			})();
-	
-		// cookie consent
+				var tick = false;
+				rail.addEventListener('scroll', function(){
+					if(!tick){ tick = true; window.requestAnimationFrame(function(){ tick = false; update(); }); }
+				}, { passive: true });
+				window.addEventListener('resize', pages);
+				rail.parentNode.insertBefore(nav, rail.nextSibling);
+				pages();
+			});
+		})();
+		// hero-parallax: foto beweegt langzamer dan scroll (niet bij reduced-motion)
+		(function(){
+			var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+			if(reduce) return;
+			var photos = Array.prototype.slice.call(document.querySelectorAll('.hero-photo, .page-hero-photo'));
+			if(!photos.length) return;
+			var ticking = false;
+			function update(){
+				ticking = false;
+				var y = window.scrollY || window.pageYOffset;
+				photos.forEach(function(box){
+					var r = box.getBoundingClientRect();
+					if(r.bottom < 0 || r.top > window.innerHeight) return;
+					var img = box.querySelector('img');
+					if(img) img.style.transform = 'translateY(' + Math.round(y * 0.22) + 'px) scale(1.12)';
+				});
+			}
+			// scale voorkomt lege randen bij verschuiving
+			photos.forEach(function(box){
+				var img = box.querySelector('img');
+				if(img) img.style.transform = 'scale(1.12)';
+			});
+			window.addEventListener('scroll', function(){
+				if(!ticking){ ticking = true; window.requestAnimationFrame(update); }
+			}, { passive: true });
+		})();
+		(function(){
+			document.documentElement.classList.add('js-reveal');
+			var els = Array.prototype.slice.call(document.querySelectorAll('.section,.stats-xl,.cross-band,.urgency-band,.facts-band,.quote-break,.building-full'));
+			if(!('IntersectionObserver' in window)) return;
+			els.forEach(function(el){ el.classList.add('reveal'); });
+			var io = new IntersectionObserver(function(entries){
+				entries.forEach(function(entry){
+					if(entry.isIntersecting){ entry.target.classList.add('visible'); io.unobserve(entry.target); }
+				});
+			}, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+			els.forEach(function(el){ io.observe(el); });
+		})();
+		(function(){
+			var header = document.querySelector('.header');
+			var toTop = document.getElementById('toTop');
+			function onScroll(){
+				var y = window.scrollY || window.pageYOffset;
+				if(header) header.classList.toggle('scrolled', y > 40);
+				if(toTop) toTop.classList.toggle('show', y > 600);
+			}
+			window.addEventListener('scroll', onScroll, { passive: true });
+			onScroll();
+			if(toTop) toTop.addEventListener('click', function(){
+				var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+				window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+			});
+		})();
 		(function(){
 			var bar = document.getElementById('cookieBar');
 			if(!bar) return;
 			if(localStorage.getItem('vdtc-cookies') === 'accepted') return;
 			bar.classList.add('show');
+			// Schuif back-to-top boven de cookie-bar zolang die zichtbaar is
+			var toTop = document.getElementById('toTop');
+			function lift(){
+				if(toTop && bar.classList.contains('show')){
+					toTop.style.bottom = (bar.offsetHeight + 32) + 'px';
+				} else if(toTop){
+					toTop.style.bottom = '';
+				}
+			}
+			lift();
+			window.addEventListener('resize', lift);
 			var btn = document.getElementById('acceptCookies');
 			if(btn) btn.addEventListener('click', function(){
 				localStorage.setItem('vdtc-cookies', 'accepted');
 				bar.classList.remove('show');
+				lift();
 			});
 		})();
 	</script>
