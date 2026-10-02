@@ -24,7 +24,7 @@ Phase: Fase 2 beeldintegratie uitgevoerd (2026-09-17) — wacht op maker-preview
 Plan: `.planning/ROADMAP.md` (5 fasen, 22 requirements, alles gemapt ✓)
 Status: Hero-2 + 3 expertise-foto's + over-ons + VCA-logo live in build; stock-gaten
 (carwash, reiniging, water) + jobs/contact-CTA nog open; testbrowser hapert → maker checkt visueel
-Last activity: 2026-09-18 — Mediakit-ronde gebouwd (palet, stats, tijdlijn, High Five, ijkingen, referenties, team); maker-preview open; 2026-09-30 cta+footer: 4 distincte service-CTA's (01 = tel), footer-quote full-bleed Ritchie-band; build groen, SEO 11/11; maker-preview open
+Last activity: 2026-09-18 — Mediakit-ronde gebouwd (palet, stats, tijdlijn, High Five, ijkingen, referenties, team); maker-preview open; 2026-10-01 git: 4 commits gereviewd en gepusht naar prive-repo (remote bijgewerkt), footer-quote alleen Benoit Goesaert; build groen; maker-preview open
 
 ## Decisions (milestone-scope)
 
