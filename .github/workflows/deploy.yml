@@ -1,7 +1,8 @@
 name: Staging deploy
+# UITGESCHAKELD 2026-10-01: publieke Pages-deploy per push is in strijd met
+# "niet live zonder expliciete ja". Alleen nog handmatig te starten.
+# Staging loopt via new.powerland.be achter Cloudflare Access (zie tasks/staging-upload.md).
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 concurrency:
   group: staging
@@ -22,9 +23,7 @@ jobs:
       - run: npm ci
       - run: npx astro build
       - uses: actions/configure-pages@v5
-        with:
-          publish_dir: dist
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-      - uses: actions/deploy-pages@v8
+      - uses: actions/deploy-pages@v4
