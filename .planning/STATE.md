@@ -1,48 +1,27 @@
-# STATE.md
+# STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
 
----
-milestone: v1.0
-name: "Duurzaam live-waardig"
-status: planning
-progress:
-  phases_complete: 0
-  phases_total: 5
-  requirements_complete: 8
-  requirements_total: 22
----
+## Waar staan we
 
-## Project Reference
+- Site: 11 pagina's, Astro static, build groen, SEO 11/11. Remote `origin/main` synchroon.
+- Huisstijl staat; 14 referenties met filter+modal; galerijen met lightbox op home/expertises/service/over.
+- Footer-quote toont alleen “Benoit Goesaert”. Team: Marijn/Benoit/Kevin met portret, Fien weg.
+- Staging voorbereid: `new.powerland.be` achter Cloudflare Access (zie `tasks/staging-upload.md`). GitHub-workflow uitgeschakeld.
 
-See: .planning/PROJECT.md (updated 2026-09-17)
+## Wat loopt
 
-**Core value:** De maker kan alles zelf aanpassen, previewen, publiceren en terugrollen — gratis, zonder breekbare handklusjes.
-**Current focus:** Milestone-initialisatie — Fase 1 (Fundering, audit) staat klaar.
+- Preview-ronde door Camil (hero, galerijen, footer, service-sectie).
+- Review door Kevin via staging-URL zodra die staat.
 
-## Current Position
+## Geblokkeerd / wacht op Camil
 
-Phase: Fase 2 beeldintegratie uitgevoerd (2026-09-17) — wacht op maker-preview + akkoord
-Plan: `.planning/ROADMAP.md` (5 fasen, 22 requirements, alles gemapt ✓)
-Status: Hero-2 + 3 expertise-foto's + over-ons + VCA-logo live in build; stock-gaten
-(carwash, reiniging, water) + jobs/contact-CTA nog open; testbrowser hapert → maker checkt visueel
-Last activity: 2026-09-18 — Mediakit-ronde gebouwd (palet, stats, tijdlijn, High Five, ijkingen, referenties, team); maker-preview open; 2026-10-01 git: 4 commits gereviewd en gepusht naar prive-repo (remote bijgewerkt), footer-quote alleen Benoit Goesaert; build groen; maker-preview open
+- Combell-upload + DNS + Access-regel (alleen Camil kan dit).
+- EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze.
+- Technisch open (laag prio): `srcset` mobiel, screenreader-test, inline-styles opruimen.
 
-## Decisions (milestone-scope)
+## Laatste 5
 
-- GSD is leidend systeem; `tasks/*.md` is archief/input (maker-akkoord 2026-09-17)
-- Onderzoek overgeslagen: brownfield, codebase + live site al geïnventariseerd
-- Roadmap inline opgesteld (geen roadmapper-subagent in deze runtime) — maker reviewt
-- Commits alleen op expliciet verzoek (nog geen commits uitgevoerd)
-
-## Blockers
-
-- Fase 3-entry: beheerlaag-keuze (JSON vs git-CMS) + mail-test op PHP-host (alleen op host te bewijzen)
-- Fase 2/4: stock-veto's (stilzwijgend akkoord — herroepbaar), jobs-teksten (CONTENT-04 open)
-- Logo-bestanden uit mediakit-pakket (maker levert aan)
-- Staand: live-flip, repo-public, DNS (aparte goedkeuringen)
-- Gedocumenteerd-dood (geen actie): `api/save-page` (alleen voor toekomstige CMS-fase), `_headers` (Netlify-only, genegeerd op PHP-host)
-
-## Todos
-
-- [x] Fase 1 audit uitvoeren en rapporteren (bewijs: zie rapport 2026-09-17)
-- [ ] Fasesluiting Fase 1 (maker-akkoord)
-- [ ] Fase 2 entry gates aan maker voorleggen
+- 2026-10-01 footer-quote alleen Benoit Goesaert; staging-voorbereiding gepusht (opencode)
+- 2026-09-30 teamportretten geplaatst en geverifieerd, Fien weg (opencode)
+- 2026-09-30 service-CTA's per kaart + footer full-bleed band (opencode)
+- 2026-09-30 issues-pass: juridisch herschreven, a11y, 45+ uniform (opencode)
+- 2026-09-30 galerij-pass: lightbox, moment-banden, rails met dots (opencode)
