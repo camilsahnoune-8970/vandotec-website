@@ -15,7 +15,8 @@ Stack: Astro 7, `output: static`, 11 pagina's. Content in `src/data/*.json`, sty
 - Branches: `<wie>/<wat>` (bv. `opencode/hero`, `codex/jobs-tekst`, `claude/footer`). Merge via pull request met preview-check (build groen · SEO 10/10 · preview bekeken door Camil).
 - Review roteert: wie bouwt, reviewt niet zichzelf. Smaak-review doet Camil altijd zelf.
 - Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden + door wie).
-- Niet live zetten, geen DNS/hosting wijzigen, geen repo publiceren zonder expliciete "ja" van Camil.
+- Niet live zetten en geen DNS/hosting wijzigen zonder expliciete "ja" van Camil. Repo is sinds 2026-10-05 publiek (besluit Camil) — dus nooit secrets/tokens/wachtwoorden committen.
+- `main` is beschermd (regelset `main-sluis`): alles via PR, lineaire historie, geen force-push. Zelfs journaalregels gaan via een branch + PR.
 
 ## Huisstijl (hard)
 
