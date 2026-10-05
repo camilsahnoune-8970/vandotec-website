@@ -106,33 +106,49 @@ ul{list-style:none}
 .hero-photo img,.page-hero-photo img{will-change:transform}
 
 /* ---------- Hero (home, foto-vrij donker) ---------- */
-.hero{background:var(--navy-deep);color:var(--white);margin-top:0;padding-top:78px;position:relative;overflow:hidden;isolation:isolate}
+.hero{background:#05070d;color:var(--white);margin-top:0;padding-top:78px;position:relative;overflow:hidden;isolation:isolate}
 .hero-photo{position:absolute;inset:0;z-index:-2;pointer-events:none}
 .hero-photo img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}
-.hero-photo img.loaded{opacity:.45}
+.hero-photo img.loaded{opacity:.58}
 .page-hero-photo img{opacity:0;transition:opacity .8s ease}
 .page-hero-photo img.loaded{opacity:.5}
 .hero::before{content:'';position:absolute;inset:0;z-index:-1;background:
-  linear-gradient(180deg,rgba(0,22,71,.55) 0%,transparent 22%),
-  linear-gradient(90deg,rgba(0,22,71,.88) 0%,rgba(0,22,71,.55) 55%,rgba(0,22,71,.25) 100%),
-  radial-gradient(60rem 30rem at 85% -10%,rgba(195,0,23,.45),transparent 60%),
-  radial-gradient(50rem 26rem at -10% 110%,rgba(38,128,255,.4),transparent 60%);pointer-events:none}
+  linear-gradient(180deg,rgba(0,0,0,.52) 0%,transparent 26%),
+  linear-gradient(90deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,.46) 55%,rgba(0,0,0,.16) 100%),
+  radial-gradient(60rem 30rem at 85% -10%,rgba(195,0,23,.38),transparent 60%);pointer-events:none}
 .hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.3;background:
   repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 26px),
   linear-gradient(115deg,transparent 62%,rgba(195,0,23,.16) 62.2%,transparent 78%)}
-.hero-inner{max-width:1000px;position:relative;z-index:1;padding:clamp(7rem,16vh,11rem) 0 clamp(3rem,6vh,4rem)}
+/* Tekenkader + hoekannotatie (architectuurtekening-gevoel, alleen desktop) */
+.hero-frame{position:absolute;left:14px;right:14px;top:92px;bottom:14px;border:1px solid rgba(255,255,255,.16);pointer-events:none;z-index:1}
+.hero-corner{position:absolute;top:calc(78px + 1.9rem);right:clamp(2rem,4vw,3.5rem);z-index:1;font-size:.72rem;font-weight:600;letter-spacing:.24em;color:rgba(255,255,255,.6);pointer-events:none}
+/* Binnenkomst-choreografie (alleen zonder reduced-motion; basis blijft zichtbaar) */
+@media(prefers-reduced-motion:no-preference){
+  .hero-inner>*{opacity:0;animation:hero-rise .9s var(--ease) forwards}
+  .hero-inner>.eyebrow{animation-delay:.05s}
+  .hero-inner>h1{animation-delay:.16s}
+  .hero-inner>.lead{animation-delay:.27s}
+  .hero-inner>.hero-cta{animation-delay:.38s}
+  .hero-meta{opacity:0;animation:hero-rise .9s var(--ease) .5s forwards}
+  .hero-corner{opacity:0;animation:hero-rise .9s var(--ease) .6s forwards}
+}
+@keyframes hero-rise{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:none}}
+.hero-inner{max-width:1000px;position:relative;z-index:1;padding:clamp(4rem,10vh,7rem) 0 clamp(2rem,4vh,2.75rem)}
 .eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:.85rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--white);margin-bottom:1.5rem}
 .eyebrow::before{content:'';width:3rem;height:2px;background:var(--red)}
-.hero h1{color:var(--white);font-size:var(--display);font-weight:700;line-height:1.05;letter-spacing:-.015em;margin-bottom:1.5rem;max-width:16ch;text-wrap:balance}
-.hero .lead{color:var(--muted-on-dark);font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.65;margin-bottom:2.75rem;max-width:62ch}
-.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;margin-bottom:3.5rem}
+.eyebrow-index{color:rgba(255,255,255,.55);letter-spacing:.1em}
+.hero h1{color:var(--white);font-size:clamp(3.25rem,8vw,6.5rem);font-weight:700;line-height:1;letter-spacing:-.02em;margin-bottom:1.5rem;max-width:16ch;text-wrap:balance}
+.hero .lead{color:var(--muted-on-dark);font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.65;margin-bottom:2rem;max-width:62ch}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;margin-bottom:2.5rem}
 .hero-link{display:inline-block;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white);border-bottom:2px solid var(--red);padding-bottom:.25rem}
 .hero-link:hover{color:var(--red)}
-.hero-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid rgba(255,255,255,.16);padding-top:1.75rem;max-width:760px}
-.hero-meta-item{padding-right:2.25rem;margin-right:2.25rem;border-right:1px solid rgba(255,255,255,.16)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2);padding:1.5rem 0;max-width:880px}
+.hero-meta-item{padding-right:2.25rem;margin-right:2.25rem;border-right:1px solid rgba(255,255,255,.2)}
 .hero-meta-item:last-child{border-right:0;margin-right:0;padding-right:0}
-.hero-meta-num{font-size:1.6rem;font-weight:700;color:var(--white);line-height:1}
+.hero-meta-index{display:block;font-size:.7rem;font-weight:600;letter-spacing:.22em;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+.hero-meta-num{font-size:clamp(1.8rem,2.6vw,2.4rem);font-weight:700;color:var(--white);line-height:1}
 .hero-meta-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-on-dark);margin-top:.4rem}
+@media(max-width:899px){.hero-frame,.hero-corner{display:none}.hero .eyebrow{letter-spacing:.14em}}
 
 /* ---------- Statement-hero (contact, referentie-stijl) ---------- */
 .statement-hero .container{position:relative;z-index:1}
