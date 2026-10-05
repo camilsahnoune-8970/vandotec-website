@@ -3,6 +3,7 @@
 ## Waar staan we
 
 - Site: 11 pagina's, Astro static, build groen, SEO 11/11. Remote `origin/main` synchroon.
+- Repo sinds 2026-10-05 publiek (besluit Camil); `main` beschermd via regelset `main-sluis` (PR-verplicht, lineair, geen force-push, geldt ook voor admins).
 - Huisstijl staat; 14 referenties met filter+modal; galerijen met lightbox op home/expertises/service/over.
 - Footer-quote toont alleen “Benoit Goesaert”. Team: Marijn/Benoit/Kevin met portret, Fien weg.
 - Staging voorbereid: `new.powerland.be` achter Cloudflare Access (zie `tasks/staging-upload.md`). GitHub-workflow uitgeschakeld.
@@ -20,6 +21,7 @@
 
 ## Laatste 5
 
+- 2026-10-05 repo publiek + sluis `main-sluis` actief, bewezen met geblokkeerde test-push (opencode)
 - 2026-10-05 werkhub ingericht via proef-PR #1 (AGENTS, STATE, PR-template, archief) (opencode)
 - 2026-10-01 footer-quote alleen Benoit Goesaert; staging-voorbereiding gepusht (opencode)
 - 2026-09-30 teamportretten geplaatst en geverifieerd, Fien weg (opencode)
