@@ -60,7 +60,7 @@ naamsvermelding in footer (`.credits`) + volledig register hier. Stock is tijdel
 | `stock-carwash.jpg` (87KB) | “Car Wash, Station Street”, Geograph, CC BY-SA 2.0 | `commons/f/f8/Car_Wash,_Station_Street_-_geograph.org.uk_-_1941497.jpg` | `/expertises#carwashes` |
 | `stock-reiniging.jpg` (82KB) | “Aviation fuel storage tank and transportation truck”, Project Kei, CC BY-SA | `commons/d/de/Aviation_fuel_storage_tank_and_transportation_truck.jpg` | `/expertises#reinigingssystemen` |
 | `stock-water.jpg` (137KB) | “R. C. Harris Water Treatment Plant interior 2025”, Canmenwalker, CC BY | `commons/d/d8/R._C._Harris_Water_Treatment_Plant_interior_2025.JPG` | `/expertises#waterprojecten` |
-| `stock-contact.jpg` (67KB) | “Fuel dispenser in use”, Henrywingra, CC BY-SA | `commons/6/60/Fuel_dispenser_in_use.jpg` | `/contact` (vervangt `contact-site.svg`) |
+| `stock-contact.jpg` (67KB, HISTORISCH — vervangen 2026-10-05, zie eigen-beelden-tabel) | “Fuel dispenser in use”, Henrywingra, CC BY-SA | `commons/6/60/Fuel_dispenser_in_use.jpg` | `/contact` (vervangt `contact-site.svg`) |
 
 Download-notitie: Wikimedia rate-limite (429) bij snelle bulk-downloads — opgelost met
 eigen User-Agent + 6s pauzes. Flickr-kandidaat (`wuestenigel`, CC BY) 404 op `_b`-formaat
@@ -155,7 +155,7 @@ overschreven bestanden behouden hun naam zodat geen markup wijzigt. Alleen `exp-
 | `srv-interventie.jpg` | `Esso Deurle 2.JPG` (Esso + bus) | SqueakyMarmot | service + contact-card |
 | `srv-onderhoud.jpg` | `Spilmont Hautrage 4.jpg` (werf) | gIadius | service |
 | `srv-preventief.jpg` | `Maes De Panne 2.jpg` (leidingwerk) | NATO E3A | service + contact-card |
-| `stock-contact.jpg` | `Pessleux Fosses-la-Ville 1.jpg` | Fuel dispenser, Henrywingra | contact-kaart |
+| `contact-werf.jpg` (was `stock-contact.jpg`) | `Pessleux Fosses-la-Ville 1.jpg` | Fuel dispenser, Henrywingra — vervangen 2026-10-05 | contact-kaart |
 | `ref-vanassche.jpg` (nieuw) | `Van Assche Zulte 1.jpg` (Texaco) | — | referentie Van Assche, Zulte |
 | `ref-maes-panne.jpg` (nieuw) | `Maes De Panne 4.jpg` (sneeuw) | — | referentie Maes, De Panne |
 | `ref-spilmont.jpg` (nieuw) | `Spilmont Hautrage 1.jpg` (kraan) | — | referentie Spilmont, Hautrage |
