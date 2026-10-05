@@ -156,6 +156,7 @@ overschreven bestanden behouden hun naam zodat geen markup wijzigt. Alleen `exp-
 | `srv-onderhoud.jpg` | `Spilmont Hautrage 4.jpg` (werf) | gIadius | service |
 | `srv-preventief.jpg` | `Maes De Panne 2.jpg` (leidingwerk) | NATO E3A | service + contact-card |
 | `contact-werf.jpg` (was `stock-contact.jpg`) | `Pessleux Fosses-la-Ville 1.jpg` | Fuel dispenser, Henrywingra — vervangen 2026-10-05 | contact-kaart |
+| `jobs-waarden.jpg` (nieuw) | `Waarden van Vandotec Poperinge.jpg` (X-schijf, VANDOTEC LOW RES WEBSITE) | eigen merlfoto high-five, 1600x900 | jobs moment-band |
 | `ref-vanassche.jpg` (nieuw) | `Van Assche Zulte 1.jpg` (Texaco) | — | referentie Van Assche, Zulte |
 | `ref-maes-panne.jpg` (nieuw) | `Maes De Panne 4.jpg` (sneeuw) | — | referentie Maes, De Panne |
 | `ref-spilmont.jpg` (nieuw) | `Spilmont Hautrage 1.jpg` (kraan) | — | referentie Spilmont, Hautrage |
