@@ -13,7 +13,7 @@ const jobs = loadPageData(jobsJson, {
 
 	<section class="page-hero">
 		<div class="page-hero-photo" aria-hidden="true">
-			<img src="/img/jobs-team.jpg" alt="" />
+			<img src="/img/jobs-team.jpg" srcset="/img/jobs-team-800.jpg 800w, /img/jobs-team.jpg 1200w" sizes="100vw" alt="" fetchpriority="high" />
 		</div>
 		<div class="hero-mark" aria-hidden="true">TEAM</div>
 		<div class="container">
@@ -26,7 +26,7 @@ const jobs = loadPageData(jobsJson, {
 	</section>
 
 	<figure class="moment-band" aria-label="Vandotec-servicebus aan de pomp">
-		<img src="/img/srv-interventie.jpg" alt="Vandotec-servicebus aan de pomp" loading="lazy" />
+		<img src="/img/srv-interventie.jpg" alt="Vandotec-servicebus aan de pomp" loading="lazy" width="1200" height="900" />
 		<figcaption class="moment-caption"><div class="container"><strong>Eigen ploegen op elke werf</strong><span>Werken bij Vandotec</span></div></figcaption>
 	</figure>
 

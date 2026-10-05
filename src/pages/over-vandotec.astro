@@ -13,7 +13,7 @@ const over = loadPageData(overJson, {
 
 	<section class="page-hero">
 		<div class="page-hero-photo" aria-hidden="true">
-			<img src="/img/hero-over.jpg" alt="" />
+			<img src="/img/hero-over.jpg" srcset="/img/hero-over-800.jpg 800w, /img/hero-over.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" />
 		</div>
 		<div class="hero-mark" aria-hidden="true">1978</div>
 		<div class="container">
@@ -38,7 +38,7 @@ const over = loadPageData(overJson, {
 				</div>
 				<div>
 					<div class="media-slot ratio-4x3" style="margin-bottom:1.5rem">
-						<img src="/img/over-ons.jpg" alt="Servicewagens van Group Vandotec" loading="lazy" />
+						<img src="/img/over-ons.jpg" alt="Servicewagens van Group Vandotec" loading="lazy" width="1200" height="675" />
 					</div>
 					{over.stats_title && (over.stats || []).length > 0 && (
 						<div class="content-block card-outline" style="margin-top:1.5rem">
@@ -71,7 +71,7 @@ const over = loadPageData(overJson, {
 	</section>
 
 	<section class="building-full" aria-label="Nieuwbouw Group Vandotec en Powerland in Poperinge">
-		<img src="/img/gebouw-poperinge.jpg" alt="Nieuwbouw Group Vandotec en Powerland in Poperinge" loading="lazy" />
+		<img src="/img/gebouw-poperinge.jpg" alt="Nieuwbouw Group Vandotec en Powerland in Poperinge" loading="lazy" width="1200" height="800" />
 	</section>
 
 	{over.powerhub_title && (
@@ -126,8 +126,8 @@ const over = loadPageData(overJson, {
 		<div class="container">
 			<div class="content-grid" style="align-items:center">
 				<div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap">
-					<img src="/img/vca-officieel.png" alt="Officieel VCA-logo" class="vca-logo-lg" loading="lazy" />
-					<img src="/img/belac-logo.jpg" alt="BELAC-accreditatie" class="vca-logo-lg" loading="lazy" />
+					<img src="/img/vca-officieel.png" alt="Officieel VCA-logo" class="vca-logo-lg" loading="lazy" width="734" height="418" />
+					<img src="/img/belac-logo.jpg" alt="BELAC-accreditatie" class="vca-logo-lg" loading="lazy" width="202" height="202" />
 				</div>
 				<div>
 					<span class="eyebrow" style="color:var(--red)">Certificering</span>
