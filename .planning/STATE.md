@@ -20,6 +20,7 @@
 
 ## Laatste 5
 
+- 2026-10-05 werkhub ingericht via proef-PR #1 (AGENTS, STATE, PR-template, archief) (opencode)
 - 2026-10-01 footer-quote alleen Benoit Goesaert; staging-voorbereiding gepusht (opencode)
 - 2026-09-30 teamportretten geplaatst en geverifieerd, Fien weg (opencode)
 - 2026-09-30 service-CTA's per kaart + footer full-bleed band (opencode)
