@@ -1,22 +1,20 @@
-## Development
+# AGENTS.md — Vandotec-website (enig contract voor mens én AI)
 
-When starting the dev server, use background mode:
+Stack: Astro 7, `output: static`, 11 pagina's. Content in `src/data/*.json`, styling in `public/style.css`, eigen foto's in `public/img/`.
 
-```
-astro dev --background
-```
+## Commando's
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
-
-Build: `npm run build` (must stay green). Preview: `npx astro preview`.
-SEO-check: `node tasks/check-seo.cjs`.
+- Build (moet groen blijven): `npm run build`
+- Preview: `npx astro preview` (lokaal, poort van Astro)
+- SEO-check: `node tasks/check-seo.cjs` (moet 10/10 blijven)
 
 ## Samenwerken (mens en AI)
 
 - Lees eerst `.planning/STATE.md` — daar staat waar we zijn.
 - Werk per pagina of per laag, nooit twee agents tegelijk in dezelfde bestanden.
-- Branches: `<wie>/<wat>` (bv. `camil/footer-licht`). Merge via pull request met preview-check.
-- Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden).
+- Branches: `<wie>/<wat>` (bv. `opencode/hero`, `codex/jobs-tekst`, `claude/footer`). Merge via pull request met preview-check (build groen · SEO 10/10 · preview bekeken door Camil).
+- Review roteert: wie bouwt, reviewt niet zichzelf. Smaak-review doet Camil altijd zelf.
+- Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden + door wie).
 - Niet live zetten, geen DNS/hosting wijzigen, geen repo publiceren zonder expliciete "ja" van Camil.
 
 ## Huisstijl (hard)
@@ -25,15 +23,18 @@ SEO-check: `node tasks/check-seo.cjs`.
 - Content in `src/data/*.json`. Geen placeholders, geen ongefundeerde claims — alleen geverifieerde info.
 - Nooit blauw op blauw. Max 2 rode accenten per viewport.
 
-## Documentation
+## Verificatie (geen bewijs = niet klaar)
 
-Full documentation: https://docs.astro.build
+- Bewijs in `dist/`: links/assets bestaan, tellers kloppen, contrast AA, geen dode code.
+- Wat je niet kunt zien (render, screenreader): markeer als “niet geverifieerd”, claim het niet.
+- Bij twijfel over foto-inhoud: zeggen, niet gokken.
 
-Consult these guides before working on related tasks:
+## Voor Codex / Claude Code (startprompt)
 
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+Verbind repo `camilsahnoune-8970/vandotec-website`, lees `AGENTS.md` + `.planning/STATE.md`, kies een open punt, werk op `codex/<taak>` of `claude/<taak>`, open een PR, schrijf één journaalregel.
+
+## Documentatie
+
+- Astro: https://docs.astro.build
+- Huisstijl-details: `docs/mediakit-2026.pdf`, `tasks/beelden.md` (beeldenregister)
+- Oude plannen/designs: `docs/archief/` (alleen naslag, niet leidend)
