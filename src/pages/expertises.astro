@@ -27,7 +27,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 
 	<section class="page-hero">
 		<div class="page-hero-photo" aria-hidden="true">
-			<img src="/img/hero-expertises.jpg" alt="" />
+			<img src="/img/hero-expertises.jpg" srcset="/img/hero-expertises-800.jpg 800w, /img/hero-expertises.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" />
 		</div>
 		<div class="hero-mark" aria-hidden="true">DOMEINEN</div>
 		<div class="container">
@@ -111,7 +111,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 		)}
 		{section.slug === 'tankstations' && (
 		<figure class="moment-band" aria-label="Technieker aan het werk aan brandstofpompen">
-			<img src="/img/wrk-pompen.jpg" alt="Technieker aan brandstofpompen met Vandotec-busje" loading="lazy" />
+			<img src="/img/wrk-pompen.jpg" alt="Technieker aan brandstofpompen met Vandotec-busje" loading="lazy" width="1200" height="900" />
 			<figcaption class="moment-caption"><div class="container"><strong>Eigen techniekers, eigen materieel</strong><span>Tankstations — uitvoering</span></div></figcaption>
 		</figure>
 		)}
@@ -179,7 +179,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 		)}
 		{section.slug === 'infrastructuurwerken' && (
 		<figure class="moment-band" aria-label="Grondwerk met keerkamers en leidingen">
-			<img src="/img/wrk-kamers.jpg" alt="Blauwe keerkamers met leidingwerk op een werf" loading="lazy" />
+			<img src="/img/wrk-kamers.jpg" alt="Blauwe keerkamers met leidingwerk op een werf" loading="lazy" width="1200" height="900" />
 			<figcaption class="moment-caption"><div class="container"><strong>Van grondwerk tot leidingwerk</strong><span>Infrastructuurwerken — uitvoering</span></div></figcaption>
 		</figure>
 		)}

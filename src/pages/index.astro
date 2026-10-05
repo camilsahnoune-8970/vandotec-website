@@ -13,10 +13,11 @@ const heroIntro = home.hero_subtitle || '';
 ---
 
 <Layout title={home.title} description={home.description} path="/">
+	<link slot="head" rel="preload" as="image" imagesrcset="/img/mom-nacht-800.jpg 800w, /img/mom-nacht.jpg 1920w" imagesizes="100vw" fetchpriority="high" />
 
 	<section class="hero">
 		<div class="hero-photo" aria-hidden="true">
-			<img src="/img/mom-nacht.jpg" alt="" fetchpriority="high" />
+			<img src="/img/mom-nacht.jpg" srcset="/img/mom-nacht-800.jpg 800w, /img/mom-nacht.jpg 1920w" sizes="100vw" alt="" fetchpriority="high" />
 		</div>
 		<div class="hero-mark" aria-hidden="true">VANDOTEC</div>
 		<div class="hero-frame" aria-hidden="true"></div>
@@ -69,7 +70,7 @@ const heroIntro = home.hero_subtitle || '';
 						<a href="/over-vandotec" class="about-link">{home.about_link_label || 'Meer over ons'} &rarr;</a>
 					</div>
 					<div class="media-slot ratio-4x3">
-						<img src="/img/home-about.jpg" alt="Tankstation met tankwagen en Vandotec-servicebus" loading="lazy" />
+						<img src="/img/home-about.jpg" alt="Tankstation met tankwagen en Vandotec-servicebus" loading="lazy" width="1200" height="900" />
 					</div>
 				</div>
 			</div>
@@ -102,7 +103,7 @@ const heroIntro = home.hero_subtitle || '';
 	</section>
 
 	<figure class="moment-band" aria-label="Tank in een sleuf met leidingwerk">
-		<img src="/img/wrk-sleuf.jpg" alt="Tank in een sleuf met leidingwerk op een werf" loading="lazy" />
+		<img src="/img/wrk-sleuf.jpg" alt="Tank in een sleuf met leidingwerk op een werf" loading="lazy" width="1000" height="1330" />
 		<figcaption class="moment-caption"><div class="container"><strong>Van sleuf tot oplevering</strong><span>Uitvoering door eigen ploegen</span></div></figcaption>
 	</figure>
 
@@ -186,7 +187,7 @@ const heroIntro = home.hero_subtitle || '';
 	)}
 
 	<figure class="moment-band" aria-label="Opgeleverd tankstation bij nacht">
-		<img src="/img/mom-nacht.jpg" alt="Verlicht tankstation bij nacht" loading="lazy" />
+		<img src="/img/mom-nacht.jpg" alt="Verlicht tankstation bij nacht" loading="lazy" width="1920" height="1080" />
 		<figcaption class="moment-caption"><div class="container"><strong>Opgeleverd — ook bij nacht herkenbaar</strong><span>Pessleux — Fosses-la-Ville</span></div></figcaption>
 	</figure>
 
