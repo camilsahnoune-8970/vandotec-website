@@ -21,6 +21,7 @@
 
 ## Laatste 5
 
+- 2026-10-05 uniforme section-hero's 02-06 via PR #4, homepage-hero via PR #3 (opencode)
 - 2026-10-05 repo publiek + sluis `main-sluis` actief, bewezen met geblokkeerde test-push (opencode)
 - 2026-10-05 werkhub ingericht via proef-PR #1 (AGENTS, STATE, PR-template, archief) (opencode)
 - 2026-10-01 footer-quote alleen Benoit Goesaert; staging-voorbereiding gepusht (opencode)
