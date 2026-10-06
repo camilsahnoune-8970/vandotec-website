@@ -21,6 +21,7 @@
 
 ## Laatste 5
 
+- 2026-10-06 onderhoudsronde E via PR #16 (utilities, motion-doc, securityfixes, reviews)
 - 2026-10-06 QA-ronde D via PR #14 (eerste spec-protocol-ronde: browsers, koppen, print)
 - 2026-10-05 spec-protocol ingericht (specs-template + QA-voorbeeld + AGENTS-regel) (opencode)
 - 2026-10-05 Esso-band weg van jobs via PR #11 (opencode)

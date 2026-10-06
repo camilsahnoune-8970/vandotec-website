@@ -1,6 +1,6 @@
 # SPEC: Onderhoudsronde E (inline-styles, motion, secure/UI-review)
 
-Status: concept — wacht op akkoord Camil.
+Status: uitgevoerd via PR #16 (2026-10-06), goedgekeurd door Camil.
 
 ## 1. Doel (één zin)
 
