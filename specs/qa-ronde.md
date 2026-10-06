@@ -1,6 +1,6 @@
 # SPEC: QA-ronde (Firefox/Safari, screenreader, print)
 
-Status: goedgekeurd door Camil 2026-10-05 — in uitvoering.
+Status: uitgevoerd via PR #14 (2026-10-06), goedgekeurd door Camil.
 
 ## 1. Doel (één zin)
 
