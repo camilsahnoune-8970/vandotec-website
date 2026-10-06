@@ -37,11 +37,11 @@ const over = loadPageData(overJson, {
 					</div>
 				</div>
 				<div>
-					<div class="media-slot ratio-4x3" style="margin-bottom:1.5rem">
+					<div class="media-slot ratio-4x3 mb-15">
 						<img src="/img/over-ons.jpg" alt="Servicewagens van Group Vandotec" loading="lazy" width="1200" height="675" />
 					</div>
 					{over.stats_title && (over.stats || []).length > 0 && (
-						<div class="content-block card-outline" style="margin-top:1.5rem">
+						<div class="content-block card-outline mt-15">
 							<h3>{over.stats_title}</h3>
 							<ul class="list-check">
 								{over.stats.map((stat) => (
@@ -55,7 +55,7 @@ const over = loadPageData(overJson, {
 		</div>
 	</section>
 
-	<section class="section" aria-label="Bedrijf in beeld" style="padding-top:0">
+	<section class="section pt-0" aria-label="Bedrijf in beeld">
 		<div class="container">
 			<div class="gal-rail" tabindex="0" role="region" aria-label="Bedrijf in beeld">
 				<button class="gal-zoom" type="button" data-full="/img/bedrijf-1.jpg" data-caption="Esso-tankstation met Vandotec-busje"><img src="/img/bedrijf-1.jpg" alt="Esso-tankstation met Vandotec-busje" loading="lazy" /><figcaption>Esso met busje</figcaption></button>
@@ -75,9 +75,9 @@ const over = loadPageData(overJson, {
 	</section>
 
 	{over.powerhub_title && (
-		<section class="section" style="padding-top:3rem;padding-bottom:0">
-			<div class="container" style="max-width:820px">
-				<span class="eyebrow" style="color:var(--red)">Powerhub</span>
+		<section class="section pt-3 pb-0">
+			<div class="container max-820">
+				<span class="eyebrow eyebrow-red">Powerhub</span>
 				<h2 class="section-title">{over.powerhub_title}</h2>
 				<div class="content-block">
 					<p set:html={over.powerhub_text} />
@@ -88,10 +88,10 @@ const over = loadPageData(overJson, {
 
 	{over.history_title && (over.history || []).length > 0 && (
 		<section class="section">
-			<div class="container" style="max-width:820px">
-				<span class="eyebrow" style="color:var(--red)">Geschiedenis</span>
+			<div class="container max-820">
+				<span class="eyebrow eyebrow-red">Geschiedenis</span>
 				<h2 class="section-title">{over.history_title}</h2>
-				{over.history_intro && <p class="section-sub" style="margin-bottom:2rem" set:html={over.history_intro} />}
+				{over.history_intro && <p class="section-sub mb-2" set:html={over.history_intro} />}
 			</div>
 			<div class="container container-wide">
 				<div class="tl-rail" role="region" aria-label={over.history_title}>
@@ -102,7 +102,7 @@ const over = loadPageData(overJson, {
 						</div>
 					))}
 				</div>
-				<div class="container" style="max-width:820px">
+				<div class="container max-820">
 					<div class="rail-nav rail-nav-light">
 						<button class="tl-prev" type="button" aria-label="Eerdere jaren">&#8592;</button>
 						<button class="tl-next" type="button" aria-label="Latere jaren">&#8594;</button>
@@ -124,13 +124,13 @@ const over = loadPageData(overJson, {
 
 	<section class="section" aria-label="VCA-certificering">
 		<div class="container">
-			<div class="content-grid" style="align-items:center">
-				<div style="display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap">
+			<div class="content-grid ai-center">
+				<div class="flex-wrap-gap">
 					<img src="/img/vca-officieel.png" alt="Officieel VCA-logo" class="vca-logo-lg" loading="lazy" width="734" height="418" />
 					<img src="/img/belac-logo.jpg" alt="BELAC-accreditatie" class="vca-logo-lg" loading="lazy" width="202" height="202" />
 				</div>
 				<div>
-					<span class="eyebrow" style="color:var(--red)">Certificering</span>
+					<span class="eyebrow eyebrow-red">Certificering</span>
 					<h2 class="section-title">VCA gecertificeerd</h2>
 					<div class="content-block">
 						<p>VCA staat voor Veiligheid, Gezondheid en Milieu Checklist Aannemers. Het certificaat bewijst dat onze ploegen veilig en gezond werken — op elke werf, bij elke opdrachtgever.</p>
@@ -144,7 +144,7 @@ const over = loadPageData(overJson, {
 	{over.values_title && (over.values || []).length > 0 && (
 		<section class="section section-gray">
 			<div class="container">
-				<h2 class="section-title" style="text-align:center;margin-bottom:2rem">{over.values_title}</h2>
+				<h2 class="section-title ta-center mb-2">{over.values_title}</h2>
 				<div class="values-grid">
 					{over.values.map((value) => (
 						<div class="value-item">
@@ -199,7 +199,7 @@ const over = loadPageData(overJson, {
 							<div class="content-block card-outline">
 								<h3 set:html={cta.text} />
 								<p set:html={cta.description} />
-								<a href={cta.url} class="btn btn-red" style="margin-top:1rem">{cta.label}</a>
+								<a href={cta.url} class="btn btn-red mt-1">{cta.label}</a>
 							</div>
 						))}
 					</div>
@@ -224,7 +224,7 @@ const over = loadPageData(overJson, {
 	{over.team_title && (over.team || []).length > 0 && (
 		<section class="section section-gray">
 			<div class="container">
-				<div class="section-header text-center" style="margin-left:auto;margin-right:auto">
+				<div class="section-header text-center mx-auto">
 					<h2 class="section-title centered">{over.team_title}</h2>
 				</div>
 				<div class="team-grid">

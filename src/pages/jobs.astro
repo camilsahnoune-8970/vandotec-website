@@ -58,9 +58,9 @@ const jobs = loadPageData(jobsJson, {
 	<section class="section section-gray">
 		<div class="container">
 			<h2 class="section-title">{jobs.open_roles_title || 'Openstaande vacatures'}</h2>
-			<p style="margin-bottom:2rem;max-width:600px" set:html={jobs.open_roles_text || ''} />
+			<p class="mb-2 max-600" set:html={jobs.open_roles_text || ''} />
 			{jobs.open_roles_cta_label && (
-				<p style="margin-top:1rem">
+				<p class="mt-1">
 					<a href="/contact" class="btn btn-red">{jobs.open_roles_cta_label}</a>
 				</p>
 			)}
