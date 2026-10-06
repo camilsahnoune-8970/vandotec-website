@@ -1,6 +1,6 @@
 # SPEC: lessen van mrsolar.be (advies-CTA, contactstrook, cijferband)
 
-Status: goedgekeurd door Camil 2026-10-06 (akkoord + “anticiperen en doen”) — in uitvoering.
+Status: uitgevoerd via PR #18 (2026-10-06), goedgekeurd door Camil (incl. stats-cijfers).
 
 ## 1. Doel (één zin)
 
