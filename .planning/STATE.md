@@ -17,10 +17,11 @@
 
 - Combell-upload + DNS + Access-regel (alleen Camil kan dit).
 - EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze.
-- Technisch open (laag prio): `srcset` mobiel, screenreader-test, inline-styles opruimen.
+- Technisch open (laag prio): inline-styles opruimen; echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
 
 ## Laatste 5
 
+- 2026-10-06 QA-ronde D via PR #14 (eerste spec-protocol-ronde: browsers, koppen, print)
 - 2026-10-05 spec-protocol ingericht (specs-template + QA-voorbeeld + AGENTS-regel) (opencode)
 - 2026-10-05 Esso-band weg van jobs via PR #11 (opencode)
 - 2026-10-05 performance-pass B via PR #8 + jobs-foto/locatie-inventaris via PR #9 (opencode)
