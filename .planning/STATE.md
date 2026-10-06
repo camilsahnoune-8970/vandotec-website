@@ -21,6 +21,7 @@
 
 ## Laatste 5
 
+- 2026-10-05 Esso-band weg van jobs via PR #11 (opencode)
 - 2026-10-05 performance-pass B via PR #8 + jobs-foto/locatie-inventaris via PR #9 (opencode)
 - 2026-10-05 content-waarheid A via PR #6 (contact-foto eigen beeld, FAQ+jobs bevestigd door Camil)
 - 2026-10-05 uniforme section-hero's 02-06 via PR #4, homepage-hero via PR #3 (opencode)
