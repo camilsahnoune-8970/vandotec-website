@@ -1,6 +1,6 @@
 # SPEC: QA-ronde (Firefox/Safari, screenreader, print)
 
-Status: concept — wacht op akkoord Camil. Eerste echte spec als voorbeeld bij het spec-protocol.
+Status: goedgekeurd door Camil 2026-10-05 — in uitvoering.
 
 ## 1. Doel (één zin)
 

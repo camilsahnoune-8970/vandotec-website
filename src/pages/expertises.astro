@@ -48,7 +48,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 							<img src={sectionImages[section.slug].src} alt={sectionImages[section.slug].alt} loading="lazy" />
 						)}
 						<div class="teaser-body">
-							<h3><a href={`#${section.slug}`}>{section.title}</a></h3>
+							<h2><a href={`#${section.slug}`}>{section.title}</a></h2>
 							<details>
 								<summary>In het kort</summary>
 								<p class="teaser-text" set:html={section.summary} />
