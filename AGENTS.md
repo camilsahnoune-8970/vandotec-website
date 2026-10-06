@@ -14,6 +14,10 @@ Stack: Astro 7, `output: static`, 11 pagina's. Content in `src/data/*.json`, sty
 - Werk per pagina of per laag, nooit twee agents tegelijk in dezelfde bestanden.
 - Branches: `<wie>/<wat>` (bv. `opencode/hero`, `codex/jobs-tekst`, `claude/footer`). Merge via pull request met preview-check (build groen · SEO 10/10 · preview bekeken door Camil).
 - Review roteert: wie bouwt, reviewt niet zichzelf. Smaak-review doet Camil altijd zelf.
+## Werkwijze (spec-first)
+
+- Geen code zonder goedgekeurde spec: kopieer `specs/_TEMPLATE.md` naar `specs/<onderwerp>.md`, vul in, Camil keurt goed, dan pas bouwen. Grote fasen lopen via GSD spec-phase; B (Spec Kit) en Ralph zijn geparkeerd.
+- Vrijgesteld: kleine fixes (typo, één regel CSS, één woord tekst) — vermeld in de PR waarom geen spec nodig was.
 - Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden + door wie).
 - Niet live zetten en geen DNS/hosting wijzigen zonder expliciete "ja" van Camil. Repo is sinds 2026-10-05 publiek (besluit Camil) — dus nooit secrets/tokens/wachtwoorden committen.
 - `main` is beschermd (regelset `main-sluis`): alles via PR, lineaire historie, geen force-push. Zelfs journaalregels gaan via een branch + PR.
