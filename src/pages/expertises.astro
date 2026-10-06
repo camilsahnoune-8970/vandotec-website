@@ -61,6 +61,16 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 		</div>
 	</section>
 
+	<aside class="advice-band" aria-label="Advies nodig">
+		<div class="container advice-band-inner">
+			<div>
+				<span class="eyebrow">Twijfelt u?</span>
+				<p><strong>Weet u niet welke oplossing past?</strong> Bel <a href="tel:+3257335251">+32 57 33 52 51</a> — wij denken mee, vrijblijvend.</p>
+			</div>
+			<a href="/contact" class="btn btn-red">Vraag advies</a>
+		</div>
+	</aside>
+
 	{(expertises.sections || []).map((section, idx) => {
 		const img = sectionImages[section.slug];
 		const chips = sectionChips[section.slug] || [];

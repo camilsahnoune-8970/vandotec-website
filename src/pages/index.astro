@@ -102,6 +102,19 @@ const heroIntro = home.hero_subtitle || '';
 		</div>
 	</section>
 
+	{(home.stats || []).length > 0 && (
+		<div class="stats-xl">
+			<div class="container">
+				{home.stats.map((stat) => (
+					<div class="stats-xl-item">
+						<div class="stats-xl-num" set:html={stat.number} />
+						<div class="stats-xl-label" set:html={stat.label} />
+					</div>
+				))}
+			</div>
+		</div>
+	)}
+
 	<figure class="moment-band" aria-label="Tank in een sleuf met leidingwerk">
 		<img src="/img/wrk-sleuf.jpg" alt="Tank in een sleuf met leidingwerk op een werf" loading="lazy" width="1000" height="1330" />
 		<figcaption class="moment-caption"><div class="container"><strong>Van sleuf tot oplevering</strong><span>Uitvoering door eigen ploegen</span></div></figcaption>
@@ -190,19 +203,6 @@ const heroIntro = home.hero_subtitle || '';
 		<img src="/img/mom-nacht.jpg" alt="Verlicht tankstation bij nacht" loading="lazy" width="1920" height="1080" />
 		<figcaption class="moment-caption"><div class="container"><strong>Opgeleverd — ook bij nacht herkenbaar</strong><span>Pessleux — Fosses-la-Ville</span></div></figcaption>
 	</figure>
-
-	{(home.stats || []).length > 0 && (
-		<div class="stats-xl">
-			<div class="container">
-				{home.stats.map((stat) => (
-					<div class="stats-xl-item">
-						<div class="stats-xl-num" set:html={stat.number} />
-						<div class="stats-xl-label" set:html={stat.label} />
-					</div>
-				))}
-			</div>
-		</div>
-	)}
 
 	<section class="section statement-band" aria-label="Onze belofte">
 		<div class="container promise-grid">

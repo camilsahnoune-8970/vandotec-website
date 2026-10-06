@@ -687,6 +687,22 @@ ul.list-check,.card-outline ul.list-check,.content-block ul.list-check{list-styl
 .section-header-split{display:flex;align-items:end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
 .flex-wrap-gap{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
 
+/* ---------- Advies-band (expertises) + contactstrook (alle pagina's) ---------- */
+.advice-band{background:var(--navy);color:var(--white);padding:2.5rem 0}
+.advice-band-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2.5rem;flex-wrap:wrap}
+.advice-band .eyebrow{margin-bottom:.75rem}
+.advice-band p{color:var(--muted-on-dark);max-width:60ch;margin:0}
+.advice-band p strong{color:var(--white)}
+.advice-band p a:not(.btn){color:var(--white);font-weight:700}
+.advice-band .btn{flex-shrink:0}
+.contact-strip{background:var(--navy);color:var(--white);padding:1.75rem 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.contact-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap}
+.contact-strip p{margin:0;color:var(--muted-on-dark)}
+.contact-strip p strong{color:var(--white)}
+.contact-strip-actions{display:flex;align-items:center;gap:1rem 2rem;flex-wrap:wrap}
+@media(max-width:640px){.advice-band-inner,.contact-strip-inner{flex-direction:column;align-items:stretch}.advice-band .btn,.contact-strip-actions .btn{text-align:center}}
+@media print{.advice-band,.contact-strip{display:none!important}}
+
 /* ---------- Print (ronde D: papier toont inhoud, geen chrome) ---------- */
 @media print{
   .skip-link,.header-nav,.header-cta,.header-mobile-toggle,.mobile-nav,.cookie-bar,.to-top,.gal-light,.ref-modal,.hero-cta,.hero-tabs,.contact-form .form-group,.contact-form button[type="submit"],.form-hint,.form-error,.connect-grid,.footer-quote,.hero-frame,.hero-corner,.hero-mark{display:none!important}
