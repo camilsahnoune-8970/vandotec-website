@@ -413,9 +413,9 @@ body.js .ref-more{display:inline-block}
 .teaser-card:hover{border-top-color:var(--red);transform:translateY(-4px)}
 .teaser-card>img{aspect-ratio:16/10;object-fit:cover;width:100%;display:block}
 .teaser-body{padding:1.5rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
-.teaser-body h3{color:var(--navy);font-size:1.05rem;font-weight:700;line-height:1.3}
-.teaser-body h3 a{color:inherit}
-.teaser-body h3 a:hover{color:var(--red)}
+.teaser-body h2{color:var(--navy);font-size:1.05rem;font-weight:700;line-height:1.3}
+.teaser-body h2 a{color:inherit}
+.teaser-body h2 a:hover{color:var(--red)}
 .teaser-card details{border-top:1px solid var(--border);padding-top:.75rem;margin-top:.25rem}
 .teaser-card summary{cursor:pointer;list-style:none;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
 .teaser-card summary::-webkit-details-marker{display:none}
@@ -660,4 +660,25 @@ ul.list-check,.card-outline ul.list-check,.content-block ul.list-check{list-styl
   .facts-band ul{grid-template-columns:1fr}
   .stats-grid{grid-template-columns:1fr}
   .stats-xl .container{grid-template-columns:1fr}
+}
+
+/* ---------- Print (ronde D: papier toont inhoud, geen chrome) ---------- */
+@media print{
+  .skip-link,.header-nav,.header-cta,.header-mobile-toggle,.mobile-nav,.cookie-bar,.to-top,.gal-light,.ref-modal,.hero-cta,.hero-tabs,.contact-form .form-group,.contact-form button[type="submit"],.form-hint,.form-error,.connect-grid,.footer-quote,.hero-frame,.hero-corner,.hero-mark{display:none!important}
+  section[aria-label="Waarmee kunnen we u helpen"]{display:none!important}
+  .hero,.page-hero{background:#fff!important;color:#000;min-height:0;padding:1.5rem 0}
+  .hero-photo,.page-hero-photo,.hero::before,.hero::after,.page-hero::before{display:none!important}
+  .hero h1,.page-hero h1,.statement-grid h1,.section-title{color:#000}
+  .hero .lead,.page-hero p,.statement-line,.section-sub{color:#333;max-width:none}
+  .statement-line a,.content-block a{color:#000}
+  .contact-dark,.footer-bottom{background:#fff!important;color:#000}
+  .contact-dark h2,.contact-dark p,.contact-dark a,.contact-dark strong,.footer-bottom p,.footer-bottom a{color:#000}
+  .contact-form .form-fallback{color:#000}
+  .contact-form .form-fallback a{color:#000}
+  .eyebrow{color:#333}
+  .eyebrow::before{background:#000}
+  a{color:#000}
+  .section{padding:1.25rem 0}
+  section,.content-block,.teaser-card{break-inside:avoid-page}
+  h1,h2,h3{break-after:avoid}
 }

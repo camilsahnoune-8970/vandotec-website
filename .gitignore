@@ -30,3 +30,8 @@ pnpm-debug.log*
 # build artifacts
 .render/
 dist/
+
+# Lokale QA/preview-screenshots (nooit committen)
+__qa-*.png
+__oordeel-*.png
+__preview-*.png
