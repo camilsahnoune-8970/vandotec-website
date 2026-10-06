@@ -32,9 +32,9 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     exit('Ongeldig e-mailadres ingevoerd.');
 }
-// basic header injection guard
+// header injection guard: elke CR- of LF apart al verboden (niet alleen het paar)
 foreach ([$name, $phone, $subject, $message] as $v) {
-    if (preg_match('/\r\n/i', $v)) {
+    if (preg_match('/[\r\n]/', $v)) {
         http_response_code(400);
         exit('Ongeldige invoer gedetecteerd.');
     }
@@ -57,9 +57,8 @@ $body .= "Bericht:\n{$message}\n";
 $subject_line = empty($subject) ? 'Nieuw contactformulier' : $subject;
 
 if (mail($to, '[Vandotec] ' . $subject_line, $body, $headers)) {
-    $redirect = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-    $redirect .= '://' . $_SERVER['HTTP_HOST'] . '/contact?sent=1';
-    header("Location: {$redirect}");
+    // relatieve redirect: geen open redirect via Host-header mogelijk
+    header('Location: /contact?sent=1');
     exit;
 } else {
     http_response_code(500);

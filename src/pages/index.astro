@@ -61,8 +61,8 @@ const heroIntro = home.hero_subtitle || '';
 	{home.about_title && (
 		<section class="section" id="about">
 			<div class="container">
-				<div class="content-grid" style="align-items:center">
-					<div style="max-width:640px">
+				<div class="content-grid ai-center">
+					<div class="max-640">
 						<h2 class="section-title">{home.about_title}</h2>
 						{(home.about_paragraphs || []).map((paragraph) => (
 							<p class="about-text" set:html={paragraph} />
@@ -79,7 +79,7 @@ const heroIntro = home.hero_subtitle || '';
 
 	<section class="section" aria-label="Expertises">
 		<div class="container">
-			<div class="section-header" style="max-width:820px">
+			<div class="section-header max-820">
 				<h2 class="section-title">Drie expertises, &eacute;&eacute;n aanspreekpunt</h2>
 			</div>
 			<div class="vtabs">
@@ -109,9 +109,9 @@ const heroIntro = home.hero_subtitle || '';
 
 	<section class="section" aria-label="Recent werk">
 		<div class="container">
-			<div class="section-header" style="display:flex;align-items:end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap">
+			<div class="section-header section-header-split">
 				<div>
-					<h2 class="section-title" style="margin-bottom:0">Van onze werven</h2>
+					<h2 class="section-title mb-0">Van onze werven</h2>
 				</div>
 				<a href="/expertises#referenties" class="about-link">Alle referenties &rarr;</a>
 			</div>
@@ -129,11 +129,11 @@ const heroIntro = home.hero_subtitle || '';
 	{home.services_title && (home.services || []).length > 0 && (
 		<section class="section section-dark">
 			<div class="container">
-				<div class="section-header text-center" style="margin-left:auto;margin-right:auto">
+				<div class="section-header text-center mx-auto">
 					<span class="eyebrow">24/7 paraat</span>
 					<h2 class="section-title centered light">{home.services_title}</h2>
 					{home.services_subtitle && (
-						<p class="section-sub light" style="margin:0 auto" set:html={home.services_subtitle} />
+						<p class="section-sub light m-0-auto" set:html={home.services_subtitle} />
 					)}
 				</div>
 			<div class="service-grid">
@@ -166,7 +166,7 @@ const heroIntro = home.hero_subtitle || '';
 						{home.process_subtitle && (
 							<p class="section-sub" set:html={home.process_subtitle} />
 						)}
-						<p style="margin-top:1.5rem">
+						<p class="mt-15">
 							<a href="/contact" class="btn btn-navy">Start uw project &rarr;</a>
 						</p>
 					</div>
@@ -207,8 +207,8 @@ const heroIntro = home.hero_subtitle || '';
 	<section class="section statement-band" aria-label="Onze belofte">
 		<div class="container promise-grid">
 			<div>
-				<span class="eyebrow" style="color:var(--red)">Onze belofte</span>
-				<p class="statement-big" style="margin-top:1.25rem">Klein genoeg om snel te schakelen. En groots genoeg om uw <em>toekomst</em> te dragen.</p>
+				<span class="eyebrow eyebrow-red">Onze belofte</span>
+				<p class="statement-big mt-125">Klein genoeg om snel te schakelen. En groots genoeg om uw <em>toekomst</em> te dragen.</p>
 			</div>
 			<aside class="promise-side">
 				<p>Actief sinds 1978. Elk project in eigen beheer: eigen installatieteam, eigen serviceteam, 24/7 paraat.</p>

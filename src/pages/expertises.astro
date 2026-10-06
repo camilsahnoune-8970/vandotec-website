@@ -39,7 +39,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 		</div>
 	</section>
 
-	<section class="section" style="padding-bottom:0">
+	<section class="section pb-0">
 		<div class="container">
 			<div class="teaser-grid">
 				{(expertises.sections || []).map((section) => (
@@ -72,12 +72,12 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 			<section class="section" id={section.slug}>
 				<div class="container">
 					{img && (
-						<div class="media-slot ratio-16x9" style="margin-bottom:2.5rem">
+						<div class="media-slot ratio-16x9 mb-25">
 							<img src={img.src} alt={img.alt} loading="lazy" />
 						</div>
 					)}
-					<div class="section-header" style="max-width:820px">
-						<span class="eyebrow" style="color:var(--red)">Expertise {num}</span>
+					<div class="section-header max-820">
+						<span class="eyebrow eyebrow-red">Expertise {num}</span>
 						<h2 class="section-title">{section.title}</h2>
 					</div>
 					{chips.length > 0 && (
@@ -97,7 +97,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 						</div>
 					</div>
 					{(section.gallery || []).length > 0 && (
-						<div class="gal-rail" tabindex="0" style="margin-top:2.5rem" role="region" aria-label={`Galerij ${section.title}`}>
+						<div class="gal-rail mt-25" tabindex="0" role="region" aria-label={`Galerij ${section.title}`}>
 							{section.gallery.map((photo) => (
 								<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt} aria-label={`Vergroot foto: ${photo.alt}`}>
 									<img src={photo.src} alt={photo.alt} loading="lazy" />
@@ -136,7 +136,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 								{(section.body || []).map((paragraph) => (
 									<p set:html={paragraph} />
 								))}
-								{section.approach_title && <h3 style="margin-top:1.5rem">{section.approach_title}</h3>}
+								{section.approach_title && <h3 class="mt-15">{section.approach_title}</h3>}
 								{(section.approach || []).map((paragraph) => (
 									<p set:html={paragraph} />
 								))}
@@ -160,7 +160,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 								{(section.body || []).map((paragraph) => (
 									<p set:html={paragraph} />
 								))}
-								{section.approach_title && <h3 style="margin-top:1.5rem">{section.approach_title}</h3>}
+								{section.approach_title && <h3 class="mt-15">{section.approach_title}</h3>}
 								{(section.approach || []).map((paragraph) => (
 									<p set:html={paragraph} />
 								))}
@@ -190,8 +190,8 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 	{expertises.references_title && (expertises.references || []).length > 0 && (
 	<section class="section" id="referenties">
 		<div class="container">
-			<div class="section-header" style="max-width:820px">
-				<span class="eyebrow" style="color:var(--red)">Realisaties</span>
+			<div class="section-header max-820">
+				<span class="eyebrow eyebrow-red">Realisaties</span>
 				<h2 class="section-title">{expertises.references_title}</h2>
 				{expertises.references_intro && <p class="section-sub" set:html={expertises.references_intro} />}
 			</div>

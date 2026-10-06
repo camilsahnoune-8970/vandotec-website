@@ -51,10 +51,10 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 			<section class="section" id={section.slug}>
 				<div class="container">
 					<div class="sec-num" aria-hidden="true">{num}</div>
-					<span class="eyebrow" style="color:var(--red)">Geaccrediteerd inspectieorganisme</span>
-					<h2 class="section-title" style="margin-top:1rem">{section.title}</h2>
+					<span class="eyebrow eyebrow-red">Geaccrediteerd inspectieorganisme</span>
+					<h2 class="section-title mt-1">{section.title}</h2>
 					{section.best_for && <p class="best-for" set:html={section.best_for} />}
-					<div class="content-grid" style="margin-top:1.5rem">
+					<div class="content-grid mt-15">
 						<div class="content-block">
 							<p set:html={section.intro} />
 							<p set:html={section.details} />
@@ -86,7 +86,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 								<li set:html={item} />
 							))}
 						</ul>
-						<p style="margin-top:1.5rem"><a class="promise-link" href="/contact#contactform">Liever schrijven? Stuur een bericht &rarr;</a></p>
+						<p class="mt-15"><a class="promise-link" href="/contact#contactform">Liever schrijven? Stuur een bericht &rarr;</a></p>
 					</div>
 					<div>
 						{img && (
@@ -101,7 +101,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 		{section.slug === 'onderhoud' && (
 			<section class="section" id={section.slug}>
 				<div class="container">
-					<div class="content-grid" style="align-items:center">
+					<div class="content-grid ai-center">
 						<div>
 							{img && (
 								<div class="media-slot ratio-4x3">
@@ -116,7 +116,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 							<div class="content-block">
 								<p set:html={section.intro} />
 								<p set:html={section.details} />
-								<ul class="list-check" style="margin-top:1rem">
+								<ul class="list-check mt-1">
 									{(section.highlights || []).map((item) => (
 										<li set:html={item} />
 									))}
@@ -130,7 +130,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 		{section.slug === 'preventief' && (
 			<section class="section section-gray" id={section.slug}>
 				<div class="container">
-					<div class="content-grid" style="align-items:center">
+					<div class="content-grid ai-center">
 						<div>
 							<div class="sec-num" aria-hidden="true">{num}</div>
 							<h2 class="section-title">{section.title}</h2>
@@ -142,7 +142,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 						</div>
 						<div>
 							{img && (
-								<div class="media-slot ratio-4x3" style="margin-bottom:1.5rem">
+								<div class="media-slot ratio-4x3 mb-15">
 									<img src={img.src} alt={img.alt} loading="lazy" />
 								</div>
 							)}
@@ -165,7 +165,7 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 
 	<section class="section" aria-label="Uitvoering in beeld">
 		<div class="container">
-			<div class="section-header" style="max-width:820px">
+			<div class="section-header max-820">
 				<h2 class="section-title">Uitvoering in beeld</h2>
 			</div>
 			<div class="gal-rail" tabindex="0" role="region" aria-label="Uitvoering in beeld">
