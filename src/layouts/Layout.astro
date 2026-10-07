@@ -128,14 +128,6 @@ const canonicalUrl = `${siteUrl}${path ?? Astro.url.pathname}`;
 					</div>
 				</div>
 			</div>
-			<div class="footer-quote">
-				<div class="footer-photo" aria-hidden="true">
-					<img src="/img/mom-werf.jpg" srcset="/img/mom-werf-800.jpg 800w, /img/mom-werf.jpg 1920w" sizes="100vw" alt="" loading="lazy" />
-				</div>
-				<div class="container">
-					<p>&ldquo;We voeren elk project volledig in eigen beheer uit.&rdquo; <span>Benoit Goesaert</span></p>
-				</div>
-			</div>
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="footer-bottom-inner">
@@ -299,7 +291,14 @@ const canonicalUrl = `${siteUrl}${path ?? Astro.url.pathname}`;
 					var r = box.getBoundingClientRect();
 					if(r.bottom < 0 || r.top > window.innerHeight) return;
 					var img = box.querySelector('img');
-					if(img) img.style.transform = 'translateY(' + Math.round(y * 0.22) + 'px) scale(1.12)';
+					if(!img) return;
+					if(box.classList.contains('spotlight-photo')){
+						// relatief t.o.v. viewport-midden (band staat midden pagina; absolute scroll zou hem wegduwen)
+						var rel = (r.top + r.height / 2 - window.innerHeight / 2) * -0.06;
+						img.style.transform = 'translateY(' + Math.round(rel) + 'px) scale(1.12)';
+					} else {
+						img.style.transform = 'translateY(' + Math.round(y * 0.22) + 'px) scale(1.12)';
+					}
 				});
 			}
 			// scale voorkomt lege randen bij verschuiving
