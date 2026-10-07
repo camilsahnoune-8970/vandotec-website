@@ -704,6 +704,15 @@ ul.list-check,.card-outline ul.list-check,.content-block ul.list-check{list-styl
 .pager a{color:var(--navy)}
 .pager a:hover{color:var(--red)}
 
+/* ---------- Klanten-ticker V4 (typografisch lint, geen foto's) ---------- */
+.ticker{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white);padding:.9rem 0}
+.ticker-track{display:flex;gap:0;width:max-content;animation:tick 55s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{white-space:nowrap;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);padding:0 1.5rem;position:relative}
+.ticker-track span::after{content:'';position:absolute;right:-4px;top:50%;width:8px;height:8px;transform:translateY(-50%) rotate(45deg);background:var(--navy);opacity:.35}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none;flex-wrap:wrap;width:auto}}
+
 /* ---------- Print (ronde D: papier toont inhoud, geen chrome) ---------- */
 @media print{
   .skip-link,.header-nav,.header-cta,.header-mobile-toggle,.mobile-nav,.cookie-bar,.to-top,.gal-light,.ref-modal,.hero-cta,.hero-tabs,.contact-form .form-group,.contact-form button[type="submit"],.form-hint,.form-error,.connect-grid,.hero-frame,.hero-corner,.hero-mark{display:none!important}
