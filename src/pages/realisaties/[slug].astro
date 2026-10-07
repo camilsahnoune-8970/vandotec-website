@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import expertisesJson from '../../data/expertises.json';
+
+export async function getStaticPaths() {
+  return (expertisesJson.references || []).map((ref) => ({
+    params: { slug: ref.slug },
+    props: { ref }
+  }));
+}
+
+const { ref } = Astro.props;
+const refs = expertisesJson.references || [];
+const idx = refs.findIndex((r) => r.slug === ref.slug);
+const prev = refs[(idx - 1 + refs.length) % refs.length];
+const next = refs[(idx + 1) % refs.length];
+const catLabel = ref.cat === 'ev-laadinstallaties' ? 'EV-laadinfrastructuur' : ref.cat === 'infrastructuurwerken' ? 'Infrastructuurwerken' : 'Tankstations';
+const heroMark = ref.cat === 'ev-laadinstallaties' ? 'LAAD' : ref.cat === 'infrastructuurwerken' ? 'WERF' : 'TANK';
+const displayName = ref.client || ref.name;
+const title = `${displayName}${ref.location ? `, ${ref.location}` : ''} | Realisatie Vandotec`;
+const description = `${catLabel} door Vandotec${ref.location ? ` in ${ref.location}` : ''}: ${ref.text}`;
+const canonical = `https://www.vandotec.be/realisaties/${ref.slug}`;
+const photos = ref.photos && ref.photos.length ? ref.photos : [{ src: ref.img, alt: ref.alt }];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: ref.text,
+  image: photos.map((p) => `https://www.vandotec.be${p.src}`),
+  author: { '@type': 'Organization', name: 'Vandotec' }
+};
+---
+
+<Layout title={title} description={description} path={`/realisaties/${ref.slug}`}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+	<section class="page-hero">
+		<div class="page-hero-photo" aria-hidden="true">
+			<img src={ref.img} alt="" fetchpriority="high" />
+		</div>
+		<div class="hero-mark" aria-hidden="true">{heroMark}</div>
+		<div class="container">
+			<div class="hero-inner">
+				<span class="eyebrow">{catLabel}</span>
+				<h1 set:html={displayName} />
+				{ref.location && <p>{ref.location}</p>}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="container">
+			<div class="content-grid">
+				<div>
+					<h2 class="section-title">Het project</h2>
+					<div class="content-block">
+						<p set:html={ref.text} />
+					</div>
+					<dl class="fact-list">
+						{ref.client && (<><dt>Klant</dt><dd>{ref.client}</dd></>)}
+						{ref.location && (<><dt>Plaats</dt><dd>{ref.location}</dd></>)}
+						<dt>Domein</dt><dd>{catLabel}</dd>
+						<dt>Uitvoering</dt><dd>Eigen ploegen, geen onderaannemers</dd>
+					</dl>
+				</div>
+				<div>
+					<div class="content-block card-outline mt-15">
+						<h3>Een project zoals dit?</h3>
+						<p>Wij denken mee, vrijblijvend — van eerste schets tot oplevering.</p>
+						<p class="mt-1"><a href="/contact" class="btn btn-red">Vraag advies</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{photos.length > 1 && (
+	<section class="section pt-0" aria-label="Foto's van dit project">
+		<div class="container">
+			<div class="section-header max-820">
+				<h2 class="section-title">In beeld</h2>
+			</div>
+			<div class="gal-rail" tabindex="0" role="region" aria-label={`Foto's ${displayName}`}>
+				{photos.map((photo) => (
+				<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt}>
+					<img src={photo.src} alt={photo.alt} loading="lazy" /><figcaption>{photo.alt}</figcaption>
+				</button>
+				))}
+			</div>
+		</div>
+	</section>
+	)}
+
+	<nav class="container pager" aria-label="Andere realisaties">
+		<a href={`/realisaties/${prev.slug}`}>&larr; {prev.client || prev.name}</a>
+		<a href="/realisaties">Alle realisaties</a>
+		<a href={`/realisaties/${next.slug}`}>{next.client || next.name} &rarr;</a>
+	</nav>
+
+</Layout>

@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import expertisesJson from '../data/expertises.json';
+import { loadPageData } from '../lib/loadPageData';
+
+const expertises = loadPageData(expertisesJson, {
+  title: 'Realisaties | Vandotec',
+  description: ''
+});
+
+const refs = expertises.references || [];
+const catLabel = (cat) => cat === 'ev-laadinstallaties' ? 'EV-laadinfrastructuur' : cat === 'infrastructuurwerken' ? 'Infrastructuurwerken' : 'Tankstations';
+const title = 'Realisaties | Vandotec';
+const description = 'Overzicht van Vandotec-realisaties: tankstations, EV-laadinfrastructuur en infrastructuurwerken bij klanten in België en Noord-Frankrijk.';
+---
+
+<Layout title={title} description={description} path="/realisaties">
+
+	<section class="page-hero">
+		<div class="page-hero-photo" aria-hidden="true">
+			<img src="/img/wrk-tankput.jpg" alt="" fetchpriority="high" width="1200" height="900" />
+		</div>
+		<div class="hero-mark" aria-hidden="true">WERVEN</div>
+		<div class="container">
+			<div class="hero-inner">
+				<span class="eyebrow">Onze werven</span>
+				<h1>Realisaties</h1>
+				<p>Tankstations, laadinfra en infrastructuurwerken — elk project in eigen beheer, van ontwerp tot oplevering.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" id="overzicht">
+		<div class="container">
+			<div class="ref-filters" role="group" aria-label="Filter op domein">
+				<button class="ref-pill is-active" type="button" data-filter="all" aria-pressed="true">Alles</button>
+				<button class="ref-pill" type="button" data-filter="tankstations" aria-pressed="false">Tankstations</button>
+				<button class="ref-pill" type="button" data-filter="ev-laadinstallaties" aria-pressed="false">EV-laadinfrastructuur</button>
+				<button class="ref-pill" type="button" data-filter="infrastructuurwerken" aria-pressed="false">Infrastructuurwerken</button>
+			</div>
+			<div class="ref-grid">
+				{refs.map((ref) => (
+				<article class="ref-card" data-cat={ref.cat || 'tankstations'}>
+					{ref.img && <a href={`/realisaties/${ref.slug}`} aria-label={`Bekijk realisatie ${ref.client || ref.name}`}><img src={ref.img} alt={ref.alt || ref.name} loading="lazy" /></a>}
+					<div class="ref-meta"><span class="ref-chip">{catLabel(ref.cat)}</span>{ref.location && <span class="ref-loc">{ref.location}</span>}</div>
+					<h2>{ref.client || ref.name}</h2>
+					<p set:html={ref.text} />
+					<a class="ref-more" href={`/realisaties/${ref.slug}`}>Bekijk project &rarr;</a>
+				</article>
+				))}
+			</div>
+			<p class="ref-empty" hidden>Geen realisaties in dit domein.</p>
+		</div>
+	</section>
+
+	<aside class="advice-band" aria-label="Advies nodig">
+		<div class="container advice-band-inner">
+			<div>
+				<span class="eyebrow">Twijfelt u?</span>
+				<p><strong>Een project zoals dit?</strong> Bel <a href="tel:+3257335251">+32 57 33 52 51</a> — wij denken mee, vrijblijvend.</p>
+			</div>
+			<a href="/contact" class="btn btn-red">Vraag advies</a>
+		</div>
+	</aside>
+
+	<script>
+		(function(){
+			var pills = Array.prototype.slice.call(document.querySelectorAll('.ref-filters .ref-pill'));
+			var cards = Array.prototype.slice.call(document.querySelectorAll('.ref-grid .ref-card'));
+			var empty = document.querySelector('.ref-empty');
+			if(!pills.length || !cards.length) return;
+			pills.forEach(function(pill){
+				pill.addEventListener('click', function(){
+					var f = pill.getAttribute('data-filter');
+					pills.forEach(function(p){ var on = p === pill; p.classList.toggle('is-active', on); p.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+					var shown = 0;
+					cards.forEach(function(card){
+						var show = f === 'all' || card.getAttribute('data-cat') === f;
+						card.hidden = !show;
+						if(show) shown++;
+					});
+					if(empty) empty.hidden = shown > 0;
+				});
+			});
+		})();
+	</script>
+</Layout>
