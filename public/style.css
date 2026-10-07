@@ -529,14 +529,7 @@ body.js .ref-more{display:inline-block}
 .footer-contact a:hover{color:var(--red);text-decoration:underline}
 .footer-main .footer-social a{color:var(--navy)}
 .footer-main .footer-social a:hover{color:var(--red)}
-/* ---------- Footer quote (full-bleed moment) ---------- */
-.footer-quote{position:relative;isolation:isolate;overflow:hidden;border-top:1px solid rgba(255,255,255,.14);padding:clamp(4.5rem,9vw,7.5rem) 0;text-align:center}
-.footer-photo{position:absolute;inset:0;z-index:-2}
-.footer-photo img{width:100%;height:100%;object-fit:cover;opacity:.32}
-.footer-quote::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,22,71,.72),rgba(0,22,71,.45) 50%,rgba(0,22,71,.78));pointer-events:none}
-.footer-quote p{font-size:clamp(1.5rem,3vw,2.25rem);font-style:italic;color:var(--white);max-width:none;margin:0 auto;line-height:1.4;text-wrap:balance}
-.footer-quote p::before{content:'\201C';display:block;font-size:2.5em;line-height:.7;color:var(--red);margin-bottom:1rem;font-style:normal}
-.footer-quote p span{display:block;margin-top:1.5rem;font-style:normal;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-on-dark)}
+/* ---------- Footer-ondersteun (donkere plint) ---------- */
 .footer-bottom{border-top:1px solid rgba(255,255,255,.14);padding:1.25rem 0}
 .footer-bottom-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.8rem;flex-wrap:wrap}
 .footer-bottom-inner .copy{color:var(--muted-on-dark)}
@@ -713,7 +706,7 @@ ul.list-check,.card-outline ul.list-check,.content-block ul.list-check{list-styl
 
 /* ---------- Print (ronde D: papier toont inhoud, geen chrome) ---------- */
 @media print{
-  .skip-link,.header-nav,.header-cta,.header-mobile-toggle,.mobile-nav,.cookie-bar,.to-top,.gal-light,.ref-modal,.hero-cta,.hero-tabs,.contact-form .form-group,.contact-form button[type="submit"],.form-hint,.form-error,.connect-grid,.footer-quote,.hero-frame,.hero-corner,.hero-mark{display:none!important}
+  .skip-link,.header-nav,.header-cta,.header-mobile-toggle,.mobile-nav,.cookie-bar,.to-top,.gal-light,.ref-modal,.hero-cta,.hero-tabs,.contact-form .form-group,.contact-form button[type="submit"],.form-hint,.form-error,.connect-grid,.hero-frame,.hero-corner,.hero-mark{display:none!important}
   section[aria-label="Waarmee kunnen we u helpen"]{display:none!important}
   .hero,.page-hero{background:#fff!important;color:#000;min-height:0;padding:1.5rem 0}
   .hero-photo,.page-hero-photo,.hero::before,.hero::after,.page-hero::before{display:none!important}
