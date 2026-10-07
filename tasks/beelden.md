@@ -157,6 +157,9 @@ overschreven bestanden behouden hun naam zodat geen markup wijzigt. Alleen `exp-
 | `srv-preventief.jpg` | `Maes De Panne 2.jpg` (leidingwerk) | NATO E3A | service + contact-card |
 | `contact-werf.jpg` (was `stock-contact.jpg`) | `Pessleux Fosses-la-Ville 1.jpg` | Fuel dispenser, Henrywingra — vervangen 2026-10-05 | contact-kaart |
 | `jobs-waarden.jpg` (nieuw) | `Waarden van Vandotec Poperinge.jpg` (X-schijf, VANDOTEC LOW RES WEBSITE) | eigen merlfoto high-five, 1600x900 | jobs moment-band |
+| `mazout-express-oostkamp-1..4.jpg` (nieuw, staged) | `Beelden/img-20190621-*` (renovatie Mazout Express Oostkamp) | pompwerken + luifel, 1200px | wacht op tekst — nog geen referentie-entry |
+| `maes-merelbeke-shell.jpg` (nieuw) | `Beelden/img-20200326-145900.jpg` (Totaalproject Maes Merelbeke) | luifels, 1200x900, merkneutrale alt | photos[] Maes Brandstoffen Merelbeke |
+| `cools-brugge-aanleg-1..2.jpg` (nieuw) | `Beelden/img-20200630-*` + `img-20200713-*` (aanleg Cools Avia Brugge) | leidingwerk + tankput, 1200px | photos[] Cools Avia Brugge |
 | `ref-vanassche.jpg` (nieuw) | `Van Assche Zulte 1.jpg` (Texaco) | — | referentie Van Assche, Zulte |
 | `ref-maes-panne.jpg` (nieuw) | `Maes De Panne 4.jpg` (sneeuw) | — | referentie Maes, De Panne |
 | `ref-spilmont.jpg` (nieuw) | `Spilmont Hautrage 1.jpg` (kraan) | — | referentie Spilmont, Hautrage |
