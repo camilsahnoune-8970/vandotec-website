@@ -2,25 +2,25 @@
 
 ## Waar staan we
 
-- Site: 11 pagina's, Astro static, build groen, SEO 11/11. Remote `origin/main` synchroon.
+- Site: 26 pagina's (11 + realisaties-hub + 14 projectpagina’s), Astro static, build groen, SEO ALL OK. Remote `origin/main` synchroon.
 - Repo sinds 2026-10-05 publiek (besluit Camil); `main` beschermd via regelset `main-sluis` (PR-verplicht, lineair, geen force-push, geldt ook voor admins).
-- Huisstijl staat; 14 referenties met filter+modal; galerijen met lightbox op home/expertises/service/over.
-- Footer-quote toont alleen “Benoit Goesaert”. Team: Marijn/Benoit/Kevin met portret, Fien weg.
-- Staging voorbereid: `new.powerland.be` achter Cloudflare Access (zie `tasks/staging-upload.md`). GitHub-workflow uitgeschakeld.
+- Huisstijl staat; hub `/realisaties` + 14 projectpagina’s met JSON-LD; V1-split + klanten-ticker op home; footer-quote verwijderd (PR #22).
+- Team: Marijn/Benoit/Kevin met portret, Fien weg.
+- Staging geschrapt uit planning (besluit Camil 2026-10-07); formulier ongetest tot er ooit een host is.
 
 ## Wat loopt
 
-- Preview-ronde door Camil (hero, galerijen, footer, service-sectie).
-- Review door Kevin via staging-URL zodra die staat.
+- Fotorondgang Beelden (groepen 1–3 deels benoemd; groep 2-rest + groep 4+ open).
+- Mazout-teksten volgen later (foto’s gestaged, nog geen entry).
 
 ## Geblokkeerd / wacht op Camil
 
-- Combell-upload + DNS + Access-regel (alleen Camil kan dit).
-- EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze.
-- Technisch open (laag prio): inline-styles opruimen; echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
+- EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
+- Technisch open (laag prio): echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
 
 ## Laatste 5
 
+- 2026-10-07 STATE rechtgezet + branches opgeruimd (opencode)
 - 2026-10-07 contentronde 1 via PR #25 (7 werffoto’s: Cools/Maes-galerijen, Mazout staged)
 - 2026-10-07 werfblokken V1+V4 via PR #23 + footer-quote weg via PR #22 (opencode)
 - 2026-10-07 realisaties-pilot via PR #20 (hub + 14 projectpagina’s, template klaar)
