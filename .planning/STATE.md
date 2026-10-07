@@ -21,6 +21,7 @@
 
 ## Laatste 5
 
+- 2026-10-07 contentronde 1 via PR #25 (7 werffoto’s: Cools/Maes-galerijen, Mazout staged)
 - 2026-10-07 werfblokken V1+V4 via PR #23 + footer-quote weg via PR #22 (opencode)
 - 2026-10-07 realisaties-pilot via PR #20 (hub + 14 projectpagina’s, template klaar)
 - 2026-10-06 mrsolar-lessen via PR #18 (advies-CTA, contactstrook, cijferband omhoog)
