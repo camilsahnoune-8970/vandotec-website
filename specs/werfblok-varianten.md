@@ -59,6 +59,6 @@ SEO-zichtbare klantnamen op home. Techniek: pure CSS-marquee, max 1 rode accent
 
 ## Status
 
-- V1 (split) en V4 (ticker) beide gebouwd en gescreenshot; Camil kiest: ALLEBEI.
+- V1 (split) en V4 (ticker) beide live via PR #23 (2026-10-07), goedgekeurd door Camil.
 - V2 (full-bleed-kaart) vervallen als moment-band-dubbel — verwijderd.
 - V3 (tab-verkenner) geparkeerd.
