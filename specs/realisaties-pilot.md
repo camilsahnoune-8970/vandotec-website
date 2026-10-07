@@ -1,6 +1,6 @@
 # SPEC: Realisaties-pilot (hub + programmatische projectpagina’s)
 
-Status: goedgekeurd door Camil 2026-10-06 (“ja” op pilot-lijn) — in uitvoering.
+Status: uitgevoerd via PR #20 (2026-10-07), goedgekeurd door Camil. Contentronde (verhalen + foto’s + toestemmingen) volgt apart.
 
 ## 1. Doel (één zin)
 
