@@ -1,208 +1,387 @@
 {
-  "title": "Expertises | Vandotec",
-  "description": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
-  "hero_title": "Onze <em>expertises</em>",
-  "hero_subtitle": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen, van ontwerp tot oplevering. Geen onderaannemers.",
-  "sections": [
+ "title": "Expertises | Vandotec",
+ "description": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
+ "hero_title": "Onze <em>expertises</em>",
+ "hero_subtitle": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen, van ontwerp tot oplevering. Geen onderaannemers.",
+ "sections": [
+  {
+   "slug": "tankstations",
+   "icon": "/img/icon-tankstation.svg",
+   "title": "Tankstations",
+   "gallery": [
     {
-      "slug": "tankstations",
-      "icon": "/img/icon-tankstation.svg",
-      "title": "Tankstations",
-      "gallery": [
-        { "src": "/img/gal-tank-lng.jpg", "alt": "LNG-tankstation in Antwerpen" },
-        { "src": "/img/gal-tank-pompen.jpg", "alt": "Pompeiland met brandstofpompen" },
-        { "src": "/img/gal-tank-texaco.jpg", "alt": "Tankstation met Texaco-luifel" },
-        { "src": "/img/wrk-werf.jpg", "alt": "Leidingwerk op een werf in opbouw" },
-        { "src": "/img/wrk-tankput.jpg", "alt": "Brandstoftank in een tankput" },
-        { "src": "/img/wrk-sleuf.jpg", "alt": "Tank in een sleuf met leidingwerk" }
-      ],
-      "summary": "Engineering, bouw en onderhoud van onder- en bovengrondse tankstationinstallaties: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie.",
-      "body": [
-        "Wij ontwerpen, bouwen en onderhouden volledige tankstationinstallaties, onder- en bovengronds: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie. Van engineering tot oplevering.",
-        "Elk project start met een analyse van de locatie en technische vereisten. Onze technische dienst werkt een uitvoeringsplan uit dat voldoet aan alle vigerende regelgeving. Na oplevering blijft Vandotec beschikbaar voor onderhoud, herstellingen en 24/7 interventie."
-      ],
-      "approach_title": "Onze aanpak",
-      "approach": [
-        "Wij werken samen met de brandstoftoeleverancier voor een correcte plaatsing en afregeling. Na oplevering ontvangt u een volledige documentatie van de installatie. Ook voor bodemsanering en buitengebruikstelling van tanks kunt u bij ons terecht."
-      ]
+     "src": "/img/gal-tank-lng.jpg",
+     "alt": "LNG-tankstation in Antwerpen"
     },
     {
-      "slug": "ev-laadinstallaties",
-      "icon": "/img/icon-ev.svg",
-      "title": "EV laadinstallaties",
-      "summary": "Plaatsing en onderhoud van AC- en DC-laadpalen met bekabeling, verdeelkasten en laadbeheersystemen voor bedrijven en openbare instanties.",
-      "body": [
-        "Wij plaatsen en onderhouden laadpalen en bijbehorende elektrische infrastructuur voor bedrijven en openbare instanties. Onze projecten omvatten AC- en DC-laadinfrastructuur, met bekabeling, verdeelkasten en laadbeheersystemen.",
-        "Van ontwerp tot oplevering: we beginnen met een inventarisatie van de gewenste capaciteit en toekomstige behoeften, dienen de nodige aanvragen in bij de netbeheerder en voeren de plaatsing uit. Na oplevering blijft ons beschikbaar voor ondersteuning en uitbreidingen."
-      ],
-      "approach_title": "Onze aanpak",
-      "approach": [
-        "We beginnen met een inventarisatie van de gewenste laadcapaciteit en toekomstige behoeften. Vervolgens ontwerpen we de installatie, dienen we de nodige aanvragen in bij de netbeheerder en voeren we de plaatsing uit.",
-        "Na oplevering blijven we beschikbaar voor technische ondersteuning, uitbreidingen en onderhoud."
-      ]
+     "src": "/img/gal-tank-pompen.jpg",
+     "alt": "Pompeiland met brandstofpompen"
     },
     {
-      "slug": "infrastructuurwerken",
-      "icon": "/img/icon-infra.svg",
-      "title": "Infrastructuurwerken",
-      "summary": "Grondverzet, riolering, wegenis, betonwerken en hoog- en middenspanningsinstallaties tot en met 36 kV voor industri&euml;le projecten.",
-      "body": [
-        "Wij voeren grondverzet, riolering, wegenis en betonwerken uit voor industri&euml;le projecten, zowel in functie van onze kerndomeinen als zelfstandig.",
-        "Wij zijn gespecialiseerd in hoog- en middenspanningsinstallaties tot en met 36 kV. Dit omvat de plaatsing van transformatoren, schakelinstallaties en bekabeling, met naleving van alle veiligheidsvoorschriften en netbeheerder-eisen."
-      ],
-      "approach_title": "HS- en MS-installaties",
-      "approach": [
-        "Deze uitvoering gebeurt in nauw overleg met de opdrachtgever en netbeheerder. Na oplevering volgt een duidelijk nazorg- en onderhoudspad."
-      ]
+     "src": "/img/gal-tank-texaco.jpg",
+     "alt": "Tankstation met Texaco-luifel"
+    },
+    {
+     "src": "/img/wrk-werf.jpg",
+     "alt": "Leidingwerk op een werf in opbouw"
+    },
+    {
+     "src": "/img/wrk-tankput.jpg",
+     "alt": "Brandstoftank in een tankput"
+    },
+    {
+     "src": "/img/wrk-sleuf.jpg",
+     "alt": "Tank in een sleuf met leidingwerk"
     }
-  ],
-  "references_title": "Referentieprojecten",
-  "references_intro": "Een greep uit onze realisaties — van tankstations tot recyclagesites.",
-  "references": [
+   ],
+   "summary": "Engineering, bouw en onderhoud van onder- en bovengrondse tankstationinstallaties: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie.",
+   "body": [
+    "Wij ontwerpen, bouwen en onderhouden volledige tankstationinstallaties, onder- en bovengronds: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie. Van engineering tot oplevering.",
+    "Elk project start met een analyse van de locatie en technische vereisten. Onze technische dienst werkt een uitvoeringsplan uit dat voldoet aan alle vigerende regelgeving. Na oplevering blijft Vandotec beschikbaar voor onderhoud, herstellingen en 24/7 interventie."
+   ],
+   "approach_title": "Onze aanpak",
+   "approach": [
+    "Wij werken samen met de brandstoftoeleverancier voor een correcte plaatsing en afregeling. Na oplevering ontvangt u een volledige documentatie van de installatie. Ook voor bodemsanering en buitengebruikstelling van tanks kunt u bij ons terecht."
+   ]
+  },
+  {
+   "slug": "ev-laadinstallaties",
+   "icon": "/img/icon-ev.svg",
+   "title": "EV laadinstallaties",
+   "summary": "Plaatsing en onderhoud van AC- en DC-laadpalen met bekabeling, verdeelkasten en laadbeheersystemen voor bedrijven en openbare instanties.",
+   "body": [
+    "Wij plaatsen en onderhouden laadpalen en bijbehorende elektrische infrastructuur voor bedrijven en openbare instanties. Onze projecten omvatten AC- en DC-laadinfrastructuur, met bekabeling, verdeelkasten en laadbeheersystemen.",
+    "Van ontwerp tot oplevering: we beginnen met een inventarisatie van de gewenste capaciteit en toekomstige behoeften, dienen de nodige aanvragen in bij de netbeheerder en voeren de plaatsing uit. Na oplevering blijft ons beschikbaar voor ondersteuning en uitbreidingen."
+   ],
+   "approach_title": "Onze aanpak",
+   "approach": [
+    "We beginnen met een inventarisatie van de gewenste laadcapaciteit en toekomstige behoeften. Vervolgens ontwerpen we de installatie, dienen we de nodige aanvragen in bij de netbeheerder en voeren we de plaatsing uit.",
+    "Na oplevering blijven we beschikbaar voor technische ondersteuning, uitbreidingen en onderhoud."
+   ]
+  },
+  {
+   "slug": "infrastructuurwerken",
+   "icon": "/img/icon-infra.svg",
+   "title": "Infrastructuurwerken",
+   "summary": "Grondverzet, riolering, wegenis, betonwerken en hoog- en middenspanningsinstallaties tot en met 36 kV voor industri&euml;le projecten.",
+   "body": [
+    "Wij voeren grondverzet, riolering, wegenis en betonwerken uit voor industri&euml;le projecten, zowel in functie van onze kerndomeinen als zelfstandig.",
+    "Wij zijn gespecialiseerd in hoog- en middenspanningsinstallaties tot en met 36 kV. Dit omvat de plaatsing van transformatoren, schakelinstallaties en bekabeling, met naleving van alle veiligheidsvoorschriften en netbeheerder-eisen."
+   ],
+   "approach_title": "HS- en MS-installaties",
+   "approach": [
+    "Deze uitvoering gebeurt in nauw overleg met de opdrachtgever en netbeheerder. Na oplevering volgt een duidelijk nazorg- en onderhoudspad."
+   ]
+  }
+ ],
+ "references_title": "Referentieprojecten",
+ "references_intro": "Een greep uit onze realisaties — van tankstations tot recyclagesites.",
+ "references": [
+  {
+   "name": "Vanheede Environmental Services, Roeselare",
+   "cat": "tankstations",
+   "text": "Nieuwe bovengrondse tankinstallatie: waterdichte betonpiste met KWS-afwerking, dieseltank en pomp, aparte AdBlue-tank.",
+   "img": "/img/ref-vanheede.jpg",
+   "alt": "Bovengrondse tankinstallatie met leidingwerk",
+   "client": "Vanheede Environmental Services",
+   "location": "Roeselare",
+   "slug": "vanheede-environmental-services-roeselare",
+   "photos": [
     {
-      "name": "Vanheede Environmental Services, Roeselare",
-      "cat": "tankstations",
-      "text": "Nieuwe bovengrondse tankinstallatie: waterdichte betonpiste met KWS-afwerking, dieseltank en pomp, aparte AdBlue-tank.",
-      "img": "/img/ref-vanheede.jpg",
-      "alt": "Bovengrondse tankinstallatie met leidingwerk"
-    },
-    {
-      "name": "Galloo, Lumes (FR)",
-      "cat": "tankstations",
-      "text": "Tankinstallatie voor recyclagesite: dubbelwandige tank (20.000/10.000 l), leidingen, vloeistofdichte piste, KWS-afscheider en GIR-tankregistratiesysteem.",
-      "img": "/img/ref-galloo.jpg",
-      "alt": "Tank en Vandotec-busje op recyclagesite"
-    },
-    {
-      "name": "Maes Brandstoffen, Merelbeke",
-      "cat": "infrastructuurwerken",
-      "text": "Totaalproject tankstation: van grondwerken en infrastructuur tot installatie van pompen, luifel en volledige afwerking. Sleutel-op-de-deur.",
-      "img": "/img/ref-maes.jpg",
-      "alt": "Tankstation Maes met groene luifel"
-    },
-    {
-      "name": "Tradit Energie, Deinze",
-      "cat": "tankstations",
-      "text": "Totale infrastructuur: brandstofpompen en installatie door Vandotec, EV-laadinfrastructuur door zusterdivisie Powerland. Synergie tussen beide divisies in één project.",
-      "img": "/img/ref-tradit.jpg",
-      "alt": "Techniekers aan het werk bij Tradit Energie"
-    },
-    {
-      "name": "Cools Avia, Brugge",
-      "cat": "infrastructuurwerken",
-      "text": "Totaalproject tankstation: grondwerken, installatie van pompen, luifel en volledige technische infrastructuur.",
-      "img": "/img/ref-cools.jpg",
-      "alt": "Vandotec-busje bij tankstation Cools Avia"
-    },
-    {
-      "name": "Iveco, Maenhout Brugge",
-      "cat": "ev-laadinstallaties",
-      "text": "Laadpalen bij showroom.",
-      "img": "/img/ref-iveco.jpg",
-      "alt": "Elektrische auto's aan laadpalen bij showroom"
-    },
-    {
-      "name": "Demarol, Lessines",
-      "cat": "tankstations",
-      "text": "Brandstofpompen (Avia).",
-      "img": "/img/ref-demarol.jpg",
-      "alt": "Avia-brandstofpompen van dichtbij"
-    },
-    {
-      "name": "Decospan, Menen",
-      "cat": "ev-laadinstallaties",
-      "text": "Laadinfrastructuur bij autodealer.",
-      "img": "/img/ref-decospan.jpg",
-      "alt": "Laadpalen bij autodealer"
-    },
-    {
-      "name": "MIG Motors, Lievegem",
-      "cat": "tankstations",
-      "text": "Servicebusje bij pompinstallatie.",
-      "img": "/img/ref-mig.jpg",
-      "alt": "Vandotec-servicebusje bij pomp"
-    },
-    {
-      "name": "Cid Lines, Ieper",
-      "cat": "tankstations",
-      "text": "Tankstation (Shell).",
-      "img": "/img/ref-cid.jpg",
-      "alt": "Tankstation met Shell-luifel"
-    },
-    {
-      "name": "Van Assche, Zulte",
-      "cat": "tankstations",
-      "text": "Nieuw tankstation (Texaco): luifel met pompen, prijstoren en volledige verharding.",
-      "img": "/img/ref-vanassche.jpg",
-      "alt": "Opgeleverd Texaco-tankstation",
-      "gallery": [
-        { "src": "/img/wrk-sleuf.jpg", "alt": "Tank in een sleuf met leidingwerk" },
-        { "src": "/img/wrk-service.jpg", "alt": "Technieker aan Texaco-brandstofpompen" }
-      ]
-    },
-    {
-      "name": "Maes, De Panne",
-      "cat": "tankstations",
-      "text": "Tankstation (Maes): luifel, pompen en prijstoren met AdBlue-voorziening.",
-      "img": "/img/ref-maes-panne.jpg",
-      "alt": "Tankstation Maes in de sneeuw",
-      "gallery": [
-        { "src": "/img/wrk-tankput.jpg", "alt": "Brandstoftank in een tankput" },
-        { "src": "/img/wrk-kamers.jpg", "alt": "Blauwe keerkamers met leidingwerk" }
-      ]
-    },
-    {
-      "name": "Spilmont, Hautrage",
-      "cat": "tankstations",
-      "text": "Plaatsing bovengrondse brandstoftank met kraan, inclusief leidingwerk en fundatie.",
-      "img": "/img/ref-spilmont.jpg",
-      "alt": "Brandstoftank wordt gehesen met een kraan"
-    },
-    {
-      "name": "Tankstation groene luifel",
-      "cat": "tankstations",
-      "text": "Tankstation met groene luifel, pompen en ontluchting — opgeleverd met eigen servicebus ter plaatse.",
-      "img": "/img/ref-pessleux.jpg",
-      "alt": "Tankstation met groene luifel en Vandotec-servicebus",
-      "gallery": [
-        { "src": "/img/wrk-pompen.jpg", "alt": "Technieker aan brandstofpompen" }
-      ]
+     "src": "/img/ref-vanheede.jpg",
+     "alt": "Bovengrondse tankinstallatie met leidingwerk"
     }
-  ],
-  "audiences_title": "Voor wie wij werken",
-  "audiences": "Brandstofbedrijven en tankstationuitbaters, industriële bedrijven, netbeheerders en energiebedrijven, aannemers en projectontwikkelaars, overheden en gemeenten.",
-  "stats": [
+   ]
+  },
+  {
+   "name": "Galloo, Lumes (FR)",
+   "cat": "tankstations",
+   "text": "Tankinstallatie voor recyclagesite: dubbelwandige tank (20.000/10.000 l), leidingen, vloeistofdichte piste, KWS-afscheider en GIR-tankregistratiesysteem.",
+   "img": "/img/ref-galloo.jpg",
+   "alt": "Tank en Vandotec-busje op recyclagesite",
+   "client": "Galloo",
+   "location": "Lumes FR",
+   "slug": "galloo-lumes-fr",
+   "photos": [
     {
-      "number": "45+",
-      "label": "Jaar ervaring"
-    },
-    {
-      "number": "6.000+",
-      "label": "Projecten"
-    },
-    {
-      "number": "3.500+",
-      "label": "IJkingen per jaar"
-    },
-    {
-      "number": "5",
-      "label": "Landen actief"
+     "src": "/img/ref-galloo.jpg",
+     "alt": "Tank en Vandotec-busje op recyclagesite"
     }
-  ],
-  "ctas": [
+   ]
+  },
+  {
+   "name": "Maes Brandstoffen, Merelbeke",
+   "cat": "infrastructuurwerken",
+   "text": "Totaalproject tankstation: van grondwerken en infrastructuur tot installatie van pompen, luifel en volledige afwerking. Sleutel-op-de-deur.",
+   "img": "/img/ref-maes.jpg",
+   "alt": "Tankstation Maes met groene luifel",
+   "client": "Maes Brandstoffen",
+   "location": "Merelbeke",
+   "slug": "maes-brandstoffen-merelbeke",
+   "photos": [
     {
-      "label": "Offerte aanvragen",
-      "url": "/contact",
-      "theme": "red",
-      "text": "Een project?",
-      "description": "Vraag een offerte aan voor uw tankstation, laadinfra- of infraproject."
+     "src": "/img/ref-maes.jpg",
+     "alt": "Tankstation Maes met groene luifel"
+    }
+   ]
+  },
+  {
+   "name": "Tradit Energie, Deinze",
+   "cat": "tankstations",
+   "text": "Totale infrastructuur: brandstofpompen en installatie door Vandotec, EV-laadinfrastructuur door zusterdivisie Powerland. Synergie tussen beide divisies in één project.",
+   "img": "/img/ref-tradit.jpg",
+   "alt": "Techniekers aan het werk bij Tradit Energie",
+   "client": "Tradit Energie",
+   "location": "Deinze",
+   "slug": "tradit-energie-deinze",
+   "photos": [
+    {
+     "src": "/img/ref-tradit.jpg",
+     "alt": "Techniekers aan het werk bij Tradit Energie"
+    }
+   ]
+  },
+  {
+   "name": "Cools Avia, Brugge",
+   "cat": "infrastructuurwerken",
+   "text": "Totaalproject tankstation: grondwerken, installatie van pompen, luifel en volledige technische infrastructuur.",
+   "img": "/img/ref-cools.jpg",
+   "alt": "Vandotec-busje bij tankstation Cools Avia",
+   "client": "Cools Avia",
+   "location": "Brugge",
+   "slug": "cools-avia-brugge",
+   "photos": [
+    {
+     "src": "/img/ref-cools.jpg",
+     "alt": "Vandotec-busje bij tankstation Cools Avia"
+    }
+   ]
+  },
+  {
+   "name": "Iveco, Maenhout Brugge",
+   "cat": "ev-laadinstallaties",
+   "text": "Laadpalen bij showroom.",
+   "img": "/img/ref-iveco.jpg",
+   "alt": "Elektrische auto's aan laadpalen bij showroom",
+   "client": "Iveco",
+   "location": "Maenhout Brugge",
+   "slug": "iveco-maenhout-brugge",
+   "photos": [
+    {
+     "src": "/img/ref-iveco.jpg",
+     "alt": "Elektrische auto's aan laadpalen bij showroom"
+    }
+   ]
+  },
+  {
+   "name": "Demarol, Lessines",
+   "cat": "tankstations",
+   "text": "Brandstofpompen (Avia).",
+   "img": "/img/ref-demarol.jpg",
+   "alt": "Avia-brandstofpompen van dichtbij",
+   "client": "Demarol",
+   "location": "Lessines",
+   "slug": "demarol-lessines",
+   "photos": [
+    {
+     "src": "/img/ref-demarol.jpg",
+     "alt": "Avia-brandstofpompen van dichtbij"
+    }
+   ]
+  },
+  {
+   "name": "Decospan, Menen",
+   "cat": "ev-laadinstallaties",
+   "text": "Laadinfrastructuur bij autodealer.",
+   "img": "/img/ref-decospan.jpg",
+   "alt": "Laadpalen bij autodealer",
+   "client": "Decospan",
+   "location": "Menen",
+   "slug": "decospan-menen",
+   "photos": [
+    {
+     "src": "/img/ref-decospan.jpg",
+     "alt": "Laadpalen bij autodealer"
+    }
+   ]
+  },
+  {
+   "name": "MIG Motors, Lievegem",
+   "cat": "tankstations",
+   "text": "Servicebusje bij pompinstallatie.",
+   "img": "/img/ref-mig.jpg",
+   "alt": "Vandotec-servicebusje bij pomp",
+   "client": "MIG Motors",
+   "location": "Lievegem",
+   "slug": "mig-motors-lievegem",
+   "photos": [
+    {
+     "src": "/img/ref-mig.jpg",
+     "alt": "Vandotec-servicebusje bij pomp"
+    }
+   ]
+  },
+  {
+   "name": "Cid Lines, Ieper",
+   "cat": "tankstations",
+   "text": "Tankstation (Shell).",
+   "img": "/img/ref-cid.jpg",
+   "alt": "Tankstation met Shell-luifel",
+   "client": "Cid Lines",
+   "location": "Ieper",
+   "slug": "cid-lines-ieper",
+   "photos": [
+    {
+     "src": "/img/ref-cid.jpg",
+     "alt": "Tankstation met Shell-luifel"
+    }
+   ]
+  },
+  {
+   "name": "Van Assche, Zulte",
+   "cat": "tankstations",
+   "text": "Nieuw tankstation (Texaco): luifel met pompen, prijstoren en volledige verharding.",
+   "img": "/img/ref-vanassche.jpg",
+   "alt": "Opgeleverd Texaco-tankstation",
+   "gallery": [
+    {
+     "src": "/img/wrk-sleuf.jpg",
+     "alt": "Tank in een sleuf met leidingwerk"
     },
     {
-      "label": "Bel nu",
-      "url": "tel:+3257335251",
-      "theme": "outline",
-      "text": "24/7 interventie nodig?",
-      "description": "Bij defecten plannen wij direct een interventie. Bel ons op +32 57 33 52 51."
+     "src": "/img/wrk-service.jpg",
+     "alt": "Technieker aan Texaco-brandstofpompen"
     }
-  ]
+   ],
+   "client": "Van Assche",
+   "location": "Zulte",
+   "slug": "van-assche-zulte",
+   "photos": [
+    {
+     "src": "/img/ref-vanassche.jpg",
+     "alt": "Opgeleverd Texaco-tankstation"
+    },
+    {
+     "src": "/img/wrk-sleuf.jpg",
+     "alt": "Tank in een sleuf met leidingwerk"
+    },
+    {
+     "src": "/img/wrk-service.jpg",
+     "alt": "Technieker aan Texaco-brandstofpompen"
+    }
+   ]
+  },
+  {
+   "name": "Maes, De Panne",
+   "cat": "tankstations",
+   "text": "Tankstation (Maes): luifel, pompen en prijstoren met AdBlue-voorziening.",
+   "img": "/img/ref-maes-panne.jpg",
+   "alt": "Tankstation Maes in de sneeuw",
+   "gallery": [
+    {
+     "src": "/img/wrk-tankput.jpg",
+     "alt": "Brandstoftank in een tankput"
+    },
+    {
+     "src": "/img/wrk-kamers.jpg",
+     "alt": "Blauwe keerkamers met leidingwerk"
+    }
+   ],
+   "client": "Maes",
+   "location": "De Panne",
+   "slug": "maes-de-panne",
+   "photos": [
+    {
+     "src": "/img/ref-maes-panne.jpg",
+     "alt": "Tankstation Maes in de sneeuw"
+    },
+    {
+     "src": "/img/wrk-tankput.jpg",
+     "alt": "Brandstoftank in een tankput"
+    },
+    {
+     "src": "/img/wrk-kamers.jpg",
+     "alt": "Blauwe keerkamers met leidingwerk"
+    }
+   ]
+  },
+  {
+   "name": "Spilmont, Hautrage",
+   "cat": "tankstations",
+   "text": "Plaatsing bovengrondse brandstoftank met kraan, inclusief leidingwerk en fundatie.",
+   "img": "/img/ref-spilmont.jpg",
+   "alt": "Brandstoftank wordt gehesen met een kraan",
+   "client": "Spilmont",
+   "location": "Hautrage",
+   "slug": "spilmont-hautrage",
+   "photos": [
+    {
+     "src": "/img/ref-spilmont.jpg",
+     "alt": "Brandstoftank wordt gehesen met een kraan"
+    }
+   ]
+  },
+  {
+   "name": "Tankstation groene luifel",
+   "cat": "tankstations",
+   "text": "Tankstation met groene luifel, pompen en ontluchting — opgeleverd met eigen servicebus ter plaatse.",
+   "img": "/img/ref-pessleux.jpg",
+   "alt": "Tankstation met groene luifel en Vandotec-servicebus",
+   "gallery": [
+    {
+     "src": "/img/wrk-pompen.jpg",
+     "alt": "Technieker aan brandstofpompen"
+    }
+   ],
+   "client": "",
+   "location": "",
+   "slug": "tankstation-groene-luifel",
+   "photos": [
+    {
+     "src": "/img/ref-pessleux.jpg",
+     "alt": "Tankstation met groene luifel en Vandotec-servicebus"
+    },
+    {
+     "src": "/img/wrk-pompen.jpg",
+     "alt": "Technieker aan brandstofpompen"
+    }
+   ]
+  }
+ ],
+ "audiences_title": "Voor wie wij werken",
+ "audiences": "Brandstofbedrijven en tankstationuitbaters, industriële bedrijven, netbeheerders en energiebedrijven, aannemers en projectontwikkelaars, overheden en gemeenten.",
+ "stats": [
+  {
+   "number": "45+",
+   "label": "Jaar ervaring"
+  },
+  {
+   "number": "6.000+",
+   "label": "Projecten"
+  },
+  {
+   "number": "3.500+",
+   "label": "IJkingen per jaar"
+  },
+  {
+   "number": "5",
+   "label": "Landen actief"
+  }
+ ],
+ "ctas": [
+  {
+   "label": "Offerte aanvragen",
+   "url": "/contact",
+   "theme": "red",
+   "text": "Een project?",
+   "description": "Vraag een offerte aan voor uw tankstation, laadinfra- of infraproject."
+  },
+  {
+   "label": "Bel nu",
+   "url": "tel:+3257335251",
+   "theme": "outline",
+   "text": "24/7 interventie nodig?",
+   "description": "Bij defecten plannen wij direct een interventie. Bel ons op +32 57 33 52 51."
+  }
+ ]
 }

@@ -703,6 +703,14 @@ ul.list-check,.card-outline ul.list-check,.content-block ul.list-check{list-styl
 @media(max-width:640px){.advice-band-inner,.contact-strip-inner{flex-direction:column;align-items:stretch}.advice-band .btn,.contact-strip-actions .btn{text-align:center}}
 @media print{.advice-band,.contact-strip{display:none!important}}
 
+/* ---------- Realisatie-detail (feiten + pager) ---------- */
+.fact-list{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.5rem;margin-top:1.5rem;max-width:560px}
+.fact-list dt{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.fact-list dd{margin:0;font-weight:600}
+.pager{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:0;padding-bottom:3rem;font-weight:700}
+.pager a{color:var(--navy)}
+.pager a:hover{color:var(--red)}
+
 /* ---------- Print (ronde D: papier toont inhoud, geen chrome) ---------- */
 @media print{
   .skip-link,.header-nav,.header-cta,.header-mobile-toggle,.mobile-nav,.cookie-bar,.to-top,.gal-light,.ref-modal,.hero-cta,.hero-tabs,.contact-form .form-group,.contact-form button[type="submit"],.form-hint,.form-error,.connect-grid,.footer-quote,.hero-frame,.hero-corner,.hero-mark{display:none!important}
