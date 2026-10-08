@@ -125,7 +125,10 @@
     },
     {
      "src": "/img/maes-merelbeke-shell.jpg",
-     "alt": "Luifels bij totaalproject Maes Merelbeke"
+     "alt": "Luifels bij totaalproject Maes Merelbeke",
+     "srcset": "/img/maes-merelbeke-shell-800.jpg 800w, /img/maes-merelbeke-shell.jpg 1200w",
+     "width": 1200,
+     "height": 900
     }
    ]
   },
@@ -161,23 +164,38 @@
     },
     {
      "src": "/img/cools-brugge-aanleg-1.jpg",
-     "alt": "Leidingwerk bij aanleg Cools Avia Brugge"
+     "alt": "Leidingwerk bij aanleg Cools Avia Brugge",
+     "srcset": "/img/cools-brugge-aanleg-1-800.jpg 800w, /img/cools-brugge-aanleg-1.jpg 1200w",
+     "width": 1200,
+     "height": 1599
     },
     {
      "src": "/img/cools-brugge-aanleg-2.jpg",
-     "alt": "Tankput met blauwe kamers bij aanleg Cools Avia Brugge"
+     "alt": "Tankput met blauwe kamers bij aanleg Cools Avia Brugge",
+     "srcset": "/img/cools-brugge-aanleg-2-800.jpg 800w, /img/cools-brugge-aanleg-2.jpg 1200w",
+     "width": 1200,
+     "height": 526
     },
     {
      "src": "/img/cools-brugge-avia-1.jpg",
-     "alt": "Avia-pomp bij Cools Brugge"
+     "alt": "Avia-pomp bij Cools Brugge",
+     "srcset": "/img/cools-brugge-avia-1-800.jpg 800w, /img/cools-brugge-avia-1.jpg 1200w",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/cools-brugge-avia-2.jpg",
-     "alt": "Avia-pompen van dichtbij bij Cools Brugge"
+     "alt": "Avia-pompen van dichtbij bij Cools Brugge",
+     "srcset": "/img/cools-brugge-avia-2-800.jpg 800w, /img/cools-brugge-avia-2.jpg 1200w",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/cools-brugge-tank.jpg",
-     "alt": "Brandstoftank wordt geplaatst bij Cools Brugge"
+     "alt": "Brandstoftank wordt geplaatst bij Cools Brugge",
+     "srcset": "/img/cools-brugge-tank-800.jpg 800w, /img/cools-brugge-tank.jpg 1200w",
+     "width": 1200,
+     "height": 900
     }
    ]
   },
@@ -267,17 +285,29 @@
    "photos": [
     {
      "src": "/img/ref-vanassche.jpg",
-     "alt": "Opgeleverd Texaco-tankstation"
+     "alt": "Opgeleverd Texaco-tankstation",
+     "srcset": "/img/ref-vanassche-800.jpg 800w, /img/ref-vanassche.jpg 1000w",
+     "width": 1000,
+     "height": 750
     },
     {
      "src": "/img/wrk-sleuf.jpg",
-     "alt": "Tank in een sleuf met leidingwerk"
+     "alt": "Tank in een sleuf met leidingwerk",
+     "srcset": "/img/wrk-sleuf-800.jpg 800w, /img/wrk-sleuf.jpg 1000w",
+     "width": 1000,
+     "height": 1330
     },
     {
      "src": "/img/wrk-service.jpg",
-     "alt": "Technieker aan Texaco-brandstofpompen"
+     "alt": "Technieker aan Texaco-brandstofpompen",
+     "srcset": "/img/wrk-service-800.jpg 800w, /img/wrk-service.jpg 1200w",
+     "width": 1200,
+     "height": 591
     }
-   ]
+   ],
+   "imgSrcset": "/img/ref-vanassche-800.jpg 800w, /img/ref-vanassche.jpg 1000w",
+   "imgWidth": 1000,
+   "imgHeight": 750
   },
   {
    "name": "Maes, De Panne",
@@ -301,17 +331,29 @@
    "photos": [
     {
      "src": "/img/ref-maes-panne.jpg",
-     "alt": "Tankstation Maes in de sneeuw"
+     "alt": "Tankstation Maes in de sneeuw",
+     "srcset": "/img/ref-maes-panne-800.jpg 800w, /img/ref-maes-panne.jpg 1000w",
+     "width": 1000,
+     "height": 750
     },
     {
      "src": "/img/wrk-tankput.jpg",
-     "alt": "Brandstoftank in een tankput"
+     "alt": "Brandstoftank in een tankput",
+     "srcset": "/img/wrk-tankput-800.jpg 800w, /img/wrk-tankput.jpg 1200w",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/wrk-kamers.jpg",
-     "alt": "Blauwe keerkamers met leidingwerk"
+     "alt": "Blauwe keerkamers met leidingwerk",
+     "srcset": "/img/wrk-kamers-800.jpg 800w, /img/wrk-kamers.jpg 1200w",
+     "width": 1200,
+     "height": 900
     }
-   ]
+   ],
+   "imgSrcset": "/img/ref-maes-panne-800.jpg 800w, /img/ref-maes-panne.jpg 1000w",
+   "imgWidth": 1000,
+   "imgHeight": 750
   },
   {
    "name": "Spilmont, Hautrage",
@@ -325,9 +367,15 @@
    "photos": [
     {
      "src": "/img/ref-spilmont.jpg",
-     "alt": "Brandstoftank wordt gehesen met een kraan"
+     "alt": "Brandstoftank wordt gehesen met een kraan",
+     "srcset": "/img/ref-spilmont-800.jpg 800w, /img/ref-spilmont.jpg 1000w",
+     "width": 1000,
+     "height": 750
     }
-   ]
+   ],
+   "imgSrcset": "/img/ref-spilmont-800.jpg 800w, /img/ref-spilmont.jpg 1000w",
+   "imgWidth": 1000,
+   "imgHeight": 750
   },
   {
    "name": "Tankstation groene luifel",
@@ -347,13 +395,22 @@
    "photos": [
     {
      "src": "/img/ref-pessleux.jpg",
-     "alt": "Tankstation met groene luifel en Vandotec-servicebus"
+     "alt": "Tankstation met groene luifel en Vandotec-servicebus",
+     "srcset": "/img/ref-pessleux-800.jpg 800w, /img/ref-pessleux.jpg 1000w",
+     "width": 1000,
+     "height": 472
     },
     {
      "src": "/img/wrk-pompen.jpg",
-     "alt": "Technieker aan brandstofpompen"
+     "alt": "Technieker aan brandstofpompen",
+     "srcset": "/img/wrk-pompen-800.jpg 800w, /img/wrk-pompen.jpg 1200w",
+     "width": 1200,
+     "height": 900
     }
-   ]
+   ],
+   "imgSrcset": "/img/ref-pessleux-800.jpg 800w, /img/ref-pessleux.jpg 1000w",
+   "imgWidth": 1000,
+   "imgHeight": 472
   },
   {
    "title": "Eigen tankinstallatie bij D-Glas",
@@ -366,40 +423,59 @@
    "photos": [
     {
      "src": "/img/dglas-oostende-1.jpg",
-     "srcset": "/img/dglas-oostende-1-800.jpg 800w",
-     "alt": "Plaatsing ondergrondse tank bij D-Glas Oostende"
+     "srcset": "/img/dglas-oostende-1-800.jpg 800w, /img/dglas-oostende-1.jpg 1200w",
+     "alt": "Plaatsing ondergrondse tank bij D-Glas Oostende",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/dglas-oostende-2.jpg",
-     "srcset": "/img/dglas-oostende-2-800.jpg 800w",
-     "alt": "Leiding- en putwerk bij D-Glas Oostende"
+     "srcset": "/img/dglas-oostende-2-800.jpg 800w, /img/dglas-oostende-2.jpg 1200w",
+     "alt": "Leiding- en putwerk bij D-Glas Oostende",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/dglas-oostende-3.jpg",
-     "srcset": "/img/dglas-oostende-3-800.jpg 800w",
-     "alt": "Afwerking tankinstallatie bij bedrijfsgebouw D-Glas"
+     "srcset": "/img/dglas-oostende-3-800.jpg 800w, /img/dglas-oostende-3.jpg 1200w",
+     "alt": "Afwerking tankinstallatie bij bedrijfsgebouw D-Glas",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/dglas-oostende-4.jpg",
-     "srcset": "/img/dglas-oostende-4-800.jpg 800w",
-     "alt": "Montage brandstofpomp bij D-Glas Oostende"
+     "srcset": "/img/dglas-oostende-4-800.jpg 800w, /img/dglas-oostende-4.jpg 1200w",
+     "alt": "Montage brandstofpomp bij D-Glas Oostende",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/dglas-oostende-5.jpg",
-     "srcset": "/img/dglas-oostende-5-800.jpg 800w",
-     "alt": "ProFleet-pomp bij D-Glas Oostende"
+     "srcset": "/img/dglas-oostende-5-800.jpg 800w, /img/dglas-oostende-5.jpg 1200w",
+     "alt": "ProFleet-pomp bij D-Glas Oostende",
+     "width": 1200,
+     "height": 1600
     },
     {
      "src": "/img/dglas-oostende-6.jpg",
-     "srcset": "/img/dglas-oostende-6-800.jpg 800w",
-     "alt": "Vulpunten diesel en gasolie bij D-Glas"
+     "srcset": "/img/dglas-oostende-6-800.jpg 800w, /img/dglas-oostende-6.jpg 1200w",
+     "alt": "Vulpunten diesel en gasolie bij D-Glas",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/dglas-oostende-7.jpg",
-     "srcset": "/img/dglas-oostende-7-800.jpg 800w",
-     "alt": "Aansluitingen tankinstallatie D-Glas Oostende"
+     "srcset": "/img/dglas-oostende-7-800.jpg 800w, /img/dglas-oostende-7.jpg 1200w",
+     "alt": "Aansluitingen tankinstallatie D-Glas Oostende",
+     "width": 1200,
+     "height": 900
     }
-   ]
+   ],
+   "imgSrcset": "/img/dglas-oostende-1-800.jpg 800w, /img/dglas-oostende-1.jpg 1200w",
+   "imgWidth": 1200,
+   "imgHeight": 900,
+   "name": "D-Glas, Oostende",
+   "alt": "Plaatsing ondergrondse tank bij D-Glas Oostende"
   },
   {
    "name": "Demarol, Lessines",
@@ -413,25 +489,43 @@
    "photos": [
     {
      "src": "/img/demarol-lessines-1.jpg",
-     "alt": "Elektriciteitskast bij Demarol Lessines"
+     "alt": "Elektriciteitskast bij Demarol Lessines",
+     "srcset": "/img/demarol-lessines-1-800.jpg 800w, /img/demarol-lessines-1.jpg 1200w",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/demarol-lessines-2.jpg",
-     "alt": "Luifel in aanbouw bij Demarol Lessines"
+     "alt": "Luifel in aanbouw bij Demarol Lessines",
+     "srcset": "/img/demarol-lessines-2-800.jpg 800w, /img/demarol-lessines-2.jpg 1200w",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/demarol-lessines-3.jpg",
-     "alt": "Gulf-tankstation Demarol in Lessines"
+     "alt": "Gulf-tankstation Demarol in Lessines",
+     "srcset": "/img/demarol-lessines-3-800.jpg 800w, /img/demarol-lessines-3.jpg 1200w",
+     "width": 1200,
+     "height": 900
     },
     {
      "src": "/img/demarol-lessines-4.jpg",
-     "alt": "Gulf-prijspaal bij Demarol Lessines"
+     "alt": "Gulf-prijspaal bij Demarol Lessines",
+     "srcset": "/img/demarol-lessines-4-800.jpg 800w, /img/demarol-lessines-4.jpg 1200w",
+     "width": 1200,
+     "height": 1600
     },
     {
      "src": "/img/demarol-lessines-5.jpg",
-     "alt": "Gulf-pompen bij Demarol Lessines"
+     "alt": "Gulf-pompen bij Demarol Lessines",
+     "srcset": "/img/demarol-lessines-5-800.jpg 800w, /img/demarol-lessines-5.jpg 1200w",
+     "width": 1200,
+     "height": 1600
     }
-   ]
+   ],
+   "imgSrcset": "/img/demarol-lessines-3-800.jpg 800w, /img/demarol-lessines-3.jpg 1200w",
+   "imgWidth": 1200,
+   "imgHeight": 900
   }
  ],
  "audiences_title": "Voor wie wij werken",

@@ -35,6 +35,8 @@ body{font-family:var(--font);font-size:1rem;font-weight:400;line-height:1.6;colo
 img{max-width:100%;height:auto;display:block}
 a{color:var(--navy);text-decoration:none;transition:color .2s}
 a:hover{color:var(--red)}
+.section-dark a:not(.btn),.cross-band a:not(.btn),.urgency-band a:not(.btn),.quote-break a:not(.btn),.facts-band a:not(.btn),.connect-item a:not(.btn){color:var(--white);text-decoration:underline}
+.section-dark a:not(.btn):hover,.cross-band a:not(.btn):hover,.urgency-band a:not(.btn):hover,.quote-break a:not(.btn):hover,.facts-band a:not(.btn):hover,.connect-item a:not(.btn):hover{color:var(--white);text-decoration-thickness:2px}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 ul{list-style:none}
 .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 1.5rem}
