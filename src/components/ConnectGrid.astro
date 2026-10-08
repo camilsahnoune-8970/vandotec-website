@@ -1,0 +1,12 @@
+---
+const { ctas = [] } = Astro.props;
+---
+<section class="connect-grid">
+	{ctas.map((cta) => (
+		<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
+			<h2 set:html={cta.text} />
+			<p set:html={cta.description} />
+			<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
+		</div>
+	))}
+</section>

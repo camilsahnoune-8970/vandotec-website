@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ConnectGrid from '../../components/ConnectGrid.astro';
 import expertisesJson from '../../data/expertises.json';
 
 export async function getStaticPaths() {
@@ -96,5 +97,7 @@ const jsonLd = {
 		<a href="/realisaties">Alle realisaties</a>
 		<a href={`/realisaties/${next.slug}`}>{next.client || next.name} &rarr;</a>
 	</nav>
+
+	{(expertisesJson.ctas || []).length > 0 && <ConnectGrid ctas={expertisesJson.ctas} />}
 
 </Layout>
