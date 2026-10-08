@@ -21,6 +21,7 @@
 ## Laatste 5
 
 - 2026-10-07 STATE rechtgezet + branches opgeruimd (opencode)
+- 2026-10-07 contentronde 4 via PR #32 (D-Glas-entry met 7 foto's)
 - 2026-10-07 contentronde 3 via PR #30 (Demarol-entry + Cools-tankfoto)
 - 2026-10-07 contentronde 2 via PR #28 (Avia-pompen bij Cools, kraanwagen in over-galerij)
 - 2026-10-07 contentronde 1 via PR #25 (7 werffoto’s: Cools/Maes-galerijen, Mazout staged)
