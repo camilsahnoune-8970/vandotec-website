@@ -41,7 +41,7 @@ const description = 'Overzicht van Vandotec-realisaties: tankstations, EV-laadin
 			<div class="ref-grid">
 				{refs.map((ref) => (
 				<article class="ref-card" data-cat={ref.cat || 'tankstations'}>
-					{ref.img && <a href={`/realisaties/${ref.slug}`} aria-label={`Bekijk realisatie ${ref.client || ref.name}`}><img src={ref.img} alt={ref.alt || ref.name} loading="lazy" /></a>}
+					{ref.img && <a href={`/realisaties/${ref.slug}`} aria-label={`Bekijk realisatie ${ref.client || ref.name}`}><img src={ref.img} alt={ref.alt || ref.client || ref.title || ref.name} loading="lazy" /></a>}
 					<div class="ref-meta"><span class="ref-chip">{catLabel(ref.cat)}</span>{ref.location && <span class="ref-loc">{ref.location}</span>}</div>
 					<h2>{ref.client || ref.name}</h2>
 					<p set:html={ref.text} />

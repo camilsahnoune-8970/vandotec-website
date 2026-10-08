@@ -110,7 +110,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 						<div class="gal-rail mt-25" tabindex="0" role="region" aria-label={`Galerij ${section.title}`}>
 							{section.gallery.map((photo) => (
 								<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt} aria-label={`Vergroot foto: ${photo.alt}`}>
-									<img src={photo.src} alt={photo.alt} loading="lazy" />
+									<img src={photo.src} { ...(photo.srcset ? { srcset: photo.srcset, sizes: '(max-width: 640px) 85vw, 520px' } : {}) } { ...(photo.width ? { width: photo.width, height: photo.height } : {}) } alt={photo.alt} loading="lazy" />
 									<figcaption>{photo.alt}</figcaption>
 								</button>
 							))}
@@ -220,11 +220,11 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 					const catLabel = ref.cat === 'ev-laadinstallaties' ? 'EV-laadinfrastructuur' : ref.cat === 'infrastructuurwerken' ? 'Infrastructuurwerken' : 'Tankstations';
 					return (
 				<article class="ref-card" data-cat={ref.cat || 'tankstations'}>
-					{ref.img && <img src={ref.img} alt={ref.alt || ref.name} loading="lazy" />}
+					{ref.img && <img src={ref.img} alt={ref.alt || ref.client || ref.title || ref.name} loading="lazy" />}
 					<div class="ref-meta"><span class="ref-chip">{catLabel}</span>{loc && <span class="ref-loc">{loc}</span>}</div>
 					<h3>{client}</h3>
 					<p set:html={ref.text} />
-					<button class="ref-more" type="button" data-idx={idx} data-client={client} data-loc={loc} data-cat={catLabel} data-text={ref.text} data-img={ref.img || ''} data-alt={ref.alt || ref.name}>Lees meer &rarr;</button>
+					<button class="ref-more" type="button" data-idx={idx} data-client={client} data-loc={loc} data-cat={catLabel} data-text={ref.text} data-img={ref.img || ''} data-alt={ref.alt || ref.client || ref.title || ref.name}>Lees meer &rarr;</button>
 				</article>
 					);
 				})}

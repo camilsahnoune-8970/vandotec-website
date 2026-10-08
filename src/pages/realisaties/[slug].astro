@@ -36,7 +36,7 @@ const jsonLd = {
 
 	<section class="page-hero">
 		<div class="page-hero-photo" aria-hidden="true">
-			<img src={ref.img} alt="" fetchpriority="high" />
+			<img src={ref.img} { ...(ref.imgSrcset ? { srcset: ref.imgSrcset, sizes: '100vw' } : {}) } { ...(ref.imgWidth ? { width: ref.imgWidth, height: ref.imgHeight } : {}) } alt="" fetchpriority="high" />
 		</div>
 		<div class="hero-mark" aria-hidden="true">{heroMark}</div>
 		<div class="container">
@@ -83,7 +83,7 @@ const jsonLd = {
 			<div class="gal-rail" tabindex="0" role="region" aria-label={`Foto's ${displayName}`}>
 				{photos.map((photo) => (
 				<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt}>
-					<img src={photo.src} alt={photo.alt} loading="lazy" /><figcaption>{photo.alt}</figcaption>
+					<img src={photo.src} { ...(photo.srcset ? { srcset: photo.srcset, sizes: '(max-width: 640px) 85vw, 520px' } : {}) } { ...(photo.width ? { width: photo.width, height: photo.height } : {}) } alt={photo.alt} loading="lazy" /><figcaption>{photo.alt}</figcaption>
 				</button>
 				))}
 			</div>
