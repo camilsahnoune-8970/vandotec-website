@@ -159,6 +159,8 @@ overschreven bestanden behouden hun naam zodat geen markup wijzigt. Alleen `exp-
 | `jobs-waarden.jpg` (nieuw) | `Waarden van Vandotec Poperinge.jpg` (X-schijf, VANDOTEC LOW RES WEBSITE) | eigen merlfoto high-five, 1600x900 | jobs moment-band |
 | `mazout-express-oostkamp-1..4.jpg` (nieuw, staged) | `Beelden/img-20190621-*` (renovatie Mazout Express Oostkamp) | pompwerken + luifel, 1200px | wacht op tekst — nog geen referentie-entry |
 | `maes-merelbeke-shell.jpg` (nieuw) | `Beelden/img-20200326-145900.jpg` (Totaalproject Maes Merelbeke) | luifels, 1200x900, merkneutrale alt | photos[] Maes Brandstoffen Merelbeke |
+| `cools-brugge-tank.jpg` (nieuw) | `Beelden/dl-img-20200616-090952.jpg` (tankplaatsing Cools Brugge) | gele tank, 1200x900 | photos[] Cools Avia Brugge (nu 6) |
+| `demarol-lessines-1..5.jpg` (nieuw) | `Beelden/img-20210212-wa0013` + `img-20211004-wa0017` + `dl-wa0018..0020` (Demarol Lessines, live-site-attributie) | pomp/luifel/station/paal/pompen, 1200px | photos[] Demarol Lessines (nieuw, live-tekst) |
 | `cools-brugge-avia-1..2.jpg` (nieuw) | `Beelden/img-20201028-wa*` (Cools Avia Brugge, bevestigd) | Avia-pompen, 1200x900 | photos[] Cools Avia Brugge (nu 5) |
 | `materieel-kraanwagen.jpg` (nieuw) | `Beelden/img-20200813-*` (eigen machinepark) | kraanwagen, 1200x900 | over-galerij Bedrijf in beeld |
 | `cools-brugge-aanleg-1..2.jpg` (nieuw) | `Beelden/img-20200630-*` + `img-20200713-*` (aanleg Cools Avia Brugge) | leidingwerk + tankput, 1200px | photos[] Cools Avia Brugge |
