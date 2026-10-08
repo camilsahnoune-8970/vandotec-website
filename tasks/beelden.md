@@ -177,3 +177,5 @@ Niet ingezet (reserve): `Maes De Panne 1/3.jpg`, `Pessleux Fosses-la-Ville 3.jpg
 
 - `logo.svg` / `logo-white.svg` (al lokaal, ongewijzigd), `quote.svg` (decoratief, vervangen door CSS).
 - Fork-CMS-cache-URL's zijn geen permanente bron — na download gelden de lokale bestanden als bron.
+
+| dglas-oostende-1..7 (+800w) | D-Glas Oostende: tankplaatsing, leidingwerk, afwerking, pomp, ProFleet, vulpunten, aansluitingen | contentronde 4 |

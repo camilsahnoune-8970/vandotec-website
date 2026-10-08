@@ -356,6 +356,52 @@
    ]
   },
   {
+   "title": "Eigen tankinstallatie bij D-Glas",
+   "client": "D-Glas",
+   "location": "Oostende",
+   "cat": "tankstations",
+   "slug": "d-glas-oostende",
+   "img": "/img/dglas-oostende-1.jpg",
+   "text": "D-Glas koos voor een eigen tankinstallatie aan de firma in Oostende. Vandotec plaatste een ondergrondse tank en voorzag de aansluitingen, pomp en vulpunten (30.000 l diesel en 5.000 l gasolie).",
+   "photos": [
+    {
+     "src": "/img/dglas-oostende-1.jpg",
+     "srcset": "/img/dglas-oostende-1-800.jpg 800w",
+     "alt": "Plaatsing ondergrondse tank bij D-Glas Oostende"
+    },
+    {
+     "src": "/img/dglas-oostende-2.jpg",
+     "srcset": "/img/dglas-oostende-2-800.jpg 800w",
+     "alt": "Leiding- en putwerk bij D-Glas Oostende"
+    },
+    {
+     "src": "/img/dglas-oostende-3.jpg",
+     "srcset": "/img/dglas-oostende-3-800.jpg 800w",
+     "alt": "Afwerking tankinstallatie bij bedrijfsgebouw D-Glas"
+    },
+    {
+     "src": "/img/dglas-oostende-4.jpg",
+     "srcset": "/img/dglas-oostende-4-800.jpg 800w",
+     "alt": "Montage brandstofpomp bij D-Glas Oostende"
+    },
+    {
+     "src": "/img/dglas-oostende-5.jpg",
+     "srcset": "/img/dglas-oostende-5-800.jpg 800w",
+     "alt": "ProFleet-pomp bij D-Glas Oostende"
+    },
+    {
+     "src": "/img/dglas-oostende-6.jpg",
+     "srcset": "/img/dglas-oostende-6-800.jpg 800w",
+     "alt": "Vulpunten diesel en gasolie bij D-Glas"
+    },
+    {
+     "src": "/img/dglas-oostende-7.jpg",
+     "srcset": "/img/dglas-oostende-7-800.jpg 800w",
+     "alt": "Aansluitingen tankinstallatie D-Glas Oostende"
+    }
+   ]
+  },
+  {
    "name": "Demarol, Lessines",
    "cat": "tankstations",
    "text": "Ook op Waals grondgebied is Vandotec actief. In Lessines realiseerden we een totaalinrichting voor Demarol (Gulf).",
