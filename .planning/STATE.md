@@ -23,6 +23,7 @@
 - 2026-10-07 STATE rechtgezet + branches opgeruimd (opencode)
 - 2026-10-07 spec review-ronde goedgekeurd via PR #34 (audit loopt)
 - 2026-10-08 integrale audit via PR #36 (REVIEW.md: 5 Critical, fix-rondes R1-R5)
+- 2026-10-08 fix-ronde R1 via PR #38 (D-Glas naam+alt, override, srcset, cookies)
 - 2026-10-07 contentronde 4 via PR #32 (D-Glas-entry met 7 foto's)
 - 2026-10-07 contentronde 3 via PR #30 (Demarol-entry + Cools-tankfoto)
 - 2026-10-07 contentronde 2 via PR #28 (Avia-pompen bij Cools, kraanwagen in over-galerij)
