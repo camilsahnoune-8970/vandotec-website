@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConnectGrid from '../components/ConnectGrid.astro';
 import homeJson from '../data/home.json';
 import { loadPageData } from '../lib/loadPageData';
 
@@ -230,15 +231,5 @@ const heroIntro = home.hero_subtitle || '';
 		</div>
 	</section>
 
-	{(home.ctas || []).length > 0 && (
-		<section class="connect-grid">
-			{home.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
-					<h2 set:html={cta.text} />
-					<p set:html={cta.description} />
-					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
-				</div>
-			))}
-		</section>
-	)}
+	{(home.ctas || []).length > 0 && <ConnectGrid ctas={home.ctas} />}
 </Layout>

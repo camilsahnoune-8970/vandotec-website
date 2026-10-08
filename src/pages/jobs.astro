@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConnectGrid from '../components/ConnectGrid.astro';
 import jobsJson from '../data/jobs.json';
 import { loadPageData } from '../lib/loadPageData';
 
@@ -67,15 +68,5 @@ const jobs = loadPageData(jobsJson, {
 		</div>
 	</section>
 
-	{(jobs.ctas || []).length > 0 && (
-		<section class="connect-grid">
-			{jobs.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
-					<h2 set:html={cta.text} />
-					<p set:html={cta.description} />
-					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
-				</div>
-			))}
-		</section>
-	)}
+	{(jobs.ctas || []).length > 0 && <ConnectGrid ctas={jobs.ctas} />}
 </Layout>

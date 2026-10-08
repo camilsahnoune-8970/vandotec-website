@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConnectGrid from '../components/ConnectGrid.astro';
 import serviceJson from '../data/service-onderhoud.json';
 import { loadPageData } from '../lib/loadPageData';
 
@@ -177,15 +178,5 @@ const serviceImages: Record<string, { src: string; alt: string }> = {
 		</div>
 	</section>
 
-	{(service.ctas || []).length > 0 && (
-		<section class="connect-grid">
-			{service.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
-					<h2 set:html={cta.text} />
-					<p set:html={cta.description} />
-					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
-				</div>
-			))}
-		</section>
-	)}
+	{(service.ctas || []).length > 0 && <ConnectGrid ctas={service.ctas} />}
 </Layout>

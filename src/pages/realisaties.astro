@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConnectGrid from '../components/ConnectGrid.astro';
 import expertisesJson from '../data/expertises.json';
 import { loadPageData } from '../lib/loadPageData';
 
@@ -62,6 +63,8 @@ const description = 'Overzicht van Vandotec-realisaties: tankstations, EV-laadin
 			<a href="/contact" class="btn btn-red">Vraag advies</a>
 		</div>
 	</aside>
+
+	{(expertises.ctas || []).length > 0 && <ConnectGrid ctas={expertises.ctas} />}
 
 	<script>
 		(function(){

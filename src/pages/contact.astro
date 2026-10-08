@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ConnectGrid from '../components/ConnectGrid.astro';
 import contactJson from '../data/contact.json';
 import { loadPageData } from '../lib/loadPageData';
 
@@ -211,17 +212,7 @@ const contact = loadPageData(contactJson, {
 		</div>
 	</section>
 
-	{(contact.ctas || []).length > 0 && (
-		<section class="connect-grid">
-			{contact.ctas.map((cta) => (
-				<div class={`connect-item ${cta.theme === 'outline' ? 'dark' : 'navy'}`}>
-					<h2 set:html={cta.text} />
-					<p set:html={cta.description} />
-					<a href={cta.url} class={`btn btn-${cta.theme === 'outline' ? 'outline' : 'red'}`}>{cta.label}</a>
-				</div>
-			))}
-		</section>
-	)}
+	{(contact.ctas || []).length > 0 && <ConnectGrid ctas={contact.ctas} />}
 
 	<script>
 		(function(){
