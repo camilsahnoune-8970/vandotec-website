@@ -456,6 +456,14 @@ body.js .ref-more{display:inline-block}
 .service-item p{font-size:.9rem;color:var(--muted-on-dark);line-height:1.65}
 .service-link{display:inline-block;margin-top:1.25rem;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--white);border-bottom:2px solid var(--red);padding-bottom:.25rem}
 .service-link:hover{color:var(--red)}
+.eyebrow-navy{color:var(--navy)}
+.section-gray .service-item{border-color:rgba(0,41,143,.14);background:var(--white)}
+.section-gray .service-item:hover{background:var(--white)}
+.section-gray .service-num{-webkit-text-stroke-color:var(--navy)}
+.section-gray .service-item h3{color:var(--navy)}
+.section-gray .service-item p{color:var(--dark)}
+.section-gray .service-link{color:var(--navy);border-bottom-color:var(--navy)}
+.section-gray .service-link:hover{color:var(--red);border-bottom-color:var(--red)}
 
 /* ---------- Processtappen 01-05 ---------- */
 
