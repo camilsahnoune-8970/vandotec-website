@@ -275,6 +275,8 @@ ul{list-style:none}
 .urgency-band.light a.urgency-tel:hover{color:var(--red)}
 .urgency-band.light p{color:var(--dark)}
 .urgency-band.light .urgency-list li{color:var(--dark)}
+.urgency-band.light .eyebrow{color:var(--navy)}
+.urgency-band.light a:not(.btn){color:var(--navy)}
 .urgency-title{margin:0 0 1.5rem;font-size:inherit;line-height:inherit}
 .urgency-tel{overflow-wrap:anywhere}
 .urgency-band .container{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2.5rem,4vw,4rem);align-items:center}
