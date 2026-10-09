@@ -62,16 +62,6 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 		</div>
 	</section>
 
-	<aside class="advice-band" aria-label="Advies nodig">
-		<div class="container advice-band-inner">
-			<div>
-				<span class="eyebrow">Twijfelt u?</span>
-				<p><strong>Weet u niet welke oplossing past?</strong> Bel <a href="tel:+3257335251">+32 57 33 52 51</a> — wij denken mee, vrijblijvend.</p>
-			</div>
-			<a href="/contact" class="btn btn-red">Vraag advies</a>
-		</div>
-	</aside>
-
 	{(expertises.sections || []).map((section, idx) => {
 		const img = sectionImages[section.slug];
 		const chips = sectionChips[section.slug] || [];
@@ -88,20 +78,20 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 						</div>
 					)}
 					<div class="section-header max-820">
-						<span class="eyebrow eyebrow-red">Expertise {num}</span>
+						<div class="exp-num" aria-hidden="true">{num}</div>
 						<h2 class="section-title">{section.title}</h2>
 					</div>
 					{chips.length > 0 && (
 						<div class="chips" aria-label="Omvat"><span class="chips-label">Omvat:</span>{chips.map((chip) => (<span class="chip">{chip}</span>))}</div>
 					)}
 					<div class="content-grid">
-						<div class="content-block">
-							{(section.body || []).map((paragraph) => (
-								<p set:html={paragraph} />
-							))}
-						</div>
-						<div class="content-block">
-							{section.approach_title && <h3>{section.approach_title}</h3>}
+					<div class="content-block">
+						{(section.body || []).map((paragraph) => (
+							<p set:html={paragraph} />
+						))}
+					</div>
+					<div class="content-block">
+						{section.approach_title && <h3 class="mt-15">{section.approach_title}</h3>}
 							{(section.approach || []).map((paragraph) => (
 								<p set:html={paragraph} />
 							))}
@@ -138,7 +128,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 							)}
 						</div>
 						<div>
-							<span class="eyebrow">Expertise {num}</span>
+							<div class="exp-num" aria-hidden="true">{num}</div>
 							<h2 class="section-title light">{section.title}</h2>
 							{chips.length > 0 && (
 								<div class="chips" aria-label="Omvat"><span class="chips-label">Omvat:</span>{chips.map((chip) => (<span class="chip">{chip}</span>))}</div>
@@ -179,7 +169,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 						</div>
 						<div>
 							{img && (
-								<div class="media-slot ratio-4x3">
+								<div class="media-slot ratio-16x9">
 									<img src={img.src} alt={img.alt} loading="lazy" />
 								</div>
 							)}
