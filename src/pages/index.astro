@@ -154,13 +154,13 @@ const heroIntro = home.hero_subtitle || '';
 	</section>
 
 	{home.services_title && (home.services || []).length > 0 && (
-		<section class="section section-dark">
+		<section class="section section-gray">
 			<div class="container">
 				<div class="section-header text-center mx-auto">
-					<span class="eyebrow">24/7 paraat</span>
-					<h2 class="section-title centered light">{home.services_title}</h2>
+					<span class="eyebrow eyebrow-navy">24/7 paraat</span>
+					<h2 class="section-title centered">{home.services_title}</h2>
 					{home.services_subtitle && (
-						<p class="section-sub light m-0-auto" set:html={home.services_subtitle} />
+						<p class="section-sub m-0-auto" set:html={home.services_subtitle} />
 					)}
 				</div>
 			<div class="service-grid">
