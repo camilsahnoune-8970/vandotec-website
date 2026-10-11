@@ -126,6 +126,8 @@ ticker-klanttoestemmingen, Powerhub-bewijs, tellers-bron.
 
 ## Voorgestelde fix-rondes (na Camil-akkoord)
 
+**Status 2026-10-11 (claude):** R1 gedaan (PR #38). Technische delen van R2-R4 gedaan via PR #52 (contact.php) en PR #53 (lightbox, ticker-pauze, print, width/height + srcset, dode CSS/assets/icon-veld, gallery→photos). Open: Layout-splits/component-extractie (R4-groot, bewust niet), rood-telling (R3, smaak), alle R5-claims en de nummers/identiteitsblokken van R2 (inhoud, besluit Camil). Spec: `specs/foutenronde-claude.md`.
+
 - R1 Critical content: D-Glas naam+alt, groene-luifel-besluit, blauw-op-blauw-override, slug-srcset,
   cookie-tekstcorrecties (privacy/cookies-tegenspraak, localStorage-label, Fonts-vermelding).
 - R2 vertrouwen: contact.php-guards (email in CRLF-check, mb_encode_mimeheader, lengte-limieten),
