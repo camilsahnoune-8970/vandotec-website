@@ -18,7 +18,6 @@
 - EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
 - Technisch open (laag prio): echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
 - Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52); hoort bij de hostingkeuze.
-- Oude publieke kopie van de site op Vercel (website-group-vandotec.vercel.app, versie van voor de herbouw, indexeerbaar): offline halen in het Vercel-account (Camil).
 - Inhoud uit REVIEW.md (bak B, besluit Camil): tellers 45+/6.000+/5 landen, 24/7, "geen onderaannemers", superlatieven, certificaat-/VCA-nummers, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten.
 
 ## Laatste 5
@@ -34,6 +33,7 @@
 - 2026-10-09 spec service-blok-licht via PR #48 + uitvoering via PR #49 (home service-overzicht licht)
 - 2026-10-11 foutenronde-claude: spec via PR #51 + contactformulier via PR #52 (berichten met Enter werden geweigerd, afzender eigen domein, grenzen) + site-fouten via PR #53 (modal-foto's werkten nooit, dialogen gecentreerd, mobiele scroll /expertises, lightbox-navigatie, ticker-pauze, print, beeldafmetingen/srcset, dode code; tests tasks/qa-*.cjs + test-contact.php) (claude)
 - 2026-10-11 tests automatisch op elke PR via PR #55 (CI; check-scripts geven nu echt een foutcode) + beveiligingsupdates via PR #57 (npm audit 12 -> 0; astro 7.3.5, sharp 0.35.5) + opruim via PR #59 (hoofdmap naar docs/archief) + lichtere beelden via PR #58 (gsm -28%, logo 102 -> 14 KB) (claude)
+- 2026-10-11 WCAG-audit axe-core via PR #60 (59 -> 0) + werkadressen uit docs via PR #62 + oude Vercel-kopie (website-group-vandotec.vercel.app) verwijderd, nu 404; CI verplicht in main-sluis (claude)
 - 2026-10-07 contentronde 4 via PR #32 (D-Glas-entry met 7 foto's)
 - 2026-10-07 contentronde 3 via PR #30 (Demarol-entry + Cools-tankfoto)
 - 2026-10-07 contentronde 2 via PR #28 (Avia-pompen bij Cools, kraanwagen in over-galerij)
