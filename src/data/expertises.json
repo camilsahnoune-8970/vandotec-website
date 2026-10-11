@@ -269,16 +269,6 @@
    "text": "Nieuw tankstation (Texaco): luifel met pompen, prijstoren en volledige verharding.",
    "img": "/img/ref-vanassche.jpg",
    "alt": "Opgeleverd Texaco-tankstation",
-   "gallery": [
-    {
-     "src": "/img/wrk-sleuf.jpg",
-     "alt": "Tank in een sleuf met leidingwerk"
-    },
-    {
-     "src": "/img/wrk-service.jpg",
-     "alt": "Technieker aan Texaco-brandstofpompen"
-    }
-   ],
    "client": "Van Assche",
    "location": "Zulte",
    "slug": "van-assche-zulte",
@@ -315,16 +305,6 @@
    "text": "Tankstation (Maes): luifel, pompen en prijstoren met AdBlue-voorziening.",
    "img": "/img/ref-maes-panne.jpg",
    "alt": "Tankstation Maes in de sneeuw",
-   "gallery": [
-    {
-     "src": "/img/wrk-tankput.jpg",
-     "alt": "Brandstoftank in een tankput"
-    },
-    {
-     "src": "/img/wrk-kamers.jpg",
-     "alt": "Blauwe keerkamers met leidingwerk"
-    }
-   ],
    "client": "Maes",
    "location": "De Panne",
    "slug": "maes-de-panne",
@@ -383,12 +363,6 @@
    "text": "Tankstation met groene luifel, pompen en ontluchting — opgeleverd met eigen servicebus ter plaatse.",
    "img": "/img/ref-pessleux.jpg",
    "alt": "Tankstation met groene luifel en Vandotec-servicebus",
-   "gallery": [
-    {
-     "src": "/img/wrk-pompen.jpg",
-     "alt": "Technieker aan brandstofpompen"
-    }
-   ],
    "client": "",
    "location": "",
    "slug": "tankstation-groene-luifel",

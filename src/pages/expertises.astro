@@ -237,7 +237,9 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 				</div>
 			</div>
 		</dialog>
-		<script type="application/json" id="refGalleries">{JSON.stringify(Object.fromEntries((expertises.references || []).map((r, i) => [i, r.gallery || []])))}</script>
+		{/* set:html: Astro rekent {…} binnen <script> niet uit (de code kwam letterlijk in de pagina).
+		    Extra foto's = photos zonder de hoofdfoto die bovenaan de modal al staat. "<" escapen tegen </script>. */}
+		<script type="application/json" id="refGalleries" set:html={JSON.stringify(Object.fromEntries((expertises.references || []).map((r, i) => [i, (r.photos || []).filter((ph) => ph.src !== r.img).map((ph) => ({ src: ph.src, alt: ph.alt }))]))).replace(/</g, '\\u003c')}></script>
 	</section>
 	)}
 
