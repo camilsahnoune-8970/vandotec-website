@@ -20,7 +20,13 @@ const centered = (pg, sel) => pg.locator(sel).evaluate((d) => { const r = d.getB
     const n = await pg.locator('#refModalGal img').count();
     const hero = await pg.locator('#refModalImg').getAttribute('src');
     const dup = await pg.locator(`#refModalGal img[src="${hero}"]`).count();
-    if (client === 'D-Glas') check('modal staat horizontaal gecentreerd', await centered(pg, '#refModal'));
+    if (client === 'D-Glas') {
+      check('modal staat horizontaal gecentreerd', await centered(pg, '#refModal'));
+      // Hoge modal (6 foto's): bij openen moet de bovenkant (hoofdfoto + titel) zichtbaar zijn,
+      // niet weggescrold omdat de focus naar "Sluiten" onderaan gaat
+      const top = await pg.evaluate(() => ({ scroll: document.querySelector('#refModal .ref-modal-card').scrollTop, img: Math.round(document.getElementById('refModalImg').getBoundingClientRect().top), focus: document.activeElement.id }));
+      check('hoge modal opent bovenaan, focus op Sluiten', top.scroll === 0 && top.img >= 0 && top.focus === 'refModalClose', `scrollTop ${top.scroll}, foto-top ${top.img}, focus ${top.focus}`);
+    }
     check(`modal ${client}: ${want} extra foto's, hoofdfoto niet dubbel`, n === want && dup === 0, `gezien ${n}, dubbel ${dup}`);
     await pg.keyboard.press('Escape');
   }

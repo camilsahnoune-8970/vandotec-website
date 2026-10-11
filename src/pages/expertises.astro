@@ -320,7 +320,10 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 				gal.hidden = photos.length === 0;
 				lastFocus = document.activeElement;
 				dialog.showModal();
-				document.getElementById('refModalClose').focus();
+				// focus op Sluiten zonder te scrollen: bij een hoge modal (veel foto's) blijft de bovenkant in beeld
+				document.getElementById('refModalClose').focus({ preventScroll: true });
+				var card = dialog.querySelector('.ref-modal-card');
+				if(card) card.scrollTop = 0;
 			}
 			function closeModal(){
 				if(!dialog) return;
