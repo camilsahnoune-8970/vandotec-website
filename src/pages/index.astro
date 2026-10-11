@@ -71,7 +71,6 @@ const heroIntro = home.hero_subtitle || '';
 			btn.addEventListener('click', function(){
 				var on = btn.getAttribute('aria-pressed') !== 'true';
 				btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-				btn.setAttribute('aria-label', on ? 'Klantenband afspelen' : 'Klantenband pauzeren');
 				btn.closest('.ticker').classList.toggle('is-paused', on);
 			});
 		});

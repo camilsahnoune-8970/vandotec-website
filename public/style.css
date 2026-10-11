@@ -182,7 +182,7 @@ ul{list-style:none}
 .section-dark{background:var(--navy-ink);color:var(--white)}
 .section-header{margin-bottom:clamp(2.5rem,5vw,4.5rem);max-width:800px}
 .section-header.center{margin-left:auto;margin-right:auto;text-align:center}
-.section-title{color:var(--navy);font-weight:700;font-size:var(--h-section);line-height:1.12;letter-spacing:-.01em;margin-bottom:1rem;position:relative;padding-bottom:1.25rem;text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
+.section-title{color:var(--navy);font-weight:700;font-size:var(--h-section);line-height:1.12;letter-spacing:-.01em;margin-bottom:1rem;position:relative;padding-bottom:1.25rem;text-wrap:balance;overflow-wrap:break-word}
 .section-title::after{content:'';position:absolute;bottom:0;left:0;width:3.5rem;height:3px;background:var(--red)}
 .section-title.centered{text-align:center}
 .section-title.centered::after{display:none} /* Regel 2026-09-17 (maker): geen streep bij gecentreerde titels */
@@ -351,7 +351,7 @@ body.js .ref-more{display:inline-block}
 .moment-caption span{display:block;margin-top:.5rem;font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-on-dark)}
 .gal-light{border:0;background:transparent;padding:0;max-width:min(1100px,92vw);margin:auto}
 .gal-light::backdrop{background:rgba(0,22,71,.88)}
-.gal-light img{width:100%;max-height:80vh;object-fit:contain;display:block;background:var(--navy-ink)}
+.gal-light img{width:100%;max-height:min(80vh,calc(100dvh - 9rem));object-fit:contain;display:block;background:var(--navy-ink)}
 .gal-light p{color:var(--white);font-weight:600;padding:.9rem .25rem 0;text-align:center}
 .gal-light-close{position:absolute;top:.5rem;right:.5rem;width:2.75rem;height:2.75rem;background:var(--red);color:var(--white);border:0;font-size:1.5rem;line-height:1;cursor:pointer}
 /* ---------- Quote-break (paginabreed, donker, groot) ---------- */
@@ -754,6 +754,8 @@ ul.list-check,.card-outline ul.list-check,.content-block ul.list-check{list-styl
 .ticker-pause[aria-pressed="true"] span{width:0;height:0;border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent currentColor}
 .ticker-pause:hover{border-color:var(--red);color:var(--red)}
 @media(prefers-reduced-motion:reduce){.ticker-pause{display:none}}
+/* Lange samenstellingen (Infrastructuurwerken) alleen op smalle schermen afbreken met koppelteken */
+@media(max-width:640px){.section-title{hyphens:auto}}
 .gal-light-nav{display:flex;align-items:center;justify-content:center;gap:1rem;padding-top:.75rem}
 .gal-light-nav[hidden]{display:none}
 .gal-light-step{width:2.75rem;height:2.75rem;background:var(--white);color:var(--navy);border:0;font-size:1.25rem;line-height:1;cursor:pointer}

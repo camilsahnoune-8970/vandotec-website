@@ -65,6 +65,28 @@ const centered = (pg, sel) => pg.locator(sel).evaluate((d) => { const r = d.getB
     await pg.keyboard.press('Enter');
     const state2 = await pg.locator('.ticker-track').evaluate((e) => getComputedStyle(e).animationPlayState);
     check('nogmaals Enter speelt verder', state2 === 'running', state2);
+    // Toggle-patroon: vast label + aria-pressed (een wisselend label + pressed spreekt zichzelf tegen)
+    await pg.keyboard.press('Enter');
+    check('label blijft "Klantenband pauzeren" bij aria-pressed=true', (await pause.getAttribute('aria-label')) === 'Klantenband pauzeren');
+  }
+
+  // 3b. Lightbox op een laag scherm (gsm liggend): navigatie zonder scrollen zichtbaar
+  {
+    const low = await b.newPage({ viewport: { width: 844, height: 390 } });
+    await low.goto(BASE + '/realisaties/d-glas-oostende', { waitUntil: 'load' });
+    await low.evaluate(() => document.querySelector('.gal-rail .gal-zoom').click());
+    const r = await low.evaluate(() => { const n = document.getElementById('galLightNav').getBoundingClientRect(); return { bottom: Math.round(n.bottom), vh: innerHeight }; });
+    check('lightbox-navigatie past op 844x390', r.bottom <= r.vh, `onderkant ${r.bottom} / ${r.vh}`);
+    await low.close();
+  }
+
+  // 3c. Geen koppeltekens in koppen op desktop (afbreken alleen nodig op smalle schermen)
+  {
+    const wide = await b.newPage({ viewport: { width: 1440, height: 900 } });
+    await wide.goto(BASE + '/expertises', { waitUntil: 'load' });
+    const h = await wide.locator('.section-title').first().evaluate((e) => getComputedStyle(e).hyphens);
+    check('section-title zonder hyphens op 1440', h !== 'auto', h);
+    await wide.close();
   }
 
   // 4. Print van een projectpagina: geen pager/CTA-chrome, foto's niet afgekapt
