@@ -23,8 +23,9 @@
 ## 2. Deur ervoor (Camil, in Cloudflare Zero Trust — zelfde plek als content.powerland.be)
 1. DNS: `new.powerland.be` naar de Combell-server, oranje wolkje aan (proxied).
 2. Access-applicatie voor `new.powerland.be`, allowlist exact:
-   - camil.sahnoune@vandotec.be
-   - kevin.bervoet@vandotec.be
+   - Camil (zijn eigen werkadres)
+   - Kevin (zijn eigen werkadres)
+   (adressen bewust niet in deze publieke repo, verwijderd 2026-10-11)
    Verder niemand. Ieder logt in met een eigen e-mailcode; geen gedeelde wachtwoorden.
 3. Test zonder inloggen (privévenster): geen toegang. Test met code: volledige site.
 
