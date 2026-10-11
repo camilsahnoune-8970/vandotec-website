@@ -39,7 +39,7 @@ const canonicalUrl = `${siteUrl}${path ?? Astro.url.pathname}`;
 			<div class="container">
 				<div class="header-inner">
 					<a href="/" class="header-logo" aria-label={siteName}>
-						<img src="/logo.png" alt={siteName} class="header-logo-img logo-color" width="807" height="240" />
+						<img src="/logo.png" srcset="/logo-480.png 480w, /logo.png 807w" sizes="142px" alt={siteName} class="header-logo-img logo-color" width="807" height="240" />
 						<img src="/logo-white.svg" alt="" aria-hidden="true" class="header-logo-img logo-white" width="277" height="82" />
 					</a>
 					<div class="header-right">
@@ -90,7 +90,7 @@ const canonicalUrl = `${siteUrl}${path ?? Astro.url.pathname}`;
 				<div class="container">
 					<div class="footer-grid">
 						<div class="footer-brand">
-							<img src="/logo.png" alt={siteName} class="footer-logo-img" width="807" height="240" />
+							<img src="/logo.png" srcset="/logo-480.png 480w, /logo.png 807w" sizes="142px" alt={siteName} class="footer-logo-img" width="807" height="240" />
 							<p>{siteName} installeert en onderhoudt tankstationinstallaties, EV-laadinstallaties en infrastructuurwerken.</p>
 							<p class="btw">BE 0417 923 411</p>
 							<div class="footer-social" aria-label="Volg Vandotec">
