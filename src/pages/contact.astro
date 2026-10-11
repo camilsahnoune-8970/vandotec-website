@@ -112,15 +112,15 @@ const contact = loadPageData(contactJson, {
 						<p class="form-error" id="formError" role="alert" hidden>Vul de verplichte velden in: naam, een geldig e-mailadres en uw bericht.</p>
 						<div class="form-group">
 							<label for="name">{contact.form_name_label || 'Naam'}{(contact.form_name_required ? ' *' : '')}</label>
-							<input type="text" id="name" name="name" autocomplete="name" required={contact.form_name_required ? true : false} />
+							<input type="text" id="name" name="name" autocomplete="name" maxlength="100" required={contact.form_name_required ? true : false} />
 						</div>
 						<div class="form-group">
 							<label for="email">{contact.form_email_label || 'E-mail'}{(contact.form_email_required ? ' *' : '')}</label>
-							<input type="email" id="email" name="email" autocomplete="email" required={contact.form_email_required ? true : false} />
+							<input type="email" id="email" name="email" autocomplete="email" maxlength="254" required={contact.form_email_required ? true : false} />
 						</div>
 						<div class="form-group">
 							<label for="phone">{contact.form_phone_label || 'Telefoon'}</label>
-							<input type="tel" id="phone" name="phone" autocomplete="tel" />
+							<input type="tel" id="phone" name="phone" autocomplete="tel" maxlength="30" />
 						</div>
 						<div class="form-group">
 							<label for="subject">{contact.form_subject_label || 'Onderwerp'}</label>
@@ -132,7 +132,7 @@ const contact = loadPageData(contactJson, {
 						</div>
 						<div class="form-group">
 							<label for="message">{contact.form_message_label || 'Bericht'}{(contact.form_message_required ? ' *' : '')}</label>
-							<textarea id="message" name="message" rows="5" required={contact.form_message_required ? true : false}></textarea>
+							<textarea id="message" name="message" rows="5" maxlength="5000" required={contact.form_message_required ? true : false}></textarea>
 						<div style="display:none">
 							<label for="website">Laat dit veld leeg</label>
 							<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
