@@ -64,6 +64,8 @@ jobs:
           cat preview.log; exit 1
       - name: Interactie (modal, lightbox, ticker, print projectpagina)
         run: node tasks/qa-interactie.cjs
+      - name: WCAG-audit axe-core (A + AA, 390 + 1440)
+        run: node tasks/qa-axe.cjs
       - name: Crawl (26 pagina's x 5 breedtes)
         run: node tasks/qa-crawl.cjs
       - name: Beeldkeuze srcset (Chromium + Firefox)

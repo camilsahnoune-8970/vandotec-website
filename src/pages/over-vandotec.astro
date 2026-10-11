@@ -96,7 +96,7 @@ const over = loadPageData(overJson, {
 				{over.history_intro && <p class="section-sub mb-2" set:html={over.history_intro} />}
 			</div>
 			<div class="container container-wide">
-				<div class="tl-rail" role="region" aria-label={over.history_title}>
+				<div class="tl-rail" tabindex="0" role="region" aria-label={over.history_title}>
 					{over.history.map((item) => (
 						<div class="tl-station">
 							<div class="tl-year" aria-hidden="true">{item.year}</div>
