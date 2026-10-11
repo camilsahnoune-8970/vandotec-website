@@ -21,4 +21,7 @@ for (const f of walk('dist').sort()) {
   if (!good) ok = false;
   console.log(f, '| title:', titles, '| og:title:', ogt, '| url:', ogu, '| canonical:', can, '| broken:', broken, '|', good ? 'OK' : 'CHECK');
 }
+const n = walk('dist').length;
+if (!n) { ok = false; console.log("FAAL: geen pagina's in dist/ (eerst npm run build)"); }
 console.log(ok ? 'ALL OK' : 'ISSUES FOUND');
+process.exit(ok ? 0 : 1);

@@ -7,7 +7,9 @@ function files(dir, out = []) {
   }
   return out;
 }
-for (const f of files('dist')) {
+let problems = 0;
+const all = files('dist');
+for (const f of all) {
   const t = fs.readFileSync(f, 'utf8');
   const rel = path.relative('dist', f);
   const h1 = (t.match(/<h1[\s>]/g) || []).length;
@@ -25,5 +27,11 @@ for (const f of files('dist')) {
     const aria = /aria-label=|aria-labelledby=/.test(tag);
     if (!aria && (!id || !t.includes(`for="${id}"`))) unlabeled++;
   }
-  console.log(`${rel} | h1:${h1} | koppen:${skip} | img-zonder-alt:${imgsNoAlt} | input-zonder-label:${unlabeled}`);
+  const bad = h1 !== 1 || skip !== 'ok' || imgsNoAlt > 0 || unlabeled > 0;
+  if (bad) problems++;
+  console.log(`${rel} | h1:${h1} | koppen:${skip} | img-zonder-alt:${imgsNoAlt} | input-zonder-label:${unlabeled}${bad ? ' | FAAL' : ''}`);
 }
+// 0 pagina's = lege build: dat is een fout, geen groen licht
+if (!all.length) { problems++; console.log("FAAL: geen pagina's in dist/"); }
+console.log(problems ? `${problems} pagina('s) met problemen` : 'ALLES OK');
+process.exit(problems ? 1 : 0);

@@ -9,6 +9,8 @@ $port = 8099;
 putenv('VD_MAIL_DRYRUN=' . $dump);
 if (@fsockopen('127.0.0.1', $port)) { fwrite(STDERR, "poort $port is al bezet: stop eerst die server\n"); exit(2); }
 $cmd = escapeshellarg(PHP_BINARY) . " -S 127.0.0.1:$port -t " . escapeshellarg($root . '/public');
+// Linux: proc_open start via /bin/sh; met "exec" vervangt php de shell, zodat proc_terminate de server zelf stopt
+if (stripos(PHP_OS, 'WIN') !== 0) $cmd = 'exec ' . $cmd;
 $proc = proc_open($cmd, [['pipe', 'r'], ['file', sys_get_temp_dir() . '/vd-php-server.log', 'a'], ['file', sys_get_temp_dir() . '/vd-php-server.log', 'a']], $pipes, null, null, ['bypass_shell' => true]);
 for ($i = 0; $i < 50 && !@fsockopen('127.0.0.1', $port); $i++) usleep(100000);
 
