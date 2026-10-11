@@ -23,8 +23,10 @@ const checks = [
   ['wit op rood (buttons)', WHITE, RED],
   ['navy op wit (titels licht)', NAVY, WHITE],
   ['muted op wit (body licht)', MUTED, WHITE],
-  ['rood op navy-ink (rest-controle)', RED, INK],
 ];
+// Combinaties die de huisstijl als tekst verbiedt: ze halen 4,5:1 niet en worden alleen gerapporteerd.
+// (Rood op navy-ink komt enkel voor als decoratief aanhalingsteken, style.css .quote-break blockquote::before.)
+const verboden = [['rood op navy-ink', RED, INK]];
 let fail = 0;
 for (const [n, f, b] of checks) {
   const r = ratio(f, b);
@@ -32,4 +34,5 @@ for (const [n, f, b] of checks) {
   if (!pass) fail++;
   console.log((pass ? 'PASS' : 'FAIL') + ' ' + r + ':1 — ' + n);
 }
+for (const [n, f, b] of verboden) console.log('VERBODEN ' + ratio(f, b) + ':1 — ' + n + ' (nooit als tekst gebruiken)');
 process.exit(fail ? 1 : 0);

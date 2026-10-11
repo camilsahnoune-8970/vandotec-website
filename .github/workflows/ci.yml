@@ -1,0 +1,74 @@
+name: Tests
+# Draait de bestaande tests bij elke pull request en elke push op main.
+# Alleen lezen: geen secrets, geen deploy (die staat los in deploy.yml en is handmatig).
+# Lokaal hetzelfde draaien: zie de stappen hieronder (preview op poort 4333 voor de browsertests).
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  # puppeteer hoort bij een paar handmatige tasks-scripts; CI heeft zijn Chrome-download niet nodig
+  PUPPETEER_SKIP_DOWNLOAD: 'true'
+
+jobs:
+  build-en-statisch:
+    name: Build + tests zonder browser
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build (faalt ook als een beeld ontbreekt)
+        run: npm run build
+      - name: Beeld-helpers
+        run: node tasks/test-img-helpers.mjs
+      - name: Beelden (afmetingen, srcset)
+        run: node tasks/qa-beelden.cjs
+      - name: SEO
+        run: node tasks/check-seo.cjs
+      - name: Toegankelijkheid (koppen, alt, labels)
+        run: node tasks/qa-a11y.cjs
+      - name: Contrast huisstijl
+        run: node tasks/check-contrast.cjs
+      - name: Contactformulier (PHP, zonder echte mail)
+        run: |
+          php -v
+          php tasks/test-contact.php
+
+  browser:
+    name: Browsertests (Chromium, Firefox, WebKit)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox webkit
+      - run: npm run build
+      - name: Preview starten op poort 4333
+        run: |
+          npx astro preview --port 4333 > preview.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf -o /dev/null http://localhost:4333/ && exit 0; sleep 1; done
+          cat preview.log; exit 1
+      - name: Interactie (modal, lightbox, ticker, print projectpagina)
+        run: node tasks/qa-interactie.cjs
+      - name: Crawl (26 pagina's x 5 breedtes)
+        run: node tasks/qa-crawl.cjs
+      - name: Beeldkeuze srcset (Chromium + Firefox)
+        run: node tasks/qa-srcset.cjs
+      - name: Firefox + WebKit
+        run: node tasks/qa-browsers.cjs
+      - name: Print contact
+        run: node tasks/qa-print.cjs
