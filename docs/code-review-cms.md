@@ -123,7 +123,7 @@ export const POST: APIRoute = async ({ cookies, redirect, request }) => {
 **Bestand:** `src/pages/beheer/login.astro`, regel 5
 
 ```astro
-const PASSWORD = 'vandotec2026';
+const PASSWORD = '<verwijderd 2026-10-11>';
 ```
 
 Met open-source hosting of publieke repo is dit geen authenticatie. Een secrets manager of `process.env.ADMIN_PASSWORD` is vereist.

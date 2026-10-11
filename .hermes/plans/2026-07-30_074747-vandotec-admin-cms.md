@@ -17,7 +17,7 @@
 - `/admin` is bereikbaar als admin entry point
 - `simple-git` is beschikbaar in package.json
 - De gebruiker werkt in de lokale site map `/Users/camil/Downloads/website group vandotec`
-- Wachtwoord is tijdelijk hardcoded als `vandotec2026`; wachtwoordwijziging komt later
+- Wachtwoord is tijdelijk hardcoded (waarde verwijderd 2026-10-11); wachtwoordwijziging komt later
 
 ## Step-by-step plan
 
