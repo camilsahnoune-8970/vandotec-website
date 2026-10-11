@@ -33,6 +33,9 @@ function pages(d, o = []) { for (const e of fs.readdirSync(d, { withFileTypes: t
   await b.close();
   console.log(`${checked} beeldkeuzes gecontroleerd, ${issues.size} problemen`);
   [...issues].slice(0, 15).forEach((x) => console.log('  ' + x));
-  console.log(issues.size ? 'FAAL' : 'ALLES OK');
-  process.exit(issues.size ? 1 : 0);
+  // 0 gecontroleerde keuzes = lege of kapotte build: dat bewijst niets, dus FAAL
+  if (!checked) console.log('FAAL: geen enkel beeld met srcset gevonden');
+  const ok = !issues.size && checked > 0;
+  console.log(ok ? 'ALLES OK' : 'FAAL');
+  process.exit(ok ? 0 : 1);
 })();
