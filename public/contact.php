@@ -46,6 +46,9 @@ foreach (['name', 'email', 'phone', 'subject', 'message'] as $k) {
         fail(400, 'Ongeldige tekens in de invoer.');
     }
 }
+// De browser verstuurt elk regeleinde in de textarea als CRLF maar telt het voor maxlength als 1 teken.
+// Normaliseren vóór de lengtecontrole, anders weigert de server een bericht dat de browser toeliet.
+$f['message'] = preg_replace('/\r\n?/', "\n", $f['message']);
 [$name, $email, $phone, $subject, $message] = array_values($f);
 
 if ($name === '' || $email === '' || $message === '') {
@@ -82,7 +85,9 @@ $headers  = "From: Vandotec website <info@vandotec.be>\r\n";
 $headers .= "Reply-To: {$email}\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
-$headers .= "Content-Transfer-Encoding: 8bit\r\n";
+// base64: een bericht van 5000 tekens zonder Enter wordt anders één regel boven de 998 bytes
+// die mailservers mogen inkorten of weigeren (RFC 5322), desnoods midden in een é.
+$headers .= "Content-Transfer-Encoding: base64\r\n";
 
 $label = $subject === '' ? 'Geen onderwerp gekozen' : $SUBJECTS[$subject];
 
@@ -97,10 +102,12 @@ $body .= "Bericht:\n{$message}\n";
 // Alleen een vaste label uit $SUBJECTS: de bezoeker bepaalt de onderwerpregel niet.
 $subject_line = encode_header('[Vandotec] ' . $label);
 
+$encoded = chunk_split(base64_encode($body));
+
 $dry = getenv('VD_MAIL_DRYRUN');
 $sent = $dry
-    ? file_put_contents($dry, "To: {$to}\r\nSubject: {$subject_line}\r\n{$headers}\r\n{$body}") !== false
-    : mail($to, $subject_line, $body, $headers);
+    ? file_put_contents($dry, "To: {$to}\r\nSubject: {$subject_line}\r\n{$headers}\r\n{$encoded}") !== false
+    : mail($to, $subject_line, $encoded, $headers);
 
 if ($sent) {
     // relatieve redirect: geen open redirect via Host-header mogelijk

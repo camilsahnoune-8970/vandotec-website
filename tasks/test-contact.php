@@ -25,9 +25,15 @@ function post($fields) {
 }
 
 $ok = ['name' => 'Jan Peeters', 'email' => 'jan@example.com', 'phone' => '+32 470 00 00 00',
-       'subject' => 'offerte', 'message' => "Graag een offerte.\nTwee lijnen.", 'website' => ''];
+       'subject' => 'offerte', 'message' => "Graag een offerte.\r\nTwee lijnen.", 'website' => '']; // CRLF: zo verstuurt een browser een textarea
 $fails = 0;
-function check($label, $cond) { global $fails; echo ($cond ? 'OK   ' : 'FAAL ') . $label . "\n"; if (!$cond) $fails++; }
+function check($label, $cond, $extra = '') { global $fails; echo ($cond ? 'OK   ' : 'FAAL ') . $label . ($extra ? " ($extra)" : '') . "\n"; if (!$cond) $fails++; }
+// Body van de gedumpte mail, gedecodeerd zoals een mailprogramma dat doet
+function body($mail) {
+    $parts = explode("\r\n\r\n", $mail, 2);
+    if (count($parts) < 2) return '';
+    return preg_match('/^Content-Transfer-Encoding: base64\r?$/mi', $parts[0]) ? base64_decode($parts[1]) : $parts[1];
+}
 
 // 1. Geldige invoer: 302 naar /contact?sent=1, mail met vaste afzender
 @unlink($dump);
@@ -37,7 +43,20 @@ check('geldige invoer geeft 302 naar /contact?sent=1', $code === 302 && strpos($
 check('From is ons eigen domein, niet de bezoeker', (bool)preg_match('/^From: .*<info@vandotec\.be>\r?$/m', $mail) && !preg_match('/^From:.*example\.com/m', $mail));
 check('Reply-To is de bezoeker', (bool)preg_match('/^Reply-To: jan@example\.com\r?$/m', $mail));
 check('onderwerp is de label uit de lijst', strpos($mail, 'Subject: [Vandotec] Offerte aanvragen') !== false);
-check('bericht over meerdere regels komt ongeschonden in de mail', strpos($mail, 'Graag een offerte.' . chr(10) . 'Twee lijnen.') !== false);
+check('bericht over meerdere regels komt ongeschonden in de mail', strpos(body($mail), 'Graag een offerte.' . chr(10) . 'Twee lijnen.') !== false);
+check('geen losse CR in de body (CRLF uit de browser genormaliseerd)', strpos(body($mail), chr(13)) === false);
+
+// Browser telt een regeleinde als 1 teken voor maxlength maar verstuurt CRLF (2 tekens)
+@unlink($dump);
+[$code] = post(['message' => str_repeat(str_repeat('a', 499) . "\r\n", 10)] + $ok);
+check('bericht van 5000 tekens met 10 Enters (zoals de browser telt) wordt aanvaard', $code === 302);
+// Eén lange regel: transportregels moeten onder 998 bytes blijven (RFC 5322)
+@unlink($dump);
+post(['message' => str_repeat('é', 5000)] + $ok);
+$raw = @file_get_contents($dump) ?: '';
+$longest = max(array_map('strlen', explode("\n", $raw)) ?: [0]);
+check('geen transportregel boven 998 bytes bij 5000 tekens zonder Enter', $raw !== '' && $longest <= 998, "langste $longest");
+check('lange body komt na decoderen ongeschonden aan', strpos(body($raw), str_repeat('é', 5000)) !== false);
 
 // Vanaf hier een bericht van één regel, zodat elke controle alleen om haar eigen reden faalt.
 $ok['message'] = 'Graag een offerte.';
@@ -63,7 +82,7 @@ foreach (['name' => 100, 'phone' => 30, 'message' => 5000] as $k => $limit) {
 check('onderwerp buiten de lijst geeft 400', $code === 400);
 @unlink($dump);
 [$code] = post(['subject' => ''] + $ok);
-check('leeg onderwerp mag (select heeft geen verplichting)', $code === 302 && strpos(file_get_contents($dump), 'Geen onderwerp gekozen') !== false);
+check('leeg onderwerp mag (select heeft geen verplichting)', $code === 302 && strpos(body(file_get_contents($dump)), 'Geen onderwerp gekozen') !== false);
 [$code] = post(['name' => "Jan \xC3\x28"] + $ok);
 check('ongeldige UTF-8 geeft 400', $code === 400);
 @unlink($dump);
