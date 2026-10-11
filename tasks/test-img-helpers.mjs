@@ -4,7 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import fs from 'node:fs/promises';
 import sharp from 'sharp';
-import { displaySize, srcToFile, isLocalRaster, variant800 } from '../integrations/img-dimensions.mjs';
+import { displaySize, srcToFile, isLocalRaster, variant800, sizesFor } from '../integrations/img-dimensions.mjs';
 
 let fails = 0;
 const check = (label, ok, extra = '') => { console.log((ok ? 'OK   ' : 'FAAL ') + label + (extra ? ` (${extra})` : '')); if (!ok) fails++; };
@@ -26,6 +26,10 @@ check('-800-variant behoudt de %-codering', variant800('/img/werf%20oost.jpg') =
 check('/_astro/-beelden worden overgeslagen', !isLocalRaster('/_astro/foto.ab12.webp'));
 check('svg wordt overgeslagen', !isLocalRaster('/logo-white.svg'));
 check('gewone jpg doet mee', isLocalRaster('/img/ref-cools.jpg'));
+
+// sizes: "auto" alleen bij lazy (de spec staat auto alleen toe bij loading=lazy)
+check('lazy beeld krijgt sizes "auto, 100vw"', sizesFor('<img src="/img/a.jpg" loading="lazy">') === 'auto, 100vw');
+check('eager beeld krijgt sizes "100vw"', sizesFor('<img src="/img/a.jpg" fetchpriority="high">') === '100vw');
 
 console.log(fails ? `\n${fails} FAAL` : '\nALLES OK');
 process.exit(fails ? 1 : 0);

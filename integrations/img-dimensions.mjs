@@ -11,14 +11,11 @@ import sharp from 'sharp';
 
 export const RASTER = /\.(jpe?g|png|webp|avif)$/i;
 
-// sizes per directe omhullende klasse, gemeten op 390/768/1024/1440 (2026-10-11).
-// Onbekende plek = 100vw: nooit slechter dan zonder srcset, de browser kiest dan het origineel.
-export const SIZES = {
-  'gal-zoom': '(max-width: 1023px) 280px, 380px',
-  'ref-card': '(max-width: 900px) 100vw, 370px',
-  'service-photo': '(max-width: 900px) 100vw, 550px',
-  'media-slot': '(max-width: 900px) 100vw, 550px',
-};
+// sizes: lazy beelden krijgen "auto, 100vw". Chrome/Edge nemen dan de echte getoonde breedte
+// (geen handgemeten waarden die bij een layoutwijziging stilletjes fout worden: binnen één klasse
+// kwamen 366 én 602 px voor). Firefox/Safari kennen "auto" nog niet en vallen terug op 100vw:
+// nooit onscherp, hooguit het origineel zoals vóór deze srcset. "auto" werkt alleen bij loading=lazy.
+export const sizesFor = (tag) => (attr(tag, 'loading') === 'lazy' ? 'auto, 100vw' : '100vw');
 
 export const attr = (tag, name) => {
   const m = tag.match(new RegExp('\\s' + name + '="([^"]*)"'));
@@ -45,13 +42,6 @@ export async function displaySize(file) {
 }
 
 export const variant800 = (src) => src.replace(RASTER, (ext) => `-800${ext}`);
-
-// Klasse van de directe ouder: het laatste openende element met class="…" vóór de <img>.
-function parentClass(html, index) {
-  const before = html.slice(Math.max(0, index - 600), index);
-  const all = [...before.matchAll(/<(\w+)\b[^>]*\sclass="([^"]*)"[^>]*>/g)];
-  return all.length ? all[all.length - 1][2].split(/\s+/)[0] : '';
-}
 
 async function htmlFiles(dir) {
   const out = [];
@@ -91,8 +81,7 @@ export async function addDimensions(distDir, publicDir) {
       if (attr(tag, 'srcset') === null && !/-800\.\w+$/.test(src) && small && (await exists(small))) {
         const s = await size(img);
         if (s && s.w > 800) {
-          const sizes = SIZES[parentClass(html, m.index)] || '100vw';
-          add += ` srcset="${variant800(src)} 800w, ${src} ${s.w}w" sizes="${sizes}"`;
+          add += ` srcset="${variant800(src)} 800w, ${src} ${s.w}w" sizes="${sizesFor(tag)}"`;
           stats.srcset++;
         }
       }
