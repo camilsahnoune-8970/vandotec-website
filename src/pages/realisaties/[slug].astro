@@ -22,6 +22,8 @@ const title = `${displayName}${ref.location ? `, ${ref.location}` : ''} | Realis
 const description = `${catLabel} door Vandotec${ref.location ? ` in ${ref.location}` : ''}: ${ref.text}`;
 const canonical = `https://www.vandotec.be/realisaties/${ref.slug}`;
 const photos = ref.photos && ref.photos.length ? ref.photos : [{ src: ref.img, alt: ref.alt }];
+// Rail: Chrome/Edge nemen met "auto" de echte breedte (lazy); Firefox/Safari de terugval = grootste railbreedte (nooit onscherp)
+const RAIL_SIZES = 'auto, (max-width: 799px) 280px, 520px';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -83,8 +85,8 @@ const jsonLd = {
 			</div>
 			<div class="gal-rail" tabindex="0" role="region" aria-label={`Foto's ${displayName}`}>
 				{photos.map((photo) => (
-				<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt}>
-					<img src={photo.src} { ...(photo.srcset ? { srcset: photo.srcset, sizes: '(max-width: 640px) 85vw, 520px' } : {}) } { ...(photo.width ? { width: photo.width, height: photo.height } : {}) } alt={photo.alt} loading="lazy" /><figcaption>{photo.alt}</figcaption>
+				<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt} aria-label={`Vergroot foto: ${photo.alt}`}>
+					<img src={photo.src} { ...(photo.srcset ? { srcset: photo.srcset, sizes: RAIL_SIZES } : {}) } { ...(photo.width ? { width: photo.width, height: photo.height } : {}) } alt={photo.alt} loading="lazy" /><figcaption>{photo.alt}</figcaption>
 				</button>
 				))}
 			</div>

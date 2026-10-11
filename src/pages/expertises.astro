@@ -101,7 +101,7 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 						<div class="gal-rail mt-25" tabindex="0" role="region" aria-label={`Galerij ${section.title}`}>
 							{section.gallery.map((photo) => (
 								<button class="gal-zoom" type="button" data-full={photo.src} data-caption={photo.alt} aria-label={`Vergroot foto: ${photo.alt}`}>
-									<img src={photo.src} { ...(photo.srcset ? { srcset: photo.srcset, sizes: '(max-width: 640px) 85vw, 520px' } : {}) } { ...(photo.width ? { width: photo.width, height: photo.height } : {}) } alt={photo.alt} loading="lazy" />
+									<img src={photo.src} { ...(photo.srcset ? { srcset: photo.srcset, sizes: 'auto, (max-width: 799px) 280px, 520px' } : {}) } { ...(photo.width ? { width: photo.width, height: photo.height } : {}) } alt={photo.alt} loading="lazy" />
 									<figcaption>{photo.alt}</figcaption>
 								</button>
 							))}
@@ -237,7 +237,9 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 				</div>
 			</div>
 		</dialog>
-		<script type="application/json" id="refGalleries">{JSON.stringify(Object.fromEntries((expertises.references || []).map((r, i) => [i, r.gallery || []])))}</script>
+		{/* set:html: Astro rekent {…} binnen <script> niet uit (de code kwam letterlijk in de pagina).
+		    Extra foto's = photos zonder de hoofdfoto die bovenaan de modal al staat. "<" escapen tegen </script>. */}
+		<script type="application/json" id="refGalleries" set:html={JSON.stringify(Object.fromEntries((expertises.references || []).map((r, i) => [i, (r.photos || []).filter((ph) => ph.src !== r.img).map((ph) => ({ src: ph.src, alt: ph.alt }))]))).replace(/</g, '\\u003c')}></script>
 	</section>
 	)}
 
@@ -318,7 +320,10 @@ const sectionImages: Record<string, { src: string; alt: string }> = {
 				gal.hidden = photos.length === 0;
 				lastFocus = document.activeElement;
 				dialog.showModal();
-				document.getElementById('refModalClose').focus();
+				// focus op Sluiten zonder te scrollen: bij een hoge modal (veel foto's) blijft de bovenkant in beeld
+				document.getElementById('refModalClose').focus({ preventScroll: true });
+				var card = dialog.querySelector('.ref-modal-card');
+				if(card) card.scrollTop = 0;
 			}
 			function closeModal(){
 				if(!dialog) return;
