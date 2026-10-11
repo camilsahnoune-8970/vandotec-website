@@ -6,7 +6,6 @@
  "sections": [
   {
    "slug": "tankstations",
-   "icon": "/img/icon-tankstation.svg",
    "title": "Tankstations",
    "gallery": [
     {
@@ -46,7 +45,6 @@
   },
   {
    "slug": "ev-laadinstallaties",
-   "icon": "/img/icon-ev.svg",
    "title": "EV laadinstallaties",
    "summary": "Plaatsing en onderhoud van AC- en DC-laadpalen met bekabeling, verdeelkasten en laadbeheersystemen voor bedrijven en openbare instanties.",
    "body": [
@@ -61,7 +59,6 @@
   },
   {
    "slug": "infrastructuurwerken",
-   "icon": "/img/icon-infra.svg",
    "title": "Infrastructuurwerken",
    "summary": "Grondverzet, riolering, wegenis, betonwerken en hoog- en middenspanningsinstallaties tot en met 36 kV voor industri&euml;le projecten.",
    "body": [

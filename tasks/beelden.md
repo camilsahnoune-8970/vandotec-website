@@ -94,7 +94,7 @@ drone-solar (idem), donkere lege garage (onaantrekkelijk).
 | `ref-tradit.jpg` (59KB) | Techniekers aan het werk (project-thumb Tradit) | Referentiekaart Tradit |
 | `ref-cools.jpg` (77KB) | Vandotec-busje bij tankstation (project-thumb Cools Avia) | Referentiekaart Cools |
 | `ref-iveco.jpg` (59KB) | Laadpalen bij showroom (project-thumb Iveco Maenhout) | Referentiekaart + home-rij |
-| `ref-demarol.jpg` (52KB) | Avia-pompen (project-thumb Demarol Lessines) | Referentiekaart |
+| ~~`ref-demarol.jpg`~~ (52KB) | Avia-pompen (project-thumb Demarol Lessines) | **Verwijderd 2026-10-11** (branch `claude/beelden-opruim`): vervangen door eigen foto's `demarol-lessines-1..5.jpg`; terug te halen via git |
 | `ref-decospan.jpg` (45KB) | Laadpalen bij dealer (project-thumb Decospan Menen) | Referentiekaart |
 | `ref-mig.jpg` (37KB) | Servicebusje bij pomp (project-thumb MIG Lievegem) | Referentiekaart |
 | `ref-cid.jpg` (22KB) | Shell-luifel (project-thumb Cid Lines Ieper) | Referentiekaart |
