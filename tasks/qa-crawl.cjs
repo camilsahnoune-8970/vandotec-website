@@ -45,5 +45,7 @@ const WIDTHS = [360, 390, 768, 1024, 1440];
   const uniq = [...new Set(issues)];
   console.log(`pagina's: ${URLS.length}, breedtes: ${WIDTHS.join(',')}, meldingen: ${uniq.length}`);
   uniq.forEach((x) => console.log(x));
-  process.exit(uniq.length ? 1 : 0);
+  // 0 pagina's = lege of kapotte build: dat is een fout, geen groen licht
+  if (!URLS.length) console.log("FAAL: geen pagina's gevonden in dist/");
+  process.exit(uniq.length || !URLS.length ? 1 : 0);
 })();
