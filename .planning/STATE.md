@@ -16,7 +16,7 @@ Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
 - Rolverdeling: **opencode bouwt**. Camil beslist, keurt specs goed en doet de smaak-review. Claude reviewt of herstelt technisch alleen op verzoek van Camil.
 - **Claude-schrijfstop**: Claude schrijft niet meer in deze repo tot Camil om een review of hotfix vraagt. Nooit twee agents tegelijk in dezelfde bestanden.
 - Startpunt: milestone v1.1 "Inhoud-waarheid": `.planning/MILESTONES.md`, `specs/inhoud-waarheid.md` (alle CLAIM-punten met feiten, bron en aanbeveling) en `.planning/REQUIREMENTS.md`. **De spec is pas goedgekeurd als Camil de PR mergt of "ja" zegt.** Tot dan bouwt niemand aan de CLAIM-punten, en doe je alleen de wachtrij P1-P5 uit de spec of niets.
-- Eerste taak voor opencode: lees de spec en meld aan Camil of iets onduidelijk is (een tweede paar ogen op de spec); stel daarna de eerste vraag volgens de volgorde in de spec (CLAIM-04).
+- Eerste taak voor opencode: lees de spec en meld aan Camil of iets onduidelijk is (een tweede paar ogen op de spec); stel daarna de eerste vraag volgens de volgorde in de spec (CLAIM-04). Staat de spec nog niet op `origin/main` terwijl Camil "ja" zegt: meld dat en laat de spec-PR eerst mergen (Camil, of Claude op zijn verzoek) voor je een branch maakt.
 - Alles wat Claude wist en niet in code staat, staat nu in de repo: `AGENTS.md` (regels en valkuilen), `tasks/QA-RUNBOOK.md` (testen), `tasks/REVIEW.md` (audit met status per punt), `tasks/SECURITY-NOTITIE.md`.
 - Gemeten bij de overdracht: de lokale branch `opencode/fotorondgang-register` staat op `a572097` (2026-10-07), is volledig gemerged en bestaat niet op origin. Hij bevat geen werk en mag weg.
 
@@ -28,7 +28,7 @@ Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
 ## Geblokkeerd / wacht op Camil
 
 1. 24/7 interventiedienst (CLAIM-03): Camil vraagt na of er een echte wachtdienst bestaat. "24/7" staat in `src/` op 24 regels in 10 bestanden (plus 2× "24 uur per dag"), en ook de OG-afbeelding `public/og-image.png` (gemaakt met `tasks/make-og.cjs:14`) zegt "24/7 interventie". Geen bron.
-2. Overige inhoudsbesluiten, één per vraag: superlatieven, certificaatnummers, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten, dunne referenties, Powerhub-tijdlijn.
+2. Overige inhoudsbesluiten (CLAIM-04 t/m 10 en 12), één per vraag: superlatieven, certificaten, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten, dunne referenties, "elk project in eigen beheer". De Powerhub-tijdlijn (CLAIM-11) sluit opencode zelf, de bron staat in de spec.
 3. Het oude CMS-wachtwoord staat in de publieke git-historie (uit de bestanden sinds PR #59). Camil bevestigt of hij het nog ergens gebruikt. Historie herschrijven is een apart besluit, geen taak voor opencode. Zie `tasks/SECURITY-NOTITIE.md`.
 4. Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52); hoort bij de hostingkeuze.
 5. EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
@@ -37,7 +37,7 @@ Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
-- 2026-10-12 milestone v1.1 "Inhoud-waarheid": `specs/inhoud-waarheid.md`, MILESTONES, REQUIREMENTS (CLAIM-01..11), ROADMAP-statusregel, startprompt (claude)
+- 2026-10-12 milestone v1.1 "Inhoud-waarheid": `specs/inhoud-waarheid.md`, MILESTONES, REQUIREMENTS (CLAIM-01..12), ROADMAP-statusregel, startprompt; tweede koude-starttest verwerkt (CLAIM-12 erbij, bronverwijzingen rechtgezet) (claude)
 - 2026-10-12 overdracht aan opencode via PR #66: STATE, AGENTS, `tasks/QA-RUNBOOK.md`, README, PR-sjabloon, SECURITY-NOTITIE (wachtwoord in historie gecorrigeerd), `.gitignore`; tweede paar ogen via koude-starttest (claude)
 - 2026-10-12 absoluut "geen onderaannemers" geschrapt via PR #65 (10 plaatsen; hero-blok nu "Eigen / Vaste ploegen"; FAQ "Werken jullie met eigen ploegen? Ja") (claude)
 - 2026-10-11 tellers 6.000+ en 5 landen als groepscijfers via PR #64 ("Projecten (groep)", "Landen actief (groep)"; bron mediakit p. 3; `verify-mediakit.cjs` volgt de site weer) (claude)
