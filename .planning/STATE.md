@@ -18,7 +18,7 @@
 - EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
 - Technisch open (laag prio): echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
 - Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52); hoort bij de hostingkeuze.
-- Inhoud uit REVIEW.md (bak B, besluit Camil): 24/7, "geen onderaannemers", superlatieven, certificaat-/VCA-nummers, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten.
+- Inhoud uit REVIEW.md (bak B, besluit Camil): 24/7 (Camil vraagt na bij Kevin/onthaal), superlatieven, certificaat-/VCA-nummers, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten.
 
 ## Laatste 5
 

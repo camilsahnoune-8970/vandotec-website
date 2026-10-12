@@ -54,6 +54,9 @@ Bewijsregel: geen bewering zonder bestand:regel of commando-output; de rest staa
   `gal-rail` 4×, `moment-band` 5×, `stats` 2 smaken (lijst met regels in module-output).
 
 **M2 inhoud**
+- **Afgehandeld 2026-10-12 (besluit Camil: nuanceren):** het absolute “geen/0 onderaannemers” is op 10 plaatsen
+  geschrapt; “eigen vaste ploegen en eigen materieel” blijft (mediakit p. 5: “altijd met eigen mensen”).
+  Hero-blok “0 Onderaannemers” is nu “Eigen / Vaste ploegen”.
 - “Eigen ploegen, geen onderaannemers” hardcoded (`[slug].astro:63`) én in data (5×) + spanning met
   Powerland-zusterdivisie (`expertises.json:135`). Absolute nul-claim zonder bewijs. Voorstel:
   “eigen vaste ploegen met eigen materieel; zusterdivisie waar van toepassing expliciet vermeld”.
