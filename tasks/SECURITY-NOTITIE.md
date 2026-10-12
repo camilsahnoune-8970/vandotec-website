@@ -32,5 +32,6 @@ niet meer in de bestanden; de historie bevat het nog steeds. De waarde staat bew
   wachtwoord in een publieke historie geldt als bekend.
 - Historie herschrijven (force-push) is een apart besluit van Camil. De sluis `main-sluis` verbiedt
   force-push; geen taak voor opencode.
+- Gevonden bij de overdracht: `.vercel/project.json` staat in git en bevat `projectId`, `orgId` en `projectName` van het inmiddels verwijderde Vercel-project. Dat zijn identifiers (aanname: geen geheimen; ik las alleen de sleutelnamen); opruimen is een besluit van Camil (zie `.planning/STATE.md`).
 - Niet gecontroleerd: andere geheimen dan dit wachtwoord (token, API-sleutel). Bij een nieuwe scan:
   noem de zoekmethode en het aantal treffers.

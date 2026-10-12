@@ -26,14 +26,15 @@ Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
 
 ## Geblokkeerd / wacht op Camil
 
-1. 24/7 interventiedienst (CLAIM-03): Camil vraagt na of er een echte wachtdienst bestaat. "24/7" staat op 26 regels in 10 bestanden en is zonder bron.
+1. 24/7 interventiedienst (CLAIM-03): Camil vraagt na of er een echte wachtdienst bestaat. "24/7" staat in `src/` op 24 regels in 10 bestanden (plus 2× "24 uur per dag"), en ook de OG-afbeelding `public/og-image.png` (gemaakt met `tasks/make-og.cjs:14`) zegt "24/7 interventie". Geen bron.
 2. Overige inhoudsbesluiten, één per vraag: superlatieven, certificaatnummers, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten, dunne referenties, Powerhub-tijdlijn.
 3. Het oude CMS-wachtwoord staat in de publieke git-historie (uit de bestanden sinds PR #59). Camil bevestigt of hij het nog ergens gebruikt. Historie herschrijven is een apart besluit, geen taak voor opencode. Zie `tasks/SECURITY-NOTITIE.md`.
 4. Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52); hoort bij de hostingkeuze.
 5. EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
 6. Technisch open (laag prio): echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
+7. Opruimen in de publieke repo, besluit Camil: `.vercel/` (het Vercel-project is verwijderd; het bestand bevat projectId, orgId en projectName), `.hermes/plans/` en `archive-legacy-html/` zijn nog gevolgd door git (14 bestanden gemeten). Ook `tasks/staging-upload.md` en `deploy.yml` zijn oud.
 
-## Laatste 5
+## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
 - 2026-10-12 overdracht aan opencode: STATE, AGENTS, `tasks/QA-RUNBOOK.md`, SECURITY-NOTITIE (wachtwoord in historie gecorrigeerd), `.gitignore` (claude)
 - 2026-10-12 absoluut "geen onderaannemers" geschrapt via PR #65 (10 plaatsen; hero-blok nu "Eigen / Vaste ploegen"; FAQ "Werken jullie met eigen ploegen? Ja") (claude)

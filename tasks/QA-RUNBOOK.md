@@ -5,9 +5,9 @@ Dit is de tekstversie van wat Claude Code als skill gebruikte (`vandotec-site-qa
 ## Regels
 
 1. **Eerst bouwen.** De tests lezen `dist/`. Een run op een oude `dist/` test de oude site: draai `npm run build` vóór elke run.
-2. **De hele set draaien**, niet één script. **De exitcode is leidend** (`$LASTEXITCODE` in PowerShell, `0` = groen). De slotregel verschilt per script: de meeste eindigen op `ALLES OK` (`check-seo`: `ALL OK`), `qa-crawl` toont `pagina's: 26, breedtes: …, meldingen: 0`, `qa-browsers` toont `<browser> OK`, `check-contrast` toont `PASS`-regels. Noem bij een fout het script en de `FAAL`-regel, geen samenvatting.
+2. **De hele set draaien**, niet één script. **De exitcode is leidend** (`$LASTEXITCODE` in PowerShell, `0` = groen). De slotregel verschilt per script: de meeste eindigen op `ALLES OK` (`check-seo`: `ALL OK`), `qa-crawl` toont `pagina's: 26, breedtes: …, meldingen: 0`, `qa-browsers` toont `ff OK` en `wk OK` (Firefox, WebKit), `check-contrast` toont `PASS`-regels. Noem bij een fout het script en de `FAAL`-regel, geen samenvatting.
 3. **Een test die niets telt, moet falen.** Een crawl over 0 pagina's of een scan van een lege `dist/` mag nooit groen zijn. Controleer het aantal ("pagina's: 26") voor je groen meldt.
-4. **Een test bewijst pas iets als hij eerst op de oude code faalt** (negatieve proef). Draai een nieuwe test dus eerst op `main` en toon de rode run in de PR.
+4. **Een test bewijst pas iets als hij eerst op de oude code faalt** (negatieve proef). Draai een nieuwe test dus eerst tegen de oude code (in je werkmap, zonder te committen, of met de fix tijdelijk teruggedraaid) en zet de rode uitvoer in de PR-tekst.
 5. **Interactietests controleren dat de data er is**, niet alleen dat een knop opent (bv. `.gal-zoom`-aantal > 0). Astro evalueert geen `{}` in een `<script>`; zo bleven modal en lightbox ooit leeg.
 6. **Verwachting van een check gewijzigd?** Bevestig eerst het brondocument en het besluit van Camil, pas dan de verwachting aan, en noem elke gewijzigde verwachting met bron in de PR. Nooit een check versoepelen om groen te krijgen. Voorbeeld: `verify-mediakit.cjs` verwachtte `+3.500` en een naam die Camil bewust had geschrapt (PR #64).
 
@@ -31,7 +31,7 @@ php tasks/test-contact.php
 **Alle scripts hebben poort 4333 vast ingebakken.** Is die poort bezet, dan kiest Astro stil 4334 en testen de scripts de verkeerde (oude) server.
 
 1. Controleer eerst dat 4333 vrij is: `Get-NetTCPConnection -LocalPort 4333 -State Listen -ErrorAction SilentlyContinue` moet leeg zijn.
-2. Start `npx astro preview --port 4333` (op de achtergrond) en lees in de log de regel `Local http://localhost:<poort>/`. Is dat niet 4333: stop, zoek wie 4333 vasthoudt, begin opnieuw.
+2. Start `npx astro preview --port 4333` (op de achtergrond) en lees in de log de regel `Local http://localhost:<poort>/`. Is dat niet 4333: stop, zoek wie 4333 vasthoudt (`Get-NetTCPConnection` + `Get-CimInstance Win32_Process`), begin opnieuw. Is het jouw eigen preview: stop hem. Is het van iemand anders: stop hem niet, meld het aan Camil en wacht.
 3. Draai:
 
 ```
