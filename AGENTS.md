@@ -61,7 +61,7 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 
 ## Voor opencode (startprompt, verse sessie na 2026-10-12)
 
-Lees `AGENTS.md`, `.planning/STATE.md` en `tasks/QA-RUNBOOK.md`. Controleer eerst de stand: `git fetch`, `git status`, `gh pr list`, en de statische testset uit het runbook op een verse `origin/main`. Is die set rood, dan meld je dat aan Camil en repareer je niets zonder spec. Start elke taak met `git switch -c opencode/<taak> origin/main` (nooit vanaf een `claude/`-branch), kies het open punt dat `.planning/STATE.md` noemt, vraag Camil één beslissing per keer, open een PR en schrijf de journaalregel zoals hierboven staat.
+Lees `AGENTS.md`, `.planning/STATE.md` en `tasks/QA-RUNBOOK.md`. Controleer eerst de stand: `git fetch`, `git status`, `gh pr list`, en de statische testset uit het runbook op een verse `origin/main`. Is die set rood, dan meld je dat aan Camil en repareer je niets zonder spec. Start elke taak met `git switch -c opencode/<taak> origin/main` (nooit vanaf een `claude/`-branch), kies het open punt dat `.planning/STATE.md` noemt (de actieve milestone staat in `.planning/MILESTONES.md`, de uitwerking in `specs/inhoud-waarheid.md`; bouw pas na Camils goedkeuring van die spec), vraag Camil één beslissing per keer, open een PR en schrijf de journaalregel zoals hierboven staat.
 
 ## Voor Codex / Claude Code (startprompt)
 

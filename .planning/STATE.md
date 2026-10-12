@@ -15,7 +15,8 @@ Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
 
 - Rolverdeling: **opencode bouwt**. Camil beslist, keurt specs goed en doet de smaak-review. Claude reviewt of herstelt technisch alleen op verzoek van Camil.
 - **Claude-schrijfstop**: Claude schrijft niet meer in deze repo tot Camil om een review of hotfix vraagt. Nooit twee agents tegelijk in dezelfde bestanden.
-- Startpunt: milestone v1.1 "Inhoud-waarheid", ter goedkeuring via een aparte PR (`claude/milestone-v1-1`). Tot die PR gemerged is, bouwt niemand aan de CLAIM-punten hieronder.
+- Startpunt: milestone v1.1 "Inhoud-waarheid": `.planning/MILESTONES.md`, `specs/inhoud-waarheid.md` (alle CLAIM-punten met feiten, bron en aanbeveling) en `.planning/REQUIREMENTS.md`. **De spec is pas goedgekeurd als Camil de PR mergt of "ja" zegt.** Tot dan bouwt niemand aan de CLAIM-punten, en doe je alleen de wachtrij P1-P5 uit de spec of niets.
+- Eerste taak voor opencode: lees de spec en meld aan Camil of iets onduidelijk is (een tweede paar ogen op de spec); stel daarna de eerste vraag volgens de volgorde in de spec (CLAIM-04).
 - Alles wat Claude wist en niet in code staat, staat nu in de repo: `AGENTS.md` (regels en valkuilen), `tasks/QA-RUNBOOK.md` (testen), `tasks/REVIEW.md` (audit met status per punt), `tasks/SECURITY-NOTITIE.md`.
 - Gemeten bij de overdracht: de lokale branch `opencode/fotorondgang-register` staat op `a572097` (2026-10-07), is volledig gemerged en bestaat niet op origin. Hij bevat geen werk en mag weg.
 
@@ -36,7 +37,8 @@ Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
-- 2026-10-12 overdracht aan opencode: STATE, AGENTS, `tasks/QA-RUNBOOK.md`, SECURITY-NOTITIE (wachtwoord in historie gecorrigeerd), `.gitignore` (claude)
+- 2026-10-12 milestone v1.1 "Inhoud-waarheid": `specs/inhoud-waarheid.md`, MILESTONES, REQUIREMENTS (CLAIM-01..11), ROADMAP-statusregel, startprompt (claude)
+- 2026-10-12 overdracht aan opencode via PR #66: STATE, AGENTS, `tasks/QA-RUNBOOK.md`, README, PR-sjabloon, SECURITY-NOTITIE (wachtwoord in historie gecorrigeerd), `.gitignore`; tweede paar ogen via koude-starttest (claude)
 - 2026-10-12 absoluut "geen onderaannemers" geschrapt via PR #65 (10 plaatsen; hero-blok nu "Eigen / Vaste ploegen"; FAQ "Werken jullie met eigen ploegen? Ja") (claude)
 - 2026-10-11 tellers 6.000+ en 5 landen als groepscijfers via PR #64 ("Projecten (groep)", "Landen actief (groep)"; bron mediakit p. 3; `verify-mediakit.cjs` volgt de site weer) (claude)
 - 2026-10-07 STATE rechtgezet + branches opgeruimd (opencode)

@@ -1,0 +1,64 @@
+# SPEC: inhoud-waarheid (milestone v1.1)
+
+Leeswijzer: geen goedgekeurde spec = geen PR. Camil keurt deze spec goed door de PR te mergen of "ja" te zeggen. Daarna bouwt opencode, één PR per besluit. Rolverdeling en werkafspraken: `AGENTS.md`. Testen: `tasks/QA-RUNBOOK.md`.
+
+## 1. Doel (één zin)
+
+Elke bewering op vandotec.be is gedekt door een bron of een bevestiging van Camil, of is afgezwakt; geen punt uit `tasks/REVIEW.md` (inhoud en juridisch) staat nog open zonder besluit.
+
+## 2. Context
+
+- Overdracht van Claude Code naar opencode op 2026-10-12, zie `.planning/STATE.md`. De inhoudsbesluiten ("bak B") zijn het enige echt open blok. CLAIM-01 (tellers, PR #64) en CLAIM-02 (onderaannemers, PR #65) zijn klaar.
+- Brondocument: `docs/mediakit-2026.pdf` (de persmap van Group Vandotec). `tasks/REVIEW.md` noemde meerdere punten "zonder bron" die in de mediakit wel staan; dat is hieronder per punt nagelopen. De mediakit is een bron voor *wat het bedrijf zelf publiek zegt*, geen bewijs dat het waar is: waar Camil moet bevestigen, staat dat erbij.
+- Nulmeting 2026-10-12: `main` = `4311dce`, `npm run build` groen (27 pagina's), `check-seo` ALL OK, `verify-mediakit.cjs` MEDIAKIT-RONDE OK.
+
+## 3. Scope
+
+- **Wél:** CLAIM-03 t/m CLAIM-11 hieronder. Per besluit één PR, met voor/na-tekst voor Camil bij zichtbare wijziging.
+- **Werkwijze per punt:** zoek zelf de feiten op, leg Camil **één** vraag voor (in gewone taal, aanbeveling eerst, zo dat "ja" volstaat), wacht op het antwoord, bouw dan. Nooit meerdere beslissingen in één bericht. Volgorde: 04, 05, 06, 07, 08, 09, 10; 03 zodra Camil antwoordt; 11 sluit je zelf met een melding.
+- **Uitdrukkelijk níet:** live zetten, DNS, hosting; afzender `info@vandotec.be` en SPF (hoort bij de hostingkeuze); rood-telling in de hero (smaak, Camil); FR-vertaling; Layout-splitsing en component-extractie (wachtrij P1, aparte spec); historie van de repo herschrijven.
+
+### De punten
+
+| # | Punt | Feiten (gemeten 2026-10-12) | Bron | Aanbeveling |
+|---|---|---|---|---|
+| 03 | **24/7 interventiedienst** | "24/7" staat in `src/` op 24 regels in 10 bestanden (plus 2× "24 uur per dag": `service-onderhoud.json`, `contact.json`). **Ook de deelafbeelding** `public/og-image.png` toont "Sinds 1978 · VCA-gecertificeerd · 24/7 interventie"; ze wordt gemaakt door `tasks/make-og.cjs:14` en moet bij een wijziging opnieuw gegenereerd worden (niet geverifieerd of dat script lokaal nog draait). Dezelfde afbeelding noemt ook "VCA-gecertificeerd" (zie 05). Per bestand (letterlijk "24/7"): `home.json` (5), `service-onderhoud.json` (4, plus "24 uur per dag" op regel 23), `Layout.astro` (3: `siteDescription`, de banner "Defect of storing?", voetmenu), `contact.astro` (3), `index.astro` (3, o.a. hero-blok regel 45-46), `expertises.json` (2), `contact.json` (1, plus "24 uur per dag" op regel 18), `over-vandotec.json` (1), `over-vandotec.astro` (1), `service-onderhoud.astro` (1) | Mediakit p. 6 zegt alleen "interventiedienst". Het nummer +32 57 33 52 51 is het kantoornummer (p. 14). | **Wacht op Camil** (hij vraagt na of er een echte wachtdienst bestaat). Bestaat hij: noteer wie het bevestigde en wanneer in `REVIEW.md`, wijzig niets. Bestaat hij niet: "24/7 bereikbaar voor storingsmeldingen; interventie in overleg, contractklanten krijgen voorrang" (voorstel uit `REVIEW.md`) of schrappen naar "interventiedienst". |
+| 04 | **Superlatieven** | `over-vandotec.json:8`: "sinds 1978 de referentie", "altijd met eigen mensen, altijd sleutel-op-de-deur". `over-vandotec.astro:138`: "op elke werf, bij elke opdrachtgever". `home.json:57` en `over-vandotec.json:111`: "de beste oplossing" (klein). | De eerste twee zijn letterlijk mediakit-tekst (p. 3 "sinds 1978 de referentie als totaalpartner en contractor", p. 5 "altijd met eigen mensen, altijd sleutel-op-de-deur"). "Op elke werf, bij elke opdrachtgever" staat niet in de mediakit. | Behouden wat uit de mediakit komt (de audit stelde afzwakken voor, maar de tekst is Camils eigen persmap). "Op elke werf, bij elke opdrachtgever" afzwakken tot "op onze werven" tenzij Camil het absolute bevestigt. "Beste oplossing" laten. |
+| 05 | **Certificaten** | Site toont VCA-logo en BELAC-logo (`over-vandotec.astro:127-139`), "ISO 17020-geaccrediteerd" (`service-onderhoud.json:10,16`, `contact.astro:205`, `home.json:45`, `service-onderhoud.astro:55`), "erkend in klasse 6/P2" (`over-vandotec.astro:139`). Geen certificaatnummers, geen geldigheidsdatum. `verify-mediakit.cjs` verwacht `ISO 17020` en `klasse 6/P2` op de over-pagina. | Mediakit p. 3: "VCA gecertificeerd • ISO 17020 geaccrediteerd • Klasse 6/P2"; p. 6. Bestaan is gedekt; nummers en geldigheid staan nergens. | Niets tonen wat niet geleverd is. Vraag Camil: wil je nummers en geldigheid tonen? Zo ja, hij levert ze aan (BELAC-nummer, VCA-certificaat, geldig tot). Zo nee: laten staan zoals de mediakit. Verzin nooit een nummer. |
+| 06 | **Merknamen** | 34 treffers (regex Esso, Shell, Avia, Texaco, Gulf, ProFleet, Porsche, Total, Q8, Lukoil): `expertises.json` (30), `over-vandotec.astro` (2), `index.astro` (1), `service-onderhoud.astro` (1). Vooral in alt-teksten en bijschriften bij foto's. Geen toestemmingsregister. | Mediakit p. 7 noemt "Cools Avia, Brugge" en "Maes Brandstoffen" als referentieklanten: klantnamen daaruit zijn gedekt. Merknamen van foto's van andere stations niet. | Klantnamen uit de mediakit blijven. Overige merknamen in alt-teksten en bijschriften neutraliseren ("tankstation", "pompeiland") en op `disclaimer.astro` één zin over merknamen en eigendom van derden toevoegen. Camil beslist per merk of hij toestemming heeft. |
+| 07 | **"Tankstation groene luifel" / Pessleux** | Kaart in `expertises.json:358-370` zonder klant of plaats, foto `ref-pessleux.jpg`. De klantnaam staat wel op de homepage: `index.astro:229` ("Pessleux — Fosses-la-Ville") en in de ticker (`index.astro:65`). De bestandsnaam `ref-pessleux*.jpg` is ook zichtbaar in de HTML. | Pessleux staat niet in de mediakit. | Zonder toestemming de naam overal weg (bijschrift, ticker, bestandsnaam hernoemen) en de kaart laten. Met toestemming: `client` en `location` op de kaart invullen. Camil beslist. |
+| 08 | **Identiteitsblok juridische pagina's** | `privacy.astro`, `cookies.astro` en `disclaimer.astro` noemen geen naam, adres of BTW (grep). Het BTW-nummer `BE 0417 923 411` en het adres staan wel in de voet van elke pagina (`Layout.astro:95,123`) en in `contact.json:8,13`. | Naam en adres staan ook in de mediakit (p. 14); het BTW-nummer staat alleen op de site zelf. | Identiteitsblok bovenaan de privacyverklaring: naam, adres, BTW, e-mail uit `contact.json`. Aanname: een privacyverklaring hoort te zeggen wie de verwerkingsverantwoordelijke is (AVG); geen juridisch advies, Camil kan het laten nakijken. Geen nieuwe claim. |
+| 09 | **Google Fonts zelf hosten** | `src/layouts/Layout.astro:18-20` laadt Open Sans (400, 500, 600, 700, 400 cursief) van `fonts.googleapis.com` en `fonts.gstatic.com`, vóór consent, terwijl de cookiebalk "geen tracking" zegt. Geen `@font-face` in `public/style.css`. | n.v.t. | Zelf hosten: dezelfde Open Sans als woff2 in `public/fonts/` met `@font-face` en preload, de drie `<link>`-regels weg, de Fonts-vermelding in de cookie-/privacytekst aanpassen. **Geen nieuwe npm-dependency**: download de bestanden en commit ze. Licentie Open Sans niet geverifieerd: controleer die vóór je commit. Bewijs: 0 verwijzingen naar `fonts.googleapis`/`gstatic` in `dist/`, screenshots 390 + 1440 voor/na zonder zichtbaar verschil, `qa-crawl` 0 mislukte verzoeken. AGENTS.md ("geen nieuwe fonts") blijft gelden: het lettertype blijft hetzelfde. |
+| 10 | **Dunne referenties** | In `expertises.json` hebben Iveco Maenhout (3 woorden), Decospan (3), MIG Motors (3) en Cid Lines (2) bijna geen tekst (geteld op 2026-10-12). De audit noemde ook 8 van 15 entries met één foto; dat is niet opnieuw gemeten. | Mediakit noemt deze klanten niet. | Aanvullen als Camil tekst en foto's levert, anders verbergen tot er 2+ foto's en een bewijsbare omschrijving zijn. Let op: verbergen verandert het aantal `realisaties/`-pagina's (nu 14) en daarmee `check-seo` en de sitemap; `qa-crawl` leest de URL's uit `dist/` en volgt vanzelf. |
+| 11 | **Powerhub-tijdlijn** | `over-vandotec.json:37-41`: "opgeleverd in mei 2026", "projectleiding intern, bij COO Marijn Louwagie". | Mediakit p. 4 (jaar 2026) en p. 10 ("opgeleverd in mei 2026", "projectleiding in handen van COO Marijn Louwagie"): site-tekst volgt de mediakit. `REVIEW.md` noemde dit ten onrechte "zonder bewijs". | Sluit zelf met een melding: zet in `REVIEW.md` "Afgehandeld, bron mediakit p. 4 en 10", wijzig niets. |
+
+### Wachtrij (zinvol werk zonder besluit van Camil; elk met eigen spec, tenzij vrijgesteld)
+
+Pak hieruit werk op terwijl je op Camils antwoord wacht. Nooit tegelijk in dezelfde bestanden als een lopende CLAIM-PR.
+
+- **P1** Layout-splitsing en component-extractie (R4-groot in `tasks/REVIEW.md`): `Layout.astro` (386 regels op 2026-10-12; de audit noemde 365) opdelen, en `page-hero` (9×), `connect-grid` (6×), `gal-rail` (4×), `moment-band` (5×) tot componenten (die aantallen komen uit de audit en zijn niet opnieuw geteld). Geen zichtbare wijziging bedoeld; de CI-set (interactie, crawl 26 × 5, axe) is het vangnet.
+- **P2** Ticker (`index.astro`, rond regel 65, volgens de audit 28 vaste spans) uit data genereren.
+- **P3** CSS-nits: `.hero-inner` driemaal gedeclareerd, dubbele `.quote-block`, restant `.footer-quote` in `tasks/qa-print.cjs`.
+- **P4** Fotorondgang Beelden: de vorige STATE zegt dat die loopt; Claude heeft dat niet kunnen bevestigen (de lokale branch `opencode/fotorondgang-register` bleek leeg en gemerged). Meld waar dit staat.
+- **P5** Prestatiebasislijn (Lighthouse, GOLIVE-02) met `tasks/perf-meten.cjs`; noteer de cijfers in `STATE.md`. Het script gebruikt puppeteer (`require('puppeteer')`), dat in de CI en bij `npm ci` zonder download blijft; niet geverifieerd of het lokaal nog draait.
+
+## 4. Acceptatiecriteria
+
+- [ ] CLAIM-03 t/m 11 staan in `.planning/REQUIREMENTS.md` (traceability) als klaar of "bewust gelaten (reden)".
+- [ ] `tasks/REVIEW.md`: elk punt onder "M2 inhoud" en het juridische punt onder "M3 vertrouwen" heeft een regel "Afgehandeld <datum>" of "Bewust gelaten (reden)".
+- [ ] Elke zichtbare tekstwijziging is eerst als voor/na aan Camil getoond en pas daarna gemerged.
+- [ ] Elke gewijzigde verwachting in `tasks/verify-mediakit.cjs` staat met bron in de PR-tekst (zie `tasks/QA-RUNBOOK.md`, regel 6).
+- [ ] CI groen op `main` na elke merge; één journaalregel in `.planning/STATE.md` per PR.
+
+## 5. Verificatie
+
+Per PR: `npm run build`, `node tasks/check-seo.cjs`, `node tasks/qa-a11y.cjs`, `node tasks/verify-mediakit.cjs`, en bij zichtbare wijziging screenshots 390 en 1440 (cookiebalk eerst sluiten, zie runbook). Voor de rest: de volledige set uit `tasks/QA-RUNBOOK.md`. Bij tekstwijzigingen: `grep` in `dist/` op de oude formulering = 0, op de nieuwe = het verwachte aantal. Zo bewees Claude PR #64 en #65.
+
+## 6. Smaak-check
+
+- [x] Nodig voor 03 t/m 10 (zichtbare tekst of beeld): voor/na aan Camil, bij 08 de nieuwe juridische tekst letterlijk.
+- [x] Niet nodig voor 11 (geen wijziging).
+
+## 7. Vrijstelling?
+
+Geen voor het geheel. CLAIM-11 is alleen een journaalwijziging.

@@ -42,6 +42,22 @@
 - [ ] **GOLIVE-03**: Security-review zonder open findings (headers, formulier-validatie, noindex admin, geen secrets)
 - [ ] **GOLIVE-04**: Maker ontvangt een live-voorstel (repo/DNS-stappen) ter expliciete goedkeuring
 
+## v1.1 Requirements — “Inhoud-waarheid” (gestart 2026-10-12, spec: `specs/inhoud-waarheid.md`)
+
+Bron voor claims: `docs/mediakit-2026.pdf` of een bevestiging van Camil; anders afzwakken of weghalen.
+
+- [x] **CLAIM-01**: Tellers 45+ / 6.000+ / 3.500+ / 5 landen staan gedekt op de site; 6.000+ projecten en 5 landen zijn gemarkeerd als groepscijfers (PR #64)
+- [x] **CLAIM-02**: Het absolute "geen onderaannemers" is geschrapt; "eigen vaste ploegen en eigen materieel" blijft (PR #65)
+- [ ] **CLAIM-03**: "24/7 interventiedienst" is bevestigd door Camil of afgezwakt, inclusief de OG-afbeelding (wacht op Camil)
+- [ ] **CLAIM-04**: Superlatieven ("de referentie", "altijd", "op elke werf, bij elke opdrachtgever") zijn bevestigd of afgezwakt
+- [ ] **CLAIM-05**: Certificaten (VCA, ISO 17020, klasse 6/P2): nummers en geldigheid getoond of bewust weggelaten
+- [ ] **CLAIM-06**: Merknamen in alt-teksten en bijschriften zijn gedekt of geneutraliseerd, met een disclaimerzin
+- [ ] **CLAIM-07**: "Tankstation groene luifel": klant genoemd met toestemming, of naam overal weg
+- [ ] **CLAIM-08**: Privacy-, cookie- en disclaimerpagina noemen de identiteit van Vandotec
+- [ ] **CLAIM-09**: Lettertype Open Sans komt van de eigen server in plaats van Google Fonts
+- [ ] **CLAIM-10**: Dunne referenties (Iveco, Decospan, MIG Motors, Cid Lines) zijn aangevuld of verborgen
+- [ ] **CLAIM-11**: Powerhub-tijdlijn is gesloten met bron mediakit p. 4 en 10
+
 ## v2 Requirements
 
 Toekomstig, niet in deze roadmap.
@@ -98,6 +114,9 @@ Toekomstig, niet in deze roadmap.
 | GOLIVE-02 | Phase 5 | Pending |
 | GOLIVE-03 | Phase 5 | Pending |
 | GOLIVE-04 | Phase 5 | Pending |
+| CLAIM-01 | v1.1 | Complete (PR #64) |
+| CLAIM-02 | v1.1 | Complete (PR #65) |
+| CLAIM-03 t/m 11 | v1.1 | Pending (zie `specs/inhoud-waarheid.md`) |
 
 **Coverage:**
 - v1 requirements: 22 total
@@ -106,4 +125,4 @@ Toekomstig, niet in deze roadmap.
 
 ---
 *Requirements defined: 2026-09-17*
-*Last updated: 2026-09-17 after milestone v1.0 start*
+*Last updated: 2026-10-12: milestone v1.1 toegevoegd (CLAIM-01..11). De rest van dit bestand is van 2026-09-17: aantallen zoals "18 pagina's" zijn verouderd (nu 27).*
