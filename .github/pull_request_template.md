@@ -5,8 +5,8 @@ Korte omschrijving + journaalregel-voorstel voor `.planning/STATE.md`.
 ## Checks (alle drie verplicht)
 
 - [ ] `npm run build` groen (exit 0)
-- [ ] `node tasks/check-seo.cjs` → 10/10 of 11/11
-- [ ] Preview bekeken door Camil (smaak-review is altijd van hem)
+- [ ] `node tasks/check-seo.cjs` → `ALL OK`
+- [ ] Preview bekeken door Camil (smaak-review is altijd van hem; onzichtbare wijziging: "n.v.t., onzichtbaar" + reden)
 
 ## Verificatie
 
@@ -15,4 +15,4 @@ Korte omschrijving + journaalregel-voorstel voor `.planning/STATE.md`.
 
 ## Review
 
-- [ ] Tweede paar ogen (niet de bouwer zelf) heeft de diff nagelezen op `AGENTS.md`-regels.
+- [ ] Tweede paar ogen (een andere agent-sessie, niet de bouwer zelf) heeft de diff nagelezen op `AGENTS.md`-regels; bevindingen staan als PR-commentaar.
