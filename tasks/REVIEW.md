@@ -61,6 +61,9 @@ Bewijsregel: geen bewering zonder bestand:regel of commando-output; de rest staa
   Voorstel: “24/7 bereikbaar voor storingsmeldingen; interventie in overleg, contractklanten prioriteit”.
 - Tellers zonder bron (`45+ jaar`, `6.000+ projecten`, `5 landen`; `expertises.json:441-453`):
   alleen BE+FR bewezen. Voorstel: peildatum/methode of terug naar “sinds 1978 — duizenden projecten”.
+  **Afgehandeld 2026-10-11 (besluit Camil):** de bron bestond wel: `docs/mediakit-2026.pdf` p. 3 geeft alle
+  vier (5 landen = BE, NL, DE, FR, LU). 6.000+ projecten en 5 landen zijn groepscijfers; labels nu
+  “Projecten (groep)” en “Landen actief (groep)” in home/over-vandotec/expertises.json.
 - IJkcijfers + ISO 17020 zonder certificaatnummer (`service-onderhoud.json:10-16`, `contact.astro:204`,
   `over-vandotec.astro:131`). Voorstel: nummer + meetjaar invullen (Camil).
 - Superlatieven `over-vandotec.json:8` (“de referentie”, 2× “altijd”) vs eigen waarde “Geen luchtkastelen”.

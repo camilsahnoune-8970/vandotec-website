@@ -1,10 +1,10 @@
 const fs = require('fs');
 // 1. Cijfers 1-op-1 tegen mediakit
 const pages = {
-  'dist/index.html': ['45+', '6.000+', '+3.500', 'IJkingen per jaar', '5', 'Landen actief'],
-  'dist/over-vandotec/index.html': ['45+', '6.000+', '1978', '2009', '2011', '2020', '2023', '2026', 'Benoit Goesaert', 'Kevin Bervoet', 'Marijn Louwagie', 'Fien Bothuyne', 'Oplossingsgericht', 'Betrokken', 'Voorbereid', 'Realistisch', 'Positief', 'ISO 17020', 'klasse 6/P2', 'Powerhub'],
+  'dist/index.html': ['45+', '6.000+', 'Projecten (groep)', '3.500+', 'IJkingen per jaar', '5', 'Landen actief (groep)'],
+  'dist/over-vandotec/index.html': ['45+', '6.000+', 'Projecten (groep)', 'Landen actief (groep)', '1978', '2009', '2011', '2020', '2023', '2026', 'Benoit Goesaert', 'Kevin Bervoet', 'Marijn Louwagie','Oplossingsgericht', 'Betrokken', 'Voorbereid', 'Realistisch', 'Positief', 'ISO 17020', 'klasse 6/P2', 'Powerhub'],
   'dist/service-onderhoud/index.html': ['ijkingen', 'IJkingen', '+500'],
-  'dist/expertises/index.html': ['Vanheede', 'Galloo', 'Maes Brandstoffen', 'Tradit Energie', 'Cools Avia', 'Voor wie wij werken', 'Brandstofbedrijven'],
+  'dist/expertises/index.html': ['Projecten (groep)', 'Landen actief (groep)', 'Vanheede', 'Galloo', 'Maes Brandstoffen', 'Tradit Energie', 'Cools Avia', 'Voor wie wij werken', 'Brandstofbedrijven'],
   'dist/contact/index.html': ['brandstofpompen'],
 };
 let ok = true;
