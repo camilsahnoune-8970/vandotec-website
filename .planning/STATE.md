@@ -1,27 +1,43 @@
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
 
+Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
+
 ## Waar staan we
 
-- Site: 26 pagina's (11 + realisaties-hub + 14 projectpagina’s), Astro static, build groen, SEO ALL OK. Remote `origin/main` synchroon.
-- Repo sinds 2026-10-05 publiek (besluit Camil); `main` beschermd via regelset `main-sluis` (PR-verplicht, lineair, geen force-push, geldt ook voor admins).
-- Huisstijl staat; hub `/realisaties` + 14 projectpagina’s met JSON-LD; V1-split + klanten-ticker op home; footer-quote verwijderd (PR #22).
-- Team: Marijn/Benoit/Kevin met portret, Fien weg.
-- Staging geschrapt uit planning (besluit Camil 2026-10-07); formulier ongetest tot er ooit een host is.
+- Site: 27 gebouwde pagina's (26 `index.html` + 404), Astro static. `npm run build` groen, `node tasks/check-seo.cjs` ALL OK.
+- Tests: bij elke PR draaien twee CI-jobs, "Build + tests zonder browser" en "Browsertests (Chromium, Firefox, WebKit)". Beide zijn verplicht in `main-sluis`. Lokaal draaien: zie `tasks/QA-RUNBOOK.md`.
+- Repo publiek sinds 2026-10-05 (besluit Camil). `main-sluis`: PR verplicht, lineaire historie, geen force-push, geen bypass, 0 verplichte reviews (review roteert toch: wie bouwt, reviewt niet zichzelf, zie AGENTS.md).
+- Live: deze nieuwe site staat niet live; de oude site (Fork CMS) draait nog. `deploy.yml` is uitgeschakeld (alleen handmatig). Niets live zetten zonder expliciete "ja" van Camil.
+- Staging geschrapt uit planning (besluit Camil 2026-10-07); het contactformulier is ongetest tot er een host is.
+- Inhoud (bak B uit `tasks/REVIEW.md`): tellers klaar (PR #64: 6.000+ en 5 landen zijn groepscijfers, bron mediakit p. 3), "geen onderaannemers" klaar (PR #65, besluit Camil: nuanceren). De rest staat hieronder.
+
+## Overdracht Claude → opencode (2026-10-12)
+
+- Rolverdeling: **opencode bouwt**. Camil beslist, keurt specs goed en doet de smaak-review. Claude reviewt of herstelt technisch alleen op verzoek van Camil.
+- **Claude-schrijfstop**: Claude schrijft niet meer in deze repo tot Camil om een review of hotfix vraagt. Nooit twee agents tegelijk in dezelfde bestanden.
+- Startpunt: milestone v1.1 "Inhoud-waarheid", ter goedkeuring via een aparte PR (`claude/milestone-v1-1`). Tot die PR gemerged is, bouwt niemand aan de CLAIM-punten hieronder.
+- Alles wat Claude wist en niet in code staat, staat nu in de repo: `AGENTS.md` (regels en valkuilen), `tasks/QA-RUNBOOK.md` (testen), `tasks/REVIEW.md` (audit met status per punt), `tasks/SECURITY-NOTITIE.md`.
+- Gemeten bij de overdracht: de lokale branch `opencode/fotorondgang-register` staat op `a572097` (2026-10-07), is volledig gemerged en bestaat niet op origin. Hij bevat geen werk en mag weg.
 
 ## Wat loopt
 
-- Fotorondgang Beelden (groepen 1–3 deels benoemd; groep 2-rest + groep 4+ open).
-- Mazout-teksten volgen later (foto’s gestaged, nog geen entry).
+- Fotorondgang Beelden (groepen 1–3 deels benoemd; groep 2-rest + groep 4+ open), volgens de vorige STATE. **Door Claude niet geverifieerd**: opencode meldt of dit nog loopt en waar het werk staat.
+- Mazout-teksten volgen later (foto's gestaged, nog geen entry).
 
 ## Geblokkeerd / wacht op Camil
 
-- EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
-- Technisch open (laag prio): echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
-- Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52); hoort bij de hostingkeuze.
-- Inhoud uit REVIEW.md (bak B, besluit Camil): 24/7 (Camil vraagt na bij Kevin/onthaal), superlatieven, certificaat-/VCA-nummers, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten.
+1. 24/7 interventiedienst (CLAIM-03): Camil vraagt na of er een echte wachtdienst bestaat. "24/7" staat op 26 regels in 10 bestanden en is zonder bron.
+2. Overige inhoudsbesluiten, één per vraag: superlatieven, certificaatnummers, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten, dunne referenties, Powerhub-tijdlijn.
+3. Het oude CMS-wachtwoord staat in de publieke git-historie (uit de bestanden sinds PR #59). Camil bevestigt of hij het nog ergens gebruikt. Historie herschrijven is een apart besluit, geen taak voor opencode. Zie `tasks/SECURITY-NOTITIE.md`.
+4. Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52); hoort bij de hostingkeuze.
+5. EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
+6. Technisch open (laag prio): echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
 
 ## Laatste 5
 
+- 2026-10-12 overdracht aan opencode: STATE, AGENTS, `tasks/QA-RUNBOOK.md`, SECURITY-NOTITIE (wachtwoord in historie gecorrigeerd), `.gitignore` (claude)
+- 2026-10-12 absoluut "geen onderaannemers" geschrapt via PR #65 (10 plaatsen; hero-blok nu "Eigen / Vaste ploegen"; FAQ "Werken jullie met eigen ploegen? Ja") (claude)
+- 2026-10-11 tellers 6.000+ en 5 landen als groepscijfers via PR #64 ("Projecten (groep)", "Landen actief (groep)"; bron mediakit p. 3; `verify-mediakit.cjs` volgt de site weer) (claude)
 - 2026-10-07 STATE rechtgezet + branches opgeruimd (opencode)
 - 2026-10-07 spec review-ronde goedgekeurd via PR #34 (audit loopt)
 - 2026-10-08 integrale audit via PR #36 (REVIEW.md: 5 Critical, fix-rondes R1-R5)

@@ -39,3 +39,6 @@ __e1-*.png
 __v1-*.png
 __v2-*.png
 __ft-*.png
+
+# Claude Code-lokaal (sessiegegevens, autoharness-runs): nooit in een publieke repo
+.claude/
