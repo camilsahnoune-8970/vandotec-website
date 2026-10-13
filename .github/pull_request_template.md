@@ -2,11 +2,11 @@
 
 Korte omschrijving. De journaalregel voor `.planning/STATE.md` hoort in deze PR zelf (zie `AGENTS.md`). Bij zichtbare wijziging: tekst voor/na en de screenshot-map.
 
-## Checks (alle drie verplicht)
+## Checks (de eerste twee verplicht; de derde alleen bij zichtbare wijziging)
 
 - [ ] `npm run build` groen (exit 0)
 - [ ] `node tasks/check-seo.cjs` → `ALL OK`
-- [ ] Preview bekeken door Camil (smaak-review is altijd van hem; onzichtbare wijziging: "n.v.t., onzichtbaar" + reden)
+- [ ] Voor/na bekeken door Camil (alleen bij zichtbare wijziging; bij onzichtbare wijziging: "n.v.t., onzichtbaar" + reden)
 
 ## Verificatie
 

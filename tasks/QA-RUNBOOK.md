@@ -39,14 +39,14 @@ php tasks/test-contact.php
 ```
 
 - `check-contrast.cjs` toont één regel `VERBODEN 2.76:1 — rood op navy-ink`. Dat is bekend en bedoeld: het gaat om een decoratief aanhalingsteken zonder tekst (`public/style.css` `.quote-break`). Het script eindigt met exit 0. De kleuren in het script komen nu uit `public/style.css` (2026-10-13). Vóór die datum stonden er andere waarden in (`#04091f`, `#6c757d`) en gaf de regel 3,13:1. Alle AA-controles blijven groen met de echte kleuren (gemeten).
-- PHP staat via winget: `%LOCALAPPDATA%\Microsoft\WinGet\Packages\PHP.PHP.8.4_*\php.exe`. `mbstring` staat daar niet aan, dus `public/contact.php` mag geen `mb_*`-functies gebruiken.
+- `php` staat niet op PATH op deze pc. Gebruik de winget-versie in PowerShell: `$php = Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages" -Directory -Filter 'PHP.PHP.8.4_*' | ForEach-Object { Join-Path $_.FullName 'php.exe' } | Where-Object { Test-Path $_ } | Select-Object -First 1; & $php tasks/test-contact.php`. Het script start zelf een server op `127.0.0.1:8099`; die poort moet vrij zijn. `mbstring` staat daar niet aan, dus `public/contact.php` mag geen `mb_*`-functies gebruiken.
 
 ## Set 2 — met preview (CI-job "Browsertests")
 
 **Alle scripts hebben poort 4333 vast ingebakken.** Is die poort bezet, dan kiest Astro stil 4334 en testen de scripts de verkeerde (oude) server.
 
 1. Controleer eerst dat 4333 vrij is: `Get-NetTCPConnection -LocalPort 4333 -State Listen -ErrorAction SilentlyContinue` moet leeg zijn.
-2. Start `npx astro preview --port 4333` (op de achtergrond) en lees in de log de regel `Local http://localhost:<poort>/`. Is dat niet 4333: stop, zoek wie 4333 vasthoudt (`Get-NetTCPConnection` + `Get-CimInstance Win32_Process`), begin opnieuw. Is het jouw eigen preview: stop hem. Is het van iemand anders: stop hem niet, meld het aan Camil en wacht.
+2. Start `npx astro preview --port 4333` (op de achtergrond) en lees in de log de regel `Local http://localhost:<poort>/`. In PowerShell: `Start-Process -FilePath cmd.exe -ArgumentList '/c','npx astro preview --port 4333' -WindowStyle Hidden`. Eigen PID: `Get-NetTCPConnection -LocalPort 4333 -State Listen`; stop de ouder `cmd.exe` (commandline bevat `astro preview --port 4333`) met `taskkill /T /F /PID <pid>`. Is dat niet 4333: stop, zoek wie 4333 vasthoudt (`Get-NetTCPConnection` + `Get-CimInstance Win32_Process`), begin opnieuw. Is het jouw eigen preview: stop hem. Is het van iemand anders: stop hem niet, meld het aan Camil en wacht.
 3. Draai:
 
 ```
@@ -71,7 +71,7 @@ npx astro preview --port 4333        # in de map van de betreffende build, in de
 node tasks/shot-pagina.cjs http://localhost:4333 /over-vandotec screenshots/claim-04-na
 ```
 
-Het script maakt `<prefix>-390.png` en `<prefix>-1440.png` (volledige pagina, cookiebalk gesloten). Daarna stop je je eigen preview met `taskkill /T /F /PID <pid>`. Voor "voor": maak eerst een worktree op `origin/main` (zie de stand-check), `npm ci`, `npm run build`, start daar de preview en draai hetzelfde commando met `screenshots/claim-04-voor`. Test 2026-10-13: home-pagina, beide breedtes, beide bestanden gemaakt.
+Het script maakt `<prefix>-390.png` en `<prefix>-1440.png` (volledige pagina, cookiebalk gesloten). Daarna stop je je eigen preview met `taskkill /T /F /PID <pid>`. Voor "voor": maak eerst een worktree op `origin/main` (zie de stand-check), `npm ci`, `npm run build`, start daar de preview en draai hetzelfde commando met het volledige pad naar de repo-root, `C:\Users\camil.sahnoune\_vandotec-check\screenshots\claim-04-voor` (een relatief pad belandt in de worktree en verdwijnt bij `worktree remove`). Test 2026-10-13: home-pagina, beide breedtes, beide bestanden gemaakt.
 
 ## Na een inhoudswijziging
 

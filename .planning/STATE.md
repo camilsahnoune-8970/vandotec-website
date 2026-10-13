@@ -15,7 +15,7 @@ Bijgewerkt 2026-10-13. **De overdracht van Claude Code naar opencode is NIET AF*
 
 - Rolverdeling: **opencode bouwt**. Camil beslist, keurt specs goed en doet de smaak-review. Claude reviewt of herstelt technisch alleen op verzoek van Camil.
 - **Claude-schrijfstop**: Claude schrijft niet meer in deze repo tot Camil om een review of hotfix vraagt. Nooit twee agents tegelijk in dezelfde bestanden. **Uitzondering, alleen voor de overdracht:** alle poort-rijen worden vóór de merge van PR #67 afgemaakt, in #67 zelf. Na de merge controleert Claude `main` en meldt dat als PR-commentaar; daarna schrijft Claude niet meer in de repo.
-- Startpunt: milestone v1.1 "Inhoud-waarheid": `.planning/MILESTONES.md`, `specs/inhoud-waarheid.md` (alle CLAIM-punten met feiten, bron en aanbeveling) en `.planning/REQUIREMENTS.md`. **De spec is pas goedgekeurd als Camil de PR mergt of "ja" zegt.** Tot dan bouwt niemand aan de CLAIM-punten, en doe je alleen de wachtrij P1-P5 uit de spec of niets.
+- Startpunt: milestone v1.1 "Inhoud-waarheid": `.planning/MILESTONES.md`, `specs/inhoud-waarheid.md` (alle CLAIM-punten met feiten, bron en aanbeveling) en `.planning/REQUIREMENTS.md`. **De spec is pas goedgekeurd als Camil de PR mergt of "ja" zegt.** Tot dan bouwt niemand aan de CLAIM-punten, en ook P1-P5 doe je pas als Camil dat item heeft goedgekeurd.
 - Opencode begint pas na de merge van #67 (C1). Eerste taak voor opencode: lees de spec en meld aan Camil of iets onduidelijk is (een tweede paar ogen op de spec); stel daarna de eerste vraag volgens de volgorde in de spec (CLAIM-04). Staat de spec nog niet op `origin/main` terwijl Camil "ja" zegt: meld dat en laat de spec-PR eerst mergen (Camil, of Claude op zijn verzoek) voor je een branch maakt.
 - Alles wat Claude wist en niet in code staat, staat nu in de repo: `AGENTS.md` (regels en valkuilen), `tasks/QA-RUNBOOK.md` (testen), `tasks/REVIEW.md` (audit met status per punt), `tasks/SECURITY-NOTITIE.md`.
 - Fotorondgang-branch `opencode/fotorondgang-register` (a572097): gemerged, leeg, verwijderd op 2026-10-13 (poort M7).
@@ -36,12 +36,12 @@ De overdracht is pas af als alles hieronder ✓ is. De M-punten zijn gaten van C
 | M7 | Verlaten branch verwijderd | ✓ | `git branch -d`: was `a572097` |
 | M8 | Staging-documenten gemarkeerd als archief | ✓ | regel 1 van `tasks/staging-upload.md` en `tasks/staging-deploy.md` |
 | M9 | Geheugen en oud startplan corrigeren (buiten de repo) | ✓ | projectgeheugen "NIET AF"; kopregel in het oude plan |
-| M10 | Koude lezer(s) op de eindtoestand vinden alleen nits | open: ronde 1 en 2 gedaan; ronde 2 had blokkers (verwerkt); ronde 3 volgt | commentaren op PR #67 |
+| M10 | Koude lezer(s) op de eindtoestand vinden alleen nits | **open**: drie rondes gedaan (het maximum van het plan). Ronde 3 vond nog blokkers; die zijn verwerkt waar Claude dat kan. Het plan staat geen vierde ronde toe, dus M10 blijft open. | commentaren op PR #67 |
 | M11 | Contrastcontrole rekende met kleuren die de site niet gebruikt (`#04091f`, `#6c757d`; site: `#001647`, `#595f65`) | ✓ | `tasks/check-contrast.cjs` gecorrigeerd; met echte kleuren alle AA-controles PASS, rood-op-navy 2,76:1 (was 3,13:1). Drempel ongewijzigd |
 | M12 | Stand-check op verse `origin/main` in de runbook niet getest | ✓ | worktree op `origin/main` (4311dce): `npm ci` exit 0, build 27 pagina's, Set 1 exit 0 (img-helpers, beelden, SEO, a11y, contrast, PHP); worktree verwijderd |
 | M13 | `verify-mediakit.cjs` gaf exitcode 0 bij een fout | ✓ | negatieve proef: kopie met een gewist label geeft `ISSUES` en exitcode 1; echte run exitcode 0 |
 | M14 | Geen procedure voor voor/na-screenshots | ✓ | `tasks/shot-pagina.cjs` getest 2026-10-13 op de home-pagina: 390 en 1440 px, volledige pagina; `screenshots/` staat in `.gitignore` |
-| M15 | Koude lezer ronde 2: gaten en tegenstrijdigheden (G1-G12) en feitelijke fouten in de spec | open: verwerkt in deze PR (zie PR-commentaar); ronde 3 volgt | commentaar op PR #67 |
+| M15 | Gaten en tegenstrijdigheden uit de koude lezers (ronde 2 en 3): feitelijke fouten in de spec, tegenstrijdige startprompt, verkeerde check-beschrijving, PHP- en preview-commando's | open: verwerkt waar Claude dat kan (zie PR-commentaar); de rest staat in de C-lijst of hieronder | commentaar op PR #67 |
 | P-a | CI groen op PR #67 (beide checks) | open | `gh pr checks 67` |
 | P-b | Na merge: `origin/main` = geteste boom; build en checks groen | open: Claude controleert na de merge en meldt het als PR-commentaar | |
 | C1 | Camil keurt PR #67 goed | open, wacht op Camil | |
@@ -85,7 +85,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
-- 2026-10-13 overdrachtspoort M1-M10 op PR #67 (claude): verify-mediakit huisstijl-gate (navy/rood, was #2680ff), QA-RUNBOOK, ARCHIEF-regels staging-docs, SECURITY-NOTITIE (staging, GitHub-beveiliging uit), spec P4/P5/CLAIM-03/CLAIM-09 gemeten, branch `opencode/fotorondgang-register` verwijderd, perf-basislijn, OG-test (0 bytes verschil), koude lezers. Overdracht NIET AF tot poort groen en C1.
+- 2026-10-13 overdrachtspoort M1-M15 op PR #67 (claude): verify-mediakit huisstijl-gate (navy/rood, was #2680ff), QA-RUNBOOK, ARCHIEF-regels staging-docs, SECURITY-NOTITIE (staging, GitHub-beveiliging uit), spec P4/P5/CLAIM-03/CLAIM-09 gemeten, branch `opencode/fotorondgang-register` verwijderd, perf-basislijn, OG-test (0 bytes verschil), koude lezers. Overdracht NIET AF tot poort groen en C1.
 
 - 2026-10-12 milestone v1.1 "Inhoud-waarheid": `specs/inhoud-waarheid.md`, MILESTONES, REQUIREMENTS (CLAIM-01..12), ROADMAP-statusregel, startprompt; tweede koude-starttest verwerkt (CLAIM-12 erbij, bronverwijzingen rechtgezet) (claude)
 - 2026-10-12 overdracht aan opencode via PR #66: STATE, AGENTS, `tasks/QA-RUNBOOK.md`, README, PR-sjabloon, SECURITY-NOTITIE (wachtwoord in historie gecorrigeerd), `.gitignore`; tweede paar ogen via koude-starttest (claude)
