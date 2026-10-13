@@ -49,7 +49,7 @@ Browsers installeren (eenmalig): `npx playwright install chromium firefox webkit
 
 ## Na een inhoudswijziging
 
-`node tasks/verify-mediakit.cjs` (niet in CI): vergelijkt de cijfers, namen en waarden op de site met `docs/mediakit-2026.pdf`. Moet eindigen op `MEDIAKIT-RONDE OK`. De regel `nieuw palet: true,false,true` (de kleur `#2680ff` staat niet in `style.css`) is een oude, ongeanalyseerde melding en geen fout van jouw wijziging.
+`node tasks/verify-mediakit.cjs` (niet in CI): vergelijkt de cijfers, namen en waarden op de site met `docs/mediakit-2026.pdf`. Moet eindigen op `MEDIAKIT-RONDE OK`. De regel `huisstijl-tokens (navy, rood): true,true` controleert de twee kleuren uit AGENTS.md; het script faalt als er één ontbreekt. De mediakit (p. 13) noemt daarnaast middenblauw `#2680FF`, en de site gebruikt die kleur niet. Dat verschil ligt bij Camil (zie `.planning/STATE.md`, punt C8).
 
 ## Valkuilen op deze pc
 

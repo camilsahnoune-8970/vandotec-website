@@ -1,6 +1,6 @@
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
 
-Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
+Bijgewerkt 2026-10-13. **De overdracht van Claude Code naar opencode is NIET AF**: zie "Overdrachtspoort" hieronder. Zolang er gaten zijn, is er geen overdracht.
 
 ## Waar staan we
 
@@ -18,24 +18,68 @@ Bijgewerkt 2026-10-12, bij de overdracht van Claude Code naar opencode.
 - Startpunt: milestone v1.1 "Inhoud-waarheid": `.planning/MILESTONES.md`, `specs/inhoud-waarheid.md` (alle CLAIM-punten met feiten, bron en aanbeveling) en `.planning/REQUIREMENTS.md`. **De spec is pas goedgekeurd als Camil de PR mergt of "ja" zegt.** Tot dan bouwt niemand aan de CLAIM-punten, en doe je alleen de wachtrij P1-P5 uit de spec of niets.
 - Eerste taak voor opencode: lees de spec en meld aan Camil of iets onduidelijk is (een tweede paar ogen op de spec); stel daarna de eerste vraag volgens de volgorde in de spec (CLAIM-04). Staat de spec nog niet op `origin/main` terwijl Camil "ja" zegt: meld dat en laat de spec-PR eerst mergen (Camil, of Claude op zijn verzoek) voor je een branch maakt.
 - Alles wat Claude wist en niet in code staat, staat nu in de repo: `AGENTS.md` (regels en valkuilen), `tasks/QA-RUNBOOK.md` (testen), `tasks/REVIEW.md` (audit met status per punt), `tasks/SECURITY-NOTITIE.md`.
-- Gemeten bij de overdracht: de lokale branch `opencode/fotorondgang-register` staat op `a572097` (2026-10-07), is volledig gemerged en bestaat niet op origin. Hij bevat geen werk en mag weg.
+- Fotorondgang-branch `opencode/fotorondgang-register` (a572097): gemerged, leeg, verwijderd op 2026-10-13 (poort M7).
+- Opencode-proces (PID 58976, sessie sinds 08/10) draaide op 2026-10-13 niet meer. Claude heeft het niet gestopt; oorzaak onbekend. Start een verse opencode-sessie.
+
+## Overdrachtspoort: status 2026-10-13, NIET AF
+
+De overdracht is pas af als alles hieronder ✓ is. De M-punten zijn gaten van Claude en worden door Claude gesloten. C1 is aan Camil.
+
+| # | Eis | Status | Bewijs |
+|---|---|---|---|
+| M1 | Palet-controle: `#2680ff` (niet huisstijl) vervangen door navy en rood, als gate | ✓ | `tasks/verify-mediakit.cjs`: regel `huisstijl-tokens (navy, rood): true,true` |
+| M2 | Staging-verwijzing in SECURITY-NOTITIE geannoteerd | ✓ | `tasks/SECURITY-NOTITIE.md` (bij "mail()"-punt) |
+| M3 | Fotorondgang gemeten (niet opgelost) | ✓ | spec P4: 65 bronfoto's, 24 op naam genoemd, 41 niet |
+| M4 | Prestatiebasislijn gedraaid op een eigen preview | ✓ met voorbehoud | tabel hieronder; LCP onder 100 ms op vijf pagina's lijkt onbetrouwbaar |
+| M5 | Maakt `tasks/make-og.cjs` lokaal dezelfde OG-afbeelding? | ✓ | scratchtest: 0 verschillende bytes van 2.268.000 |
+| M6 | Licentie Open Sans | ✓ | OFL 1.1, copyright 2020 The Open Sans Project Authors (spec CLAIM-09) |
+| M7 | Verlaten branch verwijderd | ✓ | `git branch -d`: was `a572097` |
+| M8 | Staging-documenten gemarkeerd als archief | ✓ | regel 1 van `tasks/staging-upload.md` en `tasks/staging-deploy.md` |
+| M9 | Geheugen en oud startplan corrigeren (buiten de repo) | ✓ | projectgeheugen "NIET AF"; kopregel in het oude plan |
+| M10 | Koude lezer(s) op de eindtoestand vinden alleen nits | open | commentaren op PR #67 |
+| P-a | CI groen op PR #67 (beide checks) | open | `gh pr checks 67` |
+| P-b | Na merge: `origin/main` = geteste boom; build en checks groen | open | |
+| C1 | Camil keurt PR #67 goed | open, wacht op Camil | |
+
+**Basislijn snelheid** (`tasks/perf-meten.cjs`, 390 px, cache uit, eigen preview op 4333, 2026-10-13):
+
+| pagina | KB totaal | KB beelden | verzoeken | LCP ms | CLS |
+|---|---|---|---|---|---|
+| `/` | 412 | 156 | 13 | 1588 | 0 |
+| `/expertises` | 536 | 265 | 14 | 96 | 0 |
+| `/service-onderhoud` | 332 | 81 | 11 | 72 | 0 |
+| `/over-vandotec` | 592 | 411 | 15 | 72 | 0 |
+| `/jobs` | 275 | 107 | 10 | 52 | 0.003 |
+| `/contact` | 489 | 238 | 14 | 64 | 0.019 |
+| `/cookies` | 169 | 21 | 7 | 728 | 0 |
+| `/privacy` | 170 | 21 | 7 | 712 | 0 |
+| `/disclaimer` | 169 | 21 | 7 | 700 | 0 |
+| `/algemenevoorwaarden` | 169 | 21 | 7 | 120 | 0 |
+| `/404` | 243 | 95 | 8 | 152 | 0 |
+
+Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-breedte. De LCP-waarden onder 100 ms zijn niet betrouwbaar (zie spec P5).
 
 ## Wat loopt
 
-- Fotorondgang Beelden (groepen 1–3 deels benoemd; groep 2-rest + groep 4+ open), volgens de vorige STATE. **Door Claude niet geverifieerd**: opencode meldt of dit nog loopt en waar het werk staat.
+- Fotorondgang Beelden: gemeten 2026-10-13 zijn er 65 bronfoto's lokaal (`Beelden/`, door git genegeerd); 41 daarvan staan niet op naam in `tasks/beelden.md`. De groepsindeling uit de vorige STATE staat niet in de repo. Of het werk nog loopt, is in de repo niet te zien (spec P4).
 - Mazout-teksten volgen later (foto's gestaged, nog geen entry).
 
-## Geblokkeerd / wacht op Camil
+## Wacht op Camil (C-lijst: zijn besluiten, geen gaten van Claude)
 
-1. 24/7 interventiedienst (CLAIM-03): Camil vraagt na of er een echte wachtdienst bestaat. "24/7" staat in `src/` op 24 regels in 10 bestanden (plus 2× "24 uur per dag"), en ook de OG-afbeelding `public/og-image.png` (gemaakt met `tasks/make-og.cjs:14`) zegt "24/7 interventie". Geen bron.
-2. Overige inhoudsbesluiten (CLAIM-04 t/m 10 en 12), één per vraag: superlatieven, certificaten, merknamen, groene luifel, identiteitsblok privacy, Google Fonts zelf hosten, dunne referenties, "elk project in eigen beheer". De Powerhub-tijdlijn (CLAIM-11) sluit opencode zelf, de bron staat in de spec.
-3. Het oude CMS-wachtwoord staat in de publieke git-historie (uit de bestanden sinds PR #59). Camil bevestigt of hij het nog ergens gebruikt. Historie herschrijven is een apart besluit, geen taak voor opencode. Zie `tasks/SECURITY-NOTITIE.md`.
-4. Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52); hoort bij de hostingkeuze.
-5. EV-stockfoto vervangen bij Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
-6. Technisch open (laag prio): echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
-7. Opruimen in de publieke repo, besluit Camil: `.vercel/` (het Vercel-project is verwijderd; het bestand bevat projectId, orgId en projectName), `.hermes/plans/` en `archive-legacy-html/` zijn nog gevolgd door git (14 bestanden gemeten). Ook `tasks/staging-upload.md` en `deploy.yml` zijn oud.
+- **C1.** PR #67 goedkeuren: mergen of "ja" zeggen. Dit is de laatste stap van de poort.
+- **C2.** 24/7 interventiedienst (CLAIM-03): bestaat er een echte wachtdienst? "24/7" staat in `src/` op 24 regels in 10 bestanden (plus 2× "24 uur per dag"), en ook in de OG-afbeelding `public/og-image.png`. Geen bron.
+- **C3.** Het oude CMS-wachtwoord staat in de publieke git-historie (uit de bestanden sinds PR #59). Gebruikt Camil het nog ergens? Historie herschrijven is een apart besluit. Zie `tasks/SECURITY-NOTITIE.md`.
+- **C4.** GitHub-beveiliging staat uit: Dependabot-meldingen en secret scanning (gemeten 2026-10-13). Aanbeveling: aanzetten. Claude heeft niets aangezet.
+- **C5.** Opruimen in de publieke repo: `.vercel/` (projectId/orgId van een verwijderd project), `.hermes/plans/` en `archive-legacy-html/` staan nog in git (14 bestanden).
+- **C6.** Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52). Hoort bij de hostingkeuze.
+- **C7.** Inhoudsbesluiten CLAIM-04 t/m 10 en 12, één per vraag (opencode legt ze voor). CLAIM-11 sluit opencode zelf.
+- **C8.** Middenblauw `#2680FF`: de mediakit (p. 13) noemt het als Vandotec-kleur, de site gebruikt het niet, en AGENTS.md zegt "alleen navy en rood". Mag het op de site? Zo nee: niets doen.
+- **C9.** Lopend werk buiten de specs: EV-stockfoto vervangen bij de Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen.
+- **C10.** Technisch, laag prio: echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
+
+- 2026-10-13 overdrachtspoort M1-M10 op PR #67 (claude): verify-mediakit huisstijl-gate (navy/rood, was #2680ff), QA-RUNBOOK, ARCHIEF-regels staging-docs, SECURITY-NOTITIE (staging, GitHub-beveiliging uit), spec P4/P5/CLAIM-03/CLAIM-09 gemeten, branch `opencode/fotorondgang-register` verwijderd, perf-basislijn, OG-test (0 bytes verschil), koude lezers. Overdracht NIET AF tot poort groen en C1.
 
 - 2026-10-12 milestone v1.1 "Inhoud-waarheid": `specs/inhoud-waarheid.md`, MILESTONES, REQUIREMENTS (CLAIM-01..12), ROADMAP-statusregel, startprompt; tweede koude-starttest verwerkt (CLAIM-12 erbij, bronverwijzingen rechtgezet) (claude)
 - 2026-10-12 overdracht aan opencode via PR #66: STATE, AGENTS, `tasks/QA-RUNBOOK.md`, README, PR-sjabloon, SECURITY-NOTITIE (wachtwoord in historie gecorrigeerd), `.gitignore`; tweede paar ogen via koude-starttest (claude)

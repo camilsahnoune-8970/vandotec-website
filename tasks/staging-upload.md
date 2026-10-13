@@ -1,3 +1,5 @@
+> ARCHIEF (2026-10-12): staging is geschrapt uit de planning (besluit Camil 2026-10-07). Alleen naslag, niet leidend. Dit document gaat over new.powerland.be en is niet op actualiteit gecontroleerd.
+
 # Staging-upload new.powerland.be — instructies voor Camil (2026-10-01)
 # Doel: klikbare staging achter Cloudflare Access, niet indexeerbaar, formulier echt testbaar.
 

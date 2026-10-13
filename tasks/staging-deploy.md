@@ -1,3 +1,5 @@
+> ARCHIEF (2026-10-12): staging is geschrapt uit de planning (besluit Camil 2026-10-07). Alleen naslag, niet leidend. Of er een DNS-record of host voor preview.vandotec.be bestaat, is niet nagekeken. Live-gang vandotec.be blijft een aparte beslissing van Camil.
+
 # Deploy-handleiding staging: preview.vandotec.be (besloten preview)
 
 Doel: klikbare, afgeschermde staging voor maker + zaakvoerder. Live-gang

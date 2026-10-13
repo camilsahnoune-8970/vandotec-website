@@ -17,7 +17,11 @@ for (const [f, terms] of Object.entries(pages)) {
 // 2. Oude cijfers weg
 const all = ['dist/index.html', 'dist/over-vandotec/index.html', 'dist/expertises/index.html'].map((f) => fs.readFileSync(f, 'utf8')).join('');
 console.log('oude 100+/10+ weg:', !all.includes('100+') && !all.includes('10+'));
-// 3. Nieuwe palette-tokens live
+// 3. Huisstijl-tokens live (AGENTS.md "Huisstijl (hard)": alleen navy #00298F en rood #C30017).
+// Middenblauw #2680FF uit de mediakit wordt bewust niet gebruikt; zie .planning/STATE.md (punt C8).
 const css = fs.readFileSync('dist/style.css', 'utf8');
-console.log('nieuw palet:', ['#00298f', '#2680ff', '#c30017'].map((c) => css.includes(c)).join(','));
+const tokens = ['#00298f', '#c30017'].map((c) => css.includes(c));
+if (!tokens.every(Boolean)) ok = false;
+console.log('huisstijl-tokens (navy, rood):', tokens.join(','));
 console.log(ok ? 'MEDIAKIT-RONDE OK' : 'ISSUES');
+process.exit(ok ? 0 : 1);
