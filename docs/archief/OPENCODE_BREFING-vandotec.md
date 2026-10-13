@@ -1,3 +1,5 @@
+> ARCHIEF (2026-10-13): verouderd. Noemt het GitHub-account `Camil96` en een privé-repo; beide zijn niet meer geldig. Niet leidend: gebruik `AGENTS.md` en `.planning/STATE.md`.
+
 # Vandotec.be — Briefing voor OpenCode (overname Hermes-sessie)
 
 **Datum:** 2026-09-17  

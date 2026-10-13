@@ -15,14 +15,17 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 - Werk per pagina of per laag, nooit twee agents tegelijk in dezelfde bestanden.
 - Branches: `<wie>/<wat>` (bv. `opencode/hero`, `codex/jobs-tekst`, `claude/footer`). Merge via pull request met preview-check (build groen · SEO `ALL OK` · bij zichtbare wijziging: voor/na bekeken door Camil).
 - Review roteert: wie bouwt, reviewt niet zichzelf. Smaak-review doet Camil altijd zelf.
-- Het "tweede paar ogen" is een andere agent-sessie (bv. Claude Code op verzoek van Camil, of een aparte opencode-sessie zonder jouw context) die de diff naleest tegen `AGENTS.md` en de bevindingen als PR-commentaar zet. Camil hoeft de diff niet te lezen.
-- Journaalregel: in een aparte docs-PR na de merge (dan is het PR-nummer bekend); je mag meerdere gemergde PR's in één docs-PR bundelen.
+- Het "tweede paar ogen" is een andere agent-sessie die de diff naleest tegen `AGENTS.md` en de bevindingen als PR-commentaar zet. Camil vraagt het aan (Claude Code, of een nieuwe agent-sessie die hij start). Camil hoeft de diff niet te lezen.
+- Journaalregel: in **dezelfde PR** als het werk, als extra regel in `.planning/STATE.md`. Een PR-nummer hoef je er niet in te zetten; dat staat in de PR zelf.
 
 ## Rolverdeling (sinds 2026-10-12)
 
 - **opencode bouwt.** Camil beslist, keurt specs goed, doet de smaak-review en alle live-, DNS-, hosting- en kostenbesluiten. Claude Code reviewt of herstelt technisch alleen op verzoek van Camil en schrijft niet in de repo zonder dat verzoek.
-- Zichtbare wijziging: eerst voor/na (tekst of screenshots 390 + 1440) aan Camil, merge na zijn "ja". Onzichtbare wijziging (docs, tests, techniek): merge na groene CI en het tweede paar ogen. In het PR-sjabloon vul je dan bij "Preview bekeken door Camil" in: "n.v.t., onzichtbaar" met de reden.
+- Zichtbare wijziging: eerst voor/na aan Camil, merge na zijn "ja". Voor/na = de tekst voor en na in de PR-tekst, plus screenshots 390 en 1440 als bestanden in de map `screenshots/` in de repo-root (buiten git, staat in `.gitignore`). Camil opent die bestanden. Er is geen preview-host.
+- Tests, docs en techniek zonder zichtbare wijziging: CI groen is genoeg; bij code of tekst op de site ook het tweede paar ogen. In het PR-sjabloon vul je dan bij "Preview bekeken door Camil" in: "n.v.t., onzichtbaar" met de reden.
 - Pas mergen als beide verplichte checks van `main-sluis` groen zijn: `gh pr checks <n>` zonder `pending`. Een rode check betekent stoppen en melden, nooit eromheen mergen.
+- Na Camils "ja" merget de agent die de PR opende, met het commando hieronder. Camil merget zelf alleen als de merge geblokkeerd wordt.
+- Commit- en PR-titel: `type: tekst`, bv. `content: ...`, `docs: ...`, `spec: ...`, `a11y: ...`.
 
 ## Beslissingen aan Camil (zo vraag je ze)
 
@@ -36,7 +39,8 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 
 - GitHub-account: `camilsahnoune-8970`, nooit `Camil96`. Git heeft hier geen `user.email`: commit met omgevingsvariabelen `GIT_AUTHOR_NAME`/`GIT_COMMITTER_NAME=camilsahnoune-8970` en `GIT_AUTHOR_EMAIL`/`GIT_COMMITTER_EMAIL=camil.sahnoune@vandotec.be`.
 - Push via de gh-credential, anders kan Git Credential Manager het verkeerde account nemen: `git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push -u origin <branch>`. Merge: `gh pr merge <n> --squash --delete-branch --match-head-commit <sha>`. Nooit force-pushen.
-- In de werkmap hebben veel bestanden CRLF-regeleinden (`core.autocrlf=true`; git zelf bewaart LF), bv. `src/pages/contact.astro`. Een zoek-en-vervang over meerdere regels vindt dan niets: wijzig per regel.
+- Shell: PowerShell op Windows. Omgevingsvariabelen zet je met `$env:VAR = '...'`, niet met `VAR=waarde commando`.
+- In de werkmap hebben de meeste bestanden CRLF-regeleinden (`core.autocrlf=true`; git zelf bewaart LF), bv. `src/pages/contact.astro`. Een zoek-en-vervang over meerdere regels vindt dan niets: wijzig per regel.
 - Een oude `astro preview` laat `npm ci` falen met EPERM en bezet poort 4333; zie `tasks/QA-RUNBOOK.md`. Stop alleen je eigen processen.
 
 ## Werkwijze (spec-first)

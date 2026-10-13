@@ -16,7 +16,9 @@ function ratio(a, b) {
   const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p);
   return ((x + 0.05) / (y + 0.05)).toFixed(2);
 }
-const INK = '#04091f', NAVY = '#00298f', RED = '#c30017', WHITE = '#ffffff', MUTED = '#6c757d';
+// Kleuren uit public/style.css (:root). Eerder stonden hier #04091f en #6c757d, die de site niet gebruikt:
+// dat gaf rood-op-navy 3,13:1 terwijl de site 2,76:1 is (gemeten 2026-10-13). Drempel 4,5:1 ongewijzigd.
+const INK = '#001647', NAVY = '#00298f', RED = '#c30017', WHITE = '#ffffff', MUTED = '#595f65';
 const checks = [
   ['wit op navy-ink (titels donker)', WHITE, INK],
   ['muted-op-donker .68 op navy-ink (body donker)', blend(WHITE, 0.68, INK), INK],

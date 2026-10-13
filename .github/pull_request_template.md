@@ -1,6 +1,6 @@
 ## Wat
 
-Korte omschrijving. De journaalregel voor `.planning/STATE.md` komt na de merge in een aparte docs-PR (zie `AGENTS.md`); zet hier hooguit een voorstel.
+Korte omschrijving. De journaalregel voor `.planning/STATE.md` hoort in deze PR zelf (zie `AGENTS.md`). Bij zichtbare wijziging: tekst voor/na en de screenshot-map.
 
 ## Checks (alle drie verplicht)
 

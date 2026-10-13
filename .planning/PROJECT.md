@@ -1,3 +1,5 @@
+> **Let op (2026-10-13):** dit document is van v1.0 (17/09). Actueel: `.planning/MILESTONES.md` (v1.1 "Inhoud-waarheid") en `AGENTS.md` (kleuren: alleen navy `#00298F` en rood `#C30017`). Kleur- en versiegetallen hieronder zijn verouderd.
+
 # Vandotec.be — nieuwe website (Astro, statisch)
 
 ## What This Is
