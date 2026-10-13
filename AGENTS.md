@@ -21,19 +21,21 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 ## Rolverdeling (sinds 2026-10-12)
 
 - **opencode bouwt.** Camil beslist, keurt specs goed, doet de smaak-review en alle live-, DNS-, hosting- en kostenbesluiten. Claude Code reviewt of herstelt technisch alleen op verzoek van Camil en schrijft niet in de repo zonder dat verzoek.
-- Zichtbare wijziging: eerst voor/na aan Camil, merge na zijn "ja". Voor/na = de tekst voor en na in de PR-tekst, plus screenshots 390 en 1440 als bestanden in de map `screenshots/` in de repo-root (buiten git, staat in `.gitignore`). Camil opent die bestanden. Er is geen preview-host.
+- Zichtbare wijziging: eerst voor/na aan Camil, merge na zijn "ja". Voor/na = de tekst voor en na in de PR-tekst, plus screenshots 390 en 1440 als bestanden in de map `screenshots/` in de repo-root (buiten git, staat in `.gitignore`). Camil opent die bestanden. Er is geen preview-host die Camil gebruikt; een Vercel-check op een PR is geen voor/na (zie C11 in `.planning/STATE.md`). Maak de screenshots met `node tasks/shot-pagina.cjs`, zie `tasks/QA-RUNBOOK.md`.
 - Tests, docs en techniek zonder zichtbare wijziging: CI groen is genoeg; bij code of tekst op de site ook het tweede paar ogen. In het PR-sjabloon vul je dan bij "Preview bekeken door Camil" in: "n.v.t., onzichtbaar" met de reden.
 - Pas mergen als beide verplichte checks van `main-sluis` groen zijn: `gh pr checks <n>` zonder `pending`. Een rode check betekent stoppen en melden, nooit eromheen mergen.
-- Na Camils "ja" merget de agent die de PR opende, met het commando hieronder. Camil merget zelf alleen als de merge geblokkeerd wordt.
+- Onzichtbare PR (docs, tests, techniek): merge zodra CI groen is. Camil hoeft daarop niet te wachten.
+- Zichtbare PR: eerst het tweede paar ogen, dan voor/na aan Camil, dan zijn "ja", dan de merge door de agent die de PR opende, met het commando hieronder. Camil merget zelf alleen als de merge geblokkeerd wordt.
+- Vercel-checks op een PR tellen mee in `gh pr checks`; ze moeten groen zijn.
 - Commit- en PR-titel: `type: tekst`, bv. `content: ...`, `docs: ...`, `spec: ...`, `a11y: ...`.
 
 ## Beslissingen aan Camil (zo vraag je ze)
 
 - Camil is geen developer en kan git- of codekeuzes niet beoordelen. Leg in gewone taal uit wat iets is vóór je iets vraagt. Werk in het Nederlands, met "je".
-- **Eén beslissing per vraag**, genummerd, met je aanbeveling eerst zodat "ja" volstaat. Meng geen beslissingen in een rapport of tussen uitvoering. Wat een duidelijke standaard heeft en geen risico draagt, doe je en meld je.
+- **Eén beslissing per vraag**, genummerd (een punt kan meerdere vragen hebben, bv. CLAIM-05 heeft er vier), met je aanbeveling eerst zodat "ja" volstaat. Meng geen beslissingen in een rapport of tussen uitvoering. Wat een duidelijke standaard heeft en geen risico draagt, doe je en meld je.
 - Zoek zelf op wat op te zoeken valt (bestanden, code, `docs/mediakit-2026.pdf`) voor je iets vraagt, en noem cijfers plus een concreet scenario.
 - Rapporteer in vier delen, op één scherm: (1) situatie, (2) wat het voor Camil betekent, (3) wat hij moet doen of "niets", (4) wat je niet weet of niet controleerde.
-- Elke claim klopt met wat je controleerde; een aanname noem je een aanname. Geen hooks of achtergrondprocessen zonder opdracht.
+- Elke claim klopt met wat je controleerde; een aanname noem je een aanname. Geen hooks of achtergrondprocessen zonder opdracht. Een preview-server voor testen mag; stop hem daarna weer (alleen je eigen PID).
 
 ## Valkuilen op deze pc
 
@@ -45,7 +47,7 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 
 ## Werkwijze (spec-first)
 
-- Geen code zonder goedgekeurde spec: kopieer `specs/_TEMPLATE.md` naar `specs/<onderwerp>.md`, vul in, Camil keurt goed, dan pas bouwen. Grote fasen lopen via GSD spec-phase; B (Spec Kit) en Ralph zijn geparkeerd.
+- Geen code zonder goedgekeurde spec: kopieer `specs/_TEMPLATE.md` naar `specs/<onderwerp>.md`, vul in, Camil keurt goed, dan pas bouwen. Grote fasen lopen via GSD (de planningsmethode in `.planning/`); Spec Kit en Ralph zijn geparkeerd, gebruik ze niet.
 - Vrijgesteld: kleine fixes (typo, één regel CSS, één woord tekst) — vermeld in de PR waarom geen spec nodig was.
 - Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden + door wie).
 - Niet live zetten en geen DNS/hosting wijzigen zonder expliciete "ja" van Camil. Repo is sinds 2026-10-05 publiek (besluit Camil) — dus nooit secrets/tokens/wachtwoorden committen.

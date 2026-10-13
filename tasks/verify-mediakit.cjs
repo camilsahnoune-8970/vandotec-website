@@ -1,5 +1,5 @@
 const fs = require('fs');
-// 1. Cijfers 1-op-1 tegen mediakit
+// 1. Vaste teksten en cijfers uit de mediakit, handmatig overgenomen (het script leest de PDF niet)
 const pages = {
   'dist/index.html': ['45+', '6.000+', 'Projecten (groep)', '3.500+', 'IJkingen per jaar', '5', 'Landen actief (groep)'],
   'dist/over-vandotec/index.html': ['45+', '6.000+', 'Projecten (groep)', 'Landen actief (groep)', '1978', '2009', '2011', '2020', '2023', '2026', 'Benoit Goesaert', 'Kevin Bervoet', 'Marijn Louwagie','Oplossingsgericht', 'Betrokken', 'Voorbereid', 'Realistisch', 'Positief', 'ISO 17020', 'klasse 6/P2', 'Powerhub'],

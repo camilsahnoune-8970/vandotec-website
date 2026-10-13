@@ -5,7 +5,7 @@ Dit is de tekstversie van wat Claude Code als skill gebruikte (`vandotec-site-qa
 ## Regels
 
 1. **Eerst bouwen.** De tests lezen `dist/`. Een run op een oude `dist/` test de oude site: draai `npm run build` vóór elke run.
-2. **De hele set draaien**, niet één script. **De exitcode is leidend** (`$LASTEXITCODE` in PowerShell, `0` = groen). De slotregel verschilt per script: de meeste eindigen op `ALLES OK` (`check-seo`: `ALL OK`), `qa-crawl` toont `pagina's: 26, breedtes: …, meldingen: 0`, `qa-browsers` toont `ff OK` en `wk OK` (Firefox, WebKit), `check-contrast` toont `PASS`-regels. Noem bij een fout het script en de `FAAL`-regel, geen samenvatting.
+2. **De hele set draaien**, niet één script. **De exitcode is leidend** (`$LASTEXITCODE` in PowerShell, `0` = groen). De slotregel verschilt per script: de meeste eindigen op `ALLES OK` (`check-seo`: `ALL OK`), `qa-crawl` toont `pagina's: 26, breedtes: …, meldingen: 0`, `qa-browsers` toont `ff OK` en `wk OK` (Firefox, WebKit), `check-contrast` toont `PASS`-regels. Noem bij een fout het script en de foutregel (`FAIL`, `FAAL` of `ISSUES`), geen samenvatting.
 3. **Een test die niets telt, moet falen.** Een crawl over 0 pagina's of een scan van een lege `dist/` mag nooit groen zijn. Controleer het aantal ("pagina's: 26") voor je groen meldt.
 4. **Een test bewijst pas iets als hij eerst op de oude code faalt** (negatieve proef). Draai een nieuwe test dus eerst tegen de oude code (in je werkmap, zonder te committen, of met de fix tijdelijk teruggedraaid) en zet de rode uitvoer in de PR-tekst.
 5. **Interactietests controleren dat de data er is**, niet alleen dat een knop opent (bv. `.gal-zoom`-aantal > 0). Astro evalueert geen `{}` in een `<script>`; zo bleven modal en lightbox ooit leeg.
@@ -24,7 +24,7 @@ npm ci
 npm run build
 ```
 
-Draai daarna Set 1 in die map. Ruim op met `Set-Location` terug naar de repo en `git worktree remove ..\vandotec-main-check`. Een `npm ci` in je eigen werkmap kan door een oude preview falen (EPERM, zie valkuilen). Dan eerst die preview stoppen, of de worktree gebruiken.
+Controleer vooraf `gh auth status`: het actieve account moet `camilsahnoune-8970` zijn (nooit `Camil96`). Draai daarna Set 1 in die map. Ruim op met `Set-Location` terug naar de repo en `git worktree remove ..\vandotec-main-check`. Een `npm ci` in je eigen werkmap kan door een oude preview falen (EPERM, zie valkuilen). Dan eerst die preview stoppen, of de worktree gebruiken.
 
 ## Set 1 — zonder server (CI-job "Build + tests zonder browser")
 
@@ -58,19 +58,32 @@ node tasks/qa-browsers.cjs
 node tasks/qa-print.cjs
 ```
 
-4. Stop de server daarna met `taskkill /T /F /PID <pid>`, alleen je **eigen** PID. Nooit alle `node`-processen stoppen: er kan een opencode-sessie in draaien. Het procesgereedschap stopt `php -S` niet; gebruik `taskkill`.
+4. Stop de server daarna met `taskkill /T /F /PID <pid>`, alleen je **eigen** PID. Nooit alle `node`-processen stoppen: er kan een opencode-sessie in draaien. Gebruik `taskkill`.
 
 Browsers installeren (eenmalig): `npx playwright install chromium firefox webkit`.
 
+## Voor/na-screenshots voor Camil
+
+Bij een zichtbare PR: de "na"-screenshots maak je op de branch, de "voor"-screenshots op `origin/main`. Gebruik telkens een eigen preview op poort 4333, één tegelijk.
+
+```
+npx astro preview --port 4333        # in de map van de betreffende build, in de achtergrond
+node tasks/shot-pagina.cjs http://localhost:4333 /over-vandotec screenshots/claim-04-na
+```
+
+Het script maakt `<prefix>-390.png` en `<prefix>-1440.png` (volledige pagina, cookiebalk gesloten). Daarna stop je je eigen preview met `taskkill /T /F /PID <pid>`. Voor "voor": maak eerst een worktree op `origin/main` (zie de stand-check), `npm ci`, `npm run build`, start daar de preview en draai hetzelfde commando met `screenshots/claim-04-voor`. Test 2026-10-13: home-pagina, beide breedtes, beide bestanden gemaakt.
+
 ## Na een inhoudswijziging
 
-`node tasks/verify-mediakit.cjs` (niet in CI): vergelijkt de cijfers, namen en waarden op de site met `docs/mediakit-2026.pdf`. Moet eindigen op `MEDIAKIT-RONDE OK`. De regel `huisstijl-tokens (navy, rood): true,true` controleert de twee kleuren uit AGENTS.md; het script faalt als er één ontbreekt. De mediakit (p. 13) noemt daarnaast middenblauw `#2680FF`, en de site gebruikt die kleur niet. Dat verschil ligt bij Camil (zie `.planning/STATE.md`, punt C8).
+`node tasks/verify-mediakit.cjs` (niet in CI): controleert vaste teksten en cijfers in `dist/`, die handmatig uit `docs/mediakit-2026.pdf` zijn overgenomen. Het script leest de PDF niet; bij een nieuwe mediakit werk je de lijst in het script bij. Moet eindigen op `MEDIAKIT-RONDE OK`. De regel `huisstijl-tokens (navy, rood): true,true` controleert de twee kleuren uit AGENTS.md; het script faalt als er één ontbreekt. De mediakit (p. 13) noemt daarnaast middenblauw `#2680FF`, en de site gebruikt die kleur niet. Dat verschil ligt bij Camil (zie `.planning/STATE.md`, punt C8).
 
 ## Valkuilen op deze pc
 
-- `npm ci` faalt met EPERM zolang een oude `astro preview` een bestand in `node_modules` vergrendelt. Controleer met `Get-CimInstance Win32_Process -Filter "Name='node.exe'"` en zoek `astro preview`. Valt er niets te stoppen: `npm install` werkt wel.
+- `npm ci` faalt met EPERM zolang een oude `astro preview` een bestand in `node_modules` vergrendelt. Controleer met `Get-CimInstance Win32_Process -Filter "Name='node.exe'"` en zoek `astro preview`. Valt er niets te stoppen: `npm install` werkt wel, maar dat kan `package-lock.json` wijzigen; meecommitten alleen met reden.
 - Gebruik `$env:PUPPETEER_SKIP_DOWNLOAD='true'` bij `npm ci` (zoals de CI), anders probeert puppeteer een Chrome te downloaden. Puppeteer hoort alleen bij een paar handmatige scripts.
 - Losse Playwright-scripts buiten de repo vinden `playwright` niet. Draai ze vanuit de repo-root met `$env:NODE_PATH = '.\node_modules'` (PowerShell), of zet ze in `tasks/`.
 - `tasks/perf-meten.cjs` gebruikt puppeteer en een Chrome uit de puppeteer-cache (`~\.cache\puppeteer`). Dat draait op deze pc (2026-10-13). Op een verse installatie is het niet getest; het is niet in de CI.
 - Een cookiebalk bedekt de hero op screenshots: klik eerst op "Accepteren" (`getByRole('button', { name: /accepteren/i })`).
 - Zware browsertests na elkaar draaien, niet parallel: er is weinig vrij geheugen.
+- Node: `package.json` vraagt `>=22.12.0` en de CI gebruikt 22. Op deze pc staat v26; dat is niet in de CI getest.
+- De mediakit lees je met het Read-gereedschap (ondersteunt PDF, met `pages`). Op 2026-10-13 werkte dat op deze pc; faalt het, meld dat.

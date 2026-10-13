@@ -42,7 +42,7 @@
 - [ ] **GOLIVE-03**: Security-review zonder open findings (headers, formulier-validatie, noindex admin, geen secrets)
 - [ ] **GOLIVE-04**: Maker ontvangt een live-voorstel (repo/DNS-stappen) ter expliciete goedkeuring
 
-## v1.1 Requirements — “Inhoud-waarheid” (gestart 2026-10-12, CLAIM-01..12, spec: `specs/inhoud-waarheid.md`)
+## v1.1 Requirements — “Inhoud-waarheid” (gestart 2026-10-12, CLAIM-01..14, spec: `specs/inhoud-waarheid.md`)
 
 Bron voor claims: `docs/mediakit-2026.pdf` of een bevestiging van Camil; anders afzwakken of weghalen.
 
@@ -58,6 +58,8 @@ Bron voor claims: `docs/mediakit-2026.pdf` of een bevestiging van Camil; anders 
 - [ ] **CLAIM-10**: Dunne referenties (Iveco, Decospan, MIG Motors, Cid Lines) zijn aangevuld of verborgen
 - [ ] **CLAIM-11**: Powerhub-tijdlijn is gesloten met bron mediakit p. 3, 4 en 10
 - [ ] **CLAIM-12**: Absolute "elk project / elke interventie in eigen beheer" is op één lijn gebracht met de keuze bij CLAIM-02 (het Voka-citaat blijft ongewijzigd)
+- [ ] **CLAIM-13**: De termijnen in de algemene voorwaarden (offerte 30 dagen, betaling 30 dagen) zijn bevestigd of aangepast door Camil
+- [ ] **CLAIM-14**: "Uitgebreide stock veelgebruikte onderdelen aan boord" (service-onderhoud) is bevestigd of geschrapt
 
 ## v2 Requirements
 
@@ -127,6 +129,8 @@ Toekomstig, niet in deze roadmap.
 | CLAIM-10 | v1.1 | Pending |
 | CLAIM-11 | v1.1 | Pending (opencode sluit zelf, bron in de spec) |
 | CLAIM-12 | v1.1 | Pending |
+| CLAIM-13 | v1.1 | Pending (wacht op Camil) |
+| CLAIM-14 | v1.1 | Pending (wacht op Camil) |
 
 **Coverage:**
 - v1 requirements: 22 total
@@ -135,4 +139,4 @@ Toekomstig, niet in deze roadmap.
 
 ---
 *Requirements defined: 2026-09-17*
-*Last updated: 2026-10-12: milestone v1.1 toegevoegd (CLAIM-01..12). De rest van dit bestand is van 2026-09-17: aantallen zoals "18 pagina's" zijn verouderd (nu 27).*
+*Last updated: 2026-10-12: milestone v1.1 toegevoegd (CLAIM-01..14). De rest van dit bestand is van 2026-09-17: aantallen zoals "18 pagina's" zijn verouderd (nu 27).*
