@@ -1,6 +1,6 @@
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
 
-Bijgewerkt 2026-10-13. **De overdracht van Claude Code naar opencode is NIET AF**: zie "Overdrachtspoort" hieronder. Zolang er gaten zijn, is er geen overdracht.
+Bijgewerkt 2026-10-13. **De overdracht van Claude Code naar opencode is af, met erkende restrisico's** (PR #67 gemerged als `332c6e8`; zie "Overdrachtspoort" hieronder).
 
 ## Waar staan we
 
@@ -21,9 +21,9 @@ Bijgewerkt 2026-10-13. **De overdracht van Claude Code naar opencode is NIET AF*
 - Fotorondgang-branch `opencode/fotorondgang-register` (a572097): gemerged, leeg, verwijderd op 2026-10-13 (poort M7).
 - Opencode-proces (PID 58976, sessie sinds 08/10) draaide op 2026-10-13 niet meer. Claude heeft het niet gestopt; oorzaak onbekend. Start een verse opencode-sessie.
 
-## Overdrachtspoort: status 2026-10-13, NIET AF
+## Overdrachtspoort: status 2026-10-13, AF met erkende restrisico's
 
-De overdracht is pas af als alles hieronder ✓ is. De M-punten zijn gaten van Claude en worden door Claude gesloten. C1 is aan Camil.
+De overdracht is af: PR #67 is gemerged (`332c6e8`), en Camil heeft op 13/10 besloten M10 en M15 te sluiten met de restrisico's hieronder. De M-punten waren gaten van Claude; die zijn gesloten. Wat nog open staat, staat in de C-lijst.
 
 | # | Eis | Status | Bewijs |
 |---|---|---|---|
@@ -36,15 +36,22 @@ De overdracht is pas af als alles hieronder ✓ is. De M-punten zijn gaten van C
 | M7 | Verlaten branch verwijderd | ✓ | `git branch -d`: was `a572097` |
 | M8 | Staging-documenten gemarkeerd als archief | ✓ | regel 1 van `tasks/staging-upload.md` en `tasks/staging-deploy.md` |
 | M9 | Geheugen en oud startplan corrigeren (buiten de repo) | ✓ | projectgeheugen "NIET AF"; kopregel in het oude plan |
-| M10 | Koude lezer(s) op de eindtoestand vinden alleen nits | **open**: drie rondes gedaan (het maximum van het plan). Ronde 3 vond nog blokkers; die zijn verwerkt waar Claude dat kan. Het plan staat geen vierde ronde toe, dus M10 blijft open. | commentaren op PR #67 |
+| M10 | Koude lezer(s) op de eindtoestand vinden alleen nits | ✓ gesloten met erkende restrisico's (Camil, 13/10): drie rondes gedaan; ronde 3 vond blokkers, die zijn verwerkt waar Claude dat kan. Restrisico's hieronder. | commentaren op PR #67 |
 | M11 | Contrastcontrole rekende met kleuren die de site niet gebruikt (`#04091f`, `#6c757d`; site: `#001647`, `#595f65`) | ✓ | `tasks/check-contrast.cjs` gecorrigeerd; met echte kleuren alle AA-controles PASS, rood-op-navy 2,76:1 (was 3,13:1). Drempel ongewijzigd |
 | M12 | Stand-check op verse `origin/main` in de runbook niet getest | ✓ | worktree op `origin/main` (4311dce): `npm ci` exit 0, build 27 pagina's, Set 1 exit 0 (img-helpers, beelden, SEO, a11y, contrast, PHP); worktree verwijderd |
 | M13 | `verify-mediakit.cjs` gaf exitcode 0 bij een fout | ✓ | negatieve proef: kopie met een gewist label geeft `ISSUES` en exitcode 1; echte run exitcode 0 |
 | M14 | Geen procedure voor voor/na-screenshots | ✓ | `tasks/shot-pagina.cjs` getest 2026-10-13 op de home-pagina: 390 en 1440 px, volledige pagina; `screenshots/` staat in `.gitignore` |
-| M15 | Gaten en tegenstrijdigheden uit de koude lezers (ronde 2 en 3): feitelijke fouten in de spec, tegenstrijdige startprompt, verkeerde check-beschrijving, PHP- en preview-commando's | open: verwerkt waar Claude dat kan (zie PR-commentaar); de rest staat in de C-lijst of hieronder | commentaar op PR #67 |
-| P-a | CI groen op PR #67 (beide checks) | open | `gh pr checks 67` |
-| P-b | Na merge: `origin/main` = geteste boom; build en checks groen | open: Claude controleert na de merge en meldt het als PR-commentaar | |
-| C1 | Camil keurt PR #67 goed | open, wacht op Camil | |
+| M15 | Gaten en tegenstrijdigheden uit de koude lezers (ronde 2 en 3): feitelijke fouten in de spec, tegenstrijdige startprompt, verkeerde check-beschrijving, PHP- en preview-commando's | ✓ gesloten met erkende restrisico's (Camil, 13/10): verwerkt waar Claude dat kan; de rest staat in de C-lijst of hieronder | commentaar op PR #67 |
+| P-a | CI groen op PR #67 (beide checks) | ✓ op `8fd0ea5` (vóór de merge gecontroleerd) | `gh pr checks 67` |
+| P-b | Na merge: `origin/main` = geteste boom; build en checks groen | ✓ `332c6e8` = `8fd0ea5` (`git diff` leeg); build 27 pagina's; Set 1 exit 0 | commentaar op PR #67 |
+| C1 | Camil keurt PR #67 goed | ✓ 13/10 ("ja"); gemerged als `332c6e8` | |
+
+**Erkende restrisico's (Camil, 13/10)**
+1. De mediakit-PDF is in de omgeving van de koude lezers niet leesbaar (`pdftoppm` ontbreekt). Hier wel met het Read-gereedschap. Een tekstversie in de repo zou dat oplossen; dat is niet gedaan.
+2. De wettelijke naam voor CLAIM-08 is niet geverifieerd (openbaar ondernemingsregister niet getest).
+3. De koude lezers zijn een stand-in voor opencode, geen bewijs voor zijn echte gedrag; dat blijkt pas in zijn eerste sessie.
+4. CLAIM-10 (verbergen) heeft nog geen ontwerp voor de verberg-vlag; het voorstel staat in de spec.
+5. Ronde 3 vond ook zaken die bewust niet zijn gerepareerd: `ci.yml:69` heeft "26 pagina's" in een stapnaam; `@astrojs/sitemap` staat in devDependencies en wordt niet gebruikt; `deploy.yml:4` noemt nog `new.powerland.be` (workflow is uitgeschakeld).
 
 **Basislijn snelheid** (`tasks/perf-meten.cjs`, 390 px, cache uit, eigen preview op 4333, 2026-10-13):
 
@@ -85,6 +92,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-13 overdracht af met erkende restrisico's: PR #67 gemerged als `332c6e8` (Camil "ja"), P-b gecontroleerd, M10 en M15 gesloten door Camil (claude)
 - 2026-10-13 overdrachtspoort M1-M15 op PR #67 (claude): verify-mediakit huisstijl-gate (navy/rood, was #2680ff), QA-RUNBOOK, ARCHIEF-regels staging-docs, SECURITY-NOTITIE (staging, GitHub-beveiliging uit), spec P4/P5/CLAIM-03/CLAIM-09 gemeten, branch `opencode/fotorondgang-register` verwijderd, perf-basislijn, OG-test (0 bytes verschil), koude lezers. Overdracht NIET AF tot poort groen en C1.
 
 - 2026-10-12 milestone v1.1 "Inhoud-waarheid": `specs/inhoud-waarheid.md`, MILESTONES, REQUIREMENTS (CLAIM-01..12), ROADMAP-statusregel, startprompt; tweede koude-starttest verwerkt (CLAIM-12 erbij, bronverwijzingen rechtgezet) (claude)
