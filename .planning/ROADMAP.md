@@ -1,5 +1,7 @@
 # Roadmap: Vandotec.be v1.0 “Duurzaam live-waardig”
 
+> **Status 2026-10-12:** dit is de roadmap van v1.0 (17/09) en is niet herschreven. Fase 1-2 zijn klaar, fase 3-5 liggen stil. De actieve milestone is **v1.1 "Inhoud-waarheid"**: zie `MILESTONES.md` en `specs/inhoud-waarheid.md`. Aantallen hieronder (bv. "18 pagina's") zijn verouderd.
+
 **5 phases** | **22 requirements mapped** | All covered ✓
 
 | # | Phase | Goal | Requirements | Success Criteria |

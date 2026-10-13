@@ -42,3 +42,6 @@ __ft-*.png
 
 # Claude Code-lokaal (sessiegegevens, autoharness-runs): nooit in een publieke repo
 .claude/
+
+# Voor/na-screenshots voor Camil (AGENTS.md): lokaal, niet committen
+screenshots/

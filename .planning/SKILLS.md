@@ -1,3 +1,5 @@
+> **Let op (2026-10-13):** de prioriteitsregel hieronder ("mediakit-palet > brand-spec") is verouderd voor kleuren. Voor kleuren geldt `AGENTS.md`: alleen navy en rood. De keuze van `#2680FF` ligt bij Camil (STATE, punt C8).
+
 # Skills-register (project-skills in `.agents/skills/`, telemetrie uit)
 
 Geïnstalleerd 2026-09-19 met `DISABLE_TELEMETRY=1`, scope project (opencode).

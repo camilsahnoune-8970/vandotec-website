@@ -17,7 +17,7 @@ proportionele statische review uitgevoerd op het enige dynamische punt:
   met laag volume; bij misbruik alsnog toevoegen (meten in ronde C).
 - Geen CSRF-token: geen sessie/auth, impact beperkt tot spam-mail.
 - `mail()` zonder `-f` envelope-sender: deliverability hangt van de host af;
-  verifiëren bij de staging-test (ronde C).
+  verifiëren bij de staging-test (ronde C). *Staging is geschrapt (besluit Camil 2026-10-07): deze test vervalt tot er een host is; zie `.planning/STATE.md`.*
 - E-mailvalidatie via `FILTER_VALIDATE_EMAIL`; alle velden verplichte-velden-check
   server-side (naast client-side `required`).
 
@@ -35,3 +35,4 @@ niet meer in de bestanden; de historie bevat het nog steeds. De waarde staat bew
 - Gevonden bij de overdracht: `.vercel/project.json` staat in git en bevat `projectId`, `orgId` en `projectName` van het inmiddels verwijderde Vercel-project. Dat zijn identifiers (aanname: geen geheimen; ik las alleen de sleutelnamen); opruimen is een besluit van Camil (zie `.planning/STATE.md`).
 - Niet gecontroleerd: andere geheimen dan dit wachtwoord (token, API-sleutel). Bij een nieuwe scan:
   noem de zoekmethode en het aantal treffers.
+- GitHub-beveiliging op deze repo (gemeten 2026-10-13 via de API): Dependabot-meldingen en secret scanning staan **uit**. Aanzetten is een instelling van Camil; ik heb niets aangezet. Voor publieke repo's is dat volgens mij gratis (aanname, niet nagekeken).
