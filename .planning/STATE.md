@@ -1,6 +1,6 @@
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
 
-Bijgewerkt 2026-10-13. **De overdracht van Claude Code naar opencode is af, met erkende restrisico's** (PR #67 gemerged als `332c6e8`; zie "Overdrachtspoort" hieronder).
+Bijgewerkt 2026-10-16. **Claude Code bouwt.** Camil heeft de overdracht aan opencode (12/10) op 16/10 stopgezet; alleen Claude Code bouwt nog in deze repo. De overdrachtspoort van 13/10 staat hieronder als historie.
 
 ## Waar staan we
 
@@ -11,17 +11,17 @@ Bijgewerkt 2026-10-13. **De overdracht van Claude Code naar opencode is af, met 
 - Staging geschrapt uit planning (besluit Camil 2026-10-07); het contactformulier is ongetest tot er een host is.
 - Inhoud (de inhoudspunten uit `tasks/REVIEW.md`, in het gesprek "bak B" genoemd): tellers klaar (PR #64: 6.000+ en 5 landen zijn groepscijfers, bron mediakit p. 3), "geen onderaannemers" klaar (PR #65, besluit Camil: nuanceren). De rest staat hieronder.
 
-## Overdracht Claude → opencode (2026-10-12)
+## Rolverdeling: overdracht aan opencode stopgezet (2026-10-16)
 
-- Rolverdeling: **opencode bouwt**. Camil beslist, keurt specs goed en doet de smaak-review. Claude reviewt of herstelt technisch alleen op verzoek van Camil.
-- **Claude-schrijfstop**: Claude schrijft niet meer in deze repo tot Camil om een review of hotfix vraagt. Nooit twee agents tegelijk in dezelfde bestanden. **Uitzondering, alleen voor de overdracht:** alle poort-rijen worden vóór de merge van PR #67 afgemaakt, in #67 zelf. Na de merge controleert Claude `main` en meldt dat als PR-commentaar; daarna schrijft Claude niet meer in de repo.
-- Startpunt: milestone v1.1 "Inhoud-waarheid": `.planning/MILESTONES.md`, `specs/inhoud-waarheid.md` (alle CLAIM-punten met feiten, bron en aanbeveling) en `.planning/REQUIREMENTS.md`. **De spec is pas goedgekeurd als Camil de PR mergt of "ja" zegt.** Tot dan bouwt niemand aan de CLAIM-punten, en ook P1-P5 doe je pas als Camil dat item heeft goedgekeurd.
-- Opencode begint pas na de merge van #67 (C1). Eerste taak voor opencode: lees de spec en meld aan Camil of iets onduidelijk is (een tweede paar ogen op de spec); stel daarna de eerste vraag volgens de volgorde in de spec (CLAIM-04). Staat de spec nog niet op `origin/main` terwijl Camil "ja" zegt: meld dat en laat de spec-PR eerst mergen (Camil, of Claude op zijn verzoek) voor je een branch maakt.
+- Rolverdeling: **Claude Code bouwt** (sinds 2026-10-16). Camil beslist, keurt specs goed en doet de smaak-review. Opencode bouwt niet meer in deze repo. Nooit twee agents tegelijk in dezelfde bestanden.
+- **De Claude-schrijfstop vervalt** (besluit Camil, 2026-10-16: "ik vertrouw jou meer dan opencode, we werken dit af"). Werkwijze en spelregels: `AGENTS.md`. De uitvoering loopt in GSD-fases 6 t/m 18, zie `ROADMAP.md`.
+- Startpunt: milestone v1.1 "Inhoud-waarheid": `.planning/MILESTONES.md`, `specs/inhoud-waarheid.md` (alle CLAIM-punten met feiten, bron en aanbeveling) en `.planning/REQUIREMENTS.md`. De spec is goedgekeurd (PR #67 gemerged). P1-P5 doe je pas als Camil dat item heeft goedgekeurd, met een eigen spec per item.
+- Historie: opencode zou na de merge van PR #67 beginnen. Er is nooit een branch of PR van opencode voor deze milestone gekomen (gemeten 16/10: op de server staat alleen `main`).
 - Alles wat Claude wist en niet in code staat, staat nu in de repo: `AGENTS.md` (regels en valkuilen), `tasks/QA-RUNBOOK.md` (testen), `tasks/REVIEW.md` (audit met status per punt), `tasks/SECURITY-NOTITIE.md`.
 - Fotorondgang-branch `opencode/fotorondgang-register` (a572097): gemerged, leeg, verwijderd op 2026-10-13 (poort M7).
-- Opencode-proces (PID 58976, sessie sinds 08/10) draaide op 2026-10-13 niet meer. Claude heeft het niet gestopt; oorzaak onbekend. Start een verse opencode-sessie.
+- Opencode-proces: Claude stopte op 2026-10-16, op Camils verzoek, het toen draaiende proces (gestart 15/10). Zolang Claude Code de enige bouwer is (`AGENTS.md`), raakt een eventueel ander opencode-proces de repo niet.
 
-## Overdrachtspoort: status 2026-10-13, AF met erkende restrisico's
+## Overdrachtspoort: status 2026-10-13, AF met erkende restrisico's (historie)
 
 De overdracht is af: PR #67 is gemerged (`332c6e8`), en Camil heeft op 13/10 besloten M10 en M15 te sluiten met de restrisico's hieronder. De M-punten waren gaten van Claude; die zijn gesloten. Wat nog open staat, staat in de C-lijst.
 
@@ -84,7 +84,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 - ✓ **C4** afgehandeld 16/10 (besluit Camil): secret scanning, push protection en Dependabot-beveiligingsupdates aangezet in de GitHub-instellingen; gecontroleerd via de GitHub-API (alle drie `enabled`).
 - ✓ **C5** afgehandeld 16/10 (besluit Camil): `.vercel/`, `.hermes/plans/` en `archive-legacy-html/` (14 bestanden) uit de huidige versie gehaald. De git-historie bewaart ze nog; die herschrijven we niet. `.vercel/` staat nu in `.gitignore`.
 - **C6.** Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52). Hoort bij de hostingkeuze.
-- **C7.** Inhoudsbesluiten CLAIM-04 t/m 10 en 12 t/m 14, één per vraag (opencode legt ze voor). CLAIM-11 sluit opencode zelf.
+- **C7.** Inhoudsbesluiten CLAIM-04 t/m 10 en 12 t/m 14, één per vraag (Claude Code legt ze voor, in de GSD-fases 8 t/m 17). CLAIM-11 sluit Claude Code zelf (fase 7).
 - ✓ **C8** afgehandeld 16/10 (besluit Camil): middenblauw `#2680FF` blijft van de site. De mediakit noemt het, maar AGENTS.md zegt alleen navy en rood; niets gewijzigd.
 - **C9.** Lopend werk buiten de specs: EV-stockfoto vervangen bij de Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen. Tijdelijke tekst op de privacypagina: `privacy.astro:39` zegt dat een beeld "wordt vervangen door een eigen foto zodra beschikbaar" (een placeholder volgens AGENTS.md).
 - ✓ **C10** bewust gelaten 16/10 (besluit Camil): de echte screenreader- en iPhone-Safari-test kan in deze omgeving niet worden uitgevoerd. Laag prioriteit; restrisico erkend. Basis gedaan in PR #14.

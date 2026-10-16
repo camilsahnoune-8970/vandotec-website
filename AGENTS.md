@@ -15,12 +15,12 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 - Werk per pagina of per laag, nooit twee agents tegelijk in dezelfde bestanden.
 - Branches: `<wie>/<wat>` (bv. `opencode/hero`, `codex/jobs-tekst`, `claude/footer`). Merge via pull request met preview-check (build groen · SEO `ALL OK` · bij zichtbare wijziging: voor/na bekeken door Camil).
 - Review roteert: wie bouwt, reviewt niet zichzelf. Smaak-review doet Camil altijd zelf.
-- Het "tweede paar ogen" is een andere agent-sessie die de diff naleest tegen `AGENTS.md` en de bevindingen als PR-commentaar zet. Camil vraagt het aan (Claude Code, of een nieuwe agent-sessie die hij start). Camil hoeft de diff niet te lezen.
+- Het "tweede paar ogen" is een andere agent-sessie die de diff naleest tegen `AGENTS.md` en de bevindingen als PR-commentaar zet. Claude Code start het zelf als verse subagent; Camil mag ook een nieuwe agent-sessie starten. Camil hoeft de diff niet te lezen.
 - Journaalregel: in **dezelfde PR** als het werk, als extra regel in `.planning/STATE.md`. Een PR-nummer hoef je er niet in te zetten; dat staat in de PR zelf.
 
-## Rolverdeling (sinds 2026-10-12)
+## Rolverdeling (sinds 2026-10-16)
 
-- **opencode bouwt.** Camil beslist, keurt specs goed, doet de smaak-review en alle live-, DNS-, hosting- en kostenbesluiten. Claude Code reviewt of herstelt technisch alleen op verzoek van Camil en schrijft niet in de repo zonder dat verzoek.
+- **Claude Code bouwt.** Camil beslist, keurt specs goed, doet de smaak-review en alle live-, DNS-, hosting- en kostenbesluiten. Opencode bouwt niet meer in deze repo (besluit Camil, 2026-10-16), tenzij hier opnieuw een andere rolverdeling komt te staan. Nooit twee agents tegelijk in dezelfde bestanden.
 - Zichtbare wijziging: eerst voor/na aan Camil, merge na zijn "ja". Voor/na = de tekst voor en na in de PR-tekst, plus screenshots 390 en 1440 als bestanden in de map `screenshots/` in de repo-root (buiten git, staat in `.gitignore`). Camil opent die bestanden. Er is geen preview-host die Camil gebruikt; een Vercel-check op een PR is geen voor/na (zie C11 in `.planning/STATE.md`). Maak de screenshots met `node tasks/shot-pagina.cjs`, zie `tasks/QA-RUNBOOK.md`.
 - Tests, docs en techniek zonder zichtbare wijziging: CI groen is genoeg; bij code of tekst op de site ook het tweede paar ogen. In het PR-sjabloon vul je dan bij "Preview bekeken door Camil" in: "n.v.t., onzichtbaar" met de reden.
 - Pas mergen als beide verplichte checks van `main-sluis` groen zijn: `gh pr checks <n>` zonder `pending`. Een rode check betekent stoppen en melden, nooit eromheen mergen.
@@ -47,7 +47,7 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 
 ## Werkwijze (spec-first)
 
-- Geen code zonder goedgekeurde spec: kopieer `specs/_TEMPLATE.md` naar `specs/<onderwerp>.md`, vul in, Camil keurt goed, dan pas bouwen. Grote fasen lopen via GSD (de planningsmethode in `.planning/`); Spec Kit en Ralph zijn geparkeerd, gebruik ze niet.
+- Geen code zonder goedgekeurde spec: kopieer `specs/_TEMPLATE.md` naar `specs/<onderwerp>.md`, vul in, Camil keurt goed, dan pas bouwen. Grote fasen lopen via GSD (de planningsmethode in `.planning/`); Spec Kit en Ralph zijn geparkeerd, gebruik ze niet (de reden is nergens vastgelegd; Camil kan het opheffen). GSD-instellingen staan in `.planning/config.json`, fasebestanden onder `.planning/phases/`. Lever PR's zelf met de commando's hieronder, niet met `gsd-ship` (dat pusht niet via de gh-credential-route).
 - Vrijgesteld: kleine fixes (typo, één regel CSS, één woord tekst) — vermeld in de PR waarom geen spec nodig was.
 - Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden + door wie). Bij een CLAIM ook het vinkje in `.planning/REQUIREMENTS.md` en het bijbehorende punt in `tasks/REVIEW.md`. Eén CLAIM-PR tegelijk open.
 - Niet live zetten en geen DNS/hosting wijzigen zonder expliciete "ja" van Camil. Repo is sinds 2026-10-05 publiek (besluit Camil) — dus nooit secrets/tokens/wachtwoorden committen.
@@ -65,13 +65,13 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 - Wat je niet kunt zien (render, screenreader): markeer als “niet geverifieerd”, claim het niet.
 - Bij twijfel over foto-inhoud: zeggen, niet gokken.
 
-## Voor opencode (startprompt, verse sessie na 2026-10-12)
+## Voor Claude Code (startprompt, vanaf 2026-10-16)
 
-Lees `AGENTS.md`, `.planning/STATE.md` en `tasks/QA-RUNBOOK.md`. Controleer eerst de stand: `git fetch`, `git status`, `gh pr list`, en de statische testset uit het runbook op een verse `origin/main`. Is die set rood, dan meld je dat aan Camil en repareer je niets zonder spec. Start elke taak met `git switch -c opencode/<taak> origin/main` (nooit vanaf een `claude/`-branch), kies het open punt dat `.planning/STATE.md` noemt (de actieve milestone staat in `.planning/MILESTONES.md`, de uitwerking in `specs/inhoud-waarheid.md`; bouw pas na Camils goedkeuring van die spec), vraag Camil één beslissing per keer, open een PR en schrijf de journaalregel zoals hierboven staat.
+Lees `AGENTS.md`, `.planning/STATE.md` en `tasks/QA-RUNBOOK.md`. Controleer eerst de stand: `git fetch`, `git status`, `gh pr list`, en de statische testset uit het runbook op een verse `origin/main`. Is die set rood, dan meld je dat aan Camil en repareer je niets zonder spec. Start elke taak met `git worktree add -b claude/<taak> <map buiten de repo> origin/main` (nooit vanaf een andere `claude/`-branch), kies het open punt dat `.planning/STATE.md` noemt (de actieve milestone staat in `.planning/MILESTONES.md`, de uitwerking in `specs/inhoud-waarheid.md`; de spec is goedgekeurd door de merge van PR #67), vraag Camil één beslissing per keer, open een PR en schrijf de journaalregel zoals hierboven staat.
 
-## Voor Codex / Claude Code (startprompt)
+## Voor opencode en Codex (startprompt)
 
-Verouderd (2026-10-12): deze startprompt geldt niet meer en mag niet gevolgd worden. Voor opencode geldt de sectie hierboven. Claude schrijft niet meer in de repo (zie `.planning/STATE.md`, schrijfstop).
+Verouderd (2026-10-16): deze startprompt geldt niet meer en mag niet gevolgd worden. Claude Code bouwt (zie de sectie hierboven); opencode bouwt niet meer in deze repo.
 
 ## Documentatie
 

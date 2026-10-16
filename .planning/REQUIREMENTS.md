@@ -119,18 +119,18 @@ Toekomstig, niet in deze roadmap.
 | GOLIVE-04 | Phase 5 | Pending |
 | CLAIM-01 | v1.1 | Complete (PR #64) |
 | CLAIM-02 | v1.1 | Complete (PR #65) |
-| CLAIM-03 | v1.1 | Pending (wacht op Camil) |
-| CLAIM-04 | v1.1 | Pending |
-| CLAIM-05 | v1.1 | Pending |
-| CLAIM-06 | v1.1 | Pending |
-| CLAIM-07 | v1.1 | Pending |
-| CLAIM-08 | v1.1 | Pending |
-| CLAIM-09 | v1.1 | Pending |
-| CLAIM-10 | v1.1 | Pending |
-| CLAIM-11 | v1.1 | Pending (opencode sluit zelf, bron in de spec) |
-| CLAIM-12 | v1.1 | Pending |
-| CLAIM-13 | v1.1 | Pending (wacht op Camil) |
-| CLAIM-14 | v1.1 | Pending (wacht op Camil) |
+| CLAIM-03 | Phase 8 | Pending (besluit Camil 16/10: afzwakken) |
+| CLAIM-04 | Phase 10 | Pending |
+| CLAIM-05 | Phase 11 | Pending |
+| CLAIM-06 | Phase 12 | Pending |
+| CLAIM-07 | Phase 13 | Pending |
+| CLAIM-08 | Phase 14 | Pending |
+| CLAIM-09 | Phase 15 | Pending |
+| CLAIM-10 | Phase 17 | Pending |
+| CLAIM-11 | Phase 7 | Pending (Claude Code sluit zelf; mediakit p. 3, 4, 10 gecontroleerd 16/10) |
+| CLAIM-12 | Phase 8 | Pending |
+| CLAIM-13 | Phase 16 | Pending (wacht op Camil; geen antwoord = bewust gelaten) |
+| CLAIM-14 | Phase 9 | Pending (wacht op Camil) |
 
 **Coverage:**
 - v1 requirements: 22 total
@@ -139,4 +139,4 @@ Toekomstig, niet in deze roadmap.
 
 ---
 *Requirements defined: 2026-09-17*
-*Last updated: 2026-10-12: milestone v1.1 toegevoegd (CLAIM-01..14). De rest van dit bestand is van 2026-09-17: aantallen zoals "18 pagina's" zijn verouderd (nu 27).*
+*Last updated: 2026-10-16: CLAIM-03..14 aan GSD-fases 7 t/m 17 gekoppeld (zie ROADMAP.md). De rest van dit bestand is van 2026-09-17: aantallen zoals "18 pagina's" zijn verouderd (nu 27).*
