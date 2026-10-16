@@ -35,4 +35,4 @@ niet meer in de bestanden; de historie bevat het nog steeds. De waarde staat bew
 - Gevonden bij de overdracht: `.vercel/project.json` staat in git en bevat `projectId`, `orgId` en `projectName` van het inmiddels verwijderde Vercel-project. Dat zijn identifiers (aanname: geen geheimen; ik las alleen de sleutelnamen); opruimen is een besluit van Camil (zie `.planning/STATE.md`).
 - Niet gecontroleerd: andere geheimen dan dit wachtwoord (token, API-sleutel). Bij een nieuwe scan:
   noem de zoekmethode en het aantal treffers.
-- GitHub-beveiliging op deze repo (gemeten 2026-10-13 via de API): Dependabot-meldingen en secret scanning staan **uit**. Aanzetten is een instelling van Camil; ik heb niets aangezet. Voor publieke repo's is dat volgens mij gratis (aanname, niet nagekeken).
+- GitHub-beveiliging op deze repo: secret scanning, push protection en Dependabot-beveiligingsupdates staan **aan** sinds 2026-10-16 (besluit Camil, gecontroleerd via de API: alle drie `enabled`). Dependabot kan zelf pull requests openen voor kwetsbare pakketten; die beoordeelt en merget de agent pas na groene tests.
