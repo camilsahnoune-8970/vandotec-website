@@ -3,16 +3,17 @@ gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: Inhoud-waarheid
 status: unknown
-last_updated: "2026-10-16T11:58:13.269Z"
-state_head: 3b4a8554423868cf8d201032579cd3b2688d1d39
+stopped_at: context exhaustion at 75% (2026-10-16)
+last_updated: "2026-10-16T14:03:52.886Z"
+state_head: 95a1b17f62270f4ff607884048a48259d04ca54d
 progress:
   total_phases: 13
-  completed_phases: 4
-  total_plans: 2
-  completed_plans: 2
-  percent: 22
-current_phase: 8
-current_phase_name: Absolute claims
+  completed_phases: 5
+  total_plans: 3
+  completed_plans: 3
+  percent: 38
+current_phase: 9
+current_phase_name: Stock-claim
 ---
 
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
@@ -154,3 +155,9 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 - 2026-09-30 service-CTA's per kaart + footer full-bleed band (opencode)
 - 2026-09-30 issues-pass: juridisch herschreven, a11y, 45+ uniform (opencode)
 - 2026-09-30 galerij-pass: lightbox, moment-banden, rails met dots (opencode)
+
+## Session
+
+**Last session:** 2026-10-16T14:03:52.311Z
+**Stopped at:** context exhaustion at 75% (2026-10-16)
+**Resume file:** None
