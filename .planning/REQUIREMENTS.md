@@ -56,7 +56,7 @@ Bron voor claims: `docs/mediakit-2026.pdf` of een bevestiging van Camil; anders 
 - [ ] **CLAIM-08**: De privacyverklaring noemt de identiteit van Vandotec (naam met rechtsvorm, adres, BTW, e-mail); cookie- en disclaimerpagina verwijzen ernaar
 - [ ] **CLAIM-09**: Lettertype Open Sans komt van de eigen server in plaats van Google Fonts
 - [ ] **CLAIM-10**: Dunne referenties (Iveco, Decospan, MIG Motors, Cid Lines) zijn aangevuld of verborgen
-- [ ] **CLAIM-11**: Powerhub-tijdlijn is gesloten met bron mediakit p. 3, 4 en 10
+- [x] **CLAIM-11**: Powerhub-tijdlijn is gesloten met bron mediakit p. 3, 4 en 10
 - [ ] **CLAIM-12**: Absolute "elk project / elke interventie in eigen beheer" is op één lijn gebracht met de keuze bij CLAIM-02 (het Voka-citaat blijft ongewijzigd)
 - [ ] **CLAIM-13**: De termijnen in de algemene voorwaarden (offerte 30 dagen, betaling 30 dagen) zijn bevestigd of aangepast door Camil
 - [ ] **CLAIM-14**: "Uitgebreide stock veelgebruikte onderdelen aan boord" (service-onderhoud) is bevestigd of geschrapt
@@ -119,7 +119,7 @@ Toekomstig, niet in deze roadmap.
 | GOLIVE-04 | Phase 5 | Pending |
 | CLAIM-01 | v1.1 | Complete (PR #64) |
 | CLAIM-02 | v1.1 | Complete (PR #65) |
-| CLAIM-03 | Phase 8 | Pending (besluit Camil 16/10: afzwakken) |
+| CLAIM-03 | Phase 8 | Pending |
 | CLAIM-04 | Phase 10 | Pending |
 | CLAIM-05 | Phase 11 | Pending |
 | CLAIM-06 | Phase 12 | Pending |
@@ -127,10 +127,10 @@ Toekomstig, niet in deze roadmap.
 | CLAIM-08 | Phase 14 | Pending |
 | CLAIM-09 | Phase 15 | Pending |
 | CLAIM-10 | Phase 17 | Pending |
-| CLAIM-11 | Phase 7 | Pending (Claude Code sluit zelf; mediakit p. 3, 4, 10 gecontroleerd 16/10) |
+| CLAIM-11 | Phase 7 | Complete |
 | CLAIM-12 | Phase 8 | Pending |
-| CLAIM-13 | Phase 16 | Pending (wacht op Camil; geen antwoord = bewust gelaten) |
-| CLAIM-14 | Phase 9 | Pending (wacht op Camil) |
+| CLAIM-13 | Phase 16 | Pending |
+| CLAIM-14 | Phase 9 | Pending |
 
 **Coverage:**
 - v1 requirements: 22 total

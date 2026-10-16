@@ -23,6 +23,8 @@ Aannames die ik heb gecontroleerd (L1 Meten, 16/10, tekstlaag van `docs/mediakit
 
 - Of "Powerhub-bewijs" uit de lijst "Niet geverifieerd" in `tasks/REVIEW.md` mag: ja, de mediakit is nu gelezen. Het blijft de eigen persmap van het bedrijf: geen onafhankelijk bewijs, en dat staat in de REVIEW-regel.
 
+- **Gevonden tijdens deze fase:** `requirements.mark-complete` zet een CLAIM alleen om als de statuscel in de traceability-tabel exact `Pending` is. Vier rijen hadden een opmerking in die cel (CLAIM-03, 11, 13, 14); die zijn kaal gemaakt en de regel staat nu in `AGENTS.md`. `phase.complete` meldde `requirements_updated: false` zonder waarschuwing; daarom altijd `mark-complete` apart draaien en `write_set_complete: true` controleren.
+
 ## Deferred Ideas
 
 - Geen.

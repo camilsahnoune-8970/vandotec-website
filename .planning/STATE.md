@@ -3,16 +3,16 @@ gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: Inhoud-waarheid
 status: unknown
-last_updated: "2026-10-16T11:37:53.346Z"
-state_head: c7a8195cc0216db8e2f127707e39bae831b903b3
+last_updated: "2026-10-16T11:58:13.269Z"
+state_head: 3b4a8554423868cf8d201032579cd3b2688d1d39
 progress:
   total_phases: 13
-  completed_phases: 3
-  total_plans: 1
-  completed_plans: 1
-  percent: 17
-current_phase: 7
-current_phase_name: CLAIM-11
+  completed_phases: 4
+  total_plans: 2
+  completed_plans: 2
+  percent: 22
+current_phase: 8
+current_phase_name: Absolute claims
 ---
 
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)

@@ -49,7 +49,7 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 
 - Geen code zonder goedgekeurde spec: kopieer `specs/_TEMPLATE.md` naar `specs/<onderwerp>.md`, vul in, Camil keurt goed, dan pas bouwen. Grote fasen lopen via GSD (de planningsmethode in `.planning/`); Spec Kit en Ralph zijn geparkeerd, gebruik ze niet (de reden is nergens vastgelegd; Camil kan het opheffen). GSD-instellingen staan in `.planning/config.json`, fasebestanden onder `.planning/phases/`. Lever PR's zelf met de commando's hieronder, niet met `gsd-ship` (dat pusht niet via de gh-credential-route).
 - Vrijgesteld: kleine fixes (typo, één regel CSS, één woord tekst) — vermeld in de PR waarom geen spec nodig was.
-- Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden + door wie). Bij een CLAIM ook het vinkje in `.planning/REQUIREMENTS.md` en het bijbehorende punt in `tasks/REVIEW.md`. Eén CLAIM-PR tegelijk open.
+- Na afgeronde taak: één regel in `.planning/STATE.md` (wat + welke bestanden + door wie). Bij een CLAIM ook het vinkje in `.planning/REQUIREMENTS.md` en het bijbehorende punt in `tasks/REVIEW.md`. Laat de statuscel in de traceability-tabel van `REQUIREMENTS.md` exact `Pending` tot GSD hem op `Complete` zet (`gsd_run query requirements.mark-complete <ID>`): met een opmerking in die cel zet GSD niets om. Eén CLAIM-PR tegelijk open.
 - Niet live zetten en geen DNS/hosting wijzigen zonder expliciete "ja" van Camil. Repo is sinds 2026-10-05 publiek (besluit Camil) — dus nooit secrets/tokens/wachtwoorden committen.
 - `main` is beschermd (regelset `main-sluis`): alles via PR, lineaire historie, geen force-push. Zelfs journaalregels gaan via een branch + PR.
 
