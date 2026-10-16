@@ -58,7 +58,7 @@ node tasks/qa-browsers.cjs
 node tasks/qa-print.cjs
 ```
 
-4. Stop de server daarna met `taskkill /T /F /PID <pid>`, alleen je **eigen** PID. Nooit alle `node`-processen stoppen: er kan een opencode-sessie in draaien. Gebruik `taskkill`.
+4. Stop de server daarna met `taskkill /T /F /PID <pid>`, alleen je **eigen** PID. Nooit alle `node`-processen stoppen: er kan een sessie van iemand of iets anders in draaien. Gebruik `taskkill`.
 
 Browsers installeren (eenmalig): `npx playwright install chromium firefox webkit`.
 
@@ -86,4 +86,4 @@ Het script maakt `<prefix>-390.png` en `<prefix>-1440.png` (volledige pagina, co
 - Een cookiebalk bedekt de hero op screenshots: klik eerst op "Accepteren" (`getByRole('button', { name: /accepteren/i })`).
 - Zware browsertests na elkaar draaien, niet parallel: er is weinig vrij geheugen.
 - Node: `package.json` vraagt `>=22.12.0` en de CI gebruikt 22. Op deze pc staat v26; dat is niet in de CI getest.
-- De mediakit lees je met het Read-gereedschap (ondersteunt PDF, met `pages`). Op 2026-10-13 werkte dat op deze pc; faalt het, meld dat.
+- De mediakit lees je met het Read-gereedschap (ondersteunt PDF, met `pages`). Op 2026-10-13 werkte dat op deze pc; op 2026-10-16 faalde het (`pdftoppm` ontbreekt). De PDF heeft een tekstlaag (14 pagina's): lees die met PyMuPDF in een eigen venv buiten de repo (`pip download pymupdf==1.28.2 --no-deps`, SHA-256 van de wheel vergelijken met PyPI, dan `page.get_text()`). Zo zijn op 2026-10-16 p. 3, 4, 5, 6 en 10 gecontroleerd. Faalt dat ook, meld het en noteer "niet opnieuw gelezen".

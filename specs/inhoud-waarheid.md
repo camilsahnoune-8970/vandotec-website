@@ -1,6 +1,6 @@
 # SPEC: inhoud-waarheid (milestone v1.1)
 
-Deze spec staat in PR #67 (branch `claude/milestone-v1-1`) tot die gemerged is; lees hem daar of na de merge op `main`. Leeswijzer: geen goedgekeurde spec = geen PR. Camil keurt deze spec goed door de PR te mergen of "ja" te zeggen. Daarna bouwt opencode, één PR per besluit. Rolverdeling en werkafspraken: `AGENTS.md`. Testen: `tasks/QA-RUNBOOK.md`.
+Deze spec is goedgekeurd (PR #67 gemerged op 13/10 als `332c6e8`, met Camils ja). Leeswijzer: geen goedgekeurde spec = geen PR. Claude Code bouwt, één PR per besluit (sinds 16/10; opencode is gestopt, besluit Camil). Rolverdeling en werkafspraken: `AGENTS.md`. Testen: `tasks/QA-RUNBOOK.md`.
 
 ## 1. Doel (één zin)
 
@@ -8,16 +8,16 @@ Elke bewering op vandotec.be is gedekt door een bron of een bevestiging van Cami
 
 ## 2. Context
 
-- Overdracht van Claude Code naar opencode op 2026-10-12, zie `.planning/STATE.md`. De inhoudsbesluiten ("bak B") zijn het enige echt open blok. CLAIM-01 (tellers, PR #64) en CLAIM-02 (onderaannemers, PR #65) zijn klaar.
+- Overdracht van Claude Code naar opencode op 2026-10-12, door Camil stopgezet op 2026-10-16 (Claude Code bouwt), zie `.planning/STATE.md`. De inhoudsbesluiten ("bak B") zijn het enige echt open blok. CLAIM-01 (tellers, PR #64) en CLAIM-02 (onderaannemers, PR #65) zijn klaar.
 - Brondocument: `docs/mediakit-2026.pdf` (de persmap van Group Vandotec). `tasks/REVIEW.md` noemde meerdere punten "zonder bron" die in de mediakit wel staan; dat is hieronder per punt nagelopen, met paginanummers. De mediakit is een bron voor *wat het bedrijf zelf publiek zegt*, geen bewijs dat het waar is: waar Camil moet bevestigen, staat dat erbij.
 - Nulmeting 2026-10-12: `main` = `4311dce`, `npm run build` groen (27 pagina's), `check-seo` ALL OK, `verify-mediakit.cjs` MEDIAKIT-RONDE OK.
 
 ## 3. Scope
 
 - **Wél:** CLAIM-03 t/m CLAIM-14 hieronder. Per besluit één PR, met voor/na-tekst voor Camil bij zichtbare wijziging.
-- **Werkwijze per punt:** zoek zelf de feiten op, leg Camil de vragen van het punt voor, **één per keer** en genummerd (in gewone taal, aanbeveling eerst, zo dat "ja" volstaat, met het voor/na erbij), wacht op het antwoord, bouw dan. Nooit meerdere beslissingen in één bericht. Volgorde: CLAIM-04, 05, 06, 07, 08, 09, 10, 12, 13, 14; CLAIM-03 zodra Camil antwoordt; CLAIM-11 sluit je zelf (één docs-PR, geen site-wijziging).
+- **Werkwijze per punt:** zoek zelf de feiten op, leg Camil de vragen van het punt voor, **één per keer** en genummerd (in gewone taal, aanbeveling eerst, zo dat "ja" volstaat, met het voor/na erbij), wacht op het antwoord, bouw dan. Nooit meerdere beslissingen in één bericht. Volgorde: CLAIM-04, 05, 06, 07, 08, 09, 10, 12, 13, 14; CLAIM-03: besluit Camil 16/10: afzwakken; CLAIM-11 sluit Claude Code zelf (één docs-PR, geen site-wijziging).
 - **Overlap:** CLAIM-04 en CLAIM-05 raken allebei `over-vandotec.astro:138`: doe ze na elkaar, niet tegelijk. CLAIM-03 en CLAIM-12 raken `index.astro:239`. `service-onderhoud.json:24` raakt CLAIM-12 en CLAIM-14. Vragen mag je parallel stellen; bouwen doe je één CLAIM-PR tegelijk.
-- **Start:** staat deze spec nog niet op `origin/main` terwijl Camil "ja" zegt, meld dat en laat de spec-PR eerst mergen (Camil, of Claude op zijn verzoek). Maak je branch pas daarna, anders mist hij de spec en de CLAIM-regels.
+- **Start:** vervallen; de spec staat op `origin/main` (PR #67 gemerged).
 - **Uitdrukkelijk níet:** live zetten, DNS, hosting; afzender `info@vandotec.be` en SPF (hoort bij de hostingkeuze); rood-telling in de hero (smaak, Camil); FR-vertaling; Layout-splitsing en component-extractie (wachtrij P1, aparte spec); historie van de repo herschrijven. Ook buiten deze milestone, nog open in `tasks/REVIEW.md` onder "Optional / Nit": "familiebedrijf" in de jobs-tekst, "zo snel mogelijk/direct" zonder SLA, jobs-teksten.
 
 ### De punten

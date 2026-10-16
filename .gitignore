@@ -31,6 +31,8 @@ pnpm-debug.log*
 .render/
 # Vercel-koppeling-map (lokaal bij 'vercel link'; bevat projectId en orgId, nooit committen)
 .vercel/
+# GSD: afgeleide machinestand, wordt bij elke stap opnieuw gemaakt (niet committen)
+.planning/state.json
 dist/
 
 # Lokale QA/preview-screenshots (nooit committen)
