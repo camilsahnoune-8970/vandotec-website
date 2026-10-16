@@ -85,6 +85,7 @@ Bewijsregel: geen bewering zonder bestand:regel of commando-output; de rest staa
   Voorstel: nummers + geldigheid (Camil).
 - Powerhub-tijdlijn (`over-vandotec.json:36-41`, mei 2026 + persoonsnaam) zonder extern bewijs.
   Voorstel: maand weglaten of bewijs linken.
+  **Afgehandeld 2026-10-16 (CLAIM-11):** bron is de mediakit van het bedrijf zelf (`docs/mediakit-2026.pdf`), op 16/10 in de tekstlaag gecontroleerd: p. 3 ("Oplevering Powerhub, nieuw bedrijfsgebouw in Poperinge (mei 2026)") en p. 10 ("opgeleverd in mei 2026"); p. 4 (2026: "Projectleiding intern door COO Marijn Louwagie") en p. 10 ("de volledige projectleiding lag in handen van COO Marijn Louwagie"). Dat is wat het bedrijf zelf publiek zegt, geen onafhankelijk bewijs. Geen sitewijziging.
 
 **M3 vertrouwen**
 - `contact.php:44-45`: `$email` buiten CRLF-guard (alleen `filter_var` vangt af). **Niet geverifieerd.**
@@ -128,7 +129,7 @@ Bewijsregel: geen bewering zonder bestand:regel of commando-output; de rest staa
 
 Formulier-e2e, PHP-mailheaders, rate-limit-misbruik, live HAR vóór consent, contrastmeting op foto,
 screenreader, iPhone-Safari, live indexatie, wachtdienst/SLA, certificaatnummers, merktoestemmingen,
-ticker-klanttoestemmingen, Powerhub-bewijs, tellers-bron.
+ticker-klanttoestemmingen, tellers-bron.
 
 ## Voorgestelde fix-rondes (na Camil-akkoord)
 
