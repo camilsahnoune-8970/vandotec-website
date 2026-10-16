@@ -29,6 +29,8 @@ pnpm-debug.log*
 
 # build artifacts
 .render/
+# Vercel-koppeling-map (lokaal bij 'vercel link'; bevat projectId en orgId, nooit committen)
+.vercel/
 dist/
 
 # Lokale QA/preview-screenshots (nooit committen)

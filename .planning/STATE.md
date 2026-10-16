@@ -81,8 +81,8 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 - **C1.** PR #67 goedkeuren: mergen of "ja" zeggen. Dit is de laatste stap van de poort.
 - **C2.** 24/7 interventiedienst (CLAIM-03): bestaat er een echte wachtdienst? "24/7" staat in `src/` op 24 regels in 10 bestanden (plus 2× "24 uur per dag"), en ook in de OG-afbeelding `public/og-image.png`. Geen bron.
 - **C3.** Het oude CMS-wachtwoord staat in de publieke git-historie (uit de bestanden sinds PR #59). Gebruikt Camil het nog ergens? Historie herschrijven is een apart besluit. Zie `tasks/SECURITY-NOTITIE.md`.
-- **C4.** GitHub-beveiliging staat uit: Dependabot-meldingen en secret scanning (gemeten 2026-10-13). Aanbeveling: aanzetten. Claude heeft niets aangezet.
-- **C5.** Opruimen in de publieke repo: `.vercel/` (projectId/orgId van een verwijderd project), `.hermes/plans/` en `archive-legacy-html/` staan nog in git (14 bestanden).
+- ✓ **C4** afgehandeld 16/10 (besluit Camil): secret scanning, push protection en Dependabot-beveiligingsupdates aangezet in de GitHub-instellingen; gecontroleerd via de GitHub-API (alle drie `enabled`).
+- ✓ **C5** afgehandeld 16/10 (besluit Camil): `.vercel/`, `.hermes/plans/` en `archive-legacy-html/` (14 bestanden) uit de huidige versie gehaald. De git-historie bewaart ze nog; die herschrijven we niet. `.vercel/` staat nu in `.gitignore`.
 - **C6.** Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52). Hoort bij de hostingkeuze.
 - **C7.** Inhoudsbesluiten CLAIM-04 t/m 10 en 12 t/m 14, één per vraag (opencode legt ze voor). CLAIM-11 sluit opencode zelf.
 - **C8.** Middenblauw `#2680FF`: de mediakit (p. 13) noemt het als Vandotec-kleur, de site gebruikt het niet, en AGENTS.md zegt "alleen navy en rood". Mag het op de site? Zo nee: niets doen.
@@ -92,6 +92,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-16 C4 en C5 afgehandeld (claude, besluit Camil): GitHub-beveiliging aan (secret scanning, push protection, Dependabot), 14 oude bestanden uit de huidige versie, `.vercel/` in `.gitignore`. Opencode-proces gestopt op Camils verzoek.
 - 2026-10-13 overdracht af met erkende restrisico's: PR #67 gemerged als `332c6e8` (Camil "ja"), P-b gecontroleerd, M10 en M15 gesloten door Camil (claude)
 - 2026-10-13 overdrachtspoort M1-M15 op PR #67 (claude): verify-mediakit huisstijl-gate (navy/rood, was #2680ff), QA-RUNBOOK, ARCHIEF-regels staging-docs, SECURITY-NOTITIE (staging, GitHub-beveiliging uit), spec P4/P5/CLAIM-03/CLAIM-09 gemeten, branch `opencode/fotorondgang-register` verwijderd, perf-basislijn, OG-test (0 bytes verschil), koude lezers. Overdracht NIET AF tot poort groen en C1.
 
