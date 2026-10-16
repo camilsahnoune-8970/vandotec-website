@@ -80,18 +80,19 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 - **C1.** PR #67 goedkeuren: mergen of "ja" zeggen. Dit is de laatste stap van de poort.
 - **C2.** 24/7 interventiedienst (CLAIM-03): bestaat er een echte wachtdienst? "24/7" staat in `src/` op 24 regels in 10 bestanden (plus 2× "24 uur per dag"), en ook in de OG-afbeelding `public/og-image.png`. Geen bron.
-- **C3.** Het oude CMS-wachtwoord staat in de publieke git-historie (uit de bestanden sinds PR #59). Gebruikt Camil het nog ergens? Historie herschrijven is een apart besluit. Zie `tasks/SECURITY-NOTITIE.md`.
+- ✓ **C3** afgehandeld 16/10 (besluit Camil): het oude CMS-wachtwoord is vervangen door Camil. Restrisico, geaccepteerd: de oude waarde blijft in de publieke git-historie; herschrijven is niet besloten. Zie `tasks/SECURITY-NOTITIE.md`.
 - ✓ **C4** afgehandeld 16/10 (besluit Camil): secret scanning, push protection en Dependabot-beveiligingsupdates aangezet in de GitHub-instellingen; gecontroleerd via de GitHub-API (alle drie `enabled`).
 - ✓ **C5** afgehandeld 16/10 (besluit Camil): `.vercel/`, `.hermes/plans/` en `archive-legacy-html/` (14 bestanden) uit de huidige versie gehaald. De git-historie bewaart ze nog; die herschrijven we niet. `.vercel/` staat nu in `.gitignore`.
 - **C6.** Contactformulier: afzender `info@vandotec.be` werkt alleen bij hosting via Combell (SPF vandotec.be eindigt op `-all`, zie PR #52). Hoort bij de hostingkeuze.
 - **C7.** Inhoudsbesluiten CLAIM-04 t/m 10 en 12 t/m 14, één per vraag (opencode legt ze voor). CLAIM-11 sluit opencode zelf.
-- **C8.** Middenblauw `#2680FF`: de mediakit (p. 13) noemt het als Vandotec-kleur, de site gebruikt het niet, en AGENTS.md zegt "alleen navy en rood". Mag het op de site? Zo nee: niets doen.
+- ✓ **C8** afgehandeld 16/10 (besluit Camil): middenblauw `#2680FF` blijft van de site. De mediakit noemt het, maar AGENTS.md zegt alleen navy en rood; niets gewijzigd.
 - **C9.** Lopend werk buiten de specs: EV-stockfoto vervangen bij de Powerland-laderfoto; witte logo-variant; jobs-teksten; beheerlaag-keuze; rood-telling hero (a/b/laat zo); locatie-aanvinkingen. Tijdelijke tekst op de privacypagina: `privacy.astro:39` zegt dat een beeld "wordt vervangen door een eigen foto zodra beschikbaar" (een placeholder volgens AGENTS.md).
-- **C10.** Technisch, laag prio: echte screenreader- en Safari-op-iPhone-test (basis gedaan in PR #14).
+- ✓ **C10** bewust gelaten 16/10 (besluit Camil): de echte screenreader- en iPhone-Safari-test kan in deze omgeving niet worden uitgevoerd. Laag prioriteit; restrisico erkend. Basis gedaan in PR #14.
 - **C11.** Vercel: op PR #67 verschijnen de checks "Vercel" en "Vercel Preview Comments" (project `vandotec/vandotec-website`). Claude heeft die koppeling niet aangezet en weet niet wie dat deed. Is die koppeling gewenst? Zo nee: loskoppelen is een besluit van Camil.
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-16 C3, C8 en C10 afgehandeld (claude, besluit Camil): wachtwoord vervangen (restrisico historie geaccepteerd), #2680FF blijft weg, Safari/schermlezer-test bewust gelaten. SECURITY-NOTITIE bijgewerkt.
 - 2026-10-16 C4 en C5 afgehandeld (claude, besluit Camil): GitHub-beveiliging aan (secret scanning, push protection, Dependabot), 14 oude bestanden uit de huidige versie, `.vercel/` in `.gitignore`. Opencode-proces gestopt op Camils verzoek.
 - 2026-10-13 overdracht af met erkende restrisico's: PR #67 gemerged als `332c6e8` (Camil "ja"), P-b gecontroleerd, M10 en M15 gesloten door Camil (claude)
 - 2026-10-13 overdrachtspoort M1-M15 op PR #67 (claude): verify-mediakit huisstijl-gate (navy/rood, was #2680ff), QA-RUNBOOK, ARCHIEF-regels staging-docs, SECURITY-NOTITIE (staging, GitHub-beveiliging uit), spec P4/P5/CLAIM-03/CLAIM-09 gemeten, branch `opencode/fotorondgang-register` verwijderd, perf-basislijn, OG-test (0 bytes verschil), koude lezers. Overdracht NIET AF tot poort groen en C1.
