@@ -1,3 +1,20 @@
+---
+gsd_state_version: "1.0"
+milestone: v1.1
+milestone_name: Inhoud-waarheid
+status: unknown
+last_updated: "2026-10-16T11:37:53.346Z"
+state_head: c7a8195cc0216db8e2f127707e39bae831b903b3
+progress:
+  total_phases: 13
+  completed_phases: 3
+  total_plans: 1
+  completed_plans: 1
+  percent: 17
+current_phase: 7
+current_phase_name: CLAIM-11
+---
+
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
 
 Bijgewerkt 2026-10-16. **Claude Code bouwt.** Camil heeft de overdracht aan opencode (12/10) op 16/10 stopgezet; alleen Claude Code bouwt nog in deze repo. De overdrachtspoort van 13/10 staat hieronder als historie.
@@ -92,6 +109,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-16 fase 6 "Herstel en rolwissel" afgerond (claude): Claude Code bouwt (AGENTS, STATE, MILESTONES, spec), ROADMAP.md in GSD-sjabloon (v1.1 = fase 6 t/m 18), `.planning/config.json`, fasebestanden onder `.planning/phases/`, mediakit p. 3, 4, 5, 6, 10 gecontroleerd met PyMuPDF, QA-RUNBOOK bijgewerkt. Basislijn op `9c0ce09` groen (27 pagina's).
 - 2026-10-16 C3, C8 en C10 afgehandeld (claude, besluit Camil): wachtwoord vervangen (restrisico historie geaccepteerd), #2680FF blijft weg, Safari/schermlezer-test bewust gelaten. SECURITY-NOTITIE bijgewerkt.
 - 2026-10-16 C4 en C5 afgehandeld (claude, besluit Camil): GitHub-beveiliging aan (secret scanning, push protection, Dependabot), 14 oude bestanden uit de huidige versie, `.vercel/` in `.gitignore`. Opencode-proces gestopt op Camils verzoek.
 - 2026-10-13 overdracht af met erkende restrisico's: PR #67 gemerged als `332c6e8` (Camil "ja"), P-b gecontroleerd, M10 en M15 gesloten door Camil (claude)

@@ -13,7 +13,7 @@
 
 **Milestone Goal:** elke bewering op vandotec.be is gedekt door een bron of een bevestiging van Camil, of is afgezwakt, en de C-lijst heeft geen open eindes meer.
 
-- [ ] **Phase 6: Herstel en rolwissel** - docs en GSD-inrichting op de nieuwe rolverdeling (Claude Code bouwt)
+- [x] **Phase 6: Herstel en rolwissel** - docs en GSD-inrichting op de nieuwe rolverdeling (Claude Code bouwt) (completed 2026-10-16)
 - [ ] **Phase 7: CLAIM-11** - Powerhub-tijdlijn afsluiten met bron
 - [ ] **Phase 8: Absolute claims** - CLAIM-03 (24/7) en CLAIM-12 (eigen beheer) afzwakken
 - [ ] **Phase 9: Stock-claim** - CLAIM-14 (uitgebreide stock onderdelen)
@@ -30,6 +30,7 @@
 ## Phase Details
 
 ### Phase 6: Herstel en rolwissel
+
 **Goal**: de repo, de docs en de GSD-instellingen kloppen met de nieuwe rolverdeling, en de basislijn is gemeten.
 **Depends on**: Nothing (first phase of v1.1)
 **Requirements**: geen CLAIM (infrastructuur)
@@ -37,24 +38,28 @@
   1. `AGENTS.md`, `STATE.md`, `MILESTONES.md` en de spec zeggen dat Claude Code bouwt en dat opencode niet meer bouwt.
   2. `.planning/config.json` bestaat en `ROADMAP.md` is door GSD leesbaar (`roadmap.get-phase` vindt fase 6 t/m 18).
   3. Basislijn gemeten op `origin/main`: build en de testset zonder server groen, 27 pagina's.
-**Plans**: 1 plan
+
+**Plans**: 1/1 plans complete
 
 Plans:
-- [ ] 06-01: rolwissel-docs, ROADMAP-omzetting en GSD-config in één PR
+- [x] 06-01: rolwissel-docs, ROADMAP-omzetting en GSD-config in één PR
 
 ### Phase 7: CLAIM-11
+
 **Goal**: de Powerhub-tijdlijn is afgesloten met een gecontroleerde bron.
 **Depends on**: Phase 6
 **Requirements**: CLAIM-11
 **Success Criteria** (what must be TRUE):
   1. `tasks/REVIEW.md` heeft bij het Powerhub-punt "Afgehandeld" met de bron (mediakit p. 3, 4 en 10, gecontroleerd 16/10).
   2. CLAIM-11 staat afgevinkt in `REQUIREMENTS.md`.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 07-01: documentatiewijziging (REVIEW, REQUIREMENTS, journaal)
 
 ### Phase 8: Absolute claims
+
 **Goal**: "24/7" en "elk project/elke interventie in eigen beheer" staan niet meer als ongedekte bewering op de site.
 **Depends on**: Phase 7
 **Requirements**: CLAIM-03, CLAIM-12
@@ -62,36 +67,42 @@ Plans:
   1. Na de wijziging staat "24/7" nergens meer in `dist/` en niet meer in de OG-afbeelding, tenzij Camil een wachtdienst bevestigt.
   2. De absolute "eigen beheer"-zinnen volgen dezelfde lijn als CLAIM-02; het Voka-citaat is onveranderd.
   3. Build, SEO-, a11y- en mediakit-controles groen; Camil keurde het voor/na goed.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 08-01: teksten per regel afzwakken, OG-afbeelding opnieuw genereren
 
 ### Phase 9: Stock-claim
+
 **Goal**: "uitgebreide stock veelgebruikte onderdelen" is bevestigd of geschrapt op alle vier de plaatsen.
 **Depends on**: Phase 8
 **Requirements**: CLAIM-14
 **Success Criteria** (what must be TRUE):
   1. De stock-claim staat op geen enkele plaats meer, of is bevestigd door Camil.
   2. Camil keurde het voor/na goed.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 09-01: vier plaatsen aanpassen in één PR
 
 ### Phase 10: Superlatieven
+
 **Goal**: superlatieven op de site komen uit de mediakit of zijn afgezwakt.
 **Depends on**: Phase 9
 **Requirements**: CLAIM-04
 **Success Criteria** (what must be TRUE):
   1. "op elke werf, bij elke opdrachtgever" is afgezwakt; teksten die letterlijk uit de mediakit komen blijven.
   2. De zin met "ISO 17020" en "klasse 6/P2" blijft heel; `verify-mediakit.cjs` is groen.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 10-01: tekstwijziging met voor/na
 
 ### Phase 11: Certificaten
+
 **Goal**: certificaten worden alleen getoond met wat Camil kan leveren; niets is verzonnen.
 **Depends on**: Phase 10
 **Requirements**: CLAIM-05
@@ -99,36 +110,42 @@ Plans:
   1. "bewijst" is "toont dat"; "erkend in klasse 6/P2" is "klasse 6/P2" (zoals mediakit p. 3).
   2. Er staan geen certificaatnummers of geldigheidsdata die niet zijn aangeleverd.
   3. Het BELAC-logo is bevestigd of verwijderd.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 11-01: tekst en logo, met bron voor elke gewijzigde check-verwachting
 
 ### Phase 12: Merknamen
+
 **Goal**: merknamen in alt-teksten en bijschriften zijn gedekt of geneutraliseerd.
 **Depends on**: Phase 11
 **Requirements**: CLAIM-06
 **Success Criteria** (what must be TRUE):
   1. Klantnamen uit de mediakit blijven; overige merknamen zijn geneutraliseerd (opnieuw geteld met dezelfde regex).
   2. `disclaimer.astro` heeft één zin over merknamen en eigendom van derden.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 12-01: alt-teksten en bijschriften, disclaimerzin
 
 ### Phase 13: Klanten
+
 **Goal**: klantnamen op de site (kaart, ticker, bestandsnamen) staan er alleen met toestemming.
 **Depends on**: Phase 12
 **Requirements**: CLAIM-07
 **Success Criteria** (what must be TRUE):
   1. De naam Pessleux staat nergens meer, tenzij Camil toestemming bevestigt; `ref-pessleux*.jpg` is hernoemd inclusief `tasks/beelden.md`.
   2. Overige tickerklanten zijn bevestigd of weggehaald.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 13-01: kaart, ticker en bestandsnamen
 
 ### Phase 14: Identiteit en privacy
+
 **Goal**: de privacyverklaring noemt wie de verwerkingsverantwoordelijke is, en de tijdelijke tekst op de privacypagina is weg.
 **Depends on**: Phase 13
 **Requirements**: CLAIM-08
@@ -136,12 +153,14 @@ Plans:
   1. `privacy.astro` heeft een identiteitsblok met wettelijke naam, adres, BTW en e-mail; cookie- en disclaimerpagina verwijzen ernaar.
   2. De placeholder op `privacy.astro:39` (C9) is weg.
   3. Camil bevestigde de wettelijke naam en zag de nieuwe tekst letterlijk.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 14-01: identiteitsblok en verwijzingen
 
 ### Phase 15: Lettertype zelf hosten
+
 **Goal**: Open Sans komt van de eigen server, niet van Google.
 **Depends on**: Phase 14
 **Requirements**: CLAIM-09
@@ -149,35 +168,41 @@ Plans:
   1. `dist/` bevat 0 verwijzingen naar `fonts.googleapis` of `fonts.gstatic`.
   2. Screenshots 390 en 1440 voor/na tonen geen zichtbaar verschil.
   3. De OFL-licentietekst staat in `public/fonts/`; er is geen nieuwe npm-dependency.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 15-01: woff2-bestanden, `@font-face`, `Layout.astro` en `cookies.astro`
 
 ### Phase 16: Voorwaarden
+
 **Goal**: de termijnen in de algemene voorwaarden zijn bevestigd door Camil of bewust ongemoeid gelaten.
 **Depends on**: Phase 15
 **Requirements**: CLAIM-13
 **Success Criteria** (what must be TRUE):
   1. Camil bevestigde de termijnen (offerte 30 dagen, betaling 30 dagen) of het punt staat als "bewust gelaten (niet bevestigd, juridisch nakijken door Camil)".
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 16-01: bevestiging of vastlegging
 
 ### Phase 17: Dunne referenties
+
 **Goal**: referenties zonder tekst of foto's zijn aangevuld of verborgen.
 **Depends on**: Phase 16
 **Requirements**: CLAIM-10
 **Success Criteria** (what must be TRUE):
   1. Zonder aangeleverde tekst en foto's zijn Iveco Maenhout, Decospan, MIG Motors en Cid Lines verborgen, met `sitemap.xml`, de paginatelling in `AGENTS.md` en de CI-stapnaam mee aangepast.
   2. De nieuwe paginatelling is vastgesteld en met een negatieve proef bewezen.
+
 **Plans**: 1 plan
 
 Plans:
 - [ ] 17-01: `hidden`-vlag, sitemap en tellingen
 
 ### Phase 18: Afsluiten
+
 **Goal**: de milestone is gesloten en er is geen open eind zonder eigenaar.
 **Depends on**: Phase 17
 **Requirements**: geen CLAIM (C-lijst en opruimen)
@@ -185,6 +210,7 @@ Plans:
   1. C1 t/m C11 hebben een eindstatus in `STATE.md`; geparkeerde punten staan in `MILESTONES.md` met reden, eigenaar en trigger.
   2. `grep -i opencode` in de actuele docs zegt nergens dat opencode bouwt.
   3. `gsd-complete-milestone` heeft v1.1 gearchiveerd (via een PR); scratch-worktrees, venv, `jq` en processen van Claude zijn opgeruimd.
+
 **Plans**: 2 plans
 
 Plans:
@@ -203,7 +229,7 @@ Phases execute in numeric order: 6 → 7 → 8 → … → 18
 | 3. Beheer-garanties | v1.0 | 0/0 | Deferred | - |
 | 4. Content-final | v1.0 | 0/0 | Deferred | - |
 | 5. Pre-live | v1.0 | 0/0 | Deferred | - |
-| 6. Herstel en rolwissel | v1.1 | 0/1 | Not started | - |
+| 6. Herstel en rolwissel | v1.1 | 1/1 | Complete    | 2026-10-16 |
 | 7. CLAIM-11 | v1.1 | 0/1 | Not started | - |
 | 8. Absolute claims | v1.1 | 0/1 | Not started | - |
 | 9. Stock-claim | v1.1 | 0/1 | Not started | - |
