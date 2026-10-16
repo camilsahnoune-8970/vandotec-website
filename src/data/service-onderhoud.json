@@ -1,8 +1,8 @@
 {
   "title": "Service & onderhoud | Vandotec",
-  "description": "24/7 interventiedienst, herstellingen en preventief onderhoud voor tankstations, laadinfra en industriële installaties.",
+  "description": "Interventiedienst, herstellingen en preventief onderhoud voor tankstations, laadinfra en industriële installaties.",
   "hero_title": "Service & <em>onderhoud</em>",
-  "hero_subtitle": "24/7 interventiedienst, herstellingen en preventief onderhoud voor tankstations, laadinfra en industriële installaties. E&eacute;n aanspreekpunt, eigen technici.",
+  "hero_subtitle": "Interventiedienst, herstellingen en preventief onderhoud voor tankstations, laadinfra en industriële installaties. E&eacute;n aanspreekpunt, eigen technici.",
   "sections": [
     {
       "slug": "ijkingen",
@@ -19,9 +19,9 @@
     },
     {
       "slug": "interventie",
-      "title": "24/7 interventiedienst",
-      "intro": "Bij een defect belt u ons. 24 uur per dag, 7 dagen per week. Onze technici rijden uit, lossen het probleem ter plaatse en zorgen dat uw installatie terug operationeel is.",
-      "details": "Defecte pomp, lekkende leiding of laadpaal die niet werkt: Vandotec is bereikbaar op +32 57 33 52 51. Elke interventie wordt uitgevoerd door een eigen technicus, met uitgebreide stock veelgebruikte onderdelen aan boord.",
+      "title": "Interventiedienst",
+      "intro": "Bij een defect belt u ons. Onze technici rijden uit, lossen het probleem ter plaatse en zorgen dat uw installatie terug operationeel is.",
+      "details": "Defecte pomp, lekkende leiding of laadpaal die niet werkt: Vandotec is bereikbaar op +32 57 33 52 51. Interventies worden uitgevoerd door eigen technici, met uitgebreide stock veelgebruikte onderdelen aan boord.",
       "highlights_title": "Bij interventie",
       "highlights": [
         "Eigen technici",
@@ -73,7 +73,7 @@
       "label": "Bel nu",
       "url": "tel:+3257335251",
       "theme": "outline",
-      "text": "24/7 interventie nodig?",
+      "text": "Interventie nodig?",
       "description": "Bel ons direct op +32 57 33 52 51."
     }
   ]

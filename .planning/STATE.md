@@ -109,6 +109,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-16 fase 8 CLAIM-03 + CLAIM-12 afgerond (claude, besluiten Camil): "24/7" en "24 uur per dag" van de site en uit de OG-afbeelding (nu echt PNG), tegels "24/7" zijn "Service"; "elk project/elke interventie in eigen beheer" afgezwakt tot "projecten/interventies door eigen ploegen/technici"; Voka-citaat ongemoeid. 32 vervangingen in 12 bestanden, `tasks/make-og.cjs`, `tasks/REVIEW.md`.
 - 2026-10-16 fase 7 CLAIM-11 afgerond (claude): Powerhub-tijdlijn gedekt door de mediakit, p. 3, 4 en 10 op 16/10 in de tekstlaag gecontroleerd; `tasks/REVIEW.md` bijgewerkt; geen sitewijziging.
 - 2026-10-16 fase 6 "Herstel en rolwissel" afgerond (claude): Claude Code bouwt (AGENTS, STATE, MILESTONES, spec), ROADMAP.md in GSD-sjabloon (v1.1 = fase 6 t/m 18), `.planning/config.json`, fasebestanden onder `.planning/phases/`, mediakit p. 3, 4, 5, 6, 10 gecontroleerd met PyMuPDF, QA-RUNBOOK bijgewerkt. Basislijn op `9c0ce09` groen (27 pagina's).
 - 2026-10-16 C3, C8 en C10 afgehandeld (claude, besluit Camil): wachtwoord vervangen (restrisico historie geaccepteerd), #2680FF blijft weg, Safari/schermlezer-test bewust gelaten. SECURITY-NOTITIE bijgewerkt.

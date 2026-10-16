@@ -62,6 +62,8 @@ Bewijsregel: geen bewering zonder bestand:regel of commando-output; de rest staa
   “eigen vaste ploegen met eigen materieel; zusterdivisie waar van toepassing expliciet vermeld”.
 - “24/7 interventie” op zelfde nummer als kantoor (`contact.json:14,17-18`); wachtdienst/SLA onbewezen.
   Voorstel: “24/7 bereikbaar voor storingsmeldingen; interventie in overleg, contractklanten prioriteit”.
+  **Afgehandeld 2026-10-16 (CLAIM-03, besluit Camil: afzwakken, geen bevestigde wachtdienst):** “24/7” en “24 uur per dag, 7 dagen per week” zijn van de site gehaald (24 regels in 10 bestanden plus 2 regels “24 uur per dag”) en uit de OG-afbeelding; wat overblijft is “interventiedienst”, zoals de mediakit p. 6 het schrijft. De drie getal-tegels “24/7” zijn het woord “Service” geworden. `public/og-image.png` bevatte JPEG-data onder een `.png`-naam en is nu echt PNG. Bestaat er later wél een bevestigde wachtdienst, dan is terugzetten een kleine aparte wijziging.
+- **Afgehandeld 2026-10-16 (CLAIM-12, besluit Camil: zelfde lijn als onderaannemers):** “Elk project wordt uitgevoerd door eigen vaste ploegen” is “Projecten worden uitgevoerd door eigen vaste ploegen” (3 plaatsen), “Elke interventie wordt uitgevoerd door een eigen technicus” is “Interventies worden uitgevoerd door eigen technici”, “elk project in eigen beheer” is “projecten door eigen ploegen” (2 plaatsen). Het Voka-citaat op `over-vandotec.astro:166` is ongewijzigd (geverifieerd, CONTENT-03).
 - Tellers zonder bron (`45+ jaar`, `6.000+ projecten`, `5 landen`; `expertises.json:441-453`):
   alleen BE+FR bewezen. Voorstel: peildatum/methode of terug naar “sinds 1978 — duizenden projecten”.
   **Afgehandeld 2026-10-11 (besluit Camil):** de bron bestond wel: `docs/mediakit-2026.pdf` p. 3 geeft alle
@@ -128,7 +130,7 @@ Bewijsregel: geen bewering zonder bestand:regel of commando-output; de rest staa
 ## Niet geverifieerd (rest-risico, mensenwerk of hosting nodig)
 
 Formulier-e2e, PHP-mailheaders, rate-limit-misbruik, live HAR vóór consent, contrastmeting op foto,
-screenreader, iPhone-Safari, live indexatie, wachtdienst/SLA, certificaatnummers, merktoestemmingen,
+screenreader, iPhone-Safari, live indexatie, certificaatnummers, merktoestemmingen,
 ticker-klanttoestemmingen, tellers-bron.
 
 ## Voorgestelde fix-rondes (na Camil-akkoord)
