@@ -56,7 +56,7 @@ Bron voor claims: `docs/mediakit-2026.pdf` of een bevestiging van Camil; anders 
 - [ ] **CLAIM-08**: De privacyverklaring noemt de identiteit van Vandotec (naam met rechtsvorm, adres, BTW, e-mail); cookie- en disclaimerpagina verwijzen ernaar
 - [ ] **CLAIM-09**: Lettertype Open Sans komt van de eigen server in plaats van Google Fonts
 - [ ] **CLAIM-10**: Dunne referenties (Iveco, Decospan, MIG Motors, Cid Lines) zijn aangevuld of verborgen
-- [ ] **CLAIM-11**: Powerhub-tijdlijn is gesloten met bron mediakit p. 3, 4 en 10
+- [x] **CLAIM-11**: Powerhub-tijdlijn is gesloten met bron mediakit p. 3, 4 en 10 (16/10, geen sitewijziging)
 - [ ] **CLAIM-12**: Absolute "elk project / elke interventie in eigen beheer" is op één lijn gebracht met de keuze bij CLAIM-02 (het Voka-citaat blijft ongewijzigd)
 - [ ] **CLAIM-13**: De termijnen in de algemene voorwaarden (offerte 30 dagen, betaling 30 dagen) zijn bevestigd of aangepast door Camil
 - [ ] **CLAIM-14**: "Uitgebreide stock veelgebruikte onderdelen aan boord" (service-onderhoud) is bevestigd of geschrapt
@@ -127,7 +127,7 @@ Toekomstig, niet in deze roadmap.
 | CLAIM-08 | v1.1 | Pending |
 | CLAIM-09 | v1.1 | Pending |
 | CLAIM-10 | v1.1 | Pending |
-| CLAIM-11 | v1.1 | Pending (opencode sluit zelf, bron in de spec) |
+| CLAIM-11 | v1.1 | Complete (16/10, bron mediakit) |
 | CLAIM-12 | v1.1 | Pending |
 | CLAIM-13 | v1.1 | Pending (wacht op Camil) |
 | CLAIM-14 | v1.1 | Pending (wacht op Camil) |

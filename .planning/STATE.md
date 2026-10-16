@@ -92,6 +92,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-16 CLAIM-11 gesloten (claude): Powerhub-tijdlijn gedekt door de mediakit (p. 3, 4, 10); geen sitewijziging. Restrisico: PDF niet opnieuw gelezen (`pdftoppm` ontbreekt). REVIEW.md, REQUIREMENTS.md bijgewerkt.
 - 2026-10-16 C4 en C5 afgehandeld (claude, besluit Camil): GitHub-beveiliging aan (secret scanning, push protection, Dependabot), 14 oude bestanden uit de huidige versie, `.vercel/` in `.gitignore`. Opencode-proces gestopt op Camils verzoek.
 - 2026-10-13 overdracht af met erkende restrisico's: PR #67 gemerged als `332c6e8` (Camil "ja"), P-b gecontroleerd, M10 en M15 gesloten door Camil (claude)
 - 2026-10-13 overdrachtspoort M1-M15 op PR #67 (claude): verify-mediakit huisstijl-gate (navy/rood, was #2680ff), QA-RUNBOOK, ARCHIEF-regels staging-docs, SECURITY-NOTITIE (staging, GitHub-beveiliging uit), spec P4/P5/CLAIM-03/CLAIM-09 gemeten, branch `opencode/fotorondgang-register` verwijderd, perf-basislijn, OG-test (0 bytes verschil), koude lezers. Overdracht NIET AF tot poort groen en C1.
