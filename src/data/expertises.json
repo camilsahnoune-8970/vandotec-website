@@ -1,8 +1,8 @@
 {
  "title": "Expertises | Vandotec",
- "description": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
+ "description": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Projecten worden uitgevoerd door eigen vaste ploegen.",
  "hero_title": "Onze <em>expertises</em>",
- "hero_subtitle": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen, van ontwerp tot oplevering.",
+ "hero_subtitle": "Vandotec ontwerpt, bouwt en onderhoudt installaties in drie domeinen. Projecten worden uitgevoerd door eigen vaste ploegen, van ontwerp tot oplevering.",
  "sections": [
   {
    "slug": "tankstations",
@@ -36,7 +36,7 @@
    "summary": "Engineering, bouw en onderhoud van onder- en bovengrondse tankstationinstallaties: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie.",
    "body": [
     "Wij ontwerpen, bouwen en onderhouden volledige tankstationinstallaties, onder- en bovengronds: brandstoftanks, pompeilanden, leidingwerk, bebakening, bodem- en lekdetectie. Van engineering tot oplevering.",
-    "Elk project start met een analyse van de locatie en technische vereisten. Onze technische dienst werkt een uitvoeringsplan uit dat voldoet aan alle vigerende regelgeving. Na oplevering blijft Vandotec beschikbaar voor onderhoud, herstellingen en 24/7 interventie."
+    "Elk project start met een analyse van de locatie en technische vereisten. Onze technische dienst werkt een uitvoeringsplan uit dat voldoet aan alle vigerende regelgeving. Na oplevering blijft Vandotec beschikbaar voor onderhoud, herstellingen en interventie."
    ],
    "approach_title": "Onze aanpak",
    "approach": [
@@ -531,7 +531,7 @@
    "label": "Bel nu",
    "url": "tel:+3257335251",
    "theme": "outline",
-   "text": "24/7 interventie nodig?",
+   "text": "Interventie nodig?",
    "description": "Bij defecten plannen wij direct een interventie. Bel ons op +32 57 33 52 51."
   }
  ]
