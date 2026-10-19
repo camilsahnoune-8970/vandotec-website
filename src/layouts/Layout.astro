@@ -1,6 +1,6 @@
 ---
 export const siteName = 'Vandotec';
-export const siteDescription = 'Vandotec installeert en onderhoudt tankstationinstallaties, EV-laadinfrastructuur en infrastructuurwerken. Meer dan 45 jaar ervaring en een 24/7 interventiedienst.';
+export const siteDescription = 'Vandotec installeert en onderhoudt tankstationinstallaties, EV-laadinfrastructuur en infrastructuurwerken. Meer dan 45 jaar ervaring en een interventiedienst.';
 export interface Props { title?: string; description?: string; path?: string; }
 const { title, description, path } = Astro.props as Props;
 const resolvedTitle = title ?? siteName;
@@ -79,7 +79,7 @@ const canonicalUrl = `${siteUrl}${path ?? Astro.url.pathname}`;
 		<footer class="footer">
 			<aside class="contact-strip" aria-label="Direct contact">
 				<div class="container contact-strip-inner">
-					<p><strong>Defect of storing?</strong> Onze interventiedienst is 24/7 bereikbaar.</p>
+					<p><strong>Defect of storing?</strong> Bel onze interventiedienst.</p>
 					<div class="contact-strip-actions">
 						<a href="tel:+3257335251" class="btn btn-red">+32 57 33 52 51</a>
 						<a href="mailto:info@vandotec.be" class="hero-link">Mail ons</a>
@@ -110,7 +110,7 @@ const canonicalUrl = `${siteUrl}${path ?? Astro.url.pathname}`;
 						<div class="footer-col">
 							<h2>Services</h2>
 							<ul>
-								<li><a href="/service-onderhoud#interventie">24/7 interventiedienst</a></li>
+								<li><a href="/service-onderhoud#interventie">Interventiedienst</a></li>
 								<li><a href="/service-onderhoud#onderhoud">Onderhoud &amp; herstellingen</a></li>
 								<li><a href="/service-onderhoud#preventief">Preventief onderhoud</a></li>
 								<li><a href="/service-onderhoud#ijkingen">IJkingen</a></li>

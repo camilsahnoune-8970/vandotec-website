@@ -3,16 +3,17 @@ gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: Inhoud-waarheid
 status: unknown
-last_updated: "2026-10-16T11:58:13.269Z"
-state_head: 3b4a8554423868cf8d201032579cd3b2688d1d39
+stopped_at: context exhaustion at 75% (2026-10-16)
+last_updated: "2026-10-16T14:03:52.886Z"
+state_head: 95a1b17f62270f4ff607884048a48259d04ca54d
 progress:
   total_phases: 13
-  completed_phases: 4
-  total_plans: 2
-  completed_plans: 2
-  percent: 22
-current_phase: 8
-current_phase_name: Absolute claims
+  completed_phases: 5
+  total_plans: 3
+  completed_plans: 3
+  percent: 38
+current_phase: 9
+current_phase_name: Stock-claim
 ---
 
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
@@ -109,6 +110,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-16 fase 8 CLAIM-03 + CLAIM-12 afgerond (claude, besluiten Camil): "24/7" en "24 uur per dag" van de site en uit de OG-afbeelding (nu echt PNG), tegels "24/7" zijn "Service"; "elk project/elke interventie in eigen beheer" afgezwakt tot "projecten/interventies door eigen ploegen/technici"; Voka-citaat ongemoeid. 32 vervangingen in 12 bestanden, `tasks/make-og.cjs`, `tasks/REVIEW.md`.
 - 2026-10-16 fase 7 CLAIM-11 afgerond (claude): Powerhub-tijdlijn gedekt door de mediakit, p. 3, 4 en 10 op 16/10 in de tekstlaag gecontroleerd; `tasks/REVIEW.md` bijgewerkt; geen sitewijziging.
 - 2026-10-16 fase 6 "Herstel en rolwissel" afgerond (claude): Claude Code bouwt (AGENTS, STATE, MILESTONES, spec), ROADMAP.md in GSD-sjabloon (v1.1 = fase 6 t/m 18), `.planning/config.json`, fasebestanden onder `.planning/phases/`, mediakit p. 3, 4, 5, 6, 10 gecontroleerd met PyMuPDF, QA-RUNBOOK bijgewerkt. Basislijn op `9c0ce09` groen (27 pagina's).
 - 2026-10-16 C3, C8 en C10 afgehandeld (claude, besluit Camil): wachtwoord vervangen (restrisico historie geaccepteerd), #2680FF blijft weg, Safari/schermlezer-test bewust gelaten. SECURITY-NOTITIE bijgewerkt.
@@ -153,3 +155,9 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 - 2026-09-30 service-CTA's per kaart + footer full-bleed band (opencode)
 - 2026-09-30 issues-pass: juridisch herschreven, a11y, 45+ uniform (opencode)
 - 2026-09-30 galerij-pass: lightbox, moment-banden, rails met dots (opencode)
+
+## Session
+
+**Last session:** 2026-10-16T14:03:52.311Z
+**Stopped at:** context exhaustion at 75% (2026-10-16)
+**Resume file:** None

@@ -2,22 +2,22 @@
   "title": "Vandotec | Tankstations, EV-laadinfrastructuur & infra",
   "description": "Installatiebedrijf voor tankstations, EV-laadinfrastructuur en infrastructuurwerken.",
   "hero_title": "Installaties die <em>blijven</em> draaien.",
-  "hero_subtitle": "Tankstations, EV-laadinfrastructuur en infrastructuurwerken — van ontwerp tot oplevering, met 24/7 interventie achteraf.",
+  "hero_subtitle": "Tankstations, EV-laadinfrastructuur en infrastructuurwerken — van ontwerp tot oplevering, met een interventiedienst achteraf.",
   "about_title": "Over Vandotec",
   "about_paragraphs": [
     "<strong>Vandotec</strong> is een installatiebedrijf gespecialiseerd in <strong>tankstation installaties</strong>, <strong>EV laadinstallaties</strong> en <strong>infrastructuurwerken</strong>. Wij ontwerpen, bouwen en onderhouden installaties voor ondergrondse en bovengrondse toepassingen.",
-    "Service is een kernactiviteit: bij defecten aan tankstations, laadpalen of industri&euml;le installaties plannen wij meteen een interventie via onze <strong>24/7 interventiedienst</strong>. Daarnaast voeren wij preventief onderhoud uit, ook in het kader van onderhoudscontracten.",
+    "Service is een kernactiviteit: bij defecten aan tankstations, laadpalen of industri&euml;le installaties plannen wij meteen een interventie via onze <strong>interventiedienst</strong>. Daarnaast voeren wij preventief onderhoud uit, ook in het kader van onderhoudscontracten.",
     "Meer dan 45 jaar ervaring in de sector. Projecten worden uitgevoerd door eigen vaste ploegen."
   ],
   "about_link_label": "Meer over ons",
   "expertises_title": "Onze expertises",
-  "expertises_subtitle": "Wij ontwerpen, bouwen en onderhouden installaties in drie domeinen. Elk project wordt uitgevoerd door eigen vaste ploegen.",
+  "expertises_subtitle": "Wij ontwerpen, bouwen en onderhouden installaties in drie domeinen. Projecten worden uitgevoerd door eigen vaste ploegen.",
   "expertises_cta_label": "Bekijk alle expertises",
   "services_title": "Service & interventie",
-  "services_subtitle": "Onze interventiedienst staat 24/7 paraat voor storings- en defectmeldingen. Daarnaast voeren we preventief onderhoud en herstellingen uit, ook in het kader van onderhoudscontracten.",
+  "services_subtitle": "Onze interventiedienst staat klaar voor storings- en defectmeldingen. Daarnaast voeren we preventief onderhoud en herstellingen uit, ook in het kader van onderhoudscontracten.",
   "services": [
     {
-      "title": "24/7 interventiedienst",
+      "title": "Interventiedienst",
       "text": "Bij een defect plannen wij meteen een interventie in en sturen een eigen technicus ter plaatse. Uw installatie is zo snel mogelijk terug operationeel.",
       "img": "/img/srv-interventie.jpg",
       "slug": "interventie",
@@ -70,7 +70,7 @@
     },
     {
       "title": "Onderhoud & nazorg",
-      "text": "Na oplevering blijven wij beschikbaar voor onderhoud, herstellingen en 24/7 interventie. Optioneel onderhoudscontract."
+      "text": "Na oplevering blijven wij beschikbaar voor onderhoud, herstellingen en interventie. Optioneel onderhoudscontract."
     }
   ],
   "stats": [
