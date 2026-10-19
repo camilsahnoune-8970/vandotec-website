@@ -25,7 +25,7 @@ Besluiten van Camil (19/10/2026), in twee stappen:
 
 - `home.json:29`: "…met eigen technici."
 - `service-onderhoud.json:24`: "…door eigen technici."
-- `service-onderhoud.json:28`: het lijstitem "Eigen materieel" is uit de lijst gehaald (de lijst heeft nu 3 punten).
+- `service-onderhoud.json:28`: het lijstitem "Uitgebreide stock veelgebruikte onderdelen" is uit de lijst gehaald (de lijst heeft nu 3 punten).
 - `service-onderhoud.json:37`: "Met eigen technici."
 
 ## Discretion Areas

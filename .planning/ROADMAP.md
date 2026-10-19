@@ -16,7 +16,7 @@
 - [x] **Phase 6: Herstel en rolwissel** - docs en GSD-inrichting op de nieuwe rolverdeling (Claude Code bouwt) (completed 2026-10-16)
 - [x] **Phase 7: CLAIM-11** - Powerhub-tijdlijn afsluiten met bron (completed 2026-10-16)
 - [x] **Phase 8: Absolute claims** - CLAIM-03 (24/7) en CLAIM-12 (eigen beheer) afzwakken (completed 2026-10-16)
-- [ ] **Phase 9: Stock-claim** - CLAIM-14 (uitgebreide stock onderdelen)
+- [x] **Phase 9: Stock-claim** - CLAIM-14 (uitgebreide stock onderdelen) (completed 2026-10-19)
 - [ ] **Phase 10: Superlatieven** - CLAIM-04
 - [ ] **Phase 11: Certificaten** - CLAIM-05
 - [ ] **Phase 12: Merknamen** - CLAIM-06
@@ -82,10 +82,10 @@ Plans:
   1. De stock-claim staat op geen enkele plaats meer, of is bevestigd door Camil.
   2. Camil keurde het voor/na goed.
 
-**Plans**: 1 plan
+**Plans**: 1/1 plans complete
 
 Plans:
-- [ ] 09-01: vier plaatsen aanpassen in één PR
+- [x] 09-01: vier plaatsen aanpassen in één PR
 
 ### Phase 10: Superlatieven
 
@@ -232,7 +232,7 @@ Phases execute in numeric order: 6 → 7 → 8 → … → 18
 | 6. Herstel en rolwissel | v1.1 | 1/1 | Complete    | 2026-10-16 |
 | 7. CLAIM-11 | v1.1 | 1/1 | Complete    | 2026-10-16 |
 | 8. Absolute claims | v1.1 | 1/1 | Complete    | 2026-10-16 |
-| 9. Stock-claim | v1.1 | 0/1 | Not started | - |
+| 9. Stock-claim | v1.1 | 1/1 | Complete    | 2026-10-19 |
 | 10. Superlatieven | v1.1 | 0/1 | Not started | - |
 | 11. Certificaten | v1.1 | 0/1 | Not started | - |
 | 12. Merknamen | v1.1 | 0/1 | Not started | - |
