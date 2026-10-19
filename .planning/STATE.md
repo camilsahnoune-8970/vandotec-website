@@ -3,17 +3,17 @@ gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: Inhoud-waarheid
 status: unknown
-stopped_at: Phase 9 complete, ready to plan Phase 10
-last_updated: "2026-10-19T09:00:23.826Z"
-state_head: 197497419074e6f2ac81065c490a7a2d97e04122
+stopped_at: Phase 10 complete, ready to plan Phase 11
+last_updated: "2026-10-19T13:25:10.678Z"
+state_head: b1978f0dad602f3f201f8fa4125a24ef2815fe84
 progress:
   total_phases: 13
-  completed_phases: 6
-  total_plans: 4
-  completed_plans: 4
-  percent: 33
-current_phase: 10
-current_phase_name: Superlatieven
+  completed_phases: 7
+  total_plans: 5
+  completed_plans: 5
+  percent: 39
+current_phase: 11
+current_phase_name: Certificaten
 ---
 
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
@@ -162,5 +162,5 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 ## Session
 
 **Last session:** 2026-10-16T14:03:52.311Z
-**Stopped at:** Phase 9 complete, ready to plan Phase 10
+**Stopped at:** Phase 10 complete, ready to plan Phase 11
 **Resume file:** None

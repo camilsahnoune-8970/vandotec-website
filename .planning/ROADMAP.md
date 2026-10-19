@@ -17,7 +17,7 @@
 - [x] **Phase 7: CLAIM-11** - Powerhub-tijdlijn afsluiten met bron (completed 2026-10-16)
 - [x] **Phase 8: Absolute claims** - CLAIM-03 (24/7) en CLAIM-12 (eigen beheer) afzwakken (completed 2026-10-16)
 - [x] **Phase 9: Stock-claim** - CLAIM-14 (uitgebreide stock onderdelen) (completed 2026-10-19)
-- [ ] **Phase 10: Superlatieven** - CLAIM-04
+- [x] **Phase 10: Superlatieven** - CLAIM-04 (completed 2026-10-19)
 - [ ] **Phase 11: Certificaten** - CLAIM-05
 - [ ] **Phase 12: Merknamen** - CLAIM-06
 - [ ] **Phase 13: Klanten** - CLAIM-07
@@ -96,10 +96,10 @@ Plans:
   1. "op elke werf, bij elke opdrachtgever" is afgezwakt; teksten die letterlijk uit de mediakit komen blijven.
   2. De zin met "ISO 17020" en "klasse 6/P2" blijft heel; `verify-mediakit.cjs` is groen.
 
-**Plans**: 1 plan
+**Plans**: 1/1 plans complete
 
 Plans:
-- [ ] 10-01: tekstwijziging met voor/na
+- [x] 10-01: tekstwijziging met voor/na
 
 ### Phase 11: Certificaten
 
@@ -233,7 +233,7 @@ Phases execute in numeric order: 6 → 7 → 8 → … → 18
 | 7. CLAIM-11 | v1.1 | 1/1 | Complete    | 2026-10-16 |
 | 8. Absolute claims | v1.1 | 1/1 | Complete    | 2026-10-16 |
 | 9. Stock-claim | v1.1 | 1/1 | Complete    | 2026-10-19 |
-| 10. Superlatieven | v1.1 | 0/1 | Not started | - |
+| 10. Superlatieven | v1.1 | 1/1 | Complete    | 2026-10-19 |
 | 11. Certificaten | v1.1 | 0/1 | Not started | - |
 | 12. Merknamen | v1.1 | 0/1 | Not started | - |
 | 13. Klanten | v1.1 | 0/1 | Not started | - |

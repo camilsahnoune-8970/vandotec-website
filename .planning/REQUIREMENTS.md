@@ -49,7 +49,7 @@ Bron voor claims: `docs/mediakit-2026.pdf` of een bevestiging van Camil; anders 
 - [x] **CLAIM-01**: Tellers 45+ / 6.000+ / 3.500+ / 5 landen staan gedekt op de site; 6.000+ projecten en 5 landen zijn gemarkeerd als groepscijfers (PR #64)
 - [x] **CLAIM-02**: Het absolute "geen onderaannemers" is geschrapt; "eigen vaste ploegen en eigen materieel" blijft (PR #65)
 - [x] **CLAIM-03**: "24/7 interventiedienst" is bevestigd door Camil of afgezwakt, inclusief de OG-afbeelding (wacht op Camil)
-- [ ] **CLAIM-04**: Superlatieven ("de referentie", "altijd", "op elke werf, bij elke opdrachtgever") zijn bevestigd of afgezwakt
+- [x] **CLAIM-04**: Superlatieven ("de referentie", "altijd", "op elke werf, bij elke opdrachtgever") zijn bevestigd of afgezwakt
 - [ ] **CLAIM-05**: Certificaten (VCA, ISO 17020, klasse 6/P2): nummers en geldigheid getoond of bewust weggelaten
 - [ ] **CLAIM-06**: Merknamen in alt-teksten en bijschriften zijn gedekt of geneutraliseerd, met een disclaimerzin
 - [ ] **CLAIM-07**: "Tankstation groene luifel": klant genoemd met toestemming, of naam overal weg
@@ -120,7 +120,7 @@ Toekomstig, niet in deze roadmap.
 | CLAIM-01 | v1.1 | Complete (PR #64) |
 | CLAIM-02 | v1.1 | Complete (PR #65) |
 | CLAIM-03 | Phase 8 | Complete |
-| CLAIM-04 | Phase 10 | Pending |
+| CLAIM-04 | Phase 10 | Complete |
 | CLAIM-05 | Phase 11 | Pending |
 | CLAIM-06 | Phase 12 | Pending |
 | CLAIM-07 | Phase 13 | Pending |
