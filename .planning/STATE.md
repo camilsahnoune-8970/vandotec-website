@@ -110,6 +110,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-19 fase 9 CLAIM-14 (claude, besluit Camil: afzwakken): stock-claim op 4 plaatsen weggehaald (`home.json:29`, `service-onderhoud.json:24, :28, :37`); alleen “eigen technici” blijft. Eerste versie met “eigen materieel” is bij het voor/na door Camil afgewezen (19/10). REVIEW-regel toegevoegd.
 - 2026-10-19 C11 afgehandeld (claude, besluit Camil): Vercel losgekoppeld door Camil; `.planning/SKILLS.md` verwijderd (GSD-waarschuwing W019); AGENTS-regels over Vercel bijgewerkt; hoofdmap hersteld op `main` (`2c8c6ad`), branch `claude/milestone-v1-1` verwijderd na boomcontrole op `332c6e8`.
 - 2026-10-16 fase 8 CLAIM-03 + CLAIM-12 afgerond (claude, besluiten Camil): "24/7" en "24 uur per dag" van de site en uit de OG-afbeelding (nu echt PNG), tegels "24/7" zijn "Service"; "elk project/elke interventie in eigen beheer" afgezwakt tot "projecten/interventies door eigen ploegen/technici"; Voka-citaat ongemoeid. 32 vervangingen in 12 bestanden, `tasks/make-og.cjs`, `tasks/REVIEW.md`.
 - 2026-10-16 fase 7 CLAIM-11 afgerond (claude): Powerhub-tijdlijn gedekt door de mediakit, p. 3, 4 en 10 op 16/10 in de tekstlaag gecontroleerd; `tasks/REVIEW.md` bijgewerkt; geen sitewijziging.
