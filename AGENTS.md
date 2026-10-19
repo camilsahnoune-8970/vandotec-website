@@ -21,12 +21,12 @@ Stack: Astro 7, `output: static`, 27 gebouwde pagina's (26 `index.html` + 404). 
 ## Rolverdeling (sinds 2026-10-16)
 
 - **Claude Code bouwt.** Camil beslist, keurt specs goed, doet de smaak-review en alle live-, DNS-, hosting- en kostenbesluiten. Opencode bouwt niet meer in deze repo (besluit Camil, 2026-10-16), tenzij hier opnieuw een andere rolverdeling komt te staan. Nooit twee agents tegelijk in dezelfde bestanden.
-- Zichtbare wijziging: eerst voor/na aan Camil, merge na zijn "ja". Voor/na = de tekst voor en na in de PR-tekst, plus screenshots 390 en 1440 als bestanden in de map `screenshots/` in de repo-root (buiten git, staat in `.gitignore`). Camil opent die bestanden. Er is geen preview-host die Camil gebruikt; een Vercel-check op een PR is geen voor/na (zie C11 in `.planning/STATE.md`). Maak de screenshots met `node tasks/shot-pagina.cjs`, zie `tasks/QA-RUNBOOK.md`.
+- Zichtbare wijziging: eerst voor/na aan Camil, merge na zijn "ja". Voor/na = de tekst voor en na in de PR-tekst, plus screenshots 390 en 1440 als bestanden in de map `screenshots/` in de repo-root (buiten git, staat in `.gitignore`). Camil opent die bestanden. Er is geen preview-host die Camil gebruikt (Vercel is sinds 19/10 losgekoppeld, zie C11 in `.planning/STATE.md`). Maak de screenshots met `node tasks/shot-pagina.cjs`, zie `tasks/QA-RUNBOOK.md`.
 - Tests, docs en techniek zonder zichtbare wijziging: CI groen is genoeg; bij code of tekst op de site ook het tweede paar ogen. In het PR-sjabloon vul je dan bij "Preview bekeken door Camil" in: "n.v.t., onzichtbaar" met de reden.
 - Pas mergen als beide verplichte checks van `main-sluis` groen zijn: `gh pr checks <n>` zonder `pending`. Een rode check betekent stoppen en melden, nooit eromheen mergen.
 - Onzichtbare PR (docs, tests, techniek): merge zodra CI groen is. Camil hoeft daarop niet te wachten.
 - Zichtbare PR: eerst het tweede paar ogen, dan voor/na aan Camil, dan zijn "ja", dan de merge door de agent die de PR opende, met het commando hieronder. Camil merget zelf alleen als de merge geblokkeerd wordt.
-- Vercel-checks op een PR tellen mee in `gh pr checks`; ze moeten groen zijn.
+- Verschijnt er toch weer een Vercel-check op een PR, dan is de koppeling terug: stoppen en melden (C11).
 - Commit- en PR-titel: `type: tekst`, bv. `content: ...`, `docs: ...`, `spec: ...`, `a11y: ...`.
 
 ## Beslissingen aan Camil (zo vraag je ze)
