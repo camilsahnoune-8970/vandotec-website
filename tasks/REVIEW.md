@@ -74,6 +74,7 @@ Bewijsregel: geen bewering zonder bestand:regel of commando-output; de rest staa
   `over-vandotec.astro:131`). Voorstel: nummer + meetjaar invullen (Camil).
 - Superlatieven `over-vandotec.json:8` (“de referentie”, 2× “altijd”) vs eigen waarde “Geen luchtkastelen”.
   Voorstel: “in de regel met eigen mensen, sleutel-op-de-deur waar overeengekomen”.
+- **Afgehandeld 2026-10-19 (CLAIM-04, besluiten Camil):** “op elke werf, bij elke opdrachtgever” in `over-vandotec.astro:138` is afgezwakt tot “op onze werven”. De mediakit noemt die absolute zin niet (tekstlaag p. 1-14 gelezen). “De referentie” (mediakit p. 3) en “altijd met eigen mensen, altijd sleutel-op-de-deur” (mediakit p. 5) zijn bewust gelaten: letterlijk uit de mediakit, Camil koos dat. “De beste oplossing” blijft staan (kleine standaard, geen bewijslast). Het deel “veilig en gezond werken” van de VCA-zin hoort bij CLAIM-05 (fase 11).
 - 8/15 entries hebben 1 foto; 4 hebben ≤4 woorden tekst (Iveco, Decospan, MIG, Cid e.a.).
   Voorstel: aanvullen of verbergen tot 2+ foto’s + bewijs.
 - `gallery` vs `photos`: 2 veldnamen; Demarol/D-Glas geen `gallery` → modal leeg op expertises.
