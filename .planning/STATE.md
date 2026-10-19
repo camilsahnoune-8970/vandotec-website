@@ -3,17 +3,17 @@ gsd_state_version: "1.0"
 milestone: v1.1
 milestone_name: Inhoud-waarheid
 status: unknown
-stopped_at: context exhaustion at 75% (2026-10-16)
-last_updated: "2026-10-16T14:03:52.886Z"
-state_head: 95a1b17f62270f4ff607884048a48259d04ca54d
+stopped_at: Phase 9 complete, ready to plan Phase 10
+last_updated: "2026-10-19T09:00:23.826Z"
+state_head: 197497419074e6f2ac81065c490a7a2d97e04122
 progress:
   total_phases: 13
-  completed_phases: 5
-  total_plans: 3
-  completed_plans: 3
-  percent: 38
-current_phase: 9
-current_phase_name: Stock-claim
+  completed_phases: 6
+  total_plans: 4
+  completed_plans: 4
+  percent: 33
+current_phase: 10
+current_phase_name: Superlatieven
 ---
 
 # STATE.md — waar we zijn (enige waarheid, bijhouden per taak)
@@ -110,6 +110,7 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 
 ## Journaal (nieuwste bovenaan; oudere regels staan niet strikt op volgorde)
 
+- 2026-10-19 fase 9 CLAIM-14 (claude, besluit Camil: afzwakken): stock-claim op 4 plaatsen weggehaald (`home.json:29`, `service-onderhoud.json:24, :28, :37`); alleen “eigen technici” blijft. Eerste versie met “eigen materieel” is bij het voor/na door Camil afgewezen (19/10). REVIEW-regel toegevoegd.
 - 2026-10-19 C11 afgehandeld (claude, besluit Camil): Vercel losgekoppeld door Camil; `.planning/SKILLS.md` verwijderd (GSD-waarschuwing W019); AGENTS-regels over Vercel bijgewerkt; hoofdmap hersteld op `main` (`2c8c6ad`), branch `claude/milestone-v1-1` verwijderd na boomcontrole op `332c6e8`.
 - 2026-10-16 fase 8 CLAIM-03 + CLAIM-12 afgerond (claude, besluiten Camil): "24/7" en "24 uur per dag" van de site en uit de OG-afbeelding (nu echt PNG), tegels "24/7" zijn "Service"; "elk project/elke interventie in eigen beheer" afgezwakt tot "projecten/interventies door eigen ploegen/technici"; Voka-citaat ongemoeid. 32 vervangingen in 12 bestanden, `tasks/make-og.cjs`, `tasks/REVIEW.md`.
 - 2026-10-16 fase 7 CLAIM-11 afgerond (claude): Powerhub-tijdlijn gedekt door de mediakit, p. 3, 4 en 10 op 16/10 in de tekstlaag gecontroleerd; `tasks/REVIEW.md` bijgewerkt; geen sitewijziging.
@@ -160,5 +161,5 @@ Gemeten, niet beoordeeld: op `/over-vandotec` zit 411 KB aan beelden op een gsm-
 ## Session
 
 **Last session:** 2026-10-16T14:03:52.311Z
-**Stopped at:** context exhaustion at 75% (2026-10-16)
+**Stopped at:** Phase 9 complete, ready to plan Phase 10
 **Resume file:** None
